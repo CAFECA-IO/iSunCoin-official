@@ -2,10 +2,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     parser: '@babel/eslint-parser',
-    ecmaVersion: 2020, 
-    sourceType: 'module', 
+    ecmaVersion: 2020,
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true, 
+      jsx: true,
       experimentalObjectRestSpread: true,
     },
     project: './tsconfig.eslint.json',
