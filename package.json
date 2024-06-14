@@ -1,6 +1,6 @@
 {
-  "name": "isuncoin",
-  "version": "0.1.0",
+  "name": "isuncoin-official",
+  "version": "0.1.0+1",
   "private": true,
   "scripts": {
     "dev": "next dev",
