@@ -255,6 +255,7 @@ module.exports = {
           5: 'var(--surface-brand-secondary-5)',
           50: 'var(--surface-brand-secondary-50)',
           70: 'var(--surface-brand-secondary-70)',
+          invert: 'var(--surface-brand-secondary-invert)',
           moderate: 'var(--surface-brand-secondary-moderate)',
           soft: 'var(--surface-brand-secondary-soft)',
         },
