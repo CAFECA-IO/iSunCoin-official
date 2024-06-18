@@ -8,6 +8,7 @@ function LandingPage() {
   return (
     <>
       <Head>
+        <link rel="icon" href="/logo/isuncoin_logo.svg" />
         <title>iSunCoin</title>
       </Head>
 
