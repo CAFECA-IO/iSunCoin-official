@@ -1,10 +1,27 @@
-import Image from 'next/image';
+import React from 'react';
+import Head from 'next/head';
+import LandingHeader from '@/components/landing_header/landing_header';
+import LandingFooter from '@/components/landing_footer/landing_footer';
+import LandingPageBody from '@/components/landing_page_body/landing_page_body';
 
-export default function Home() {
+function LandingPage() {
   return (
-    <div>
-      <h1>Welcome to Next.js!</h1>
-      <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-    </div>
+    <>
+      <Head>
+        <link rel="icon" href="/logo/isuncoin_logo.svg" />
+        <title>iSunCoin</title>
+      </Head>
+
+      {/* Navbar */}
+      <LandingHeader />
+
+      {/* Test */}
+      <LandingPageBody />
+
+      {/* Footer */}
+      <LandingFooter />
+    </>
   );
 }
+
+export default LandingPage;
