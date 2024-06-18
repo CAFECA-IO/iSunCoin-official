@@ -1,9 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 const LandingFooter = () => {
+  const thisYear = new Date().getFullYear();
+
   return (
-    <footer>
-      <section className="flex max-w-full items-center overflow-x-hidden font-barlow">
+    <footer className="flex flex-col gap-24px px-80px py-48px">
+      <section className="flex max-w-full items-center gap-80px overflow-x-hidden font-barlow">
+        {/* Logo */}
         <div>
           <svg
             width="91"
@@ -76,9 +77,11 @@ const LandingFooter = () => {
             </defs>
           </svg>
         </div>
-        <div className="flex">
-          <div>
-            <div className="flex items-center">
+
+        <div className="flex grow justify-between">
+          {/* Address & Telephone */}
+          <div className="flex flex-col justify-between">
+            <div className="flex items-center gap-8px">
               <div className="flex items-center justify-center">
                 <svg
                   width="21"
@@ -107,11 +110,11 @@ const LandingFooter = () => {
                   </defs>
                 </svg>
               </div>
-              <p>
+              <p className="text-text-neutral-primary">
                 13F.-6, No. 2, Ln. 150, Sec. 5, Xinyi Rd., Xinyi Dist., Taipei City 110416 , Taiwan
               </p>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-8px">
               <div className="flex items-center justify-center">
                 <svg
                   width="21"
@@ -128,10 +131,11 @@ const LandingFooter = () => {
                   />
                 </svg>
               </div>
-              <p>+886-2-2700-1979</p>
+              <p className="text-text-neutral-primary">+886-2-2700-1979</p>
             </div>
           </div>
-          <div>
+          {/* GitHub Icon */}
+          <div className="">
             <svg
               width="88"
               height="67"
@@ -155,8 +159,8 @@ const LandingFooter = () => {
           </div>
         </div>
       </section>
-      <section>
-        <p>iSunFA @ 2024. All rights reserved.</p>
+      <section className="text-right text-text-neutral-secondary">
+        <p>iSunFA @ {thisYear}. All rights reserved.</p>
       </section>
     </footer>
   );
