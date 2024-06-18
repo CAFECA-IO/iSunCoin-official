@@ -160,7 +160,7 @@ const LandingFooter = () => {
         </div>
       </section>
       <section className="text-right text-text-neutral-secondary">
-        <p>iSunFA @ {thisYear}. All rights reserved.</p>
+        <p>iSunFA @ 2024~{thisYear}. All rights reserved.</p>
       </section>
     </footer>
   );
