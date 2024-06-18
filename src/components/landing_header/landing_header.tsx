@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import useOuterClick from '@/lib/hooks/use_outer_click';
-// import toggle
-
 import { ISUNCOIN_ROUTE } from '@/constants/url';
 import ThemeToggle from '@/components/theme_toggle/theme_toggle';
 
@@ -15,7 +13,7 @@ const languages = [
 ];
 
 const LandingHeader = () => {
-  // ToDo: (今天 - Liz) i18n
+  // ToDo: (20240618 - Liz) i18n
   //   const { t }: { t: TranslateFunction } = useTranslation('common');
 
   const {
@@ -27,7 +25,7 @@ const LandingHeader = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <main className="flex items-center gap-lv-7 border px-lv-10 py-lv-4">
+    <header className="fixed inset-x-0 top-0 z-40 flex max-w-full items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-md">
       {/* Navigation Links */}
       <nav>
         <ul className="flex items-center gap-lv-7">
@@ -266,60 +264,43 @@ const LandingHeader = () => {
 
       {/* Language Selector Button */}
       <div className="p-12px">
-        <div onClick={toggleDropdown}>
+        <div onClick={toggleDropdown} className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"
             height="32"
             fill="none"
             viewBox="0 0 32 32"
+            className="hover:cursor-pointer hover:text-stroke-brand-primary"
           >
             <path
-              fill="#001840"
+              // fill="#001840"
+              fill="currentColor"
               fillRule="evenodd"
               d="M4.038 13.001a12.36 12.36 0 0 0-.367 3c0 1.035.127 2.04.367 3h5.904a21.4 21.4 0 0 1-.271-3.02c.02-1.004.112-2 .27-2.98H4.039Zm.688-2h5.64a21.403 21.403 0 0 1 3.366-7.124A12.353 12.353 0 0 0 4.726 11ZM16.004 4.2a19.4 19.4 0 0 0-3.564 6.802h7.128A19.4 19.4 0 0 0 16.004 4.2Zm4.033 8.802h-8.066a19.405 19.405 0 0 0-.3 3c.022 1.012.123 2.015.3 3h8.066c.177-.985.278-1.988.3-3a19.405 19.405 0 0 0-.3-3Zm2.029 6a21.41 21.41 0 0 0 .271-3.02 21.409 21.409 0 0 0-.271-2.98h5.904c.24.96.367 1.965.367 3s-.127 2.04-.367 3h-5.904Zm-2.498 2H12.44a19.4 19.4 0 0 0 3.564 6.802A19.4 19.4 0 0 0 19.568 21Zm-5.836 7.125A21.404 21.404 0 0 1 10.365 21H4.726a12.353 12.353 0 0 0 9.006 7.125Zm4.544 0A21.404 21.404 0 0 0 21.643 21h5.639a12.353 12.353 0 0 1-9.006 7.125ZM27.282 11h-5.64a21.403 21.403 0 0 0-3.366-7.124A12.353 12.353 0 0 1 27.282 11ZM1.671 16c0-7.916 6.417-14.333 14.333-14.333S30.337 8.085 30.337 16 23.92 30.334 16.004 30.334 1.67 23.917 1.67 16.001Z"
               clipRule="evenodd"
             />
           </svg>
+          {/* dropmenu */}
+          <ul
+            className={`absolute left-0.5 top-80px flex h-200px w-160px -translate-x-1/2 flex-col items-center justify-evenly rounded-xs border bg-surface-neutral-surface-lv2 px-24px text-center shadow-dropmenu ${dropdownOpen ? 'block' : 'hidden'}`}
+          >
+            {languages.map((lang: { label: string; code: string }) => (
+              <li
+                key={lang.code}
+                className="cursor-pointer text-base font-medium text-button-text-secondary"
+                // onClick={() => changeLanguage(lang.code)} // ToDo: (20240618 - Liz) i18n
+              >
+                {lang.label}
+              </li>
+            ))}
+          </ul>
         </div>
-        {/* // ToDo: (今天 - Liz) Unfinished... */}
-        {/* <div
-          className={`relative flex flex-col items-center justify-center ${dropdownOpen ? 'bg-dropdown-surface-menu-background-primary' : ''} hover:cursor-pointer`}
-          onClick={toggleDropdown}
-        > */}
-        {/* <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          fill="none"
-          viewBox="0 0 32 32"
-        >
-          <path
-            fill="#001840"
-            fillRule="evenodd"
-            d="M4.038 13.001a12.36 12.36 0 0 0-.367 3c0 1.035.127 2.04.367 3h5.904a21.4 21.4 0 0 1-.271-3.02c.02-1.004.112-2 .27-2.98H4.039Zm.688-2h5.64a21.403 21.403 0 0 1 3.366-7.124A12.353 12.353 0 0 0 4.726 11ZM16.004 4.2a19.4 19.4 0 0 0-3.564 6.802h7.128A19.4 19.4 0 0 0 16.004 4.2Zm4.033 8.802h-8.066a19.405 19.405 0 0 0-.3 3c.022 1.012.123 2.015.3 3h8.066c.177-.985.278-1.988.3-3a19.405 19.405 0 0 0-.3-3Zm2.029 6a21.41 21.41 0 0 0 .271-3.02 21.409 21.409 0 0 0-.271-2.98h5.904c.24.96.367 1.965.367 3s-.127 2.04-.367 3h-5.904Zm-2.498 2H12.44a19.4 19.4 0 0 0 3.564 6.802A19.4 19.4 0 0 0 19.568 21Zm-5.836 7.125A21.404 21.404 0 0 1 10.365 21H4.726a12.353 12.353 0 0 0 9.006 7.125Zm4.544 0A21.404 21.404 0 0 0 21.643 21h5.639a12.353 12.353 0 0 1-9.006 7.125ZM27.282 11h-5.64a21.403 21.403 0 0 0-3.366-7.124A12.353 12.353 0 0 1 27.282 11ZM1.671 16c0-7.916 6.417-14.333 14.333-14.333S30.337 8.085 30.337 16 23.92 30.334 16.004 30.334 1.67 23.917 1.67 16.001Z"
-            clipRule="evenodd"
-          />
-        </svg> */}
-        <ul
-          className={`flex flex-col items-center justify-center rounded-xs border text-center font-bold ${dropdownOpen ? 'block' : 'hidden'}`}
-        >
-          {languages.map((lang: { label: string; code: string }) => (
-            <li
-              key={lang.code}
-              className="mr-2 w-full cursor-pointer font-bold text-button-text-secondary"
-              // onClick={() => changeLanguage(lang.code)} // ToDo: (今天 - Liz) i18n
-            >
-              {lang.label}
-            </li>
-          ))}
-        </ul>
-        {/* </div> */}
       </div>
 
       {/* Theme Toggle (Day/Night mode) Button */}
       <ThemeToggle />
-    </main>
+    </header>
   );
 };
 

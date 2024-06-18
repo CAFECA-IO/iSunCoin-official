@@ -2,8 +2,8 @@
 
 const LandingFooter = () => {
   return (
-    <div>
-      <section className="flex items-center">
+    <footer>
+      <section className="flex max-w-full items-center overflow-x-hidden font-barlow">
         <div>
           <svg
             width="91"
@@ -158,7 +158,7 @@ const LandingFooter = () => {
       <section>
         <p>iSunFA @ 2024. All rights reserved.</p>
       </section>
-    </div>
+    </footer>
   );
 };
 

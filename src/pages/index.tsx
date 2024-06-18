@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import LandingHeader from '@/components/landing_header/landing_header';
 import LandingFooter from '@/components/landing_footer/landing_footer';
+import LandingPageBody from '@/components/landing_page_body/landing_page_body';
 
 function LandingPage() {
   return (
@@ -11,19 +12,13 @@ function LandingPage() {
       </Head>
 
       {/* Navbar */}
-      <div>
-        <LandingHeader />
-      </div>
+      <LandingHeader />
 
       {/* Test */}
-      <div className="h-fullpx bg-surface-neutral-surface-lv1">
-        <h1 className="text-text-brand-primary-lv2">內文</h1>
-      </div>
+      <LandingPageBody />
 
       {/* Footer */}
-      <div>
-        <LandingFooter />
-      </div>
+      <LandingFooter />
     </>
   );
 }
