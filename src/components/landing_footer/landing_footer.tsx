@@ -2,7 +2,7 @@ const LandingFooter = () => {
   const thisYear = new Date().getFullYear();
 
   return (
-    <footer className="flex flex-col gap-24px px-80px py-48px">
+    <footer className="flex flex-col gap-24px bg-surface-neutral-surface-lv2 px-80px py-48px">
       <section className="flex max-w-full items-center gap-80px overflow-x-hidden font-barlow">
         {/* Logo */}
         <div>

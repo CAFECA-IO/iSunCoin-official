@@ -736,6 +736,7 @@ module.exports = {
       },
       backgroundImage: {
         landingPageKv: 'url("/elements/landing_page_kv.png")',
+        landingDataGraphic: 'url("/elements/landing_data_graghic.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -759,7 +760,7 @@ module.exports = {
         sm: ['14px', '20px'],
         base: ['16px', '24px'],
         lg: ['18px', '28px'],
-        xl: ['20px', '28px'],
+        xl: ['20px', '32px'],
         '2xl': ['24px', '32px'],
         '3xl': ['30px', '36px'],
         '32px': ['32px', '36px'],
@@ -975,8 +976,10 @@ module.exports = {
         '134px': '134px',
         '140px': '140px',
         '150px': '150px',
+        '157px': '157px',
         '160px': '160px',
         '170px': '170px',
+        '176px': '176px',
         '180px': '180px',
         '190px': '190px',
         '200px': '200px',
@@ -1014,6 +1017,7 @@ module.exports = {
         '390px': '390px',
         '400px': '400px',
         '410px': '410px',
+        '416px': '416px',
         '420px': '420px',
         '430px': '430px',
         '432px': '432px',
@@ -1040,6 +1044,7 @@ module.exports = {
         '570px': '570px',
         '580px': '580px',
         '590px': '590px',
+        '594px': '594px',
         '600px': '600px',
         '620px': '620px',
         '630px': '630px',
@@ -1053,10 +1058,12 @@ module.exports = {
         '850px': '850px',
         '865px': '865px',
         '900px': '900px',
+        '908px': '908px',
         '950px': '950px',
         '960px': '960px',
         '1000px': '1000px',
         '1100px': '1100px',
+        '1103px': '1103px',
         '1200px': '1200px',
         '1300px': '1300px',
         '1350px': '1350px',
@@ -1254,13 +1261,13 @@ module.exports = {
       },
       // Info: 如果設定 `s`, `m`，會造成左上左下沒有圓弧角的問題，要設定 `sm`, `md` 才行 (20240424 - Shirley)
       borderRadius: {
-        xxs: 'var(--radius-xxs)',
-        xs: 'var(--radius-xs)',
-        sm: 'var(--radius-s)',
-        md: 'var(--radius-m)',
-        lg: 'var(--radius-l)',
-        xl: 'var(--radius-xl)',
-        rounded: 'var(--radius-rounded)',
+        xxs: 'var(--radius-xxs)', // 3px
+        xs: 'var(--radius-xs)', // 5px
+        sm: 'var(--radius-s)', // 10px
+        md: 'var(--radius-m)', // 15px
+        lg: 'var(--radius-l)', // 20px
+        xl: 'var(--radius-xl)', // 25px
+        rounded: 'var(--radius-rounded)', // 999px
       },
       margin: {
         '8px': '8px',
@@ -1294,6 +1301,7 @@ module.exports = {
         '50px': '50px',
       },
       boxShadow: {
+        s: '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
         lg: '0 4px 10px rgba(0,0,0,0.7)',
         xl: '0 4px 24px rgba(0, 0, 0, 0.40)',
         xlReverse: '0px -4px 24px rgba(0, 0, 0, 0.40)',
@@ -1328,7 +1336,15 @@ module.exports = {
         scrollBtn:
           '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
 
-        card: '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
+        /* iSunCoin */
+        header:
+          '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+
+        downDropShadowS:
+          '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
+        downDropShadowM:
+          '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+        regularShadow: '0px 8px 16px 0px #00000026',
       },
       dropShadow: {
         lg: '0 4px 10px rgba(0,0,0,0.7)',
