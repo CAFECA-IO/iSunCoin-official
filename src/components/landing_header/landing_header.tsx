@@ -26,9 +26,6 @@ const LandingHeader = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 flex max-w-full items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-header">
-      <Link href="/products">Products</Link>
-      <Link href="/products">Products</Link>
-
       {/* Navigation Links */}
       <nav>
         <ul className="flex items-center gap-lv-7">

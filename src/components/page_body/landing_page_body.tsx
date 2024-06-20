@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSectionOfLandingPage from '@/components/hero_section_of_landing_page/hero_section_of_landing_page';
+import HeroSectionOfLandingPage from '@/components/hero_section/hero_section_of_landing_page';
 import Introduction from '@/components/introduction/introduction';
 import StatisticsOverview from '@/components/statistics_overview/statistics_overview';
 

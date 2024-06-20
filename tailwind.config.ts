@@ -736,7 +736,8 @@ module.exports = {
       },
       backgroundImage: {
         landingPageKv: 'url("/elements/landing_page_kv.png")',
-        landingDataGraphic: 'url("/elements/landing_data_graghic.png")',
+        landingDataGraphic: 'url("/elements/landing_data_graphic.png")',
+        groundKv: 'url("/elements/ground_kv.png")',
       },
       zIndex: {
         '-10': '-10',
