@@ -25,7 +25,7 @@ const LandingHeader = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 flex max-w-full items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-md">
+    <header className="fixed inset-x-0 top-0 z-40 flex max-w-full items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-header">
       {/* Navigation Links */}
       <nav>
         <ul className="flex items-center gap-lv-7">
@@ -283,7 +283,7 @@ const LandingHeader = () => {
           </svg>
           {/* dropmenu */}
           <ul
-            className={`absolute left-0.5 top-80px flex h-200px w-160px -translate-x-1/2 flex-col items-center justify-evenly rounded-xs border bg-surface-neutral-surface-lv2 px-24px text-center shadow-dropmenu ${dropdownOpen ? 'block' : 'hidden'}`}
+            className={`absolute left-0.5 top-80px flex h-200px w-160px -translate-x-1/2 flex-col items-center justify-evenly rounded-xs border bg-surface-neutral-surface-lv2 px-24px text-center shadow-downDropShadowS ${dropdownOpen ? 'block' : 'hidden'}`}
           >
             {languages.map((lang: { label: string; code: string }) => (
               <li

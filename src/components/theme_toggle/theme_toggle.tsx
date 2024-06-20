@@ -5,11 +5,11 @@ const ThemeToggle = () => {
 
   return (
     <div
-      className={`flex h-36px w-64px flex-none cursor-pointer items-center rounded-full p-2px transition-colors duration-300 ease-in-out ${isOn ? 'bg-switch-surface-active' : 'bg-switch-surface-base'}`}
+      className={`flex h-36px w-66px flex-none cursor-pointer items-center rounded-full p-2px transition-colors duration-300 ease-in-out ${isOn ? 'bg-switch-surface-active' : 'bg-switch-surface-base'}`}
       onClick={() => setIsOn(!isOn)}
     >
       <div
-        className={`flex h-32px w-32px items-center justify-center rounded-full bg-white shadow-md transition-transform ease-in-out ${isOn ? 'translate-x-7' : ''}`}
+        className={`flex h-32px w-32px items-center justify-center rounded-full bg-white shadow-md transition-transform ease-in-out ${isOn ? 'translate-x-30px' : ''}`}
       >
         {isOn ? (
           <svg

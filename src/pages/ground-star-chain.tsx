@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import LandingHeader from '@/components/landing_header/landing_header';
 import LandingFooter from '@/components/landing_footer/landing_footer';
-import LandingPageBody from '@/components/page_body/landing_page_body';
+import GroundStarChainPageBody from '@/components/page_body/ground_star_chain_page_body';
 
-function LandingPage() {
+function GroundStarChainPage() {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ function LandingPage() {
       <LandingHeader />
 
       {/* Body */}
-      <LandingPageBody />
+      <GroundStarChainPageBody />
 
       {/* Footer */}
       <LandingFooter />
@@ -24,4 +24,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default GroundStarChainPage;

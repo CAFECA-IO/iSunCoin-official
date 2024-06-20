@@ -23,8 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "tailwind.config.ts",
-    "src/lib/utils/email.js"
+    "tailwind.config.ts"
+    // "src/lib/utils/email.js"
   ],
   "exclude": ["node_modules"]
 }
