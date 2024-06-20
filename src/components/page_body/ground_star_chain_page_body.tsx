@@ -1,6 +1,7 @@
 import React from 'react';
 import HeroSectionOfGround from '@/components/hero_section/hero_section_of_ground';
 import FeaturesSection from '@/components/features_section/features_section';
+import DecentralizedNetwork from '@/components/decentralized_network/decentralized_network';
 
 const GroundStarChainPageBody = () => {
   return (
@@ -8,6 +9,8 @@ const GroundStarChainPageBody = () => {
       <HeroSectionOfGround />
 
       <FeaturesSection />
+
+      <DecentralizedNetwork />
     </main>
   );
 };

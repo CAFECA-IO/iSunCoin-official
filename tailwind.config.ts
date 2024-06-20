@@ -738,6 +738,7 @@ module.exports = {
         landingPageKv: 'url("/elements/landing_page_kv.png")',
         landingDataGraphic: 'url("/elements/landing_data_graphic.png")',
         groundKv: 'url("/elements/ground_kv.png")',
+        starsWeb: 'url("/elements/stars_web.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -1026,6 +1027,7 @@ module.exports = {
         '438px': '438px',
         '440px': '440px',
         '450px': '450px',
+        '464px': '464px',
         '475px': '475px',
         '479px': '479px',
         '480px': '480px',
