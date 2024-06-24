@@ -6,18 +6,21 @@ import ProductsPageBody from '@/components/page_body/products_page_body';
 
 function ProductsPage() {
   return (
-    <div>
+    <>
       <Head>
         <link rel="icon" href="/logo/isuncoin_logo.svg" />
         <title>iSunCoin</title>
       </Head>
 
+      {/* Navbar */}
       <LandingHeader />
 
+      {/* Body */}
       <ProductsPageBody />
 
+      {/* Footer */}
       <LandingFooter />
-    </div>
+    </>
   );
 }
 

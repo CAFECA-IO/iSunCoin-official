@@ -739,6 +739,10 @@ module.exports = {
         landingDataGraphic: 'url("/elements/landing_data_graphic.png")',
         groundKv: 'url("/elements/ground_kv.png")',
         starsWeb: 'url("/elements/stars_web.png")',
+        productsSlide1: 'url("/elements/products_slide1.png")',
+        productsSlide2: 'url("/elements/products_slide2.png")',
+        productsSlide3: 'url("/elements/products_slide3.png")',
+        yellowCurveLine: 'url("/elements/yellow_curve_line.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -1060,6 +1064,7 @@ module.exports = {
         '800px': '800px',
         '850px': '850px',
         '865px': '865px',
+        '875px': '875px',
         '900px': '900px',
         '908px': '908px',
         '950px': '950px',
@@ -1401,6 +1406,7 @@ module.exports = {
       rotate: {
         135: '135deg',
         40: '40deg',
+        270: '270deg',
       },
       borderWidth: {
         '0.5px': '0.5px',
