@@ -1,4 +1,4 @@
-// components/Carousel.tsx
+// components/Carousel.tsx // Deprecated: (今天丟棄 - Liz)!!!
 
 import { useEffect, useState } from 'react';
 

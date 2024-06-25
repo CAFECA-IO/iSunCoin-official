@@ -350,6 +350,10 @@ module.exports = {
           tertiary: 'var(--text-neutral-tertiary)',
         },
 
+        'text-primary': {
+          DEFAULT: 'var(--text-text-primary)',
+        },
+
         'text-state-error': {
           DEFAULT: 'var(--text-state-error)',
           invert: 'var(--text-state-error-invert)',
@@ -769,16 +773,17 @@ module.exports = {
         xl: ['20px', '32px'],
         '2xl': ['24px', '32px'],
         '3xl': ['30px', '36px'],
-        '32px': ['32px', '36px'],
+        '32px': ['32px', '40px'],
         '4xl': ['36px', '40px'],
         '40px': ['40px', '44px'],
         '5xl': ['42px', 1],
+        '44px': ['44px', '52px'],
         '48px': ['48px', '52px'],
         '6xl': ['56px', '60px'],
         '64px': ['64px', '68px'],
         '7xl': ['72px', 1],
         '8xl': ['96px', 1],
-        '9xl': ['128px', 1],
+        '9xl': ['128px', '144px'],
 
         h1: '44px',
         h2: '36px',
