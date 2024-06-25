@@ -11,13 +11,14 @@ const CarouselKv = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
+    fade: true,
   };
 
   return (
-    <div className="">
+    <div>
       <Slider {...settings}>
-        <section className="relative flex py-80px">
+        <section className="relative flex min-h-875px py-80px">
           <div className="absolute bottom-0 right-0 z-0 h-400px w-400px rotate-270 bg-yellowCurveLine bg-contain bg-center bg-no-repeat"></div>
           <div className="z-10 flex gap-54px">
             <div className="flex basis-1/2 flex-col gap-40px pl-80px">
@@ -86,16 +87,16 @@ const CarouselKv = () => {
             <div className="flex basis-1/2 items-center justify-center">
               <Image
                 src={'/elements/model_pro_black.png'}
+                alt="model_pro_black"
                 width={875}
                 height={875}
-                alt="model_pro_black"
-                className="z-10 object-contain"
+                className="z-10 w-full object-contain"
                 layout="responsive"
               ></Image>
             </div>
           </div>
         </section>
-        <section className="relative flex py-80px">
+        <section className="relative flex min-h-875px py-80px">
           <div className="absolute bottom-0 right-0 z-0 h-400px w-400px rotate-270 bg-yellowCurveLine bg-contain bg-center bg-no-repeat"></div>
           <div className="z-10 flex gap-54px">
             <div className="flex basis-1/2 flex-col gap-40px pl-80px">
@@ -164,16 +165,16 @@ const CarouselKv = () => {
             <div className="flex basis-1/2 items-center justify-center">
               <Image
                 src={'/elements/model_max_white.png'}
+                alt="model_max_white"
                 width={875}
                 height={875}
-                alt="model_max_white"
-                className="z-10 object-contain"
+                className="z-10 w-full object-contain"
                 layout="responsive"
               ></Image>
             </div>
           </div>
         </section>
-        <section className="relative flex py-80px">
+        <section className="relative flex min-h-875px py-80px">
           <div className="absolute bottom-0 right-0 z-0 h-400px w-400px rotate-270 bg-yellowCurveLine bg-contain bg-center bg-no-repeat"></div>
           <div className="z-10 flex">
             <div className="flex basis-1/4 flex-col gap-40px pl-80px">
@@ -238,10 +239,10 @@ const CarouselKv = () => {
             <div className="flex basis-3/4 items-end justify-center">
               <Image
                 src={'/elements/model_enterprise_black.png'}
+                alt="model_enterprise_black"
                 width={964}
                 height={575}
-                alt="model_enterprise_black"
-                className="z-10 object-contain"
+                className="z-10 w-full object-contain"
                 layout="responsive"
               ></Image>
             </div>
