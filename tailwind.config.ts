@@ -350,6 +350,10 @@ module.exports = {
           tertiary: 'var(--text-neutral-tertiary)',
         },
 
+        'text-primary': {
+          DEFAULT: 'var(--text-text-primary)',
+        },
+
         'text-state-error': {
           DEFAULT: 'var(--text-state-error)',
           invert: 'var(--text-state-error-invert)',
@@ -739,6 +743,10 @@ module.exports = {
         landingDataGraphic: 'url("/elements/landing_data_graphic.png")',
         groundKv: 'url("/elements/ground_kv.png")',
         starsWeb: 'url("/elements/stars_web.png")',
+        productsSlide1: 'url("/elements/products_slide1.png")',
+        productsSlide2: 'url("/elements/products_slide2.png")',
+        productsSlide3: 'url("/elements/products_slide3.png")',
+        yellowCurveLine: 'url("/elements/yellow_curve_line.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -765,16 +773,19 @@ module.exports = {
         xl: ['20px', '32px'],
         '2xl': ['24px', '32px'],
         '3xl': ['30px', '36px'],
-        '32px': ['32px', '36px'],
+        '32px': ['32px', '40px'],
         '4xl': ['36px', '40px'],
         '40px': ['40px', '44px'],
         '5xl': ['42px', 1],
+        '44px': ['44px', '52px'],
         '48px': ['48px', '52px'],
         '6xl': ['56px', '60px'],
         '64px': ['64px', '68px'],
         '7xl': ['72px', 1],
         '8xl': ['96px', 1],
-        '9xl': ['128px', 1],
+        '9xl': ['128px', '144px'],
+        '120px': ['120px', '144px'],
+        '200px': ['200px', '240px'],
 
         h1: '44px',
         h2: '36px',
@@ -958,6 +969,7 @@ module.exports = {
         '75px': '75px',
         '76px': '76px',
         '77px': '77px',
+        '78px': '78px',
         // '80px': '80px',
         '81px': '81px',
         '82px': '82px',
@@ -1005,12 +1017,15 @@ module.exports = {
         '296px': '296px',
         '300px': '300px',
         '310px': '310px',
+        '318px': '318px',
         '320px': '320px',
         '330px': '330px',
         '340px': '340px',
         '350px': '350px',
         '354px': '354px',
         '360px': '360px',
+        '362px': '362px',
+        '363px': '363px',
         '370px': '370px',
         '372px': '372px',
         '376px': '376px',
@@ -1060,10 +1075,12 @@ module.exports = {
         '800px': '800px',
         '850px': '850px',
         '865px': '865px',
+        '875px': '875px',
         '900px': '900px',
         '908px': '908px',
         '950px': '950px',
         '960px': '960px',
+        '975px': '975px',
         '1000px': '1000px',
         '1100px': '1100px',
         '1103px': '1103px',
@@ -1155,11 +1172,19 @@ module.exports = {
         '94rem': '94rem',
         '96rem': '96rem',
 
+        '2%': '2%',
+        '5%': '5%',
         '8%': '8%',
+        '10%': '10%',
         '11%': '11%',
         '14%': '14%',
+        '30%': '30%',
         '35%': '35%',
+        '43%': '43%',
         '50%': '50%',
+        '80%': '80%',
+        '95%': '95%',
+
         '1/2': '50%',
         '1/4': '25%',
         '1/5': '20%',
@@ -1192,8 +1217,6 @@ module.exports = {
         '1/15': '6.666666666666667%',
         '1/16': '6.25%',
         '1/3': '33.333333%',
-        '80%': '80%',
-        '95%': '95%',
 
         '80vh': '80vh',
         '90vh': '90vh',
@@ -1401,6 +1424,7 @@ module.exports = {
       rotate: {
         135: '135deg',
         40: '40deg',
+        270: '270deg',
       },
       borderWidth: {
         '0.5px': '0.5px',
@@ -1433,6 +1457,15 @@ module.exports = {
           '0%': { transform: 'translateX(10%)' },
           '100%': { transform: 'translateX(0)' },
         },
+        // Info: (240625 - Liz) For products page first animation slide
+        'slide-in': {
+          '0%': { left: '-100%' },
+          '100%': { left: '5%' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         slideBottomToTop: 'slideBottomToTop 1s ease-out forwards',
@@ -1440,8 +1473,15 @@ module.exports = {
         slideRightBottomToCenter: 'slideRightBottomToCenter 1s ease-out forwards',
         slideRightToCenter: 'slideRightToCenter 1s ease-out forwards',
         spinFast: 'spin 1s linear infinite',
+        // Info: (240625 - Liz) For products page first animation slide
+        'slide-in': 'slide-in 1s linear backwards',
+        'fade-in': 'fade-in 1s linear 1.5s backwards',
       },
-
+      transitionDelay: {
+        1500: '1500ms',
+        2000: '2000ms',
+        2500: '2500ms',
+      },
       content: {
         checked: '"✔"',
       },

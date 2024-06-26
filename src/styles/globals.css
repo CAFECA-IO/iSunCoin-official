@@ -321,6 +321,8 @@
     --text-support-rose: var(--support-rose-600);
     --text-support-taro: var(--support-taro-600);
 
+    --text-text-primary: #1a2e50;
+
     /* light mode spacing */
     --radius-xxs: var(--number-3);
     --radius-xs: var(--number-5);
