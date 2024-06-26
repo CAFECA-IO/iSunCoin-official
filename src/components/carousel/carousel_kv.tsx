@@ -2,13 +2,14 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ProductAnimation from '@/components/carousel/product_animation';
+// import ProductAnimation from '@/components/carousel/product_animation'; // Deprecated: (240626 - Liz)
+import KvAnimation from '@/components/carousel/kv_animation';
 
 const CarouselKv = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -19,7 +20,8 @@ const CarouselKv = () => {
     <div className="flex items-start justify-center">
       <div className="mb-30px max-w-1440px">
         <Slider {...settings}>
-          <ProductAnimation />
+          <KvAnimation />
+          {/* <ProductAnimation /> // Deprecated: (240626 - Liz) */}
           <section className="relative flex min-h-875px py-80px">
             <div className="absolute bottom-0 right-0 z-0 h-400px w-400px rotate-270 bg-yellowCurveLine bg-contain bg-center bg-no-repeat"></div>
             <div className="z-10 flex gap-54px">

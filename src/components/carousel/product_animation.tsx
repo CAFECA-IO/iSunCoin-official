@@ -1,3 +1,4 @@
+// Deprecated: (240626 - Liz) 此動畫用絕對定位製作，可能要被 kv_animation 取代
 import Image from 'next/image';
 
 const ProductAnimation = () => {
