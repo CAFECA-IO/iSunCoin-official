@@ -350,7 +350,7 @@ module.exports = {
           tertiary: 'var(--text-neutral-tertiary)',
         },
 
-        'text-primary': {
+        'text-text-primary': {
           DEFAULT: 'var(--text-text-primary)',
         },
 

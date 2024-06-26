@@ -26,7 +26,7 @@ const CarouselKv = () => {
             <div className="z-10 flex gap-54px">
               <div className="flex basis-1/2 flex-col gap-40px pl-80px">
                 <div>
-                  <h3 className="pb-16px text-9xl font-extrabold text-text-primary">PRO</h3>
+                  <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">PRO</h3>
                   <p className="text-32px font-semibold text-text-neutral-secondary">
                     Turning imagination into reality
                   </p>
@@ -104,7 +104,7 @@ const CarouselKv = () => {
             <div className="z-10 flex gap-54px">
               <div className="flex basis-1/2 flex-col gap-40px pl-80px">
                 <div>
-                  <h3 className="pb-16px text-9xl font-extrabold text-text-primary">MAX </h3>
+                  <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">MAX </h3>
                   <p className="text-32px font-semibold text-text-neutral-secondary">
                     Making wishes come true
                   </p>
@@ -183,7 +183,9 @@ const CarouselKv = () => {
             <div className="z-10 flex">
               <div className="flex basis-1/4 flex-col gap-40px pl-80px">
                 <div>
-                  <h3 className="pb-16px text-9xl font-extrabold text-text-primary">Enterprise </h3>
+                  <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">
+                    Enterprise{' '}
+                  </h3>
                   <p className="text-32px font-semibold text-text-neutral-secondary">
                     The power to lead the future
                   </p>
