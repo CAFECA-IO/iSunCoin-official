@@ -1070,6 +1070,7 @@ module.exports = {
         '650px': '650px',
         '660px': '660px',
         '700px': '700px',
+        '718px': '718px',
         '726px': '726px',
         '750px': '750px',
         '800px': '800px',
@@ -1484,6 +1485,9 @@ module.exports = {
       },
       content: {
         checked: '"✔"',
+      },
+      scale: {
+        '-1': '-1',
       },
     },
   },
