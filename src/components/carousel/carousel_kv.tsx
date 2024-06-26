@@ -8,10 +8,11 @@ const CarouselKv = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 500, // Slide transition takes 0.5 seconds
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 4500, // Each slide stays for 4.5 seconds
     fade: true,
   };
 
