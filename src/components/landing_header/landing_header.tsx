@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import { ISUNCOIN_ROUTE } from '@/constants/url';
@@ -17,6 +14,7 @@ const LandingHeader = () => {
   //   const { t }: { t: TranslateFunction } = useTranslation('common');
 
   const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     targetRef: dropdownRef,
     componentVisible: dropdownOpen,
     setComponentVisible: setDropdownOpen,
