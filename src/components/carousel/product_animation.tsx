@@ -1,3 +1,4 @@
+// Deprecated: (240626 - Liz) 此動畫用絕對定位製作，可能要被 kv_animation 取代
 import Image from 'next/image';
 
 const ProductAnimation = () => {
@@ -27,10 +28,7 @@ const ProductAnimation = () => {
         className="absolute right-0 w-200px rotate-180"
       ></Image>
 
-      <h2
-        className="absolute left-14% top-43% rotate-180 animate-fade-in text-120px font-black text-text-neutral-tertiary"
-        // style={{ animationFillMode: 'backwards' }}
-      >
+      <h2 className="absolute left-300px top-475px rotate-180 -scale-x-100 animate-fade-in text-200px font-extrabold text-text-neutral-tertiary opacity-50">
         PRO
       </h2>
 
@@ -42,10 +40,7 @@ const ProductAnimation = () => {
         className="absolute left-363px top-78px w-520px"
       ></Image>
 
-      <h2
-        className="absolute left-975px top-318px animate-fade-in text-200px font-black text-text-neutral-tertiary"
-        // style={{ animationFillMode: 'backwards' }}
-      >
+      <h2 className="absolute left-975px top-318px animate-fade-in text-200px font-extrabold text-text-neutral-tertiary">
         CT
       </h2>
 
@@ -57,18 +52,11 @@ const ProductAnimation = () => {
         className="absolute bottom-77px right-362px w-520px"
       ></Image>
 
-      <h2
-        className="absolute left-240px top-318px animate-slide-in text-200px font-black text-surface-brand-primary"
-        // duration-1000 ease-linear
-        // style={{ animationFillMode: 'backwards' }}
-      >
+      <h2 className="absolute left-240px top-318px animate-slide-in text-200px font-extrabold text-surface-brand-primary">
         PRODU
       </h2>
 
-      <ul
-        className="absolute bottom-10% right-2% animate-fade-in text-48px font-semibold text-text-brand-secondary-lv2"
-        // style={{ animationFillMode: 'backwards' }}
-      >
+      <ul className="absolute bottom-10% right-2% animate-fade-in text-48px font-semibold text-text-brand-secondary-lv2">
         <li>Pro.</li>
         <li>Max.</li>
         <li>Enterprise.</li>
