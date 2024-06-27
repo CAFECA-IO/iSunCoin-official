@@ -1458,7 +1458,7 @@ module.exports = {
           '0%': { transform: 'translateX(10%)' },
           '100%': { transform: 'translateX(0)' },
         },
-        // Info: (240625 - Liz) For products page first animation slide
+        // Info: (240625 - Liz) 客製化動畫幀
         'slide-in': {
           '0%': { left: '-100%' },
           '100%': { left: '5%' },
@@ -1467,6 +1467,11 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        // ToDo: (240627 - Liz) keyframes 和 animation 命名規則我想要統一，不要有''又有變數，找時間一次修改
       },
       animation: {
         slideBottomToTop: 'slideBottomToTop 1s ease-out forwards',
@@ -1474,9 +1479,11 @@ module.exports = {
         slideRightBottomToCenter: 'slideRightBottomToCenter 1s ease-out forwards',
         slideRightToCenter: 'slideRightToCenter 1s ease-out forwards',
         spinFast: 'spin 1s linear infinite',
-        // Info: (240625 - Liz) For products page first animation slide
-        'slide-in': 'slide-in 1s linear backwards',
-        'fade-in': 'fade-in 1s linear 1.5s backwards',
+        // Info: (240625 - Liz) 客製化動畫 使用方式是 animate-fade-in
+        'slide-in-back': 'slide-in 1s linear backwards',
+        'fade-in-back': 'fade-in 1s linear 1.5s backwards',
+        'fade-in': 'fade-in 1s forwards', // 1s 代表動畫時間，forwards 代表動畫結束後保持最後的狀態
+        wiggle: 'wiggle 1s ease-in-out infinite', // 1s 代表動畫時間，ease-in-out 代表動畫速度，infinite 代表無限循環
       },
       transitionDelay: {
         1500: '1500ms',

@@ -28,7 +28,7 @@ const ProductAnimation = () => {
         className="absolute right-0 w-200px rotate-180"
       ></Image>
 
-      <h2 className="absolute left-300px top-475px rotate-180 -scale-x-100 animate-fade-in text-200px font-extrabold text-text-neutral-tertiary opacity-50">
+      <h2 className="absolute left-300px top-475px rotate-180 -scale-x-100 animate-fade-in-back text-200px font-extrabold text-text-neutral-tertiary opacity-50">
         PRO
       </h2>
 
@@ -40,7 +40,7 @@ const ProductAnimation = () => {
         className="absolute left-363px top-78px w-520px"
       ></Image>
 
-      <h2 className="absolute left-975px top-318px animate-fade-in text-200px font-extrabold text-text-neutral-tertiary">
+      <h2 className="absolute left-975px top-318px animate-fade-in-back text-200px font-extrabold text-text-neutral-tertiary">
         CT
       </h2>
 
@@ -52,11 +52,11 @@ const ProductAnimation = () => {
         className="absolute bottom-77px right-362px w-520px"
       ></Image>
 
-      <h2 className="absolute left-240px top-318px animate-slide-in text-200px font-extrabold text-surface-brand-primary">
+      <h2 className="absolute left-240px top-318px animate-slide-in-back text-200px font-extrabold text-surface-brand-primary">
         PRODU
       </h2>
 
-      <ul className="absolute bottom-10% right-2% animate-fade-in text-48px font-semibold text-text-brand-secondary-lv2">
+      <ul className="absolute bottom-10% right-2% animate-fade-in-back text-48px font-semibold text-text-brand-secondary-lv2">
         <li>Pro.</li>
         <li>Max.</li>
         <li>Enterprise.</li>

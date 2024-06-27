@@ -1,5 +1,4 @@
 import HeroSectionOfProducts from '@/components/hero_section/hero_section_of_products';
-
 import ThreeModelsIntro from '@/components/scroll_animation/three_models_intro';
 
 const ProductsPageBody = () => {
