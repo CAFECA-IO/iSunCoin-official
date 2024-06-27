@@ -5,7 +5,7 @@ const KvAnimation = () => {
     <div>
       <Image
         unoptimized
-        src={'/animation/products.gif'}
+        src={'/video/products.gif'}
         alt="Animated GIF"
         width={1440}
         height={875}
