@@ -1056,6 +1056,11 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact !important;
+}
+
 html,
 body {
   padding: 0;
@@ -1075,30 +1080,20 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-h6 {
-  -webkit-text-stroke: 1px white;
-  color: transparent;
-}
-
 .hollowYellow {
   -webkit-text-stroke: 1px #ffa502;
   color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-print-color-adjust: exact !important;
 }
 
 .noPrint {
@@ -1127,7 +1122,7 @@ a {
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 24, 64, 0.7) 0%, rgba(0, 24, 64, 0) 100%);
 }
 
-/* Custom bottom shadow */
+/* // Info: (20240620 - Liz) Custom bottom shadow */
 .bottomShadow {
   @apply shadow-lg;
   box-shadow:

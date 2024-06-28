@@ -1373,6 +1373,9 @@ module.exports = {
         downDropShadowM:
           '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
         regularShadow: '0px 8px 16px 0px #00000026',
+
+        downDropShadowXS:
+          '0px 2px 5px 0px #3143621A, 0px 6px 10px 0px #31436217, 0px 11px 13px 0px #3143620D, 0px 28px 15px 0px #31436203, 0px 50px 17px 0px #31436200',
       },
       dropShadow: {
         lg: '0 4px 10px rgba(0,0,0,0.7)',
