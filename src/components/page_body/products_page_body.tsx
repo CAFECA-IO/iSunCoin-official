@@ -1,6 +1,6 @@
 import HeroSectionOfProducts from '@/components/hero_section/hero_section_of_products';
-import ThreeModelsIntro from '@/components/scroll_animation/three_models_intro';
-import ThreeModelsVideo from '@/components/scroll_animation/three_models_video';
+import ThreeModelsIntro from '@/components/three_models/three_models_intro';
+import ThreeModelsVideo from '@/components/three_models/three_models_video';
 
 const ProductsPageBody = () => {
   return (
