@@ -5,8 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 
 const ColorTypeSelector = () => {
-  const [selectedColor, setSelectedColor] = useState<string | null>('black');
-  const [selectedType, setSelectedType] = useState<string | null>('Pro');
+  const [selectedColor, setSelectedColor] = useState<string>('black');
+  const [selectedType, setSelectedType] = useState<string>('Pro');
 
   const colors = { black: 'bg-surface-neutral-invert', white: 'bg-surface-neutral-surface-lv2' };
   const types = ['Pro', 'Max', 'Enterprise'];
@@ -87,21 +87,19 @@ const ColorTypeSelector = () => {
 
         {/* Slider */}
         <div className="max-w-1/2">
-          {selectedColor && selectedType && (
-            <Slider {...settings}>
-              {getImages(selectedType, selectedColor).map((image) => (
-                <div key={image}>
-                  <Image
-                    src={image}
-                    alt={`slide-${image}`}
-                    width={520}
-                    height={520}
-                    className="h-auto w-full object-contain"
-                  />
-                </div>
-              ))}
-            </Slider>
-          )}
+          <Slider {...settings}>
+            {getImages(selectedType, selectedColor).map((image) => (
+              <div key={image}>
+                <Image
+                  src={image}
+                  alt={`slide-${image}`}
+                  width={520}
+                  height={520}
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
       </section>
     </section>
