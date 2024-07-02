@@ -862,10 +862,10 @@ const ProductComparison = () => {
         <div className="flex items-center">
           <Image
             src={'/product/type_pro_max.png'}
-            width={400}
-            height={400}
+            width={1000}
+            height={800}
             alt="test"
-            className={isProductDefault ? 'h-400px w-auto' : 'h-auto w-380px opacity-30'}
+            className={isProductDefault ? 'h-400px w-auto' : 'h-auto w-320px opacity-30'}
           ></Image>
           {isProductDefault && (
             <button
@@ -922,10 +922,10 @@ const ProductComparison = () => {
 
           <Image
             src={'/product/type_enterprise.png'}
-            width={400}
-            height={400}
+            width={1000}
+            height={800}
             alt="test"
-            className={isProductDefault ? 'h-auto w-380px opacity-30' : 'h-400px w-auto'}
+            className={isProductDefault ? 'h-auto w-320px opacity-30' : 'h-400px w-auto'}
           ></Image>
         </div>
       </div>
