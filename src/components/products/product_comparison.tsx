@@ -1,8 +1,35 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import Image from 'next/image';
 
-const typeProInfo = {
+interface ModalProps {
+  isMaxListVisible: boolean;
+  isProListVisible: boolean;
+  isEnterpriseListVisible: boolean;
+  showProList: () => void;
+  showMaxList: () => void;
+  showEnterpriseList: () => void;
+  closeModal: () => void;
+}
+
+interface TypeProListProps {
+  openModal: () => void;
+  hideMaxList: () => void;
+  hideEnterpriseList: () => void;
+}
+
+interface TypeMaxListProps {
+  openModal: () => void;
+  hideProList: () => void;
+  hideEnterpriseList: () => void;
+}
+
+interface TypeEnterpriseListProps {
+  openModal: () => void;
+  hideProList: () => void;
+  hideMaxList: () => void;
+}
+
+const typeProData = {
   type: 'Pro',
   subtle: 'Turning imagination into reality',
   cpu: '4 Core / 8 Thread',
@@ -14,7 +41,7 @@ const typeProInfo = {
   vga: '1',
 };
 
-const typeMaxInfo = {
+const typeMaxData = {
   type: 'Max',
   subtle: 'Making wishes come true',
   cpu: '14 Core / 20 Thread',
@@ -26,7 +53,7 @@ const typeMaxInfo = {
   vga: '2',
 };
 
-const typeEnterpriseInfo = {
+const typeEnterpriseData = {
   type: 'Enterprise',
   subtle: 'The power to lead the future',
   cpu: '24 Core / 32 Thread',
@@ -38,24 +65,21 @@ const typeEnterpriseInfo = {
   vga: '4',
 };
 
-const TypeProList = () => {
-  // 狀態從外面傳入 從 props 拿取
-  // const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  // const openModal = () => {
-  //   setModalOpen(true);
-  // };
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
+const TypeProList = ({ openModal, hideMaxList, hideEnterpriseList }: TypeProListProps) => {
+  const handleClick = () => {
+    openModal();
+    hideMaxList();
+    hideEnterpriseList();
+  };
 
   return (
-    <div className="space-y-40px text-text-text-primary">
+    <div className="flex-1 space-y-40px text-text-text-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
-          {typeProInfo.type}
+          {typeProData.type}
           <span className="text-32px font-semibold text-text-neutral-secondary"> /Type</span>
         </h1>
-        <h5 className="font-semibold text-text-neutral-tertiary">{typeProInfo.subtle}</h5>
+        <h5 className="font-semibold text-text-neutral-tertiary">{typeProData.subtle}</h5>
       </div>
 
       <ul className="space-y-20px">
@@ -90,7 +114,7 @@ const TypeProList = () => {
             <h6 className="font-medium">CPU</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeProInfo.cpu}</p>
+          <p className="text-lg font-semibold">{typeProData.cpu}</p>
         </li>
         {/* ===== MB ===== */}
         <li className="flex items-center gap-20px">
@@ -124,8 +148,8 @@ const TypeProList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            {typeProInfo.mb} <br />
-            {typeProInfo.mbSub}
+            {typeProData.mb} <br />
+            {typeProData.mbSub}
           </p>
         </li>
 
@@ -153,7 +177,7 @@ const TypeProList = () => {
             <h6 className="font-medium">RAM</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeProInfo.ram}</p>
+          <p className="text-lg font-semibold">{typeProData.ram}</p>
         </li>
 
         {/* ===== SSD/HDD ===== */}
@@ -181,8 +205,8 @@ const TypeProList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            <span>SSD: {typeProInfo.ssd}</span> <br />
-            <span>HDD: {typeProInfo.hdd}</span>
+            <span>SSD: {typeProData.ssd}</span> <br />
+            <span>HDD: {typeProData.hdd}</span>
           </p>
         </li>
 
@@ -210,7 +234,7 @@ const TypeProList = () => {
             <h6 className="font-medium">VGA</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeProInfo.vga}</p>
+          <p className="text-lg font-semibold">{typeProData.vga}</p>
         </li>
       </ul>
 
@@ -218,7 +242,7 @@ const TypeProList = () => {
         <button
           type="button"
           className="flex items-center justify-center gap-8px rounded-xs border border-button-stroke-secondary px-24px py-10px text-button-text-secondary transition-colors duration-300 ease-in-out hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
-          // onClick={openModal} 連動到父元件
+          onClick={handleClick}
         >
           <p className="text-base font-medium">Detail info</p>
           <div>
@@ -256,15 +280,21 @@ const TypeProList = () => {
   );
 };
 
-const TypeMaxList = () => {
+const TypeMaxList = ({ openModal, hideProList, hideEnterpriseList }: TypeMaxListProps) => {
+  const handleClick = () => {
+    openModal();
+    hideProList();
+    hideEnterpriseList();
+  };
+
   return (
-    <div className="space-y-40px text-text-text-primary">
+    <div className="flex-1 space-y-40px text-text-text-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
-          {typeMaxInfo.type}
+          {typeMaxData.type}
           <span className="text-32px font-semibold text-text-neutral-secondary"> /Type</span>
         </h1>
-        <h5 className="font-semibold text-text-neutral-tertiary">{typeMaxInfo.subtle}</h5>
+        <h5 className="font-semibold text-text-neutral-tertiary">{typeMaxData.subtle}</h5>
       </div>
 
       <ul className="space-y-20px">
@@ -299,7 +329,7 @@ const TypeMaxList = () => {
             <h6 className="font-medium">CPU</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeMaxInfo.cpu}</p>
+          <p className="text-lg font-semibold">{typeMaxData.cpu}</p>
         </li>
         {/* ===== MB ===== */}
         <li className="flex items-center gap-20px">
@@ -333,8 +363,8 @@ const TypeMaxList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            {typeMaxInfo.mb} <br />
-            {typeMaxInfo.mbSub}
+            {typeMaxData.mb} <br />
+            {typeMaxData.mbSub}
           </p>
         </li>
 
@@ -362,7 +392,7 @@ const TypeMaxList = () => {
             <h6 className="font-medium">RAM</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeMaxInfo.ram}</p>
+          <p className="text-lg font-semibold">{typeMaxData.ram}</p>
         </li>
 
         {/* ===== SSD/HDD ===== */}
@@ -390,8 +420,8 @@ const TypeMaxList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            <span>SSD: {typeMaxInfo.ssd}</span> <br />
-            <span>HDD: {typeMaxInfo.hdd}</span>
+            <span>SSD: {typeMaxData.ssd}</span> <br />
+            <span>HDD: {typeMaxData.hdd}</span>
           </p>
         </li>
 
@@ -419,7 +449,7 @@ const TypeMaxList = () => {
             <h6 className="font-medium">VGA</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeMaxInfo.vga}</p>
+          <p className="text-lg font-semibold">{typeMaxData.vga}</p>
         </li>
       </ul>
 
@@ -427,6 +457,7 @@ const TypeMaxList = () => {
         <button
           type="button"
           className="flex items-center justify-center gap-8px rounded-xs border border-button-stroke-secondary px-24px py-10px text-button-text-secondary transition-colors duration-300 ease-in-out hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
+          onClick={handleClick}
         >
           <p className="text-base font-medium">Detail info</p>
           <div>
@@ -464,15 +495,21 @@ const TypeMaxList = () => {
   );
 };
 
-const TypeEnterpriseList = () => {
+const TypeEnterpriseList = ({ openModal, hideProList, hideMaxList }: TypeEnterpriseListProps) => {
+  const handleClick = () => {
+    openModal();
+    hideProList();
+    hideMaxList();
+  };
+
   return (
     <div className="space-y-40px text-text-text-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
-          {typeEnterpriseInfo.type}
+          {typeEnterpriseData.type}
           <span className="text-32px font-semibold text-text-neutral-secondary"> /Type</span>
         </h1>
-        <h5 className="font-semibold text-text-neutral-tertiary">{typeEnterpriseInfo.subtle}</h5>
+        <h5 className="font-semibold text-text-neutral-tertiary">{typeEnterpriseData.subtle}</h5>
       </div>
 
       <ul className="space-y-20px">
@@ -507,7 +544,7 @@ const TypeEnterpriseList = () => {
             <h6 className="font-medium">CPU</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeEnterpriseInfo.cpu}</p>
+          <p className="text-lg font-semibold">{typeEnterpriseData.cpu}</p>
         </li>
         {/* ===== MB ===== */}
         <li className="flex items-center gap-20px">
@@ -541,8 +578,8 @@ const TypeEnterpriseList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            {typeEnterpriseInfo.mb} <br />
-            {typeEnterpriseInfo.mbSub}
+            {typeEnterpriseData.mb} <br />
+            {typeEnterpriseData.mbSub}
           </p>
         </li>
 
@@ -570,7 +607,7 @@ const TypeEnterpriseList = () => {
             <h6 className="font-medium">RAM</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeEnterpriseInfo.ram}</p>
+          <p className="text-lg font-semibold">{typeEnterpriseData.ram}</p>
         </li>
 
         {/* ===== SSD/HDD ===== */}
@@ -598,8 +635,8 @@ const TypeEnterpriseList = () => {
           </div>
           {/* content */}
           <p className="text-lg font-semibold">
-            <span>SSD: {typeEnterpriseInfo.ssd}</span> <br />
-            <span>HDD: {typeEnterpriseInfo.hdd}</span>
+            <span>SSD: {typeEnterpriseData.ssd}</span> <br />
+            <span>HDD: {typeEnterpriseData.hdd}</span>
           </p>
         </li>
 
@@ -627,7 +664,7 @@ const TypeEnterpriseList = () => {
             <h6 className="font-medium">VGA</h6>
           </div>
           {/* content */}
-          <p className="text-lg font-semibold">{typeEnterpriseInfo.vga}</p>
+          <p className="text-lg font-semibold">{typeEnterpriseData.vga}</p>
         </li>
       </ul>
 
@@ -635,6 +672,7 @@ const TypeEnterpriseList = () => {
         <button
           type="button"
           className="flex items-center justify-center gap-8px rounded-xs border border-button-stroke-secondary px-24px py-10px text-button-text-secondary transition-colors duration-300 ease-in-out hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
+          onClick={handleClick}
         >
           <p className="text-base font-medium">Detail info</p>
           <div>
@@ -672,15 +710,24 @@ const TypeEnterpriseList = () => {
   );
 };
 
-// Define an interface for your component's props
-interface ModalProps {
-  isMaxListVisible: boolean;
-  isProListVisible: boolean;
-}
+const Modal = ({
+  isMaxListVisible,
+  isProListVisible,
+  isEnterpriseListVisible,
+  showProList,
+  showMaxList,
+  showEnterpriseList,
+  closeModal,
+}: ModalProps) => {
+  const handleClick = () => {
+    closeModal();
+    showProList();
+    showMaxList();
+    showEnterpriseList();
+  };
 
-const Modal = ({ isMaxListVisible, isProListVisible }: ModalProps) => {
   return (
-    <div className="space-y-16px">
+    <div className="mx-auto flex max-w-500px flex-1 flex-col justify-between gap-16px rounded-lg bg-surface-neutral-surface-lv1 px-40px py-20px shadow-downDropShadowM">
       <h4 className="text-xl font-bold text-text-text-primary">Detail info.</h4>
 
       <p className="text-lg font-semibold text-text-neutral-primary">
@@ -691,12 +738,18 @@ const Modal = ({ isMaxListVisible, isProListVisible }: ModalProps) => {
             performance in both transfer power and read speed.
           </>
         )}
-
         {isMaxListVisible && (
           <>
             The MAX model features ARGB fans and a 1TB solid-state drive, utilizing LDPC error
             correction and AES 256-bit advanced encryption technology. It offers faster and more
             efficient transfer power and read speeds compared to the PRO model.
+          </>
+        )}
+        {isEnterpriseListVisible && (
+          <>
+            The Enterprise model features a water cooling system and a 2TB solid-state drive. It has
+            seven slots to accommodate high-power graphics cards, making it suitable for handling
+            complex data and running multi-layer machine learning models.
           </>
         )}
       </p>
@@ -722,23 +775,32 @@ const Modal = ({ isMaxListVisible, isProListVisible }: ModalProps) => {
             VGA: ASUS PROART-RTX4060TI-O16G*2
           </>
         )}
+        {isEnterpriseListVisible && (
+          <>
+            CPU: Intel i9-14900(24Core/32Thread) <br />
+            MB: ASUS Pro WS W790-ACE <br />
+            RAM:Kingston 64GB(32GB*2) <br />
+            SSD:Micron Crucial T500 2TB/Gen4 <br />
+            HDD:WD 12TB/256MB <br />
+            VGA: ASUS PROART-RTX4060TI-O16G*4
+          </>
+        )}
       </p>
+
+      {/* Back button */}
+      <button
+        type="button"
+        className="rounded-xs border border-button-stroke-secondary px-16px py-8px text-button-text-secondary hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
+        onClick={handleClick}
+      >
+        Back
+      </button>
     </div>
   );
 };
 
 const ProductComparison = () => {
-  const [isProductDefault, setIsProductDefault] = useState<boolean>(true);
-  // true: Pro and Max, false: Enterprise, Default: Pro and Max
-  const selectEnterprise = () => {
-    setIsProductDefault(false);
-  };
-  const selectProAndMax = () => {
-    setIsProductDefault(true);
-  };
-
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  // 由 isModalOpen 控制 Modal 開關 (true: 開, false: 關) 打開的時候會隱藏另一個列表
   const openModal = () => {
     setModalOpen(true);
   };
@@ -746,9 +808,10 @@ const ProductComparison = () => {
     setModalOpen(false);
   };
 
-  // Info: (今天 - Liz) 控制 Pro 和 Max 列表的顯示
+  // Info: (240702 - Liz) 控制列表的顯示 & 決定 Modal 的內容
   const [isProListVisible, setProListVisible] = useState<boolean>(true);
   const [isMaxListVisible, setMaxListVisible] = useState<boolean>(true);
+  const [isEnterpriseListVisible, setEnterpriseListVisible] = useState<boolean>(true);
   const showProList = () => {
     setProListVisible(true);
   };
@@ -761,11 +824,41 @@ const ProductComparison = () => {
   const hideMaxList = () => {
     setMaxListVisible(false);
   };
+  const showEnterpriseList = () => {
+    setEnterpriseListVisible(true);
+  };
+  const hideEnterpriseList = () => {
+    setEnterpriseListVisible(false);
+  };
+
+  const [isProductDefault, setIsProductDefault] = useState<boolean>(true);
+  // true: Pro and Max, false: Enterprise, Default: Pro and Max
+  const selectEnterprise = () => {
+    setIsProductDefault(false);
+    closeModal();
+    showEnterpriseList();
+  };
+  const selectProAndMax = () => {
+    setIsProductDefault(true);
+    closeModal();
+    showMaxList();
+    showProList();
+  };
 
   return (
-    <section className="mx-auto max-w-1440px">
+    <section className="mx-auto max-w-1440px py-20px">
+      <div className="my-60px space-y-20px text-center text-text-neutral-primary">
+        <h2 className="text-64px font-bold">
+          Which Product is<span className="text-text-brand-primary-lv2"> Right </span>for you?
+        </h2>
+        <h3 className="text-lg font-semibold">
+          Find the right device model for you. The chart compares the performance of various models,
+          helping you identify the one that meets your needs.
+        </h3>
+      </div>
+
       <div className="flex h-400px items-center justify-center">
-        {/* Pro and Max */}
+        {/* Pro and Max Image */}
         <div className="flex items-center">
           <Image
             src={'/product/type_pro_max.png'}
@@ -800,7 +893,7 @@ const ProductComparison = () => {
           )}
         </div>
 
-        {/* Enterprise */}
+        {/* Enterprise Image */}
         <div className="flex items-center">
           {!isProductDefault && (
             <button
@@ -837,22 +930,62 @@ const ProductComparison = () => {
         </div>
       </div>
 
-      {isProductDefault && (
-        <div className="flex justify-center gap-70px">
-          <TypeProList />
-          <TypeMaxList />
-          {/* <TypeProList isModalOpen={isModalOpen} /> */}
-        </div>
-      )}
+      <div className="px-70px">
+        {/* Show TypeProList & TypeMaxList  */}
+        {isProductDefault && (
+          <div className="flex items-center justify-center gap-70px">
+            {isProListVisible && (
+              <TypeProList
+                openModal={openModal}
+                hideMaxList={hideMaxList}
+                hideEnterpriseList={hideEnterpriseList}
+              />
+            )}
 
-      {!isProductDefault && (
-        <div className="flex justify-center">
-          <TypeEnterpriseList />
-        </div>
-      )}
+            {isMaxListVisible && (
+              <TypeMaxList
+                openModal={openModal}
+                hideProList={hideProList}
+                hideEnterpriseList={hideEnterpriseList}
+              />
+            )}
 
-      <div className="mt-200px border-2 border-lime-500">
-        <Modal isMaxListVisible={isMaxListVisible} isProListVisible={isProListVisible} />
+            {isModalOpen && (
+              <Modal
+                isMaxListVisible={isMaxListVisible}
+                isProListVisible={isProListVisible}
+                isEnterpriseListVisible={isEnterpriseListVisible}
+                showProList={showProList}
+                showMaxList={showMaxList}
+                showEnterpriseList={showEnterpriseList}
+                closeModal={closeModal}
+              />
+            )}
+          </div>
+        )}
+
+        {/* Show TypeEnterpriseList */}
+        {!isProductDefault && (
+          <div className="flex justify-center">
+            <TypeEnterpriseList
+              openModal={openModal}
+              hideProList={hideProList}
+              hideMaxList={hideMaxList}
+            />
+
+            {isModalOpen && (
+              <Modal
+                isMaxListVisible={isMaxListVisible}
+                isProListVisible={isProListVisible}
+                isEnterpriseListVisible={isEnterpriseListVisible}
+                showProList={showProList}
+                showMaxList={showMaxList}
+                showEnterpriseList={showEnterpriseList}
+                closeModal={closeModal}
+              />
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
