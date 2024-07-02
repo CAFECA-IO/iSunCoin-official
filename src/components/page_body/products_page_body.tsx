@@ -3,6 +3,7 @@ import ThreeModelsIntro from '@/components/three_models/three_models_intro';
 import ThreeModelsVideo from '@/components/three_models/three_models_video';
 import ColorTypeSelector from '@/components/three_models/color_type_selector';
 import ProductComparison from '@/components/products/product_comparison';
+import CustomerGuidance from '@/components/products/customer_guidance';
 
 const ProductsPageBody = () => {
   return (
@@ -16,6 +17,8 @@ const ProductsPageBody = () => {
       <ColorTypeSelector />
 
       <ProductComparison />
+
+      <CustomerGuidance />
     </main>
   );
 };
