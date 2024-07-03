@@ -1,28 +1,17 @@
-import { useState } from 'react';
-
 const CustomerGuidance = () => {
-  const [isContactUsHovered, setContactUsHovered] = useState(false);
-  const [isMoreDetailHovered, setMoreDetailHovered] = useState(false);
-
   return (
     <section className="mx-auto flex max-w-1440px justify-center gap-32px pb-40px pt-20px">
       {/* ===== Contact Us ===== */}
-      <div
-        className="min-h-600px max-w-600px flex-1 bg-contactUsBg bg-cover bg-center bg-no-repeat"
-        onMouseEnter={() => setContactUsHovered(true)}
-        onMouseLeave={() => setContactUsHovered(false)}
-      >
-        <div className="flex h-full w-full flex-col items-center justify-center hover:backdrop-brightness-50">
+      <div className="group min-h-600px max-w-600px flex-1 bg-surface-brand-secondary-30 bg-contactUsBg bg-cover bg-center bg-no-repeat bg-blend-multiply hover:bg-surface-brand-secondary-50">
+        <div className="flex h-full w-full flex-col items-center justify-center">
           <h3 className="mb-40px pt-100px text-center text-48px font-bold text-text-neutral-invert">
             What I need?
           </h3>
 
-          {isContactUsHovered && (
-            <p className="mx-60px text-center text-lg font-semibold text-text-neutral-invert">
-              If you are unsure about which device model you need, you can contact us for an
-              assessment to determine the most suitable product for you.
-            </p>
-          )}
+          <p className="mx-60px text-center text-lg font-semibold text-transparent group-hover:text-text-neutral-invert">
+            If you are unsure about which device model you need, you can contact us for an
+            assessment to determine the most suitable product for you.
+          </p>
 
           <button
             type="button"
@@ -50,26 +39,20 @@ const CustomerGuidance = () => {
       </div>
 
       {/* ===== More Detail ===== */}
-      <div
-        className="min-h-600px max-w-600px flex-1 bg-surface-brand-secondary-30 bg-moreDetailBg bg-cover bg-center bg-no-repeat"
-        onMouseEnter={() => setMoreDetailHovered(true)}
-        onMouseLeave={() => setMoreDetailHovered(false)}
-      >
+      <div className="group min-h-600px max-w-600px flex-1 bg-surface-brand-secondary-30 bg-moreDetailBg bg-cover bg-center bg-no-repeat bg-blend-multiply hover:bg-surface-brand-secondary-50">
         <div className="flex h-full w-full flex-col items-center justify-center hover:backdrop-brightness-50">
           <h3 className="mb-40px pt-100px text-center text-48px font-bold text-text-neutral-invert">
             Most suitable product
           </h3>
 
-          {isMoreDetailHovered && (
-            <p className="mx-60px text-center text-lg font-semibold text-text-neutral-invert">
-              If you want to learn more about the device models, we provide detailed product
-              specifications for your reference.
-            </p>
-          )}
+          <p className="mx-60px text-center text-lg font-semibold text-transparent group-hover:text-text-neutral-invert">
+            If you want to learn more about the device models, we provide detailed product
+            specifications for your reference.
+          </p>
 
           <button
             type="button"
-            className="mt-100px flex items-center gap-8px rounded-xs border border-button-stroke-primary px-32px py-14px text-button-text-primary hover:border-surface-brand-primary-soft hover:bg-surface-brand-primary-soft hover:text-text-neutral-primary"
+            className="mt-125px flex items-center gap-8px rounded-xs border border-button-stroke-primary px-32px py-14px text-button-text-primary hover:border-surface-brand-primary-soft hover:bg-surface-brand-primary-soft hover:text-text-neutral-primary"
           >
             <p className="text-lg font-medium">More detail</p>
             <div>
