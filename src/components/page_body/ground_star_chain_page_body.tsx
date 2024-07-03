@@ -1,8 +1,9 @@
 import React from 'react';
-import HeroSectionOfGround from '@/components/hero_section/hero_section_of_ground';
+import HeroSectionOfGround from '@/components/ground_star_chain/hero_section_of_ground';
 import FeaturesSection from '@/components/ground_star_chain/features_section';
 import DecentralizedNetwork from '@/components/ground_star_chain/decentralized_network';
 import GreenEnergyCertificates from '@/components/ground_star_chain/green_energy_certificates';
+import DigitalAssetConversion from '@/components/ground_star_chain/digital_asset_conversion';
 
 const GroundStarChainPageBody = () => {
   return (
@@ -14,6 +15,8 @@ const GroundStarChainPageBody = () => {
       <DecentralizedNetwork />
 
       <GreenEnergyCertificates />
+
+      <DigitalAssetConversion />
     </main>
   );
 };

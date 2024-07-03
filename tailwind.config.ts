@@ -750,6 +750,7 @@ module.exports = {
         contactUsBg: 'url("/elements/contact_us_bg.png")',
         moreDetailBg: 'url("/elements/more_detail_bg.png")',
         greenEnergy: 'url("/elements/green_energy.png")',
+        blueMoney: 'url("/elements/blue_money.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -1190,6 +1191,7 @@ module.exports = {
         '10%': '10%',
         '11%': '11%',
         '14%': '14%',
+        '22%': '22%',
         '26%': '26%',
         '28%': '28%',
         '29%': '29%',
@@ -1382,6 +1384,10 @@ module.exports = {
         /* iSunCoin */
         header:
           '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+
+        footer:
+          '0px -3px 7px 0px #3143621A, 0px -13px 13px 0px #31436217, 0px -30px 18px 0px #3143620D, 0px -53px 21px 0px #31436203, 0px -83px 23px 0px #31436200',
+
         downDropShadowXS:
           '0px 2px 5px 0px #3143621A, 0px 6px 10px 0px #31436217, 0px 11px 13px 0px #3143620D, 0px 28px 15px 0px #31436203, 0px 50px 17px 0px #31436200',
         downDropShadowS:
