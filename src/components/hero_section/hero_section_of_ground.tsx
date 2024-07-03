@@ -1,6 +1,6 @@
 const HeroSectionOfGround = () => {
   return (
-    <section className="flex h-screen items-center justify-end bg-groundKv bg-contain bg-center bg-no-repeat px-80px">
+    <section className="mx-auto flex h-screen max-w-1440px items-center justify-end bg-groundKv bg-cover bg-center bg-no-repeat px-80px">
       <div className="flex flex-col items-end gap-16px">
         <h1 className="text-48px font-normal">
           <span className="text-text-neutral-primary">Ground </span>

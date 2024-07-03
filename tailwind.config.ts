@@ -749,6 +749,7 @@ module.exports = {
         yellowCurveLine: 'url("/elements/yellow_curve_line.png")',
         contactUsBg: 'url("/elements/contact_us_bg.png")',
         moreDetailBg: 'url("/elements/more_detail_bg.png")',
+        greenEnergy: 'url("/elements/green_energy.png")',
       },
       zIndex: {
         '-10': '-10',
@@ -1035,13 +1036,14 @@ module.exports = {
         '380px': '380px',
         '388px': '388px',
         '390px': '390px',
+
         '400px': '400px',
         '410px': '410px',
         '416px': '416px',
         '420px': '420px',
         '430px': '430px',
         '432px': '432px',
-
+        '436px': '436px',
         '438px': '438px',
         '440px': '440px',
         '450px': '450px',
@@ -1049,11 +1051,11 @@ module.exports = {
         '475px': '475px',
         '479px': '479px',
         '480px': '480px',
+
         '500px': '500px',
         '505px': '505px',
         '510px': '510px',
         '515px': '515px',
-
         '520px': '520px',
         '530px': '530px',
         '540px': '540px',
@@ -1066,25 +1068,30 @@ module.exports = {
         '580px': '580px',
         '590px': '590px',
         '594px': '594px',
+
         '600px': '600px',
         '620px': '620px',
         '630px': '630px',
         '640px': '640px',
         '650px': '650px',
         '660px': '660px',
+
         '700px': '700px',
         '718px': '718px',
         '726px': '726px',
         '750px': '750px',
+
         '800px': '800px',
         '850px': '850px',
         '865px': '865px',
         '875px': '875px',
+
         '900px': '900px',
         '908px': '908px',
         '950px': '950px',
         '960px': '960px',
         '975px': '975px',
+
         '1000px': '1000px',
         '1100px': '1100px',
         '1103px': '1103px',
@@ -1100,6 +1107,7 @@ module.exports = {
         '1900px': '1900px',
         '1920px': '1920px',
         '2000px': '2000px',
+
         '0.1rem': '0.1rem',
         '0.125rem': '0.125rem', // 2px
         '0.2rem': '0.2rem',
@@ -1182,7 +1190,12 @@ module.exports = {
         '10%': '10%',
         '11%': '11%',
         '14%': '14%',
+        '26%': '26%',
+        '28%': '28%',
+        '29%': '29%',
         '30%': '30%',
+        '31%': '31%',
+        '32%': '32%',
         '35%': '35%',
         '43%': '43%',
         '50%': '50%',
@@ -1502,6 +1515,9 @@ module.exports = {
       },
       scale: {
         '-1': '-1',
+        175: '1.75',
+        200: '2',
+        225: '2.25',
       },
     },
   },
