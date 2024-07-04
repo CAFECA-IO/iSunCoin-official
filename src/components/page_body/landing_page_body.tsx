@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSectionOfLandingPage from '@/components/landing_page_index/hero_section_of_landing_page';
 import Introduction from '@/components/landing_page_index/introduction';
 import StatisticsOverview from '@/components/landing_page_index/statistics_overview';
+import WhatWeDo from '@/components/landing_page_index/what_we_do';
 
 const LandingPageBody = () => {
   return (
@@ -11,6 +12,8 @@ const LandingPageBody = () => {
       <Introduction />
 
       <StatisticsOverview />
+
+      <WhatWeDo />
     </main>
   );
 };
