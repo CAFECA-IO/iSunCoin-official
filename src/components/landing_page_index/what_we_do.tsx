@@ -94,7 +94,7 @@ const WhatWeDo = () => {
         animConnection2.totalFrames * (((scrollPosition - 1500) / duration) * 2);
       const frameSafetyBox = animSafetyBox.totalFrames * (((scrollPosition - 1900) / duration) * 2);
       const frameConnection3 =
-        animConnection3.totalFrames * (((scrollPosition - 2600) / duration) * 2);
+        animConnection3.totalFrames * (((scrollPosition - 2300) / duration) * 2);
 
       /* Packing frame */
       if (scrollPosition > 200 && scrollPosition < 1100) {
@@ -122,8 +122,8 @@ const WhatWeDo = () => {
         animSafetyBox.goToAndStop(frameSafetyBox, true);
       }
       /* Connection 3 frame */
-      if (scrollPosition > 2600 && scrollPosition < 3100) {
-        if (frameConnection3 <= 0) animConnection3.goToAndStop(-1, true);
+      if (scrollPosition > 2300 && scrollPosition < 2700) {
+        if (frameConnection3 <= 0) animConnection3.goToAndStop(0, true);
         animConnection3.goToAndStop(frameConnection3, true);
       }
     }
@@ -145,7 +145,7 @@ const WhatWeDo = () => {
 
   return (
     <section className="mx-auto max-w-1440px">
-      <div className="p-80px text-text-neutral-primary">
+      <div className="p-80px pb-120px text-text-neutral-primary">
         {/* ===== Title ===== */}
         <div className="flex flex-col items-center space-y-16px py-14">
           {/* <h2 className="text-48px font-bold">{t('HOME_PAGE.WHAT_WE_DO_TITLE')}</h2> // ToDo: (240704 - Liz) 等之後串翻譯檔 */}
