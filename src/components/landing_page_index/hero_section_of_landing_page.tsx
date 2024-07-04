@@ -1,6 +1,6 @@
 const HeroSectionOfLandingPage = () => {
   return (
-    <section className="flex h-screen items-center bg-landingPageKv bg-cover bg-center bg-no-repeat px-80px">
+    <section className="mx-auto flex h-screen max-w-1440px items-center bg-landingPageKv bg-cover bg-center bg-no-repeat px-80px">
       <div className="flex flex-col items-start gap-16px">
         <h1 className="text-64px font-bold">
           <span className="text-text-brand-primary-lv2">iSun</span>
