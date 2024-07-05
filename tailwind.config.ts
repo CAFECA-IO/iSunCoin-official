@@ -1121,12 +1121,14 @@ module.exports = {
         '2rem': '2rem',
         '2.3rem': '2.3rem',
         '2.5rem': '2.5rem',
-        '3rem': '3rem',
+        '3rem': '3rem', // 48px
         '3.2rem': '3.2rem',
         '3.3rem': '3.3rem',
         '3.5rem': '3.5rem',
         '4rem': '4rem',
         '4.125rem': '4.125rem', // 66px
+        '4.8125rem': '4.8125rem', // 77px
+        '4.875rem': '4.875rem', // 78px
         '5rem': '5rem',
         '6rem': '6rem',
         '6.2rem': '6.2rem',
@@ -1136,26 +1138,34 @@ module.exports = {
         '10rem': '10rem',
         '11rem': '11rem',
         '12rem': '12rem',
+        '12.5rem': '12.5rem', // 200px
         '13rem': '13rem',
         '14rem': '14rem',
-        '15rem': '15rem',
+        '15rem': '15rem', // 240px
         '16rem': '16rem',
         '17rem': '17rem',
         '18rem': '18rem',
+        '18.75rem': '18.75rem', // 300px
         '19rem': '19rem',
+        '19.875rem': '19.875rem', // 318px
         '20rem': '20rem',
         '21rem': '21rem',
         '22rem': '22rem',
+        '22.625rem': '22.625rem', // 362px
+        '22.6875rem': '22.6875rem', // 363px
         '23rem': '23rem',
         '24rem': '24rem',
         '25rem': '25rem',
         '26rem': '26rem',
         '28rem': '28rem',
+        '29.6875rem': '29.6875rem', // 475px
         '30rem': '30rem',
         '32rem': '32rem',
+        '32.5rem': '32.5rem', // 520px
         '34rem': '34rem',
         '35rem': '35rem',
         '36rem': '36rem',
+        '37.5rem': '37.5rem', // 600px
         '38rem': '38rem',
         '40rem': '40rem',
         '42rem': '42rem',
@@ -1164,8 +1174,11 @@ module.exports = {
         '48rem': '48rem',
         '50rem': '50rem',
         '52rem': '52rem',
-        '56rem': '56rem',
+        '54.6875rem': '54.6875rem', // 875px
+        '55rem': '55rem', // 880px
+        '56rem': '56rem', // 896px
         '60rem': '60rem',
+        '60.9375rem': '60.9375rem', // 975px
         '64rem': '64rem',
         '68rem': '68rem',
         '70rem': '70rem',
