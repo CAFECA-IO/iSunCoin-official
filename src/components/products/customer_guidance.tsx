@@ -40,7 +40,7 @@ const CustomerGuidance = () => {
 
       {/* ===== More Detail ===== */}
       <div className="group min-h-600px max-w-600px flex-1 bg-surface-brand-secondary-30 bg-moreDetailBg bg-cover bg-center bg-no-repeat bg-blend-multiply hover:bg-surface-brand-secondary-50">
-        <div className="flex h-full w-full flex-col items-center justify-center hover:backdrop-brightness-50">
+        <div className="flex h-full w-full flex-col items-center justify-center">
           <h3 className="mb-40px pt-100px text-center text-48px font-bold text-text-neutral-invert">
             Most suitable product
           </h3>

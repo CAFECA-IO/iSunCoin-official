@@ -88,12 +88,11 @@ const HeroSectionOfProducts = () => {
             </div>
             <div className="flex basis-1/2 items-center justify-center">
               <Image
-                src={'/elements/model_pro_black.png'}
+                src={'/product/model_pro_black.png'}
                 alt="model_pro_black"
-                width={875}
-                height={875}
-                className="z-10 w-full object-contain"
-                layout="responsive"
+                width={574}
+                height={574}
+                className="z-10 h-auto w-93% object-cover object-center"
               ></Image>
             </div>
           </div>
@@ -166,12 +165,11 @@ const HeroSectionOfProducts = () => {
             </div>
             <div className="flex basis-1/2 items-center justify-center">
               <Image
-                src={'/elements/model_max_white.png'}
+                src={'/product/model_max_white.png'}
                 alt="model_max_white"
                 width={875}
                 height={875}
-                className="z-10 w-full object-contain"
-                layout="responsive"
+                className="z-10 h-auto w-full object-cover object-center"
               ></Image>
             </div>
           </div>
@@ -242,12 +240,11 @@ const HeroSectionOfProducts = () => {
             </div>
             <div className="flex basis-3/4 items-end justify-center">
               <Image
-                src={'/elements/model_enterprise_black.png'}
+                src={'/product/model_enterprise_black.png'}
                 alt="model_enterprise_black"
                 width={964}
                 height={575}
-                className="z-10 w-full object-contain"
-                layout="responsive"
+                className="z-10 h-auto w-full object-cover"
               ></Image>
             </div>
           </div>
