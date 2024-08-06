@@ -1,4 +1,4 @@
-// Deprecated: (240705 - Liz) 此動畫用絕對定位製作，可能要被 SliderCover 取代
+// Deprecated: (240705 - Liz) 此動畫用絕對定位製作，已被 SliderCover 取代，先留著備用，之後這支檔案會刪除。
 import Image from 'next/image';
 
 const ProductAnimation = () => {

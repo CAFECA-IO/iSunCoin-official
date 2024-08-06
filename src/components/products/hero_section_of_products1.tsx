@@ -1,4 +1,4 @@
-// Deprecated: (240705 - Liz) 可能會被 HeroSectionOfProducts2 取代，詳細參考這張https://github.com/CAFECA-IO/iSunCoin-official/issues/48，先留著備份，等設計師確認再刪除。
+// Deprecated: (240705 - Liz) 已被 HeroSectionOfProducts2 取代，詳細參考這張https://github.com/CAFECA-IO/iSunCoin-official/issues/48，先留著備份，等設計師確認再刪除。
 
 import Image from 'next/image';
 import Slider from 'react-slick';
