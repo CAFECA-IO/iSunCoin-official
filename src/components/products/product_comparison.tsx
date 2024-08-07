@@ -800,35 +800,35 @@ const Modal = ({
 };
 
 const ProductComparison = () => {
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const openModal = () => {
-    setModalOpen(true);
+    setIsModalOpen(true);
   };
   const closeModal = () => {
-    setModalOpen(false);
+    setIsModalOpen(false);
   };
 
   // Info: (240702 - Liz) 控制列表的顯示 & 決定 Modal 的內容
-  const [isProListVisible, setProListVisible] = useState<boolean>(true);
-  const [isMaxListVisible, setMaxListVisible] = useState<boolean>(true);
-  const [isEnterpriseListVisible, setEnterpriseListVisible] = useState<boolean>(true);
+  const [isProListVisible, setIsProListVisible] = useState<boolean>(true);
+  const [isMaxListVisible, setIsMaxListVisible] = useState<boolean>(true);
+  const [isEnterpriseListVisible, setIsEnterpriseListVisible] = useState<boolean>(true);
   const showProList = () => {
-    setProListVisible(true);
+    setIsProListVisible(true);
   };
   const hideProList = () => {
-    setProListVisible(false);
+    setIsProListVisible(false);
   };
   const showMaxList = () => {
-    setMaxListVisible(true);
+    setIsMaxListVisible(true);
   };
   const hideMaxList = () => {
-    setMaxListVisible(false);
+    setIsMaxListVisible(false);
   };
   const showEnterpriseList = () => {
-    setEnterpriseListVisible(true);
+    setIsEnterpriseListVisible(true);
   };
   const hideEnterpriseList = () => {
-    setEnterpriseListVisible(false);
+    setIsEnterpriseListVisible(false);
   };
 
   const [isProductDefault, setIsProductDefault] = useState<boolean>(true);
