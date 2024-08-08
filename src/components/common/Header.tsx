@@ -24,31 +24,57 @@ const Header = () => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 flex max-w-full items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-header">
+    <header className="fixed inset-x-0 top-0 z-40 flex items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-header">
       {/* Navigation Links */}
       <nav>
         <ul className="flex items-center gap-lv-7">
           <li>
             <div>
               <Link href={ISUNCOIN_ROUTE_V2.HOME_PAGE} className="flex items-center gap-8px">
-                <Image src="/logo/isuncoin_logo.svg" alt="logo" width={40} height={40}></Image>
-                <Image src="/logo/isuncoin.svg" alt="logo_string" width={90} height={18}></Image>
+                <Image
+                  src="/logo/isuncoin_logo.svg"
+                  alt="logo"
+                  width={40}
+                  height={40}
+                  className="max-w-fit"
+                ></Image>
+                <Image
+                  src="/logo/isuncoin.svg"
+                  alt="logo_string"
+                  width={90}
+                  height={18}
+                  className="max-w-fit"
+                ></Image>
               </Link>
             </div>
           </li>
-          <li className="group text-tabs-text-default">
+          <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>Use</Link>
+              <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
+                <p className="text-base font-medium">Use</p>
+              </Link>
             </div>
           </li>
-          <li className="group text-tabs-text-default">
+          <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>Develop</Link>
+              <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
+                <p className="text-base font-medium">Develop</p>
+              </Link>
             </div>
           </li>
-          <li className="group text-tabs-text-default">
+          <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>Autonomy</Link>
+              <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
+                <p className="text-base font-medium">Autonomy</p>
+              </Link>
+            </div>
+          </li>
+          <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
+            <div>
+              {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
+              <p className="cursor-not-allowed text-base font-medium text-tabs-text-disable">
+                Research
+              </p>
             </div>
           </li>
         </ul>
@@ -68,36 +94,16 @@ const Header = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex grow items-center justify-between rounded-sm border border-lightGray3 bg-input-surface-input-background">
+      <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
         <div className="grow">
           <input
             type="text"
             placeholder="Search"
-            className="w-full rounded-sm bg-input-surface-input-background px-3 py-2.5 text-base font-medium placeholder:text-input-text-input-placeholder focus:outline-none"
+            className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-base font-medium outline-none placeholder:text-input-text-input-placeholder"
           />
         </div>
-        <div className="cursor-pointer px-3 py-2.5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="none"
-            viewBox="0 0 20 20"
-          >
-            <g clipPath="url(#a)">
-              <path
-                fill="#314362"
-                fillRule="evenodd"
-                d="M9.586 3.251a6.333 6.333 0 1 0 4.386 10.902.76.76 0 0 1 .182-.182 6.333 6.333 0 0 0-4.568-10.72Zm6.044 11.317a7.833 7.833 0 1 0-1.06 1.06l2.402 2.404a.75.75 0 1 0 1.06-1.061l-2.402-2.403Z"
-                clipRule="evenodd"
-              />
-            </g>
-            <defs>
-              <clipPath id="a">
-                <path fill="#fff" d="M0 0h20v20H0z" />
-              </clipPath>
-            </defs>
-          </svg>
+        <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
+          <Image src="/elements/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
         </div>
       </div>
 

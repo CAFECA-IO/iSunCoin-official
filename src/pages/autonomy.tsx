@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '@/components/common/Header';
 import AutonomyPageBody from '@/components/autonomy_page/autonomy_page_body';
+import Footer from '@/components/common/Footer';
 
 const AutonomyPage = () => {
   return (
@@ -18,6 +19,7 @@ const AutonomyPage = () => {
       <AutonomyPageBody />
 
       {/* Footer */}
+      <Footer />
     </>
   );
 };
