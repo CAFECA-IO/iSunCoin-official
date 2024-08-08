@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ISUNCOIN_ROUTE } from '@/constants/url';
 import ThemeToggle from '@/components/toggle/theme_toggle';
-import I18n from '../i18n/i18n';
+import I18n from '@/components/i18n/i18n';
 
 const LandingHeader = () => {
   // ToDo: (20240618 - Liz) i18n

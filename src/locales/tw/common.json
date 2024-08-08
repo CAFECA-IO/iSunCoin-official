@@ -17,6 +17,9 @@
     "INTRO_CARD_4_DESCRIPTION": "iSunCoin 可以建立一個全球可訪問的公共帳本，輕鬆為全世界創建應用程序服務。",
     "PARTICIPATE_TITLE": "參與 iSunCoin",
     "PARTICIPATE_DESCRIPTION": "iSunCoin 透過電腦將能源轉換為算力資源，並將這些資源提供給 iSunCoin 平台以換取獎勵，從而實現挖礦。您只需在普通家用電腦或筆記型電腦上安裝 iSunCoin 軟體，即可立即開始挖礦。為了獲得最佳算力轉換效率，建議使用網路頻寬 10Mbps 以上、算力 10TOPS 以上、記憶體 4GB 以上、儲存容量 1TB 以上的機器。",
-    "DOWNLOAD": "下載"
+    "DOWNLOAD": "下載",
+
+    "CONTRIBUTE_TITLE": "貢獻 iSunCoin.com",
+    "CONTRIBUTE_DESCRIPTION": "本網站遵循「公共領域貢獻宣言」（CC0），以非營利方式提供 iSunCoin 的技術支持和說明，同時推廣相關應用。您可以對本網站的所有內容提出編輯建議、推薦新功能或協助除錯。"
   }
 }

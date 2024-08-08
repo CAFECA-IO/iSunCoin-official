@@ -17,6 +17,9 @@
     "INTRO_CARD_4_DESCRIPTION": "iSunCoin can establish a globally accessible public ledger, easily creating application services for the entire world.",
     "PARTICIPATE_TITLE": "Participate in iSunCoin",
     "PARTICIPATE_DESCRIPTION": "iSunCoin transforms energy into computing power resources through computers and provides these resources to the iSunCoin platform in exchange for rewards, thereby achieving mining. You can start mining immediately by installing the iSunCoin software on an ordinary home computer or laptop. For optimal computing power conversion efficiency, it is recommended to use machines with network bandwidth above 10 Mbps, computing power above 10 TOPS, memory above 4 GB, and storage capacity above 1 TB.",
-    "DOWNLOAD": "Download"
+    "DOWNLOAD": "Download",
+
+    "CONTRIBUTE_TITLE": "Contribute to iSunCoin.com",
+    "CONTRIBUTE_DESCRIPTION": "This website adheres to the \"Public Domain Contribution Declaration\" (CC0) and provides technical support and explanations for iSunCoin in a non-profit manner while promoting related applications. You can propose editing suggestions, recommend fantastic new features, or assist with debugging for all content on this website."
   }
 }
