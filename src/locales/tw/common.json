@@ -14,6 +14,9 @@
     "INTRO_CARD_3_TITLE": "保護隱私",
     "INTRO_CARD_3_DESCRIPTION": "iSunCoin 實施零知識證明的會計向量標準，允許以標準化和隱私保護的格式交換公共資訊。",
     "INTRO_CARD_4_TITLE": "連接世界",
-    "INTRO_CARD_4_DESCRIPTION": "iSunCoin 可以建立一個全球可訪問的公共帳本，輕鬆為全世界創建應用程序服務。"
+    "INTRO_CARD_4_DESCRIPTION": "iSunCoin 可以建立一個全球可訪問的公共帳本，輕鬆為全世界創建應用程序服務。",
+    "PARTICIPATE_TITLE": "參與 iSunCoin",
+    "PARTICIPATE_DESCRIPTION": "iSunCoin 透過電腦將能源轉換為算力資源，並將這些資源提供給 iSunCoin 平台以換取獎勵，從而實現挖礦。您只需在普通家用電腦或筆記型電腦上安裝 iSunCoin 軟體，即可立即開始挖礦。為了獲得最佳算力轉換效率，建議使用網路頻寬 10Mbps 以上、算力 10TOPS 以上、記憶體 4GB 以上、儲存容量 1TB 以上的機器。",
+    "DOWNLOAD": "下載"
   }
 }

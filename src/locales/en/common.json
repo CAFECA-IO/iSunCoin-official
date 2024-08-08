@@ -14,6 +14,9 @@
     "INTRO_CARD_3_TITLE": "Privacy Protection",
     "INTRO_CARD_3_DESCRIPTION": "iSunCoin implements an accounting vector standard with zero-knowledge proof, allowing public information exchange in a standardized and privacy-protected format.",
     "INTRO_CARD_4_TITLE": "Connecting the World",
-    "INTRO_CARD_4_DESCRIPTION": "iSunCoin can establish a globally accessible public ledger, easily creating application services for the entire world."
+    "INTRO_CARD_4_DESCRIPTION": "iSunCoin can establish a globally accessible public ledger, easily creating application services for the entire world.",
+    "PARTICIPATE_TITLE": "Participate in iSunCoin",
+    "PARTICIPATE_DESCRIPTION": "iSunCoin transforms energy into computing power resources through computers and provides these resources to the iSunCoin platform in exchange for rewards, thereby achieving mining. You can start mining immediately by installing the iSunCoin software on an ordinary home computer or laptop. For optimal computing power conversion efficiency, it is recommended to use machines with network bandwidth above 10 Mbps, computing power above 10 TOPS, memory above 4 GB, and storage capacity above 1 TB.",
+    "DOWNLOAD": "Download"
   }
 }

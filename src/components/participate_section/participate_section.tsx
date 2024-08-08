@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 
 enum iSunCoinVersion {
@@ -9,6 +10,7 @@ enum iSunCoinVersion {
 }
 
 const ParticipateSection = () => {
+  const { t } = useTranslation('common');
   const [selectedVersion, setSelectedVersion] = useState(iSunCoinVersion.WINDOWS);
 
   const {
@@ -36,14 +38,11 @@ const ParticipateSection = () => {
     <div className="flex w-full items-center justify-between">
       {/* Info:(20240808 - Julian) Text */}
       <div className="flex w-1/2 flex-col items-start gap-y-20px p-80px">
-        <p className="text-36px font-semibold text-text-neutral-primary">Participate in iSunCoin</p>
+        <p className="text-36px font-semibold text-text-neutral-primary">
+          {t('HOME_PAGE.PARTICIPATE_TITLE')}
+        </p>
         <p className="font-normal text-text-neutral-secondary">
-          iSunCoin transforms energy into computing power resources through computers and provides
-          these resources to the iSunCoin platform in exchange for rewards, thereby achieving
-          mining. You can start mining immediately by installing the iSunCoin software on an
-          ordinary home computer or laptop. For optimal computing power conversion efficiency, it is
-          recommended to use machines with network bandwidth above 10 Mbps, computing power above 10
-          TOPS, memory above 4 GB, and storage capacity above 1 TB.
+          {t('HOME_PAGE.PARTICIPATE_DESCRIPTION')}
         </p>
         {/* Info:(20240808 - Julian) Download */}
         <div className="flex items-center divide-x divide-input-stroke-input rounded-sm border border-input-stroke-input text-text-text-primary">
@@ -73,7 +72,7 @@ const ParticipateSection = () => {
             disabled
             className="px-12px py-10px disabled:text-input-text-input-placeholder"
           >
-            Download
+            {t('HOME_PAGE.DOWNLOAD')}
           </button>
         </div>
       </div>
