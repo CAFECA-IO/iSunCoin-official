@@ -14,9 +14,23 @@ const I18n = () => {
     targetRef: dropdownRef,
     componentVisible: dropdownOpen,
     setComponentVisible: setDropdownOpen,
-  } = useOuterClick<HTMLUListElement>(false);
+  } = useOuterClick<HTMLDivElement>(false);
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  const langMenu = languages.map((lang: { label: string; code: string }) => (
+    <Link
+      id={`lang-${lang.code}`}
+      key={lang.code}
+      href={asPath}
+      onClick={toggleDropdown}
+      scroll={false}
+      locale={lang.code}
+      className="w-full cursor-pointer px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
+    >
+      {lang.label}
+    </Link>
+  ));
 
   return (
     <div className="relative flex justify-center">
@@ -36,22 +50,12 @@ const I18n = () => {
           />
         </svg>
       </button>
-      <ul
+      <div
         ref={dropdownRef}
         className={`absolute top-50px flex h-160px w-120px flex-col items-center justify-evenly rounded-xs bg-surface-neutral-surface-lv2 text-center shadow-downDropShadowS ${dropdownOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-10 opacity-0'} transition-all duration-300 ease-in-out`}
       >
-        {languages.map((lang: { label: string; code: string }) => (
-          <li
-            key={lang.code}
-            className="w-full cursor-pointer px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
-            onClick={toggleDropdown}
-          >
-            <Link id={`lang-${lang.code}`} scroll={false} locale={lang.code} href={asPath}>
-              {lang.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+        {langMenu}
+      </div>
     </div>
   );
 };
