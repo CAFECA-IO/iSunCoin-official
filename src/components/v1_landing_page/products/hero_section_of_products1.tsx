@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import KvVideo from '@/components/animation/kv_video';
+import KvVideo from '@/components/v1_landing_page/animation/kv_video';
 
 const HeroSectionOfProducts1 = () => {
   const settings = {

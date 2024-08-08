@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import useOuterClick from '@/lib/hooks/use_outer_click';
-import { ISUNCOIN_ROUTE } from '@/constants/url';
+import { ISUNCOIN_ROUTE_V1 } from '@/constants/url';
 import ThemeToggle from '@/components/toggle/theme_toggle';
 
 const languages = [
@@ -29,7 +29,7 @@ const LandingHeader = () => {
         <ul className="flex items-center gap-lv-7">
           <li>
             <div>
-              <Link href={ISUNCOIN_ROUTE.LANDING_PAGE}>
+              <Link href={ISUNCOIN_ROUTE_V1.LANDING_PAGE}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="139"
@@ -77,7 +77,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE.ABOUT}>
+              <Link href={ISUNCOIN_ROUTE_V1.ABOUT}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="96"
@@ -122,7 +122,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE.GROUND_STAR_CHAIN}>
+              <Link href={ISUNCOIN_ROUTE_V1.GROUND_STAR_CHAIN}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="179"
@@ -167,7 +167,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE.PRODUCTS}>
+              <Link href={ISUNCOIN_ROUTE_V1.PRODUCTS}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="118"
@@ -281,7 +281,7 @@ const LandingHeader = () => {
           </svg>
           {/* dropmenu */}
           <ul
-            className={`absolute left-0.5 top-80px flex h-200px w-160px -translate-x-1/2 flex-col items-center justify-evenly rounded-xs border bg-surface-neutral-surface-lv2 px-24px text-center shadow-downDropShadowS ${dropdownOpen ? 'block' : 'hidden'}`}
+            className={`absolute left-1/2 top-80px flex h-200px w-160px -translate-x-1/2 flex-col items-center justify-evenly rounded-xs border bg-surface-neutral-surface-lv2 px-24px text-center shadow-downDropShadowS ${dropdownOpen ? 'block' : 'hidden'}`}
           >
             {languages.map((lang: { label: string; code: string }) => (
               <li

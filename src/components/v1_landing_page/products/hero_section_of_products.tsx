@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import KvVideo from '@/components/animation/kv_video';
-import SliderCover from '@/components/products/slider_cover';
+import KvVideo from '@/components/v1_landing_page/animation/kv_video';
+import SliderCover from '@/components/v1_landing_page/products/slider_cover';
 
 // Info: (240705 - Liz) 定義投影片內容的類型
 type SlideContent = React.ReactNode;
