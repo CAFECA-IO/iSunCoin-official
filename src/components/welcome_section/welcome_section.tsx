@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const WelcomeSection = () => {
+  const { t } = useTranslation('common');
+
   const introData = [
     {
       imageStr: '/elements/open_and_free.png',
@@ -68,7 +71,7 @@ const WelcomeSection = () => {
 
           <a
             id="white-paper-btn"
-            href="/"
+            href={t('HOME_PAGE.WHITEPAPER_LINK')}
             download
             className="flex cursor-pointer items-center gap-4px rounded-full bg-button-surface-strong-secondary px-16px py-8px text-sm text-button-text-invert hover:bg-button-surface-strong-secondary-hover"
           >

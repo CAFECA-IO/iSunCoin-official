@@ -54,7 +54,11 @@ const ParticipateSection = () => {
             onClick={handleVersionClick}
           >
             <div className="w-70px text-left">{selectedVersion}</div>
-            <Image src="/icons/chevron_down.svg" width={16} height={16} alt="arrow_down_icon" />
+            <div
+              className={`${versionVisible ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
+            >
+              <Image src="/icons/chevron_down.svg" width={16} height={16} alt="arrow_down_icon" />
+            </div>
 
             <div
               ref={versionRef}

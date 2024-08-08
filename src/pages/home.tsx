@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { ILocale } from '@/interfaces/locale';
 import LandingHeader from '@/components/landing_header/landing_header';
 import LandingFooter from '@/components/landing_footer/landing_footer';
 import HeadPageBody from '@/components/page_body/home_page_body';
@@ -23,5 +25,13 @@ const HomePage = () => {
     </>
   );
 };
+
+const getStaticPropsFunction = async ({ locale }: ILocale) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+});
+
+export const getStaticProps = getStaticPropsFunction;
 
 export default HomePage;
