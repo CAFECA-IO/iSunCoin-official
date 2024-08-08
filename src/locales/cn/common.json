@@ -1,6 +1,19 @@
 {
   "HOME_PAGE": {
-    "WHITEPAPER": "Whitepaper",
-    "WHITEPAPER_LINK": "/whitepaper/isuncoin_whitepaper_cn_v1.1.2.pdf"
+    "WELCOME": "欢迎来到",
+    "WHITEPAPER": "白皮书",
+    "WHITEPAPER_LINK": "/whitepaper/isuncoin_whitepaper_cn_v1.1.2.pdf",
+    "WELCOME_DESCRIPTION_1": "iSunCoin 是一种开放且自由的互联网技术，连接所有计算机，重新定义计算能力的标准单位，并为数以万计的去中心化应用程序提供运行环境。",
+    "WELCOME_DESCRIPTION_2": "它实现了一种具有零知识证明的会计向量标准，允许人们以标准化和隐私保护的格式公开交换信息。它可以建立一个全球可访问的公共账本，并使人们能够在平台上创建和运行去中心化应用程序服务。",
+    "WELCOME_DESCRIPTION_3": "iSunCoin 的分布式账本技术具有高度的灵活性，允许使用者创建任何形式的程序逻辑，实现我们尚未想象的系统。",
+    "WELCOME_DESCRIPTION_4": "任何电脑都可以运行 iSunCoin，为平台提供算力并获得奖励。",
+    "INTRO_CARD_1_TITLE": "开放且自由",
+    "INTRO_CARD_1_DESCRIPTION": "iSunCoin 是一种开放且自由的互联网技术，连接所有计算机，重新定义计算能力的标准单位，并为数以万计的去中心化应用程序提供运行环境。",
+    "INTRO_CARD_2_TITLE": "共享运算能力",
+    "INTRO_CARD_2_DESCRIPTION": "iSunCoin 连接所有计算机，重新定义计算能力的标准单位，并为数以万计的去中心化应用程序提供运行环境。",
+    "INTRO_CARD_3_TITLE": "保护隐私",
+    "INTRO_CARD_3_DESCRIPTION": "iSunCoin 实施零知识证明的会计向量标准，允许以标准化和隐私保护的格式交换公共信息。",
+    "INTRO_CARD_4_TITLE": "连接世界",
+    "INTRO_CARD_4_DESCRIPTION": "iSunCoin 可以建立一个全球可访问的公共账本，轻松为全世界创建应用程序服务。"
   }
 }

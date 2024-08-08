@@ -1,6 +1,19 @@
 {
   "HOME_PAGE": {
+    "WELCOME": "Welcome to",
     "WHITEPAPER": "Whitepaper",
-    "WHITEPAPER_LINK": "/whitepaper/isuncoin_whitepaper_en_v1.1.2.pdf"
+    "WHITEPAPER_LINK": "/whitepaper/isuncoin_whitepaper_en_v1.1.2.pdf",
+    "WELCOME_DESCRIPTION_1": "iSunCoin is an open and free internet technology that connects all computers to redefine the standard unit of computing power and provides an operational environment for tens of thousands of decentralized applications.",
+    "WELCOME_DESCRIPTION_2": "It implements an accounting vector standard with zero-knowledge proof, allowing people to publicly exchange information in a standardized and privacy-protected format. It can establish a globally accessible public ledger and also enable people to create and run decentralized application services on the platform.",
+    "WELCOME_DESCRIPTION_3": "The distributed ledger technology of iSunCoin is highly flexible, allowing users to create any form of program logic, realizing systems we have yet to imagine.",
+    "WELCOME_DESCRIPTION_4": "Any computer can run iSunCoin, providing computing power to the platform and earning rewards.",
+    "INTRO_CARD_1_TITLE": "Open and Free",
+    "INTRO_CARD_1_DESCRIPTION": "iSunCoin is an open and free internet technology that connects all computers to redefine the standard unit of computing power and provides an operational environment for tens of thousands of decentralized applications.",
+    "INTRO_CARD_2_TITLE": "Shared Computing Power",
+    "INTRO_CARD_2_DESCRIPTION": "iSunCoin connects all computers to redefine the standard unit of computing power and provides an operational environment for tens of thousands of decentralized applications.",
+    "INTRO_CARD_3_TITLE": "Privacy Protection",
+    "INTRO_CARD_3_DESCRIPTION": "iSunCoin implements an accounting vector standard with zero-knowledge proof, allowing public information exchange in a standardized and privacy-protected format.",
+    "INTRO_CARD_4_TITLE": "Connecting the World",
+    "INTRO_CARD_4_DESCRIPTION": "iSunCoin can establish a globally accessible public ledger, easily creating application services for the entire world."
   }
 }
