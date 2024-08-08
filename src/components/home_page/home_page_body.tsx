@@ -1,9 +1,20 @@
-const HomePageBody = () => {
+import WelcomeSection from '@/components/home_page/welcome_section';
+import ParticipateSection from '@/components/home_page/participate_section';
+import ContributeSection from '@/components/common/contribute_section';
+
+const HeadPageBody = () => {
   return (
-    <main className="mt-88px min-h-screen max-w-full overflow-x-hidden bg-surface-neutral-main-background font-barlow">
-      <h1>Welcome to the home page!</h1>
-    </main>
+    <div className="flex min-h-screen flex-col font-barlow">
+      {/* Info:(20240808 - Julian) Welcome */}
+      <WelcomeSection />
+
+      {/* Info:(20240808 - Julian) Participate */}
+      <ParticipateSection />
+
+      {/* Info:(20240808 - Julian) Contribute */}
+      <ContributeSection />
+    </div>
   );
 };
 
-export default HomePageBody;
+export default HeadPageBody;

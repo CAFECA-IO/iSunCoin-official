@@ -1,0 +1,92 @@
+import Image from 'next/image';
+import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
+import useOuterClick from '@/lib/hooks/use_outer_click';
+
+enum iSunCoinVersion {
+  WINDOWS = 'Windows',
+  MAC = 'Mac',
+  LINUX = 'Linux',
+}
+
+const ParticipateSection = () => {
+  const { t } = useTranslation('common');
+  const [selectedVersion, setSelectedVersion] = useState(iSunCoinVersion.WINDOWS);
+
+  const {
+    targetRef: versionRef,
+    componentVisible: versionVisible,
+    setComponentVisible: setVersionVisible,
+  } = useOuterClick<HTMLDivElement>(false);
+
+  const handleVersionClick = () => setVersionVisible(!versionVisible);
+
+  const versionDropMenu = Object.values(iSunCoinVersion).map((version) => (
+    <div
+      key={version}
+      className="w-full p-12px py-8px text-left hover:bg-drag-n-drop-surface-hover"
+      onClick={() => {
+        setSelectedVersion(version);
+        setVersionVisible(false);
+      }}
+    >
+      {version}
+    </div>
+  ));
+
+  return (
+    <div className="flex w-full flex-col-reverse items-center justify-between md:flex-row">
+      {/* Info:(20240808 - Julian) Text */}
+      <div className="flex flex-col items-start gap-y-20px p-80px md:w-1/2">
+        <p className="text-36px font-semibold text-text-neutral-primary">
+          {t('HOME_PAGE.PARTICIPATE_TITLE')}
+        </p>
+        <p className="font-normal text-text-neutral-secondary">
+          {t('HOME_PAGE.PARTICIPATE_DESCRIPTION')}
+        </p>
+        {/* Info:(20240808 - Julian) Download */}
+        <div className="flex items-center divide-x divide-input-stroke-input rounded-sm border border-input-stroke-input text-text-text-primary">
+          <button
+            id="select-version-btn"
+            type="button"
+            className="relative flex items-center gap-12px px-16px py-10px"
+            onClick={handleVersionClick}
+          >
+            <div className="w-70px text-left">{selectedVersion}</div>
+            <div
+              className={`${versionVisible ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
+            >
+              <Image src="/icons/chevron_down.svg" width={16} height={16} alt="arrow_down_icon" />
+            </div>
+
+            <div
+              ref={versionRef}
+              className={`absolute left-0 top-14 flex w-full flex-col items-start rounded-xs border border-dropdown-stroke-menu ${versionVisible ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-10 opacity-0'} bg-dropdown-surface-menu-background-primary p-8px shadow-downDropShadowM transition-all duration-300 ease-in-out`}
+            >
+              {versionDropMenu}
+            </div>
+          </button>
+          <button
+            id="download-btn"
+            type="button"
+            disabled
+            className="px-12px py-10px disabled:text-input-text-input-placeholder"
+          >
+            {t('HOME_PAGE.DOWNLOAD')}
+          </button>
+        </div>
+      </div>
+      {/* Info:(20240808 - Julian) Image */}
+      <div className="relative h-550px w-full md:w-1/2">
+        <Image
+          src="/elements/participate.png"
+          fill
+          style={{ objectFit: 'cover' }}
+          alt="participate_image"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default ParticipateSection;
