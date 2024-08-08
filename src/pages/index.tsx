@@ -1,10 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import LandingHeader from '@/components/landing_header/landing_header';
-import LandingFooter from '@/components/landing_footer/landing_footer';
-import LandingPageBody from '@/components/page_body/landing_page_body';
+import Header from '@/components/common/Header';
+import HomePageBody from '@/components/home_page/home_page_body';
 
-function LandingPage() {
+const HomePage = () => {
   return (
     <>
       <Head>
@@ -13,15 +12,14 @@ function LandingPage() {
       </Head>
 
       {/* Navbar */}
-      <LandingHeader />
+      <Header />
 
       {/* Body */}
-      <LandingPageBody />
+      <HomePageBody />
 
       {/* Footer */}
-      <LandingFooter />
     </>
   );
-}
+};
 
-export default LandingPage;
+export default HomePage;
