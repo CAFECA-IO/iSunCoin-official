@@ -861,7 +861,7 @@ const ProductComparison = () => {
         {/* Pro and Max Image */}
         <div className="flex items-center">
           <Image
-            src={'/product/type_pro_max.png'}
+            src={'/v1/product/type_pro_max.png'}
             width={1000}
             height={800}
             alt="test"
@@ -921,7 +921,7 @@ const ProductComparison = () => {
           )}
 
           <Image
-            src={'/product/type_enterprise.png'}
+            src={'/v1/product/type_enterprise.png'}
             width={1000}
             height={800}
             alt="test"

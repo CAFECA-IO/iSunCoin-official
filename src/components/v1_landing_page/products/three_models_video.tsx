@@ -16,7 +16,7 @@ const ThreeModelsVideo = () => {
   return (
     <section className="relative mx-auto min-h-800px max-w-1440px px-50px">
       <Image
-        src={'/video/pro_cool.gif'}
+        src={'/v1/video/pro_cool.gif'}
         width={1440}
         height={798}
         alt="Pro"

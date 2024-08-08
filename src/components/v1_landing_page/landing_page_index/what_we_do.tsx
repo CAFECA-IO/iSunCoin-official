@@ -37,49 +37,49 @@ const WhatWeDo = () => {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/packing.json',
+      path: '/v1/animations/packing.json',
     });
     const animConnection1 = lottie.loadAnimation({
       container: lottieConnection1.current!,
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/connection.json',
+      path: '/v1/animations/connection.json',
     });
     const animAuditing = lottie.loadAnimation({
       container: lottieAuditing.current!,
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/auditing.json',
+      path: '/v1/animations/auditing.json',
     });
     const animConnection2 = lottie.loadAnimation({
       container: lottieConnection2.current!,
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/connection_2.json',
+      path: '/v1/animations/connection_2.json',
     });
     const animSafetyBox = lottie.loadAnimation({
       container: lottieSafetyBox.current!,
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/three_safety_box.json',
+      path: '/v1/animations/three_safety_box.json',
     });
     const animConnection3 = lottie.loadAnimation({
       container: lottieConnection3.current!,
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: '/animations/connection_3.json',
+      path: '/v1/animations/connection_3.json',
     });
     const animEnding = lottie.loadAnimation({
       container: lottieEnding.current!,
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: '/animations/ending.json',
+      path: '/v1/animations/ending.json',
     });
 
     function animateBodyMoving(duration: number) {
@@ -151,7 +151,7 @@ const WhatWeDo = () => {
           {/* <h2 className="text-48px font-bold">{t('HOME_PAGE.WHAT_WE_DO_TITLE')}</h2> // ToDo: (240704 - Liz) 等之後串翻譯檔 */}
           <h2 className="text-48px font-bold">What we do</h2>
 
-          <Image src="/elements/decoration.svg" width={40} height={10} alt="decoration" />
+          <Image src="/v1/elements/decoration.svg" width={40} height={10} alt="decoration" />
         </div>
 
         {/* ===== Animation ===== */}

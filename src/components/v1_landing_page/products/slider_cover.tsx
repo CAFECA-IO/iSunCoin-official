@@ -4,7 +4,7 @@ const SliderCover = () => {
   return (
     <section className="relative mt-auto h-54.6875rem max-w-90rem">
       <Image
-        src={'/elements/circle.png'}
+        src={'/v1/elements/circle.png'}
         alt="circle"
         width={600}
         height={600}
@@ -12,7 +12,7 @@ const SliderCover = () => {
       ></Image>
 
       <Image
-        src={'/elements/yellow_curve_line.png'}
+        src={'/v1/elements/yellow_curve_line.png'}
         alt="yellow_curve_line_1"
         width={400}
         height={400}
@@ -20,7 +20,7 @@ const SliderCover = () => {
       ></Image>
       {/*  */}
       <Image
-        src={'/elements/yellow_curve_line.png'}
+        src={'/v1/elements/yellow_curve_line.png'}
         alt="yellow_curve_line_2"
         width={200}
         height={200}
@@ -32,7 +32,7 @@ const SliderCover = () => {
       </h2>
 
       <Image
-        src={'/elements/white_type_pc.png'}
+        src={'/v1/elements/white_type_pc.png'}
         alt="white_type_pc"
         width={520}
         height={520}
@@ -44,7 +44,7 @@ const SliderCover = () => {
       </h2>
 
       <Image
-        src={'/elements/black_type_pc.png'}
+        src={'/v1/elements/black_type_pc.png'}
         alt="black_type_pc"
         width={520}
         height={520}
@@ -72,7 +72,7 @@ export default SliderCover;
 //   return (
 //     <section className="relative mt-auto h-875px max-w-1440px">
 //       <Image
-//         src={'/elements/circle.png'}
+//         src={'/v1/elements/circle.png'}
 //         alt="circle"
 //         width={600}
 //         height={600}
@@ -80,7 +80,7 @@ export default SliderCover;
 //       ></Image>
 
 //       <Image
-//         src={'/elements/yellow_curve_line.png'}
+//         src={'/v1/elements/yellow_curve_line.png'}
 //         alt="yellow_curve_line_1"
 //         width={400}
 //         height={400}
@@ -88,7 +88,7 @@ export default SliderCover;
 //       ></Image>
 
 //       <Image
-//         src={'/elements/yellow_curve_line.png'}
+//         src={'/v1/elements/yellow_curve_line.png'}
 //         alt="yellow_curve_line_2"
 //         width={200}
 //         height={200}
@@ -100,7 +100,7 @@ export default SliderCover;
 //       </h2>
 
 //       <Image
-//         src={'/elements/white_type_pc.png'}
+//         src={'/v1/elements/white_type_pc.png'}
 //         alt="white_type_pc"
 //         width={520}
 //         height={520}
@@ -112,7 +112,7 @@ export default SliderCover;
 //       </h2>
 
 //       <Image
-//         src={'/elements/black_type_pc.png'}
+//         src={'/v1/elements/black_type_pc.png'}
 //         alt="black_type_pc"
 //         width={520}
 //         height={520}

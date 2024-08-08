@@ -5,7 +5,7 @@ const ProductAnimation = () => {
   return (
     <section className="relative h-875px w-1440px border border-red-500">
       <Image
-        src={'/elements/circle.png'}
+        src={'/v1/elements/circle.png'}
         alt="circle"
         width={600}
         height={600}
@@ -13,7 +13,7 @@ const ProductAnimation = () => {
       ></Image>
 
       <Image
-        src={'/elements/yellow_curve_line.png'}
+        src={'/v1/elements/yellow_curve_line.png'}
         alt="yellow_curve_line_1"
         width={400}
         height={400}
@@ -21,7 +21,7 @@ const ProductAnimation = () => {
       ></Image>
 
       <Image
-        src={'/elements/yellow_curve_line.png'}
+        src={'/v1/elements/yellow_curve_line.png'}
         alt="yellow_curve_line_2"
         width={200}
         height={200}
@@ -33,7 +33,7 @@ const ProductAnimation = () => {
       </h2>
 
       <Image
-        src={'/elements/white_type_pc.png'}
+        src={'/v1/elements/white_type_pc.png'}
         alt="white_type_pc"
         width={520}
         height={520}
@@ -45,7 +45,7 @@ const ProductAnimation = () => {
       </h2>
 
       <Image
-        src={'/elements/black_type_pc.png'}
+        src={'/v1/elements/black_type_pc.png'}
         alt="black_type_pc"
         width={520}
         height={520}

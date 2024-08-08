@@ -169,7 +169,7 @@ const Slide3 = () => (
       </div>
       <div className="flex basis-1/2 items-center justify-center">
         <Image
-          src={'/product/model_max_white.png'}
+          src={'/v1/product/model_max_white.png'}
           alt="model_max_white"
           width={574}
           height={574}
@@ -245,7 +245,7 @@ const Slide4 = () => (
       </div>
       <div className="flex basis-3/4 items-end justify-center">
         <Image
-          src={'/product/model_enterprise_black.png'}
+          src={'/v1/product/model_enterprise_black.png'}
           alt="model_enterprise_black"
           width={964}
           height={575}

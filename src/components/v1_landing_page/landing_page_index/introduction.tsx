@@ -12,7 +12,7 @@ const Introduction = () => {
       <div className="flex justify-center gap-16px text-center text-lg font-medium text-text-neutral-primary">
         <div className="flex w-416px flex-col items-center gap-16px rounded-sm bg-surface-neutral-surface-lv1 px-20px py-16px shadow-downDropShadowS">
           <Image
-            src="/elements/introduction_computer.svg"
+            src="/v1/elements/introduction_computer.svg"
             alt="introduction"
             width={64}
             height={64}
@@ -21,7 +21,7 @@ const Introduction = () => {
         </div>
         <div className="flex w-416px flex-col items-center gap-16px rounded-sm bg-surface-neutral-surface-lv1 px-20px py-16px shadow-downDropShadowS">
           <Image
-            src="/elements/introduction_share_link.svg"
+            src="/v1/elements/introduction_share_link.svg"
             alt="introduction"
             width={64}
             height={64}
@@ -30,7 +30,7 @@ const Introduction = () => {
         </div>
         <div className="flex w-416px flex-col items-center gap-16px rounded-sm bg-surface-neutral-surface-lv1 px-20px py-16px shadow-downDropShadowS">
           <Image
-            src="/elements/introduction_calculator.svg"
+            src="/v1/elements/introduction_calculator.svg"
             alt="introduction"
             width={64}
             height={64}
