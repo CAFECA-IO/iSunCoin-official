@@ -35,9 +35,9 @@ const ParticipateSection = () => {
   ));
 
   return (
-    <div className="flex w-full items-center justify-between">
+    <div className="flex w-full flex-col-reverse items-center justify-between md:flex-row">
       {/* Info:(20240808 - Julian) Text */}
-      <div className="flex w-1/2 flex-col items-start gap-y-20px p-80px">
+      <div className="flex flex-col items-start gap-y-20px p-80px md:w-1/2">
         <p className="text-36px font-semibold text-text-neutral-primary">
           {t('HOME_PAGE.PARTICIPATE_TITLE')}
         </p>
@@ -77,7 +77,7 @@ const ParticipateSection = () => {
         </div>
       </div>
       {/* Info:(20240808 - Julian) Image */}
-      <div className="relative h-500px w-1/2">
+      <div className="relative h-550px w-full md:w-1/2">
         <Image
           src="/elements/participate.png"
           fill
