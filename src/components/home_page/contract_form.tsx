@@ -6,7 +6,7 @@ const ContractForm = () => {
   const { t } = useTranslation('common');
 
   // Info: (20240809 - Julian) 信件送出的時間
-  // const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+  const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 
   // Info: (20240809 - Julian) form input state
   const [firstNameInput, setFirstNameInput] = useState('');
@@ -16,6 +16,8 @@ const ContractForm = () => {
   const [detailInput, setDetailInput] = useState('');
   // Info: (20240809 - Julian) verify format
   const [emailIsValid, setEmailIsValid] = useState(true);
+  // Info: (20240809 - Julian) sending
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     // Info: (20240809 - Julian) 驗證信箱格式
@@ -39,13 +41,80 @@ const ContractForm = () => {
     setDetailInput(event.target.value);
   };
 
+  const successProcess = () => {
+    // ToDo: (20240809 - Julian) 成功的土司
+    // eslint-disable-next-line no-console
+    console.log('success');
+
+    // Info: (20240809 - Julian) 清空 input
+    setFirstNameInput('');
+    setLastNameInput('');
+    setEmailInput('');
+    setPhoneInput('');
+    setDetailInput('');
+    setIsSending(false);
+  };
+
+  const failedProcess = () => {
+    // ToDo: (20240809 - Julian) 失敗的土司
+    // eslint-disable-next-line no-console
+    console.error('failed');
+    setIsSending(false);
+  };
+
+  // Info: (20240809 - Julian) 按下送出按鈕後做的事
+  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+    // Info: (20240809 - Julian) 先驗證信箱格式，不符合就直接 return
+    if (!emailIsValid) return;
+
+    // Info: (20240809 - Julian) 送出中
+    setIsSending(true);
+
+    try {
+      event.preventDefault();
+
+      const emailData = {
+        comment: `<h3>姓名：${firstNameInput} ${lastNameInput}</h3><h3>電話：${phoneInput}</h3><h3>電郵：${emailInput}</h3><h3>回饋：${detailInput}</h3><p>${now}<p>`,
+      };
+
+      // Info: (20240809 - Julian) call API
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        body: JSON.stringify(emailData),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      });
+      const result = await res.json();
+
+      const { success } = result;
+
+      if (success) {
+        successProcess();
+      } else {
+        failedProcess();
+      }
+    } catch (error) {
+      failedProcess();
+    }
+  };
+
   return (
     <div className="flex flex-col-reverse items-center justify-center gap-12px bg-surface-neutral-main-background px-80px py-40px md:flex-row">
       {/* Info:(20240809 - Julian) Form ticket */}
       <div className="flex w-90vw flex-col gap-48px rounded-lg bg-stroke-neutral-invert p-48px font-semibold text-input-text-primary shadow-downDropShadowM md:w-550px">
         <h2 className="text-44px">{t('HOME_PAGE.CONTRACT_TITLE')}</h2>
         {/* Info:(20240809 - Julian) Form */}
-        <form className="grid flex-1 grid-flow-row grid-cols-2 gap-24px">
+        <form
+          onSubmit={submitHandler}
+          className="relative grid flex-1 grid-flow-row grid-cols-2 gap-24px"
+        >
+          {/* Info:(20240809 - Julian) Sending animation */}
+          <div
+            className={`absolute bg-stroke-neutral-invert ${isSending ? 'flex' : 'hidden'} h-full w-full flex-1 items-center justify-center`}
+          >
+            <Image src="/animations/loading.gif" alt="loading_animation" width={100} height={100} />
+          </div>
           {/* Info:(20240809 - Julian) First Name */}
           <div className="flex flex-col gap-8px text-sm">
             <p>{t('HOME_PAGE.CONTRACT_FIRST_NAME')}</p>
