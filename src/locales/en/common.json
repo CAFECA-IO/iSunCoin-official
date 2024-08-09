@@ -18,7 +18,6 @@
     "PARTICIPATE_TITLE": "Participate in iSunCoin",
     "PARTICIPATE_DESCRIPTION": "iSunCoin transforms energy into computing power resources through computers and provides these resources to the iSunCoin platform in exchange for rewards, thereby achieving mining. You can start mining immediately by installing the iSunCoin software on an ordinary home computer or laptop. For optimal computing power conversion efficiency, it is recommended to use machines with network bandwidth above 10 Mbps, computing power above 10 TOPS, memory above 4 GB, and storage capacity above 1 TB.",
     "DOWNLOAD": "Download",
-
     "CONTRIBUTE_TITLE": "Contribute to iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "This website adheres to the \"Public Domain Contribution Declaration\" (CC0) and provides technical support and explanations for iSunCoin in a non-profit manner while promoting related applications. You can propose editing suggestions, recommend fantastic new features, or assist with debugging for all content on this website.",
     "CONTRACT_TITLE": "Get In Touch",
@@ -30,5 +29,44 @@
     "CONTRACT_DETAIL": "Detail",
     "CONTRACT_DETAIL_PLACEHOLDER": "What do you want to tell us.",
     "CONTRACT_SUBMIT": "Send"
+  },
+
+  "AUTONOMY_PAGE": {
+    "AUTONOMY_TITLE": "iSunCoin Autonomy",
+    "AUTONOMY_DESCRIPTION": "iSunCoin adopts decentralized governance, allowing coin holders to participate in community governance through proposals and voting. Users holding iSunCoin automatically become community members, with the right to propose improvements to the iSunCoin ecosystem. After extensive community discussion and voting, decisions are written into smart contracts and executed automatically through community consensus-driven decision-making. This ensures the long-term healthy development of the project and attracts more users and developers to join.",
+    "DECENTRALIZED_GOVERNANCE": "Decentralized Governance",
+    "PARTICIPATION": "Participation: Coin holders can propose and vote.",
+    "COMMUNITY_MEMBERS": "Community Members: Anyone with iSunCoin.",
+    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "Submit Proposals with 100 ISC Deposit",
+    "VOTING_AFTER": "Voting after",
+    "BLOCKS": "blocks",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "Approved proposals (1,000+ votes) get deposit refunded.",
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "Rejected proposals forfeit deposit (Goes to reward pool).",
+    "UPDATE_CYCLE": "Update Cycle",
+    "SYSTEM_UPDATE": "System Update",
+    "DECISION_MAKING": "Decision-Making",
+    "EXECUTION": "Execution",
+    "PRIORITIZATION": "Prioritization",
+    "SYSTEM_UPDATE_CONTENT": "Every 1,310,720 blocks.",
+    "DECISION_MAKING_CONTENT": "Community members can participate in decision-making regarding the future development direction of iSunCoin through proposals and voting.Community members who participate in governance and provide effective, adopted suggestions will receive governance rewards in the next update cycle.",
+    "EXECUTION_CONTENT": "Proposals approved by community resolution will be executed by a dedicated team, which will regularly report execution progress to the community. To ensure system stability, the execution team will strictly evaluate each plan and adjust the execution schedule flexibly.",
+    "PRIORITIZATION_CONTENT": "Proposals will be prioritized for execution based on the difference between approval and disapproval votes. If there are too many proposals to complete in the current cycle, they will be carried over to the next cycle."
+  },
+
+  "HEADER": {
+    "USE": "Use",
+    "DEVELOP": "Develop",
+    "AUTONOMY": "Autonomy",
+    "RESEARCH": "Research",
+    "SEARCH": "Search"
+  },
+
+  "FOOTER": {
+    "ABOUT_US": "About Us",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "TERMS_OF_USE": "Terms of Use",
+    "COOKIE_POLICY": "Cookie Policy",
+    "CONTACT_US": "Contact Us",
+    "LAST_UPDATED": "Last Updated"
   }
 }

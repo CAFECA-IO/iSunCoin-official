@@ -18,7 +18,6 @@
     "PARTICIPATE_TITLE": "參與 iSunCoin",
     "PARTICIPATE_DESCRIPTION": "iSunCoin 透過電腦將能源轉換為算力資源，並將這些資源提供給 iSunCoin 平台以換取獎勵，從而實現挖礦。您只需在普通家用電腦或筆記型電腦上安裝 iSunCoin 軟體，即可立即開始挖礦。為了獲得最佳算力轉換效率，建議使用網路頻寬 10Mbps 以上、算力 10TOPS 以上、記憶體 4GB 以上、儲存容量 1TB 以上的機器。",
     "DOWNLOAD": "下載",
-
     "CONTRIBUTE_TITLE": "貢獻 iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "本網站遵循「公共領域貢獻宣言」（CC0），以非營利方式提供 iSunCoin 的技術支持和說明，同時推廣相關應用。您可以對本網站的所有內容提出編輯建議、推薦新功能或協助除錯。",
     "CONTRACT_TITLE": "聯絡我們",
@@ -30,5 +29,44 @@
     "CONTRACT_DETAIL": "描述",
     "CONTRACT_DETAIL_PLACEHOLDER": "想告訴我們什麼",
     "CONTRACT_SUBMIT": "發送"
+  },
+
+  "AUTONOMY_PAGE": {
+    "AUTONOMY_TITLE": "iSunCoin 自治",
+    "AUTONOMY_DESCRIPTION": "iSunCoin 採用去中心化治理，讓持幣者透過提案和投票的方式參與社群治理。持有 iSunCoin 的用戶自動成為社群成員，有權對 iSunCoin 生態系統提出改進建議。經過廣泛的社群討論和投票，決策被寫入智慧合約，並透過社群共識驅動的決策自動執行。這保證了專案的長期健康發展，吸引更多的用戶和開發者加入。",
+    "DECENTRALIZED_GOVERNANCE": "去中心化治理",
+    "PARTICIPATION": "參與：持幣者可以提議和投票。",
+    "COMMUNITY_MEMBERS": "社群成員：任何擁有 iSunCoin 的人。",
+    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "提交提案並支付 100 ISC 作為押金。",
+    "VOTING_AFTER": "",
+    "BLOCKS": "個區塊後投票",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "獲得批准的提案（1,000 票以上）可退還押金。",
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒絕的提案將被沒收押金（進入獎勵池）。",
+    "UPDATE_CYCLE": "更新週期",
+    "SYSTEM_UPDATE": "系統更新",
+    "DECISION_MAKING": "決策",
+    "EXECUTION": "執行",
+    "PRIORITIZATION": "優先順序",
+    "SYSTEM_UPDATE_CONTENT": "每 1,310,720 個區塊。",
+    "DECISION_MAKING_CONTENT": "社群成員可以透過提案和投票的方式參與 iSunCoin 未來發展方向的決策。",
+    "EXECUTION_CONTENT": "經社區決議批准的提案將由專門的團隊執行，該團隊將定期向社區報告執行進度。為確保系統穩定性，執行團隊會對每個計畫進行嚴格評估，並靈活調整執行進度。",
+    "PRIORITIZATION_CONTENT": "提案將根據批准票和反對票之間的差異確定優先執行順序。如果當前週期內有太多提案需要完成，它們將結轉到下一個週期。"
+  },
+
+  "HEADER": {
+    "USE": "使用",
+    "DEVELOP": "開發",
+    "AUTONOMY": "自治",
+    "RESEARCH": "研究",
+    "SEARCH": "搜尋"
+  },
+
+  "FOOTER": {
+    "ABOUT_US": "關於我們",
+    "PRIVACY_POLICY": "隱私政策",
+    "TERMS_OF_USE": "使用條款",
+    "COOKIE_POLICY": "Cookie 政策",
+    "CONTACT_US": "聯絡我們",
+    "LAST_UPDATED": "最後更新於"
   }
 }

@@ -3,16 +3,16 @@ import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
 import ThemeToggle from '@/components/common/toggle/theme_toggle';
 import Image from 'next/image';
 import I18n from '@/components/common/i18n';
+import { useTranslation } from 'next-i18next';
 
 const Header = () => {
-  // ToDo: (20240618 - Liz) i18n
-  //   const { t }: { t: TranslateFunction } = useTranslation('common');
+  const { t } = useTranslation('common');
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 flex items-center gap-lv-7 bg-surface-neutral-surface-lv1 px-lv-10 py-lv-4 font-barlow shadow-header">
       {/* Navigation Links */}
-      <nav>
-        <ul className="flex items-center gap-lv-7">
+      <nav className="w-520px">
+        <ul className="flex items-center justify-between gap-10px">
           <li>
             <div>
               <Link href={ISUNCOIN_ROUTE_V2.HOME_PAGE} className="flex items-center gap-8px">
@@ -36,21 +36,21 @@ const Header = () => {
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
               <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
-                <p className="text-base font-medium">Use</p>
+                <p className="text-base font-medium">{t('HEADER.USE')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
               <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
-                <p className="text-base font-medium">Develop</p>
+                <p className="text-base font-medium">{t('HEADER.DEVELOP')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
               <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
-                <p className="text-base font-medium">Autonomy</p>
+                <p className="text-base font-medium">{t('HEADER.AUTONOMY')}</p>
               </Link>
             </div>
           </li>
@@ -58,7 +58,7 @@ const Header = () => {
             <div>
               {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
               <p className="cursor-not-allowed text-base font-medium text-tabs-text-disable">
-                Research
+                {t('HEADER.RESEARCH')}
               </p>
             </div>
           </li>
@@ -83,12 +83,12 @@ const Header = () => {
         <div className="grow">
           <input
             type="text"
-            placeholder="Search"
+            placeholder={t('HEADER.SEARCH')}
             className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-base font-medium outline-none placeholder:text-input-text-input-placeholder"
           />
         </div>
         <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-          <Image src="/elements/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
+          <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
         </div>
       </div>
 
