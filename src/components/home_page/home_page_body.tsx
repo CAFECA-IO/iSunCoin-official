@@ -2,7 +2,7 @@ import WelcomeSection from '@/components/home_page/welcome_section';
 import ParticipateSection from '@/components/home_page/participate_section';
 import ContributeSection from '@/components/common/contribute_section';
 
-const HeadPageBody = () => {
+const HomePageBody = () => {
   return (
     <div className="flex min-h-screen flex-col font-barlow">
       {/* Info:(20240808 - Julian) Welcome */}
@@ -17,4 +17,4 @@ const HeadPageBody = () => {
   );
 };
 
-export default HeadPageBody;
+export default HomePageBody;
