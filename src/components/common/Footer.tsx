@@ -2,8 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
 import packageJson from '@package';
+import { useTranslation } from 'next-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation('common');
   const { version, releaseDate } = packageJson;
 
   return (
@@ -17,7 +19,7 @@ const Footer = () => {
           </Link>
         </div>
         <p className="text-xs font-normal text-text-neutral-secondary">
-          Last Updated: {releaseDate}
+          {t('FOOTER.LAST_UPDATED')}: {releaseDate}
         </p>
       </section>
 
@@ -25,19 +27,19 @@ const Footer = () => {
       <section>
         <ul className="flex gap-24px text-sm font-medium text-button-text-secondary">
           <li>
-            <p className="cursor-not-allowed px-16px py-8px">About Us</p>
+            <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.ABOUT_US')}</p>
           </li>
           <li>
-            <p className="cursor-not-allowed px-16px py-8px">Privacy Policy</p>
+            <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.PRIVACY_POLICY')}</p>
           </li>
           <li>
-            <p className="cursor-not-allowed px-16px py-8px">Terms of Use</p>
+            <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.TERMS_OF_USE')}</p>
           </li>
           <li>
-            <p className="cursor-not-allowed px-16px py-8px">Cookie Policy</p>
+            <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.COOKIE_POLICY')}</p>
           </li>
           <li>
-            <p className="cursor-not-allowed px-16px py-8px">Contact Us</p>
+            <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.CONTACT_US')}</p>
           </li>
         </ul>
       </section>

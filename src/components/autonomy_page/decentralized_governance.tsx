@@ -6,7 +6,7 @@ const DecentralizedGovernance = () => {
   const blocksAmount = '32,768';
 
   return (
-    <section className="flex justify-between md:p-10px lg:p-80px">
+    <section className="flex justify-evenly md:p-20px lg:p-80px">
       {/* ===== Left Section ===== */}
       <div>
         <div className="space-y-24px py-32px">

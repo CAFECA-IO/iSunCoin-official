@@ -33,6 +33,32 @@
     "VOTING_AFTER": "",
     "BLOCKS": "個區塊後投票",
     "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "獲得批准的提案（1,000 票以上）可退還押金。",
-    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒絕的提案將被沒收押金（進入獎勵池）。"
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒絕的提案將被沒收押金（進入獎勵池）。",
+    "UPDATE_CYCLE": "更新週期",
+    "SYSTEM_UPDATE": "系統更新",
+    "DECISION_MAKING": "決策",
+    "EXECUTION": "執行",
+    "PRIORITIZATION": "優先順序",
+    "SYSTEM_UPDATE_CONTENT": "每 1,310,720 個區塊。",
+    "DECISION_MAKING_CONTENT": "社群成員可以透過提案和投票的方式參與 iSunCoin 未來發展方向的決策。",
+    "EXECUTION_CONTENT": "經社區決議批准的提案將由專門的團隊執行，該團隊將定期向社區報告執行進度。為確保系統穩定性，執行團隊會對每個計畫進行嚴格評估，並靈活調整執行進度。",
+    "PRIORITIZATION_CONTENT": "提案將根據批准票和反對票之間的差異確定優先執行順序。如果當前週期內有太多提案需要完成，它們將結轉到下一個週期。"
+  },
+
+  "HEADER": {
+    "USE": "使用",
+    "DEVELOP": "開發",
+    "AUTONOMY": "自治",
+    "RESEARCH": "研究",
+    "SEARCH": "搜尋"
+  },
+
+  "FOOTER": {
+    "ABOUT_US": "關於我們",
+    "PRIVACY_POLICY": "隱私政策",
+    "TERMS_OF_USE": "使用條款",
+    "COOKIE_POLICY": "Cookie 政策",
+    "CONTACT_US": "聯絡我們",
+    "LAST_UPDATED": "最後更新於"
   }
 }
