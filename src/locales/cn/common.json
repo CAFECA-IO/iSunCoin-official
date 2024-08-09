@@ -21,5 +21,44 @@
 
     "CONTRIBUTE_TITLE": "贡献 iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "本网站遵循「公共领域贡献宣言」（CC0），以非营利方式提供 iSunCoin 的技术支持和说明，同时推广相关应用。您可以对本网站的所有内容提出编辑建议、推荐新功能或协助除错。"
+  },
+
+  "AUTONOMY_PAGE": {
+    "AUTONOMY_TITLE": "iSunCoin 自治",
+    "AUTONOMY_DESCRIPTION": "iSunCoin 采用去中心化治理，让持币者透过提案和投票的方式参与社群治理。持有iSunCoin 的用户自动成为社群成员，有权对iSunCoin 生态系统提出改进建议。经过广泛的社群讨论和投票，决策被写入智慧合约，并透过社群共识驱动的决策自动执行。这保证了专案的长期健康发展，吸引更多的用户和开发者加入。",
+    "DECENTRALIZED_GOVERNANCE": "去中心化治理",
+    "PARTICIPATION": "参与：持币者可以提议和投票。",
+    "COMMUNITY_MEMBERS": "社群成员：任何拥有 iSunCoin 的人。",
+    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "提交提案并支付 100 ISC 作为押金。",
+    "VOTING_AFTER": "",
+    "BLOCKS": "个区块后投票",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "获得批准的提案（1,000 票以上）可退还押金。",
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒绝的提案将被没收押金（进入奖励池）。",
+    "UPDATE_CYCLE": "更新周期",
+    "SYSTEM_UPDATE": "系统更新",
+    "DECISION_MAKING": "决策",
+    "EXECUTION": "执行",
+    "PRIORITIZATION": "优先顺序",
+    "SYSTEM_UPDATE_CONTENT": "每 1,310,720 个区块。",
+    "DECISION_MAKING_CONTENT": "社群成员可以透过提案和投票的方式参与 iSunCoin 未来发展方向的决策。",
+    "EXECUTION_CONTENT": "经社区决议批准的提案将由专门的团队执行，该团队将定期向社区报告执行进度。为确保系统稳定性，执行团队会对每个计画进行严格评估，并灵活调整执行进度。",
+    "PRIORITIZATION_CONTENT": "提案将根据批准票和反对票之间的差异确定优先执行顺序。如果当前周期内有太多提案需要完成，它们将结转到下一个周期。"
+  },
+
+  "HEADER": {
+    "USE": "使用",
+    "DEVELOP": "开发",
+    "AUTONOMY": "自治",
+    "RESEARCH": "研究",
+    "SEARCH": "搜索"
+  },
+
+  "FOOTER": {
+    "ABOUT_US": "关于我们",
+    "PRIVACY_POLICY": "隐私政策",
+    "TERMS_OF_USE": "使用条款",
+    "COOKIE_POLICY": "Cookie 政策",
+    "CONTACT_US": "联络我们",
+    "LAST_UPDATED": "最后更新于"
   }
 }
