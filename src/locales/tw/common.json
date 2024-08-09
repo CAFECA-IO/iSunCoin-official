@@ -20,6 +20,15 @@
     "DOWNLOAD": "下載",
 
     "CONTRIBUTE_TITLE": "貢獻 iSunCoin.com",
-    "CONTRIBUTE_DESCRIPTION": "本網站遵循「公共領域貢獻宣言」（CC0），以非營利方式提供 iSunCoin 的技術支持和說明，同時推廣相關應用。您可以對本網站的所有內容提出編輯建議、推薦新功能或協助除錯。"
+    "CONTRIBUTE_DESCRIPTION": "本網站遵循「公共領域貢獻宣言」（CC0），以非營利方式提供 iSunCoin 的技術支持和說明，同時推廣相關應用。您可以對本網站的所有內容提出編輯建議、推薦新功能或協助除錯。",
+    "CONTRACT_TITLE": "聯絡我們",
+    "CONTRACT_FIRST_NAME": "名字",
+    "CONTRACT_LAST_NAME": "姓氏",
+    "CONTRACT_EMAIL": "電子郵件",
+    "CONTRACT_EMAIL_VERIFY": "電子郵件格式有誤",
+    "CONTRACT_PHONE": "電話號碼",
+    "CONTRACT_DETAIL": "描述",
+    "CONTRACT_DETAIL_PLACEHOLDER": "想告訴我們什麼",
+    "CONTRACT_SUBMIT": "發送"
   }
 }
