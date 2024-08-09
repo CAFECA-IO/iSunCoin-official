@@ -2,10 +2,10 @@ import nodemailer from 'nodemailer';
 import googleOAuth2Client from '@/lib/googleOAuth2Client';
 
 async function createTransporter() {
-  const { access_token: accessToken } = googleOAuth2Client.credentials;
-  const refreshToken = process.env.REACT_APP_REFRESH_TOKEN;
+  const { access_token: accessToken, refresh_token: refreshToken } = googleOAuth2Client.credentials;
 
   if (!accessToken || !refreshToken) {
+    // ToDo: (20240809 - Julian) 為何沒拿到 refreshToken？
     throw new Error('No access token or refresh token available');
   }
 
