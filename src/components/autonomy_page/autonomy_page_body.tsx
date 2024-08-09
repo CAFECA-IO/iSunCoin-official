@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import DecentralizedGovernance from '@/components/autonomy_page/decentralized_governance';
 import { useTranslation } from 'next-i18next';
+import DecentralizedGovernance from '@/components/autonomy_page/decentralized_governance';
+import UpdateCycle from '@/components/autonomy_page/update_cycle';
 
 const AutonomyPageBody = () => {
   const { t } = useTranslation('common');
@@ -27,8 +28,11 @@ const AutonomyPageBody = () => {
         </p>
       </section>
 
-      {/* DecentralizedGovernance */}
+      {/* Decentralized Governance */}
       <DecentralizedGovernance />
+
+      {/* Update Cycle */}
+      <UpdateCycle />
     </main>
   );
 };
