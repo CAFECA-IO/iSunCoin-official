@@ -21,5 +21,18 @@
 
     "CONTRIBUTE_TITLE": "貢獻 iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "本網站遵循「公共領域貢獻宣言」（CC0），以非營利方式提供 iSunCoin 的技術支持和說明，同時推廣相關應用。您可以對本網站的所有內容提出編輯建議、推薦新功能或協助除錯。"
+  },
+
+  "AUTONOMY_PAGE": {
+    "AUTONOMY_TITLE": "iSunCoin 自治",
+    "AUTONOMY_DESCRIPTION": "iSunCoin 採用去中心化治理，讓持幣者透過提案和投票的方式參與社群治理。持有 iSunCoin 的用戶自動成為社群成員，有權對 iSunCoin 生態系統提出改進建議。經過廣泛的社群討論和投票，決策被寫入智慧合約，並透過社群共識驅動的決策自動執行。這保證了專案的長期健康發展，吸引更多的用戶和開發者加入。",
+    "DECENTRALIZED_GOVERNANCE": "去中心化治理",
+    "PARTICIPATION": "參與：持幣者可以提議和投票。",
+    "COMMUNITY_MEMBERS": "社群成員：任何擁有 iSunCoin 的人。",
+    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "提交提案並支付 100 ISC 作為押金。",
+    "VOTING_AFTER": "",
+    "BLOCKS": "個區塊後投票",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "獲得批准的提案（1,000 票以上）可退還押金。",
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒絕的提案將被沒收押金（進入獎勵池）。"
   }
 }
