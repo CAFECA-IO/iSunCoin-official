@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
-import packageJson from '../../../package.json';
+import packageJson from '@package';
 
 const Footer = () => {
   const { version, releaseDate } = packageJson;
