@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
-import ThemeToggle from '@/components/toggle/theme_toggle';
+import ThemeToggle from '@/components/common/toggle/theme_toggle';
 import Image from 'next/image';
-import I18n from '@/components/i18n/i18n';
+import I18n from '@/components/common/i18n';
 
 const Header = () => {
   // ToDo: (20240618 - Liz) i18n

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import { ISUNCOIN_ROUTE_V1 } from '@/constants/url';
-import ThemeToggle from '@/components/toggle/theme_toggle';
+import ThemeToggle from '@/components/common/toggle/theme_toggle';
 
 const languages = [
   { label: 'English', code: 'en' },
