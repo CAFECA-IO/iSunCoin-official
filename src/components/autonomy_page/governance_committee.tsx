@@ -29,7 +29,7 @@ const cards = [
 
 const CardsComponent = () => {
   return (
-    <div className="grid flex-1 grid-cols-2 gap-y-40px">
+    <div className="grid grid-cols-2 gap-y-40px lg:w-1/2">
       {cards.map((card) => (
         <div key={card.title} className="flex flex-col items-center gap-8px">
           <div className="flex h-64px w-64px">
@@ -51,26 +51,26 @@ const GovernanceCommittee = () => {
   return (
     <section className="flex flex-col gap-60px p-80px lg:flex-row lg:gap-0">
       {/* Left Section */}
-      <div className="flex flex-1 flex-col justify-between">
+      <div className="flex flex-col justify-between lg:w-1/2">
         <h1 className="text-center text-48px font-semibold text-text-neutral-primary">
           Governance Committee
         </h1>
 
         {/* Top 5 Holders */}
         <div className="flex justify-center -space-x-56px pt-20px">
-          <div className="flex w-120px xl:w-140px">
+          <div className="flex w-140px">
             <Image src="/elements/person1.svg" alt="person1" width={140} height={140}></Image>
           </div>
-          <div className="flex w-140px xl:w-160px">
+          <div className="flex w-160px">
             <Image src="/elements/person2.svg" alt="person2" width={160} height={160}></Image>
           </div>
-          <div className="z-10 flex w-160px xl:w-180px">
+          <div className="z-10 flex w-180px">
             <Image src="/elements/person3.svg" alt="person3" width={180} height={180}></Image>
           </div>
-          <div className="z-5 flex w-140px xl:w-160px">
+          <div className="z-5 flex w-160px">
             <Image src="/elements/person4.svg" alt="person4" width={160} height={160}></Image>
           </div>
-          <div className="flex w-120px xl:w-140px">
+          <div className="flex w-140px">
             <Image src="/elements/person5.svg" alt="person5" width={140} height={140}></Image>
           </div>
         </div>
@@ -92,39 +92,3 @@ const GovernanceCommittee = () => {
 };
 
 export default GovernanceCommittee;
-
-/*
-
-        <div className="flex justify-center">
-          <Image src="/elements/person1.svg" alt="person1" width={140} height={140}></Image>
-          <Image
-            src="/elements/person2.svg"
-            alt="person2"
-            width={160}
-            height={160}
-            className="relative -ml-50px"
-          ></Image>
-          <Image
-            src="/elements/person3.svg"
-            alt="person3"
-            width={180}
-            height={180}
-            className="relative z-10 -ml-60px"
-          ></Image>
-          <Image
-            src="/elements/person4.svg"
-            alt="person4"
-            width={160}
-            height={160}
-            className="relative z-5 -ml-52px"
-          ></Image>
-          <Image
-            src="/elements/person5.svg"
-            alt="person5"
-            width={140}
-            height={140}
-            className="relative -ml-50px"
-          ></Image>
-        </div>
-
-*/
