@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import googleOAuth2Client from '@/lib/googleOAuth2Client';
+import googleOAuth2Client from '@/lib/utils/google_o_auth_client';
 
 async function createTransporter() {
   const { access_token: accessToken, refresh_token: refreshToken } = googleOAuth2Client.credentials;

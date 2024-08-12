@@ -1,4 +1,4 @@
-import createTransporter from '@/lib/nodemailer';
+import createTransporter from '@/lib/utils/nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

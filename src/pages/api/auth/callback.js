@@ -1,4 +1,4 @@
-import googleOAuth2Client from '@/lib/googleOAuth2Client'; // 確保路徑正確
+import googleOAuth2Client from '@/lib/utils/google_o_auth_client';
 
 export default async function handler(req, res) {
   const { code } = req.query;
