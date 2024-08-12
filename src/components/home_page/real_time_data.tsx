@@ -41,6 +41,7 @@ const RealTimeData = () => {
   const mapGraph =
     csvData && csvData.length ? (
       <ComposableMap projectionConfig={{ rotate: [-20, 0, 0] }}>
+        {/* Info:(20240812 - Julian) Add shadow to the map */}
         <defs>
           <filter id="shadow">
             <feDropShadow dy="8" stdDeviation="0.1" floodColor="#192E47" />
