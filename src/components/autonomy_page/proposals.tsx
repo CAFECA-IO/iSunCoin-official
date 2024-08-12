@@ -1,46 +1,49 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const cards = [
   {
-    title: 'Eligibility',
-    description: '10,000+ ISC holders.',
+    title: 'AUTONOMY_PAGE.ELIGIBILITY',
+    description: 'AUTONOMY_PAGE.ELIGIBILITY_DESCRIPTION',
     descriptionSecond: '',
     imageUrl: '/elements/eligibility_pig.svg',
     alt: 'eligibility',
   },
   {
-    title: 'Deposit',
-    description: '100 ISC per proposal.',
+    title: 'AUTONOMY_PAGE.DEPOSIT',
+    description: 'AUTONOMY_PAGE.DEPOSIT_DESCRIPTION',
     descriptionSecond: '',
     imageUrl: '/elements/deposit_coin.svg',
     alt: 'deposit',
   },
   {
-    title: 'Voting',
-    description: 'After 32,768 blocks.',
+    title: 'AUTONOMY_PAGE.VOTING',
+    description: 'AUTONOMY_PAGE.VOTING_DESCRIPTION',
     descriptionSecond: '',
     imageUrl: '/elements/voting_window.svg',
     alt: 'voting',
   },
   {
-    title: 'Adoption',
-    description: '1,000+ votes',
-    descriptionSecond: 'approvals > rejections.',
+    title: 'AUTONOMY_PAGE.ADOPTION',
+    description: 'AUTONOMY_PAGE.ADOPTION_DESCRIPTION',
+    descriptionSecond: 'AUTONOMY_PAGE.ADOPTION_DESCRIPTION_SECOND',
     imageUrl: '/elements/adoption_cheer.svg',
     alt: 'adoption',
   },
 ];
 
 const CardsComponent = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className="grid grid-cols-1 gap-40px md:grid-cols-2 lg:grid-cols-4">
       {cards.map((card) => (
         <div key={card.title} className="flex flex-col items-center">
           <Image src={card.imageUrl} alt={card.alt} width={204} height={200} />
           <div className="space-y-8px pb-16px pt-24px text-center text-base font-normal text-text-neutral-secondary">
-            <h2 className="text-28px font-bold text-text-neutral-primary">{card.title}</h2>
-            <p>{card.description}</p>
-            {card.descriptionSecond && <p>{card.descriptionSecond}</p>}
+            <h2 className="text-28px font-bold text-text-neutral-primary">{t(card.title)}</h2>
+            <p>{t(card.description)}</p>
+            {card.descriptionSecond && <p>{t(card.descriptionSecond)}</p>}
           </div>
         </div>
       ))}
