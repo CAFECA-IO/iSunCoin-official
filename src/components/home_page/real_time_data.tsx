@@ -149,7 +149,7 @@ const RealTimeData = () => {
         <div className="relative w-full">{mapGraph}</div>
         {/* Info:(20240812 - Julian) Map Legend */}
         <div className="-mt-120px flex w-full flex-col items-center gap-10px px-80px text-xl font-bold">
-          <p className="text-text-neutral-primary">Mined Blocks in 24 H</p>
+          <p className="text-text-neutral-primary">{t('HOME_PAGE.REAL_TIME_24_HR_MINED')}</p>
           <div className="grid w-full grid-flow-row grid-cols-5 items-center overflow-hidden rounded-full border-3px border-white text-center">
             <div className={`${bgColorP1} text-text-neutral-solid-light`}>0-200</div>
             <div className={`${bgColorP2} text-text-neutral-solid-light`}>200-400</div>
