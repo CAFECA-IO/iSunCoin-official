@@ -1,6 +1,7 @@
 import WelcomeSection from '@/components/home_page/welcome_section';
 import ParticipateSection from '@/components/home_page/participate_section';
 import ContributeSection from '@/components/common/contribute_section';
+import ContractForm from '@/components/home_page/contract_form';
 
 const HomePageBody = () => {
   return (
@@ -13,6 +14,9 @@ const HomePageBody = () => {
 
       {/* Info:(20240808 - Julian) Contribute */}
       <ContributeSection />
+
+      {/* Info:(20240809 - Julian) Contract Form */}
+      <ContractForm />
     </div>
   );
 };

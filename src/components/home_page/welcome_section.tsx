@@ -63,7 +63,9 @@ const WelcomeSection = () => {
             <p className="text-xl font-bold text-text-brand-primary-lv2">
               {t('HOME_PAGE.WELCOME')}
             </p>
-            <h1 className="text-64px font-semibold text-text-brand-secondary-lv1">iSunCoin</h1>
+            <h1 className="text-64px font-semibold text-text-brand-secondary-lv1">
+              {t('HOME_PAGE.ISUNCOIN')}
+            </h1>
           </div>
           {/* Info:(20240808 - Julian) White Paper */}
           <a
