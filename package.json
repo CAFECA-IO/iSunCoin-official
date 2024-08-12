@@ -1,6 +1,6 @@
 {
   "name": "isuncoin-official",
-  "version": "0.1.0+12",
+  "version": "0.1.0+14",
   "releaseDate": "2024-08-09",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "validate": "npm run test && npm run check-format && npm run lint"
   },
   "dependencies": {
+    "d3-fetch": "^3.0.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "googleapis": "^140.0.1",
@@ -25,17 +26,20 @@
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^15.0.1",
+    "react-simple-maps": "^3.0.0",
     "react-slick": "^0.30.2",
     "react-usestateref": "^1.0.9",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/eslint-plugin": "^7.24.7",
+    "@types/d3-fetch": "^3.0.7",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-simple-maps": "^3.0.6",
     "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
