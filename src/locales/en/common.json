@@ -64,6 +64,29 @@
     "PRIORITIZATION_CONTENT": "Proposals will be prioritized for execution based on the difference between approval and disapproval votes. If there are too many proposals to complete in the current cycle, they will be carried over to the next cycle."
   },
 
+  "DEVELOP_PAGE": {
+    "CURRENT_PROPOSALS": "Current Proposals",
+    "AGREE_BUTTON": "Agree",
+    "DISAGREE_BUTTON": "Disagree",
+    "AGREE_COUNT": "Agree",
+    "DISAGREE_COUNT": "Disagree",
+    "VOTINGS": "votings",
+    "PHASE_1": "Phase",
+    "PHASE_2": "",
+    "PROPOSALS_START_1": "Proposals Start in",
+    "PROPOSALS_START_2": "Blocks",
+    "VOTINGS_END_1": "Votings End in",
+    "VOTINGS_END_2": "Blocks",
+    "FORM_TITLE": "I want to propose",
+    "FORM_SUBTITLE": "You can only propose during proposals period",
+    "FORM_TITLE_TEXT": "Title",
+    "FORM_TITLE_PLACEHOLDER": "Your proposal title",
+    "FORM_CONTENT_TEXT": "Proposals",
+    "FORM_CONTENT_PLACEHOLDER": "Detail of your proposal",
+    "CHECKBOX_TEXT": "You need to deposit 100 ISC to propose, it would only be refund when your proposals is approved. otherwise it will goes to reward pool.",
+    "SUBMIT_BUTTON": "Propose"
+  },
+
   "HEADER": {
     "USE": "Use",
     "DEVELOP": "Develop",

@@ -64,6 +64,29 @@
     "PRIORITIZATION_CONTENT": "提案将根据批准票和反对票之间的差异确定优先执行顺序。如果当前周期内有太多提案需要完成，它们将结转到下一个周期。"
   },
 
+  "DEVELOP_PAGE": {
+    "CURRENT_PROPOSALS": "当前提案",
+    "AGREE_BUTTON": "同意",
+    "DISAGREE_BUTTON": "不同意",
+    "AGREE_COUNT": "同意数",
+    "DISAGREE_COUNT": "不同意数",
+    "VOTINGS": "票",
+    "PHASE_1": "第",
+    "PHASE_2": "期",
+    "PROPOSALS_START_1": "提案将于",
+    "PROPOSALS_START_2": "个区块开始",
+    "VOTINGS_END_1": "投票将于",
+    "VOTINGS_END_2": "个区块结束",
+    "FORM_TITLE": "我想提案",
+    "FORM_SUBTITLE": "您只能在提案期间提出提案",
+    "FORM_TITLE_TEXT": "标题",
+    "FORM_TITLE_PLACEHOLDER": "您的提案标题",
+    "FORM_CONTENT_TEXT": "内容",
+    "FORM_CONTENT_PLACEHOLDER": "提案的详细内容",
+    "CHECKBOX_TEXT": "您需要支付 100 ISC 作为提案押金，当提案被批准时，押金将退还。否则将进入奖励池。",
+    "SUBMIT_BUTTON": "提案"
+  },
+
   "HEADER": {
     "USE": "使用",
     "DEVELOP": "开发",

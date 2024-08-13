@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const ProposeForm = () => {
+  const { t } = useTranslation('common');
+
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -32,10 +35,13 @@ const ProposeForm = () => {
         <div className="flex items-center justify-between px-30px">
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
-            <p className="text-lg font-bold text-text-brand-primary-lv1">Phase 000002</p>
+            <p className="text-lg font-bold text-text-brand-primary-lv1">
+              {t('DEVELOP_PAGE.PHASE_1')} 000002 {t('DEVELOP_PAGE.PHASE_2')}
+            </p>
             <h2 className="text-36px font-semibold text-text-neutral-secondary">
-              Proposals Start in
-              <span className="text-64px font-bold text-text-neutral-primary"> 655360</span> Blocks
+              {t('DEVELOP_PAGE.PROPOSALS_START_1')}
+              <span className="text-64px font-bold text-text-neutral-primary"> 655360</span>{' '}
+              {t('DEVELOP_PAGE.PROPOSALS_START_2')}
             </h2>
           </div>
           {/* Info:(20240813 - Julian) Image */}
@@ -52,21 +58,23 @@ const ProposeForm = () => {
             {/* Info:(20240813 - Julian) Title */}
             <div className="flex flex-col items-center gap-8px">
               <h2 className="text-44px font-semibold text-text-neutral-primary">
-                I want to propose
+                {t('DEVELOP_PAGE.FORM_TITLE')}
               </h2>
               <p className="text-lg text-text-neutral-secondary">
-                You can only propose during proposals period
+                {t('DEVELOP_PAGE.FORM_SUBTITLE')}
               </p>
             </div>
             {/* Info:(20240813 - Julian) Input */}
             <div className="flex w-full flex-col items-stretch gap-16px">
               {/* Info:(20240813 - Julian) Proposal Title */}
               <div className="flex flex-col items-start gap-8px">
-                <p className="text-sm font-semibold text-input-text-primary">Title</p>
+                <p className="text-sm font-semibold text-input-text-primary">
+                  {t('DEVELOP_PAGE.FORM_TITLE_TEXT')}
+                </p>
                 <input
                   id="proposal-title-input"
                   type="text"
-                  placeholder="Your proposal title"
+                  placeholder={t('DEVELOP_PAGE.FORM_TITLE_PLACEHOLDER')}
                   value={inputTitle}
                   onChange={handleTitleChange}
                   className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder"
@@ -75,10 +83,12 @@ const ProposeForm = () => {
               </div>
               {/* Info:(20240813 - Julian) Proposal Content */}
               <div className="flex flex-col items-start gap-8px">
-                <p className="text-sm font-semibold text-input-text-primary">Proposals</p>
+                <p className="text-sm font-semibold text-input-text-primary">
+                  {t('DEVELOP_PAGE.FORM_CONTENT_TEXT')}
+                </p>
                 <textarea
                   id="proposal-content-input"
-                  placeholder="Detail of your proposal"
+                  placeholder={t('DEVELOP_PAGE.FORM_CONTENT_PLACEHOLDER')}
                   value={inputContent}
                   onChange={handleContentChange}
                   className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder"
@@ -97,8 +107,7 @@ const ProposeForm = () => {
                 />
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label htmlFor="proposal-checkbox" className="text-sm text-checkbox-text-primary">
-                  You need to deposit 100 ISC to propose, it would only be refund when your
-                  proposals is approved. otherwise it will goes to reward pool.
+                  {t('DEVELOP_PAGE.CHECKBOX_TEXT')}
                 </label>
               </div>
             </div>
@@ -108,7 +117,7 @@ const ProposeForm = () => {
               type="submit"
               className="ml-auto w-fit rounded-xs bg-button-surface-strong-primary px-32px py-14px text-button-text-primary-solid"
             >
-              Propose (100 ISC)
+              {t('DEVELOP_PAGE.SUBMIT_BUTTON')} (100 ISC)
             </button>
           </form>
         </div>
