@@ -1,5 +1,6 @@
 import WelcomeSection from '@/components/home_page/welcome_section';
 import ParticipateSection from '@/components/home_page/participate_section';
+import RealTimeData from '@/components/home_page/real_time_data';
 import ContributeSection from '@/components/common/contribute_section';
 import ContractForm from '@/components/home_page/contract_form';
 
@@ -11,6 +12,9 @@ const HomePageBody = () => {
 
       {/* Info:(20240808 - Julian) Participate */}
       <ParticipateSection />
+
+      {/* Info:(20240808 - Julian) Real Time Data */}
+      <RealTimeData />
 
       {/* Info:(20240808 - Julian) Contribute */}
       <ContributeSection />
