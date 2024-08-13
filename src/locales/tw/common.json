@@ -19,7 +19,16 @@
     "PARTICIPATE_TITLE": "參與陽光幣",
     "PARTICIPATE_DESCRIPTION": "陽光幣透過電腦將能源轉換成算力資源，並提供算力資源給陽光幣平台換取獎勵來實現挖礦，一般的家用電腦或是筆記性電腦安裝 iSunCoin 軟體即可立即開始挖礦。為達到最佳的算力轉換效益，推薦使用 10 Mbps 以上頻寬的網路、算力 10 TOPS 以上、記憶體 4 GB 以上、儲存容量 1 TB 以上的機器。",
     "DOWNLOAD": "下載",
-
+    "REAL_TIME_DATA_TITLE": "陽光幣即時數據",
+    "REAL_TIME_TOTAL_ISSUANCE": "總發行量",
+    "REAL_TIME_ISC": "ISC",
+    "REAL_TIME_TOTAL_NODES": "總節點數",
+    "REAL_TIME_NODES": "nodes",
+    "REAL_TIME_TOTAL_COMPUTING_POWER": "總算力",
+    "REAL_TIME_TOPS": "TOPS",
+    "REAL_TIME_24_HR_TXNS": "24 小時交易數",
+    "REAL_TIME_TXNS": "Txns",
+    "REAL_TIME_24_HR_MINED": "24 小時挖礦區塊數",
     "CONTRIBUTE_TITLE": "為 iSunCoin.com 做出貢獻",
     "CONTRIBUTE_DESCRIPTION": "此網站遵守「公眾領域貢獻宣告」（CC0），以非盈利形式提供 iSunCoin 技術支持與說明，並推廣相關應用。你可以針對本網站的所有內容提出編輯建議、推薦超讚的新功能或協助除錯。",
     "CONTRACT_TITLE": "聯絡我們",
@@ -99,6 +108,40 @@
 
     "GOVERNANCE_REWARDS": "治理獎勵",
     "GOVERNANCE_REWARDS_DESCRIPTION": "參與陽光幣的提案與投票都需要繳納一定數量的保證金，大部分的保證金在決算後將予以退還，只有被否決的提案保證金因意見不被社群採納而遭沒收，沒收的保證金將投入治理獎勵池作為治理獎勵。除此之外，每個區塊也會提供額外的治理獎勵。"
+  },
+
+  "DEVELOP_PAGE": {
+    "CURRENT_PROPOSALS": "當前提案",
+    "AGREE_BUTTON": "同意",
+    "DISAGREE_BUTTON": "不同意",
+    "AGREE_COUNT": "同意數",
+    "DISAGREE_COUNT": "不同意數",
+    "VOTINGS": "票",
+    "PHASE_1": "第",
+    "PHASE_2": "期",
+    "PROPOSALS_START_1": "提案將於",
+    "PROPOSALS_START_2": "個區塊開始",
+    "VOTINGS_END_1": "投票將於",
+    "VOTINGS_END_2": "個區塊結束",
+    "FORM_TITLE": "我想提案",
+    "FORM_SUBTITLE": "您只能在提案期間提出提案",
+    "FORM_TITLE_TEXT": "標題",
+    "FORM_TITLE_PLACEHOLDER": "您的提案標題",
+    "FORM_CONTENT_TEXT": "內容",
+    "FORM_CONTENT_PLACEHOLDER": "提案的詳細內容",
+    "CHECKBOX_TEXT": "您需要支付 100 ISC 作為提案押金，當提案表決通過，押金才會退還；否則將進入獎勵池。",
+    "SUBMIT_BUTTON": "提案"
+  },
+
+  "MESSAGE_MODAL": {
+    "NEW_PROPOSAL_TITLE": "提出新主題",
+    "NEW_PROPOSAL_MESSAGE": "您確定要支付 100 ISC 提出提案嗎？只有當提案表決通過，您的押金才會退還；否則將進入獎勵池。",
+    "AGREE_PROPOSAL_TITLE": "同意",
+    "AGREE_PROPOSAL_MESSAGE": "您確定要支付 1 ISC 投票「同意」嗎？您的押金將在投票結束時退還，獎勵可在之後領取。",
+    "DISAGREE_PROPOSAL_TITLE": "不同意",
+    "DISAGREE_PROPOSAL_MESSAGE": "您確定要支付 1 ISC 投票「不同意」嗎？您的押金將在投票結束時退還，獎勵可在之後領取。",
+    "CANCEL_BTN": "取消",
+    "CONFIRM_BTN": "確認"
   },
 
   "HEADER": {

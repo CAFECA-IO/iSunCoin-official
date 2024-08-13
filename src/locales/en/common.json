@@ -19,6 +19,16 @@
     "PARTICIPATE_TITLE": "Participate in iSunCoin",
     "PARTICIPATE_DESCRIPTION": "iSunCoin transforms energy into computing power resources through computers and provides these resources to the iSunCoin platform in exchange for rewards, thereby achieving mining. You can start mining immediately by installing the iSunCoin software on an ordinary home computer or laptop. For optimal computing power conversion efficiency, it is recommended to use machines with network bandwidth above 10 Mbps, computing power above 10 TOPS, memory above 4 GB, and storage capacity above 1 TB.",
     "DOWNLOAD": "Download",
+    "REAL_TIME_DATA_TITLE": "Real-Time Data",
+    "REAL_TIME_TOTAL_ISSUANCE": "Total Issuance",
+    "REAL_TIME_ISC": "ISC",
+    "REAL_TIME_TOTAL_NODES": "Total Nodes",
+    "REAL_TIME_NODES": "nodes",
+    "REAL_TIME_TOTAL_COMPUTING_POWER": "Total Computing Power",
+    "REAL_TIME_TOPS": "TOPS",
+    "REAL_TIME_24_HR_TXNS": "24-Hour Transactions",
+    "REAL_TIME_TXNS": "Txns",
+    "REAL_TIME_24_HR_MINED": "Mined Blocks in 24 H",
     "CONTRIBUTE_TITLE": "Contribute to iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "This website adheres to the \"Public Domain Contribution Declaration\" (CC0) and provides technical support and explanations for iSunCoin in a non-profit manner while promoting related applications. You can propose editing suggestions, recommend fantastic new features, or assist with debugging for all content on this website.",
     "CONTRACT_TITLE": "Get In Touch",
@@ -98,6 +108,40 @@
 
     "GOVERNANCE_REWARDS": "Governance Rewards",
     "GOVERNANCE_REWARDS_DESCRIPTION": "Participation in iSunCoin proposals and voting requires a certain amount of deposit. Most deposits will be refunded after the decision, except for deposits of rejected proposals, which will be forfeited due to the community's disapproval and added to the governance reward pool as governance rewards. Additionally, each block will provide extra governance rewards."
+  },
+
+  "DEVELOP_PAGE": {
+    "CURRENT_PROPOSALS": "Current Proposals",
+    "AGREE_BUTTON": "Agree",
+    "DISAGREE_BUTTON": "Disagree",
+    "AGREE_COUNT": "Agree",
+    "DISAGREE_COUNT": "Disagree",
+    "VOTINGS": "votings",
+    "PHASE_1": "Phase",
+    "PHASE_2": "",
+    "PROPOSALS_START_1": "Proposals Start in",
+    "PROPOSALS_START_2": "Blocks",
+    "VOTINGS_END_1": "Votings End in",
+    "VOTINGS_END_2": "Blocks",
+    "FORM_TITLE": "I want to propose",
+    "FORM_SUBTITLE": "You can only propose during proposals period",
+    "FORM_TITLE_TEXT": "Title",
+    "FORM_TITLE_PLACEHOLDER": "Your proposal title",
+    "FORM_CONTENT_TEXT": "Proposals",
+    "FORM_CONTENT_PLACEHOLDER": "Detail of your proposal",
+    "CHECKBOX_TEXT": "You need to deposit 100 ISC to propose, it would only be refund when your proposals is approved. otherwise it will goes to reward pool.",
+    "SUBMIT_BUTTON": "Propose"
+  },
+
+  "MESSAGE_MODAL": {
+    "NEW_PROPOSAL_TITLE": "Propose new topic",
+    "NEW_PROPOSAL_MESSAGE": "Are you sure you want to deposit 100 ISC to propose? Your deposit will be refunded only if the proposal is adopted; otherwise, it will go to the reward pool for participants.",
+    "AGREE_PROPOSAL_TITLE": "Agree with",
+    "AGREE_PROPOSAL_MESSAGE": "Are you sure you want to deposit 1 ISC to vote for \"Agree\"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.",
+    "DISAGREE_PROPOSAL_TITLE": "Disagree with",
+    "DISAGREE_PROPOSAL_MESSAGE": "Are you sure you want to deposit 1 ISC to vote for \"Disagree\"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.",
+    "CANCEL_BTN": "Cancel",
+    "CONFIRM_BTN": "Confirm"
   },
 
   "HEADER": {
