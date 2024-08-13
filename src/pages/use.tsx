@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import UsePageBody from '@/components/use_page/use_page_bode';
-import Footer from '@/components/common/footer';
+import Footer from '@/components/common/footer_1';
 
 const UsePage = () => {
   return (

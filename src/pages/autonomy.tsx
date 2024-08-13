@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import AutonomyPageBody from '@/components/autonomy_page/autonomy_page_body';
-import Footer from '@/components/common/footer';
+import Footer from '@/components/common/footer_1';
 
 const AutonomyPage = () => {
   return (
