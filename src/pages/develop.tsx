@@ -14,13 +14,13 @@ const DevelopPage = () => {
         <title>iSunCoin</title>
       </Head>
 
-      {/* Navbar */}
+      {/* Info:(20240813 - Julian) Navbar */}
       <Header />
 
-      {/* Body */}
+      {/* Info:(20240813 - Julian) Body */}
       <DevelopPageBody />
 
-      {/* Footer */}
+      {/* Info:(20240813 - Julian) Footer */}
       <Footer />
     </>
   );

@@ -74,6 +74,40 @@
     "ADOPTION_DESCRIPTION_SECOND": "approvals > rejections."
   },
 
+  "DEVELOP_PAGE": {
+    "CURRENT_PROPOSALS": "Current Proposals",
+    "AGREE_BUTTON": "Agree",
+    "DISAGREE_BUTTON": "Disagree",
+    "AGREE_COUNT": "Agree",
+    "DISAGREE_COUNT": "Disagree",
+    "VOTINGS": "votings",
+    "PHASE_1": "Phase",
+    "PHASE_2": "",
+    "PROPOSALS_START_1": "Proposals Start in",
+    "PROPOSALS_START_2": "Blocks",
+    "VOTINGS_END_1": "Votings End in",
+    "VOTINGS_END_2": "Blocks",
+    "FORM_TITLE": "I want to propose",
+    "FORM_SUBTITLE": "You can only propose during proposals period",
+    "FORM_TITLE_TEXT": "Title",
+    "FORM_TITLE_PLACEHOLDER": "Your proposal title",
+    "FORM_CONTENT_TEXT": "Proposals",
+    "FORM_CONTENT_PLACEHOLDER": "Detail of your proposal",
+    "CHECKBOX_TEXT": "You need to deposit 100 ISC to propose, it would only be refund when your proposals is approved. otherwise it will goes to reward pool.",
+    "SUBMIT_BUTTON": "Propose"
+  },
+
+  "MESSAGE_MODAL": {
+    "NEW_PROPOSAL_TITLE": "Propose new topic",
+    "NEW_PROPOSAL_MESSAGE": "Are you sure you want to deposit 100 ISC to propose? Your deposit will be refunded only if the proposal is adopted; otherwise, it will go to the reward pool for participants.",
+    "AGREE_PROPOSAL_TITLE": "Agree with",
+    "AGREE_PROPOSAL_MESSAGE": "Are you sure you want to deposit 1 ISC to vote for \"Agree\"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.",
+    "DISAGREE_PROPOSAL_TITLE": "Disagree with",
+    "DISAGREE_PROPOSAL_MESSAGE": "Are you sure you want to deposit 1 ISC to vote for \"Disagree\"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.",
+    "CANCEL_BTN": "Cancel",
+    "CONFIRM_BTN": "Confirm"
+  },
+
   "HEADER": {
     "USE": "Use",
     "DEVELOP": "Develop",
