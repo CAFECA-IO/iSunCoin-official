@@ -95,7 +95,10 @@
     "REFUND_VOTING_DEPOSIT": "退還投票保證金",
     "REJECTION": "提案否決",
     "FORFEIT_PROPOSAL_DEPOSIT": "沒收提案保證金",
-    "GOES_TO_REWARD_POOL": "進入獎勵池"
+    "GOES_TO_REWARD_POOL": "進入獎勵池",
+
+    "GOVERNANCE_REWARDS": "治理獎勵",
+    "GOVERNANCE_REWARDS_DESCRIPTION": "參與陽光幣的提案與投票都需要繳納一定數量的保證金，大部分的保證金在決算後將予以退還，只有被否決的提案保證金因意見不被社群採納而遭沒收，沒收的保證金將投入治理獎勵池作為治理獎勵。除此之外，每個區塊也會提供額外的治理獎勵。"
   },
 
   "HEADER": {

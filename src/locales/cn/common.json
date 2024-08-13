@@ -95,7 +95,10 @@
     "REFUND_VOTING_DEPOSIT": "退还投票保证金",
     "REJECTION": "提案否决",
     "FORFEIT_PROPOSAL_DEPOSIT": "没收提案保证金",
-    "GOES_TO_REWARD_POOL": "进入奖励池"
+    "GOES_TO_REWARD_POOL": "进入奖励池",
+
+    "GOVERNANCE_REWARDS": "治理奖励",
+    "GOVERNANCE_REWARDS_DESCRIPTION": "参与阳光币的提案与投票都需要缴纳一定数量的保证金，大部分的保证金在决算后将予以退还，只有被否决的提案保证金因意见不被社群采纳而遭没收，没收的保证金将投入治理奖励池作为治理奖励。除此之外，每个区块也会提供额外的治理奖励。"
   },
 
   "HEADER": {

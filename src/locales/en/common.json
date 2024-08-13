@@ -94,7 +94,10 @@
     "REFUND_VOTING_DEPOSIT": "Refund voting deposit",
     "REJECTION": "Rejection",
     "FORFEIT_PROPOSAL_DEPOSIT": "Forfeit proposal deposit",
-    "GOES_TO_REWARD_POOL": "Goes to reward pool"
+    "GOES_TO_REWARD_POOL": "Goes to reward pool",
+
+    "GOVERNANCE_REWARDS": "Governance Rewards",
+    "GOVERNANCE_REWARDS_DESCRIPTION": "Participation in iSunCoin proposals and voting requires a certain amount of deposit. Most deposits will be refunded after the decision, except for deposits of rejected proposals, which will be forfeited due to the community's disapproval and added to the governance reward pool as governance rewards. Additionally, each block will provide extra governance rewards."
   },
 
   "HEADER": {
