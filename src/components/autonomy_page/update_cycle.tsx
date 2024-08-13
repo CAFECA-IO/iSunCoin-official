@@ -32,7 +32,7 @@ const CardsComponent = () => {
   const { t } = useTranslation('common');
 
   return (
-    <>
+    <div className="flex flex-wrap justify-center gap-40px">
       {cards.map((card) => {
         return (
           <div
@@ -55,7 +55,7 @@ const CardsComponent = () => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
@@ -69,9 +69,7 @@ const UpdateCycle = () => {
       </h1>
 
       {/* Cards */}
-      <div className="flex flex-wrap justify-center gap-40px">
-        <CardsComponent />
-      </div>
+      <CardsComponent />
     </section>
   );
 };
