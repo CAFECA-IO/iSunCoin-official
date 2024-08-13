@@ -27,10 +27,9 @@ const ProposeForm = () => {
     e.preventDefault();
 
     messageModalDataHandler({
-      title: 'Propose new topic',
-      message:
-        'Are you sure you want to deposit 100 ISC to propose? Your deposit will be refunded only if the proposal is adopted; otherwise, it will go to the reward pool for participants.',
-      confirmBtnText: 'Confirm (100 ISC)',
+      title: t('MESSAGE_MODAL.NEW_PROPOSAL_TITLE'),
+      message: t('MESSAGE_MODAL.NEW_PROPOSAL_MESSAGE'),
+      confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (100 ISC)`,
       confirmHandler: () => {
         // ToDo: (20240813 - Julian) Submit proposal
       },

@@ -87,6 +87,17 @@
     "SUBMIT_BUTTON": "提案"
   },
 
+  "MESSAGE_MODAL": {
+    "NEW_PROPOSAL_TITLE": "提出新主题",
+    "NEW_PROPOSAL_MESSAGE": "您确定要支付 100 ISC 提出提案吗？只有当提案被采纳时，您的押金才会退还；否则将进入奖励池。",
+    "AGREE_PROPOSAL_TITLE": "同意",
+    "AGREE_PROPOSAL_MESSAGE": "您确定要支付 1 ISC 投票「同意」吗？您的押金将在投票结束时退还，奖励可在之后领取。",
+    "DISAGREE_PROPOSAL_TITLE": "不同意",
+    "DISAGREE_PROPOSAL_MESSAGE": "您确定要支付 1 ISC 投票「不同意」吗？您的押金将在投票结束时退还，奖励可在之后领取。",
+    "CANCEL_BTN": "取消",
+    "CONFIRM_BTN": "确认"
+  },
+
   "HEADER": {
     "USE": "使用",
     "DEVELOP": "开发",

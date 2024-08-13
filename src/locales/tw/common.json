@@ -83,8 +83,19 @@
     "FORM_TITLE_PLACEHOLDER": "您的提案標題",
     "FORM_CONTENT_TEXT": "內容",
     "FORM_CONTENT_PLACEHOLDER": "提案的詳細內容",
-    "CHECKBOX_TEXT": "您需要支付 100 ISC 作為提案押金，當提案被批准時，押金將退還。否則將進入獎勵池。",
+    "CHECKBOX_TEXT": "您需要支付 100 ISC 作為提案押金，當提案被批准時，押金才會退還；否則將進入獎勵池。",
     "SUBMIT_BUTTON": "提案"
+  },
+
+  "MESSAGE_MODAL": {
+    "NEW_PROPOSAL_TITLE": "提出新主題",
+    "NEW_PROPOSAL_MESSAGE": "您確定要支付 100 ISC 提出提案嗎？只有當提案被採納時，您的押金才會退還；否則將進入獎勵池。",
+    "AGREE_PROPOSAL_TITLE": "同意",
+    "AGREE_PROPOSAL_MESSAGE": "您確定要支付 1 ISC 投票「同意」嗎？您的押金將在投票結束時退還，獎勵可在之後領取。",
+    "DISAGREE_PROPOSAL_TITLE": "不同意",
+    "DISAGREE_PROPOSAL_MESSAGE": "您確定要支付 1 ISC 投票「不同意」嗎？您的押金將在投票結束時退還，獎勵可在之後領取。",
+    "CANCEL_BTN": "取消",
+    "CONFIRM_BTN": "確認"
   },
 
   "HEADER": {

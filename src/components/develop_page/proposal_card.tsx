@@ -9,10 +9,9 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
 
   const agreeHandler = () => {
     messageModalDataHandler({
-      title: `Agree with "${title}"`,
-      message:
-        'Are you sure you want to deposit 1 ISC to vote for "Agree"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.',
-      confirmBtnText: 'Confirm (1 ISC)',
+      title: `${t('MESSAGE_MODAL.AGREE_PROPOSAL_TITLE')} "${title}"`,
+      message: t('MESSAGE_MODAL.AGREE_PROPOSAL_MESSAGE'),
+      confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
       confirmHandler: () => {
         // ToDo: (20240813 - Julian) Submit agree
       },
@@ -22,10 +21,9 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
 
   const disagreeHandler = () => {
     messageModalDataHandler({
-      title: `Disagree with "${title}"`,
-      message:
-        'Are you sure you want to deposit 1 ISC to vote for "Disagree"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.',
-      confirmBtnText: 'Confirm (1 ISC)',
+      title: `${t('MESSAGE_MODAL.DISAGREE_PROPOSAL_TITLE')} "${title}"`,
+      message: t('MESSAGE_MODAL.DISAGREE_PROPOSAL_MESSAGE'),
+      confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
       confirmHandler: () => {
         // ToDo: (20240813 - Julian) Submit agree
       },

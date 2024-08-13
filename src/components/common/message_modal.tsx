@@ -1,5 +1,6 @@
-import { IMessageModal } from '@/interfaces/message_modal';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
+import { IMessageModal } from '@/interfaces/message_modal';
 
 interface IMessageModalProps {
   isModalVisible: boolean;
@@ -12,6 +13,7 @@ const MessageModal = ({
   modalVisibilityHandler,
   messageModalData,
 }: IMessageModalProps) => {
+  const { t } = useTranslation('common');
   const { title, message, confirmBtnText, confirmHandler } = messageModalData;
 
   const isDisplayModal = isModalVisible ? (
@@ -32,7 +34,7 @@ const MessageModal = ({
             onClick={modalVisibilityHandler}
             className="rounded-xs border border-button-stroke-secondary bg-button-surface-soft-secondary px-16px py-8px text-button-text-secondary-solid hover:bg-button-surface-soft-secondary-hover"
           >
-            Cancel
+            {t('MESSAGE_MODAL.CANCEL_BTN')}
           </button>
           <button
             type="button"
