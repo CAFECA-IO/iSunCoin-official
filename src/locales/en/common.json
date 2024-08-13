@@ -51,7 +51,17 @@
     "SYSTEM_UPDATE_CONTENT": "Every 1,310,720 blocks.",
     "DECISION_MAKING_CONTENT": "Community members can participate in decision-making regarding the future development direction of iSunCoin through proposals and voting.Community members who participate in governance and provide effective, adopted suggestions will receive governance rewards in the next update cycle.",
     "EXECUTION_CONTENT": "Proposals approved by community resolution will be executed by a dedicated team, which will regularly report execution progress to the community. To ensure system stability, the execution team will strictly evaluate each plan and adjust the execution schedule flexibly.",
-    "PRIORITIZATION_CONTENT": "Proposals will be prioritized for execution based on the difference between approval and disapproval votes. If there are too many proposals to complete in the current cycle, they will be carried over to the next cycle."
+    "PRIORITIZATION_CONTENT": "Proposals will be prioritized for execution based on the difference between approval and disapproval votes. If there are too many proposals to complete in the current cycle, they will be carried over to the next cycle.",
+
+    "ELIGIBILITY": "Eligibility",
+    "ELIGIBILITY_DESCRIPTION": "10,000+ ISC holders.",
+    "DEPOSIT": "Deposit",
+    "DEPOSIT_DESCRIPTION": "100 ISC per proposal.",
+    "VOTING": "Voting",
+    "VOTING_DESCRIPTION": "After 32,768 blocks.",
+    "ADOPTION": "Adoption",
+    "ADOPTION_DESCRIPTION": "1,000+ votes",
+    "ADOPTION_DESCRIPTION_SECOND": "approvals > rejections."
   },
 
   "HEADER": {
