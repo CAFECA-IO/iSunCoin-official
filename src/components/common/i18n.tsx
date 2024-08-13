@@ -1,40 +1,27 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import useOuterClick from '@/lib/hooks/use_outer_click';
-
-const languages = [
-  { label: 'English', code: 'en' },
-  { label: '繁體中文', code: 'tw' },
-  { label: '简体中文', code: 'cn' },
-];
+import React from 'react';
+import LanguageMenu from '@/components/common/language_menu';
 
 interface I18nProps {
-  isIconVersion: boolean;
+  // Info: (20240813 - Liz) 顯示語言選單在手機版 Header 中必須使用
+  // ToDo: (20240813 - Liz) showText, showLanguageList, setShowLanguageList 這三個 props 有依賴性，要嘛都有值，要嘛都沒有值，未來可以再整合
+  showText?: boolean;
+  showLanguageList?: boolean;
+  setShowLanguageList?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const I18n = ({ isIconVersion }: I18nProps) => {
-  const { asPath } = useRouter();
+const I18n = ({
+  showText = false,
+  showLanguageList = false,
+  setShowLanguageList = () => {},
+}: I18nProps) => {
   const {
     targetRef: dropdownRef,
     componentVisible: dropdownOpen,
     setComponentVisible: setDropdownOpen,
-  } = useOuterClick<HTMLDivElement>(false);
+  } = useOuterClick<HTMLDivElement>(showLanguageList);
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-
-  const langMenu = languages.map((lang: { label: string; code: string }) => (
-    <Link
-      id={`lang-${lang.code}`}
-      key={lang.code}
-      href={asPath}
-      onClick={toggleDropdown}
-      scroll={false}
-      locale={lang.code}
-      className="w-full cursor-pointer px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
-    >
-      {lang.label}
-    </Link>
-  ));
 
   const iconVersion = (
     <div className="relative flex justify-center">
@@ -58,7 +45,7 @@ const I18n = ({ isIconVersion }: I18nProps) => {
         ref={dropdownRef}
         className={`absolute top-50px flex h-160px w-120px flex-col items-center justify-evenly rounded-xs bg-surface-neutral-surface-lv2 text-center shadow-downDropShadowS ${dropdownOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-10 opacity-0'} transition-all duration-300 ease-in-out`}
       >
-        {langMenu}
+        <LanguageMenu onClick={toggleDropdown} />
       </div>
     </div>
   );
@@ -67,7 +54,10 @@ const I18n = ({ isIconVersion }: I18nProps) => {
     <div className="relative flex px-12px py-8px text-lg font-medium text-dropdown-text-primary">
       <button
         type="button"
-        onClick={toggleDropdown}
+        onClick={() => {
+          toggleDropdown();
+          setShowLanguageList((prev) => !prev);
+        }}
         className="flex items-center justify-between gap-12px hover:text-stroke-brand-primary"
       >
         <div className="flex items-center justify-between">
@@ -105,16 +95,10 @@ const I18n = ({ isIconVersion }: I18nProps) => {
           </svg>
         </div>
       </button>
-      <div
-        ref={dropdownRef}
-        className={`absolute top-50px flex h-160px w-120px flex-col items-center justify-evenly rounded-xs bg-surface-neutral-surface-lv2 text-center shadow-downDropShadowS ${dropdownOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-10 opacity-0'} transition-all duration-300 ease-in-out`}
-      >
-        {langMenu}
-      </div>
     </div>
   );
 
-  return isIconVersion ? iconVersion : textVersion;
+  return showText ? textVersion : iconVersion;
 };
 
 export default I18n;

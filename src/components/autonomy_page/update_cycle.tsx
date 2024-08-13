@@ -32,7 +32,6 @@ const CardsComponent = () => {
   const { t } = useTranslation('common');
 
   return (
-    // <div className="flex flex-wrap justify-center gap-40px xl:justify-between">
     <div className="grid grid-cols-1 gap-y-10 xl:grid-cols-2">
       {cards.map((card) => {
         return (
