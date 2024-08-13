@@ -2,6 +2,9 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import DecentralizedGovernance from '@/components/autonomy_page/decentralized_governance';
 import UpdateCycle from '@/components/autonomy_page/update_cycle';
+import Proposals from '@/components/autonomy_page/proposals';
+import GovernanceCommittee from '@/components/autonomy_page/governance_committee';
+import Deposit from '@/components/autonomy_page/deposit';
 
 const AutonomyPageBody = () => {
   const { t } = useTranslation('common');
@@ -33,6 +36,15 @@ const AutonomyPageBody = () => {
 
       {/* Update Cycle */}
       <UpdateCycle />
+
+      {/* Proposals */}
+      <Proposals />
+
+      {/* GovernanceCommittee */}
+      <GovernanceCommittee />
+
+      {/* Deposit */}
+      <Deposit />
     </main>
   );
 };

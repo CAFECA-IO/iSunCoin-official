@@ -43,14 +43,14 @@
   },
 
   "AUTONOMY_PAGE": {
-    "AUTONOMY_TITLE": "iSunCoin 自治",
-    "AUTONOMY_DESCRIPTION": "iSunCoin 採用去中心化治理，讓持幣者透過提案和投票的方式參與社群治理。持有 iSunCoin 的用戶自動成為社群成員，有權對 iSunCoin 生態系統提出改進建議。經過廣泛的社群討論和投票，決策被寫入智慧合約，並透過社群共識驅動的決策自動執行。這保證了專案的長期健康發展，吸引更多的用戶和開發者加入。",
+    "AUTONOMY_TITLE": "陽光幣自治",
+    "AUTONOMY_DESCRIPTION": "陽光幣採用去中心式治理，持幣者可以透過提案、投票等方式參與社區治理。持有陽光幣的用戶即具備社群成員資格，任何社群成員都可以提出改善陽光幣生態的建議，經過社區廣泛討論和投票後，決議將被寫入智能合約並自動執行透過社區共識驅動的決策，能夠確保項目長期健康發展，並吸引更多的用戶和開發者加入。",
     "DECENTRALIZED_GOVERNANCE": "去中心化治理",
     "PARTICIPATION": "參與：持幣者可以提議和投票。",
-    "COMMUNITY_MEMBERS": "社群成員：任何擁有 iSunCoin 的人。",
-    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "提交提案並支付 100 ISC 作為押金。",
-    "VOTING_AFTER": "",
-    "BLOCKS": "個區塊後投票",
+    "COMMUNITY_MEMBERS": "社群成員：任何擁有陽光幣的人。",
+    "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "每份提案需要扣除 100 ISC 作為保證金",
+    "VOTING_AFTER": "公告",
+    "BLOCKS": "個區塊後表決投票",
     "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "獲得批准的提案（1,000 票以上）可退還押金。",
     "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "被拒絕的提案將被沒收押金（進入獎勵池）。",
     "UPDATE_CYCLE": "更新週期",
@@ -58,10 +58,20 @@
     "DECISION_MAKING": "決策",
     "EXECUTION": "執行",
     "PRIORITIZATION": "優先順序",
-    "SYSTEM_UPDATE_CONTENT": "每 1,310,720 個區塊。",
-    "DECISION_MAKING_CONTENT": "社群成員可以透過提案和投票的方式參與 iSunCoin 未來發展方向的決策。",
-    "EXECUTION_CONTENT": "經社區決議批准的提案將由專門的團隊執行，該團隊將定期向社區報告執行進度。為確保系統穩定性，執行團隊會對每個計畫進行嚴格評估，並靈活調整執行進度。",
-    "PRIORITIZATION_CONTENT": "提案將根據批准票和反對票之間的差異確定優先執行順序。如果當前週期內有太多提案需要完成，它們將結轉到下一個週期。"
+    "SYSTEM_UPDATE_CONTENT": "每 1,310,720 個區塊進行一次系統升級。",
+    "DECISION_MAKING_CONTENT": "社群成員可透過提案與投票，直接參與決策陽光幣的 未來發展方向。",
+    "EXECUTION_CONTENT": "社群決議通過的提案將交由專責團隊執行，並定期向社群回報執行進度。為確保系統穩定性，執行團隊將嚴格評估各項方案，並彈性調整執行時程。",
+    "PRIORITIZATION_CONTENT": "採納的提案將根據同意票數減去 否決票數後的差額數字由高至低決定執行順序排序，若提案過多無法於本期完成，將延續至下個週期執行。參與治理，且提供有效被採納的意見之社群成員，將在下一個更新週期中獲得治理獎勵。",
+
+    "ELIGIBILITY": "資格",
+    "ELIGIBILITY_DESCRIPTION": "持有 10,000 以上的陽光幣",
+    "DEPOSIT": "保證金",
+    "DEPOSIT_DESCRIPTION": "每份提案 100 ISC 保證金",
+    "VOTING": "投票",
+    "VOTING_DESCRIPTION": "每 32,768 個區塊後",
+    "ADOPTION": "採納",
+    "ADOPTION_DESCRIPTION": "1,000 票以上",
+    "ADOPTION_DESCRIPTION_SECOND": "贊成票數 > 反對票數"
   },
 
   "DEVELOP_PAGE": {
