@@ -33,7 +33,7 @@ const CurrentProposals = () => {
         </div>
         {/* Info:(20240813 - Julian) Block */}
         <div className="relative z-10 -mt-50px flex flex-col items-center gap-24px rounded-lg bg-surface-neutral-surface-lv1 px-32px py-40px shadow-downDropShadowL">
-          <h2 className="text-44px font-bold">Current Proposals</h2>
+          <h2 className="text-44px font-bold text-text-neutral-primary">Current Proposals</h2>
           <div className="grid w-full grid-flow-row grid-cols-1 gap-20px py-20px md:grid-cols-2">
             {proposalList}
           </div>
