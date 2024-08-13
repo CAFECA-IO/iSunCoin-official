@@ -1,10 +1,38 @@
 import { useTranslation } from 'next-i18next';
 import { IProposal } from '@/interfaces/proposal';
+import { useGlobalCtx } from '@/contexts/global_context';
 
 const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
   const { t } = useTranslation('common');
-
   const { title, content, agreeCount, disagreeCount } = proposal;
+  const { messageModalVisibleHandler, messageModalDataHandler } = useGlobalCtx();
+
+  const agreeHandler = () => {
+    messageModalDataHandler({
+      title: `Agree with "${title}"`,
+      message:
+        'Are you sure you want to deposit 1 ISC to vote for "Agree"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.',
+      confirmBtnText: 'Confirm (1 ISC)',
+      confirmHandler: () => {
+        // ToDo: (20240813 - Julian) Submit agree
+      },
+    });
+    messageModalVisibleHandler();
+  };
+
+  const disagreeHandler = () => {
+    messageModalDataHandler({
+      title: `Disagree with "${title}"`,
+      message:
+        'Are you sure you want to deposit 1 ISC to vote for "Disagree"? Your deposit will be refunded at the end of the voting, and the reward can be claimed afterward.',
+      confirmBtnText: 'Confirm (1 ISC)',
+      confirmHandler: () => {
+        // ToDo: (20240813 - Julian) Submit agree
+      },
+    });
+    messageModalVisibleHandler();
+  };
+
   return (
     <div className="flex flex-col divide-y divide-stroke-neutral-quaternary rounded-xs border border-stroke-neutral-quaternary bg-surface-neutral-surface-lv2">
       <div className="flex flex-1 flex-col gap-12px p-16px">
@@ -14,6 +42,7 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
           <button
             id={`agree-button-${proposal.id}`}
             type="button"
+            onClick={agreeHandler}
             className="w-full rounded-xs bg-button-surface-strong-primary px-16px py-8px text-sm text-button-text-primary-solid hover:bg-button-surface-strong-primary-hover disabled:bg-button-surface-strong-disable disabled:text-button-text-disable disabled:hover:bg-button-surface-strong-disable"
           >
             {t('DEVELOP_PAGE.AGREE_BUTTON')}
@@ -21,6 +50,7 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
           <button
             id={`disagree-button-${proposal.id}`}
             type="button"
+            onClick={disagreeHandler}
             className="w-full rounded-xs bg-button-surface-strong-secondary px-16px py-8px text-sm text-button-text-invert hover:bg-button-surface-strong-secondary-hover disabled:bg-button-surface-strong-disable disabled:text-button-text-disable disabled:hover:bg-button-surface-strong-disable"
           >
             {t('DEVELOP_PAGE.DISAGREE_BUTTON')}

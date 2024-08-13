@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { useGlobalCtx } from '@/contexts/global_context';
 
 const ProposeForm = () => {
   const { t } = useTranslation('common');
+  const { messageModalVisibleHandler, messageModalDataHandler } = useGlobalCtx();
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -23,6 +25,17 @@ const ProposeForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    messageModalDataHandler({
+      title: 'Propose new topic',
+      message:
+        'Are you sure you want to deposit 100 ISC to propose? Your deposit will be refunded only if the proposal is adopted; otherwise, it will go to the reward pool for participants.',
+      confirmBtnText: 'Confirm (100 ISC)',
+      confirmHandler: () => {
+        // ToDo: (20240813 - Julian) Submit proposal
+      },
+    });
+    messageModalVisibleHandler();
   };
 
   return (
