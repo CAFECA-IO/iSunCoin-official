@@ -53,28 +53,26 @@ const CardsComponent = () => {
 
 const topics = [
   {
-    title: 'Core Protocol Upgrades',
-    content:
-      'Changes directly affecting the underlying blockchain architecture, including but not limited to zero-knowledge proof consensus and virtual machines.',
+    title: 'AUTONOMY_PAGE.CORE_PROTOCOL_UPGRADES',
+    content: 'AUTONOMY_PAGE.CORE_PROTOCOL_UPGRADES_CONTENT',
   },
   {
-    title: 'Functional Upgrades',
-    content:
-      'Additions or modifications to blockchain features, including but not limited to cross-chain technology support and native exchange contracts.',
+    title: 'AUTONOMY_PAGE.FUNCTIONAL_UPGRADES',
+    content: 'AUTONOMY_PAGE.FUNCTIONAL_UPGRADES_CONTENT',
   },
   {
     title: 'Parameter Adjustments',
-    content:
-      'Changes to various blockchain parameters to optimize network performance, such as block size and transaction fees.',
+    content: 'AUTONOMY_PAGE.PARAMETER_ADJUSTMENTS_CONTENT',
   },
   {
-    title: 'Governance Committee Adjustments',
-    content:
-      'Changes to the composition, responsibilities, and authority of the governance committee, including adding or removing committee members.',
+    title: 'AUTONOMY_PAGE.GOVERNANCE_COMMITTEE_ADJUSTMENTS',
+    content: 'AUTONOMY_PAGE.GOVERNANCE_COMMITTEE_ADJUSTMENTS_CONTENT',
   },
 ];
 
 const TopicsComponent = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className="grid grid-cols-1 gap-56px md:grid-cols-2">
       {topics.map((topic) => (
@@ -82,8 +80,8 @@ const TopicsComponent = () => {
           key={topic.title}
           className="space-y-16px rounded-lg bg-surface-neutral-surface-lv2 px-36px py-16px shadow-downDropShadowXS"
         >
-          <h2 className="text-xl font-semibold text-text-neutral-primary">{topic.title}</h2>
-          <p className="text-text-neutral-primary">{topic.content}</p>
+          <h2 className="text-xl font-semibold text-text-neutral-primary">{t(topic.title)}</h2>
+          <p className="text-text-neutral-primary">{t(topic.content)}</p>
         </div>
       ))}
     </div>
@@ -91,15 +89,19 @@ const TopicsComponent = () => {
 };
 
 const Proposals = () => {
+  const { t } = useTranslation('common');
+
   return (
     <section className="space-y-40px p-80px">
-      <h1 className="text-center text-36px font-semibold text-text-neutral-primary">Proposals</h1>
+      <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
+        {t('AUTONOMY_PAGE.PROPOSALS')}
+      </h1>
 
       {/* 4 icon cards */}
       <CardsComponent />
 
       <h2 className="text-center text-2xl font-semibold text-text-neutral-primary">
-        Proposals are limited to the following topics:
+        {t('AUTONOMY_PAGE.PROPOSALS_ARE_LIMITED_TO_THE_FOLLOWING_TOPICS')}:
       </h2>
 
       {/* 4 topics */}
