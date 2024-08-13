@@ -32,12 +32,13 @@ const CardsComponent = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className="flex flex-wrap justify-center gap-40px xl:justify-between">
+    // <div className="flex flex-wrap justify-center gap-40px xl:justify-between">
+    <div className="grid grid-cols-1 gap-y-10 xl:grid-cols-2">
       {cards.map((card) => {
         return (
           <div
             key={card.title}
-            className="basis-580px rounded border border-stroke-neutral-quaternary shadow-downDropShadowS"
+            className="max-w-580px justify-self-center rounded border border-stroke-neutral-quaternary shadow-downDropShadowS xl:odd:justify-self-start xl:even:justify-self-end"
           >
             <div>
               <Image
