@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import DevelopPageBody from '@/components/develop_page/develop_page_body';
-import Footer from '@/components/common/footer_1';
+import Footer from '@/components/common/footer';
 
 const DevelopPage = () => {
   return (
