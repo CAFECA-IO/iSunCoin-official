@@ -5,6 +5,8 @@ import UpdateCycle from '@/components/autonomy_page/update_cycle';
 import Proposals from '@/components/autonomy_page/proposals';
 import GovernanceCommittee from '@/components/autonomy_page/governance_committee';
 import Deposit from '@/components/autonomy_page/deposit';
+import GovernanceRewards from '@/components/autonomy_page/governance_rewards';
+import ContributeSection from '@/components/common/contribute_section';
 
 const AutonomyPageBody = () => {
   const { t } = useTranslation('common');
@@ -40,11 +42,16 @@ const AutonomyPageBody = () => {
       {/* Proposals */}
       <Proposals />
 
-      {/* GovernanceCommittee */}
+      {/* Governance Committee */}
       <GovernanceCommittee />
 
       {/* Deposit */}
       <Deposit />
+
+      {/* Governance Rewards */}
+      <GovernanceRewards />
+
+      <ContributeSection />
     </main>
   );
 };

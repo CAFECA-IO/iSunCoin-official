@@ -71,7 +71,43 @@
     "VOTING_DESCRIPTION": "After 32,768 blocks.",
     "ADOPTION": "Adoption",
     "ADOPTION_DESCRIPTION": "1,000+ votes",
-    "ADOPTION_DESCRIPTION_SECOND": "approvals > rejections."
+    "ADOPTION_DESCRIPTION_SECOND": "approvals > rejections.",
+
+    "CORE_PROTOCOL_UPGRADES": "Core Protocol Upgrades",
+    "CORE_PROTOCOL_UPGRADES_CONTENT": "Changes directly affecting the underlying blockchain architecture, including but not limited to zero-knowledge proof consensus and virtual machines.",
+    "FUNCTIONAL_UPGRADES": "Functional Upgrades",
+    "FUNCTIONAL_UPGRADES_CONTENT": "Additions or modifications to blockchain features, including but not limited to cross-chain technology support and native exchange contracts.",
+    "PARAMETER_ADJUSTMENTS": "Parameter Adjustments",
+    "PARAMETER_ADJUSTMENTS_CONTENT": "Changes to various blockchain parameters to optimize network performance, such as block size and transaction fees.",
+    "GOVERNANCE_COMMITTEE_ADJUSTMENTS": "Governance Committee Adjustments",
+    "GOVERNANCE_COMMITTEE_ADJUSTMENTS_CONTENT": "Changes to the composition, responsibilities, and authority of the governance committee, including adding or removing committee members.",
+
+    "PROPOSALS": "Proposals",
+    "PROPOSALS_ARE_LIMITED_TO_THE_FOLLOWING_TOPICS": "Proposals are limited to the following topics",
+
+    "PROPOSAL_REVIEW": "Proposal Review",
+    "PROPOSAL_REVIEW_CONTENT": "Reviewing community member proposals to ensure their reasonableness and feasibility.",
+    "DECISION_MAKING_CONTENT_2": "Voting on major decisions and representing the community in making decisions.",
+    "COMMUNICATION": "Communication",
+    "COMMUNICATION_CONTENT": "Maintaining close communication with community members and collecting feedback.",
+    "RISK_MANAGEMENT": "Risk Management",
+    "RISK_MANAGEMENT_CONTENT": "Assessing project risks and formulating corresponding countermeasures.",
+
+    "GOVERNANCE_COMMITTEE": "Governance Committee",
+    "TOP_5_ISC_HOLDERS": "Top 5 ISC holders",
+    "OTHERS_VIA_PROPOSALS": "others via proposals.",
+
+    "DEPOSIT_1_ISC_PER_VOTE": "Deposit: 1 ISC per vote",
+    "DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION": "To ensure fair and transparent community governance, all proposals are decided by voting. Each community member can cast one vote, either for or against a proposal. To enhance the quality of voting and reduce random voting or malicious attacks, each vote requires a deposit of 1 ISC as a security deposit. All the participants can claim governance rewards.",
+    "APPROVAL": "Approval",
+    "REFUND_PROPOSAL_DEPOSITS": "Refund proposal deposits",
+    "REFUND_VOTING_DEPOSIT": "Refund voting deposit",
+    "REJECTION": "Rejection",
+    "FORFEIT_PROPOSAL_DEPOSIT": "Forfeit proposal deposit",
+    "GOES_TO_REWARD_POOL": "Goes to reward pool",
+
+    "GOVERNANCE_REWARDS": "Governance Rewards",
+    "GOVERNANCE_REWARDS_DESCRIPTION": "Participation in iSunCoin proposals and voting requires a certain amount of deposit. Most deposits will be refunded after the decision, except for deposits of rejected proposals, which will be forfeited due to the community's disapproval and added to the governance reward pool as governance rewards. Additionally, each block will provide extra governance rewards."
   },
 
   "DEVELOP_PAGE": {

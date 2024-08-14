@@ -1,17 +1,17 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const Deposit = () => {
+  const { t } = useTranslation('common');
+
   return (
     <section className="flex flex-col items-center space-y-40px p-80px">
       <div className="space-y-16px">
         <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
-          Deposit: 1 ISC per vote
+          {t('AUTONOMY_PAGE.DEPOSIT_1_ISC_PER_VOTE')}
         </h1>
         <p className="text-2xl font-semibold text-text-neutral-secondary">
-          To ensure fair and transparent community governance, all proposals are decided by voting.
-          Each community member can cast one vote, either for or against a proposal. To enhance the
-          quality of voting and reduce random voting or malicious attacks, each vote requires a
-          deposit of 1 ISC as a security deposit. All the participants can claim governance rewards.
+          {t('AUTONOMY_PAGE.DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION')}
         </p>
       </div>
 
@@ -22,9 +22,12 @@ const Deposit = () => {
             <Image src="/elements/o_approval.svg" alt="o_approval" width={200} height={200}></Image>
           </div>
           <div className="space-y-8px p-16px text-center">
-            <h4 className="text-xl font-semibold text-text-neutral-primary">Approval</h4>
+            <h4 className="text-xl font-semibold text-text-neutral-primary">
+              {t('AUTONOMY_PAGE.APPROVAL')}
+            </h4>
             <p className="text-text-neutral-secondary">
-              Refund proposal deposits, <br /> Refund voting deposit.
+              {t('AUTONOMY_PAGE.REFUND_PROPOSAL_DEPOSITS')}, <br />
+              {t('AUTONOMY_PAGE.REFUND_VOTING_DEPOSIT')}.
             </p>
           </div>
         </div>
@@ -40,10 +43,13 @@ const Deposit = () => {
             ></Image>
           </div>
           <div className="space-y-8px p-16px text-center">
-            <h4 className="text-xl font-semibold text-text-neutral-primary">Rejection</h4>
+            <h4 className="text-xl font-semibold text-text-neutral-primary">
+              {t('AUTONOMY_PAGE.REJECTION')}
+            </h4>
             <p className="text-text-neutral-secondary">
-              Forfeit proposal deposit <br /> (Goes to reward pool), <br />
-              Refund voting deposit.
+              {t('AUTONOMY_PAGE.FORFEIT_PROPOSAL_DEPOSIT')} <br /> (
+              {t('AUTONOMY_PAGE.GOES_TO_REWARD_POOL')}), <br />
+              {t('AUTONOMY_PAGE.REFUND_VOTING_DEPOSIT')}.
             </p>
           </div>
         </div>

@@ -1,33 +1,36 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const cards = [
   {
-    title: 'Proposal Review',
-    content: 'Reviewing community member proposals to ensure their reasonableness and feasibility.',
+    title: 'AUTONOMY_PAGE.PROPOSAL_REVIEW',
+    content: 'AUTONOMY_PAGE.PROPOSAL_REVIEW_CONTENT',
     imageUrl: '/elements/magnifying_glass.svg',
     alt: 'proposal review',
   },
   {
-    title: 'Decision-Making',
-    content: 'Voting on major decisions and representing the community in making decisions.',
+    title: 'AUTONOMY_PAGE.DECISION_MAKING',
+    content: 'AUTONOMY_PAGE.DECISION_MAKING_CONTENT_2',
     imageUrl: '/elements/justice_hammer.svg',
     alt: 'decision-making',
   },
   {
-    title: 'Communication',
-    content: 'Maintaining close communication with community members and collecting feedback.',
+    title: 'AUTONOMY_PAGE.COMMUNICATION',
+    content: 'AUTONOMY_PAGE.COMMUNICATION_CONTENT',
     imageUrl: '/elements/business_handshake.svg',
     alt: 'communication',
   },
   {
-    title: 'Risk Management',
-    content: 'Assessing project risks and formulating corresponding countermeasures.',
+    title: 'AUTONOMY_PAGE.RISK_MANAGEMENT',
+    content: 'AUTONOMY_PAGE.RISK_MANAGEMENT_CONTENT',
     imageUrl: '/elements/shield_check.svg',
     alt: 'risk management',
   },
 ];
 
 const CardsComponent = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className="grid grid-cols-2 gap-y-40px lg:w-1/2">
       {cards.map((card) => (
@@ -37,9 +40,9 @@ const CardsComponent = () => {
           </div>
           <div className="space-y-8px p-16px text-base font-normal text-text-neutral-secondary">
             <h2 className="text-center text-xl font-semibold text-text-neutral-primary">
-              {card.title}
+              {t(card.title)}
             </h2>
-            <p>{card.content}</p>
+            <p>{t(card.content)}</p>
           </div>
         </div>
       ))}
@@ -48,12 +51,14 @@ const CardsComponent = () => {
 };
 
 const GovernanceCommittee = () => {
+  const { t } = useTranslation('common');
+
   return (
     <section className="flex flex-col gap-60px p-80px lg:flex-row lg:gap-0">
       {/* Left Section */}
       <div className="flex flex-col justify-between lg:w-1/2">
         <h1 className="text-center text-48px font-semibold text-text-neutral-primary">
-          Governance Committee
+          {t('AUTONOMY_PAGE.GOVERNANCE_COMMITTEE')}
         </h1>
 
         {/* Top 5 Holders */}
@@ -77,10 +82,10 @@ const GovernanceCommittee = () => {
 
         <div>
           <h3 className="text-center text-4xl font-semibold text-text-neutral-primary">
-            Top 5 ISC holders
+            {t('AUTONOMY_PAGE.TOP_5_ISC_HOLDERS')}
           </h3>
           <p className="text-center font-semibold text-text-neutral-secondary">
-            others via proposals.
+            {t('AUTONOMY_PAGE.OTHERS_VIA_PROPOSALS')}
           </p>
         </div>
       </div>
