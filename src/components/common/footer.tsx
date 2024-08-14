@@ -4,9 +4,13 @@ import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
 import packageJson from '@package';
 import { useTranslation } from 'next-i18next';
 
-const Footer = () => {
+type FooterProps = {
+  lastModifiedDate: string;
+};
+
+const Footer = ({ lastModifiedDate }: FooterProps) => {
   const { t } = useTranslation('common');
-  const { version, releaseDate } = packageJson;
+  const { version } = packageJson;
 
   return (
     <footer className="flex items-center justify-between gap-10px bg-surface-neutral-surface-lv2 px-20px py-24px lg:px-80px">
@@ -19,7 +23,7 @@ const Footer = () => {
           </Link>
         </div>
         <p className="text-xs font-normal text-text-neutral-secondary">
-          {t('FOOTER.LAST_UPDATED')}: {releaseDate}
+          {t('FOOTER.LAST_UPDATED')}: {lastModifiedDate}
         </p>
       </section>
 
