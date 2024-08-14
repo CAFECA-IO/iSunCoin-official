@@ -5,8 +5,13 @@ import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import AutonomyPageBody from '@/components/autonomy_page/autonomy_page_body';
 import Footer from '@/components/common/footer';
+import { getLastModifiedDate } from '@/lib/utils/common_backend';
 
-const AutonomyPage = () => {
+type AutonomyPageProps = {
+  lastModifiedDate: string;
+};
+
+const AutonomyPage: React.FC<AutonomyPageProps> = ({ lastModifiedDate }) => {
   return (
     <>
       <Head>
@@ -21,7 +26,7 @@ const AutonomyPage = () => {
       <AutonomyPageBody />
 
       {/* Footer */}
-      <Footer />
+      <Footer lastModifiedDate={lastModifiedDate} />
     </>
   );
 };
@@ -29,6 +34,7 @@ const AutonomyPage = () => {
 const getStaticPropsFunction = async ({ locale }: ILocale) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
+    lastModifiedDate: await getLastModifiedDate(),
   },
 });
 

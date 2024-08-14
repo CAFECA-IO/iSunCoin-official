@@ -5,8 +5,13 @@ import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import DevelopPageBody from '@/components/develop_page/develop_page_body';
 import Footer from '@/components/common/footer';
+import { getLastModifiedDate } from '@/lib/utils/common_backend';
 
-const DevelopPage = () => {
+type DevelopPageProps = {
+  lastModifiedDate: string;
+};
+
+const DevelopPage: React.FC<DevelopPageProps> = ({ lastModifiedDate }) => {
   return (
     <>
       <Head>
@@ -21,7 +26,7 @@ const DevelopPage = () => {
       <DevelopPageBody />
 
       {/* Info:(20240813 - Julian) Footer */}
-      <Footer />
+      <Footer lastModifiedDate={lastModifiedDate} />
     </>
   );
 };
@@ -29,6 +34,7 @@ const DevelopPage = () => {
 const getStaticPropsFunction = async ({ locale }: ILocale) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
+    lastModifiedDate: await getLastModifiedDate(),
   },
 });
 

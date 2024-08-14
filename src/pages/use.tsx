@@ -5,8 +5,13 @@ import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
 import UsePageBody from '@/components/use_page/use_page_bode';
 import Footer from '@/components/common/footer';
+import { getLastModifiedDate } from '@/lib/utils/common_backend';
 
-const UsePage = () => {
+type UsePageProps = {
+  lastModifiedDate: string;
+};
+
+const UsePage: React.FC<UsePageProps> = ({ lastModifiedDate }) => {
   return (
     <>
       <Head>
@@ -21,7 +26,7 @@ const UsePage = () => {
       <UsePageBody />
 
       {/* Footer */}
-      <Footer />
+      <Footer lastModifiedDate={lastModifiedDate} />
     </>
   );
 };
@@ -29,6 +34,7 @@ const UsePage = () => {
 const getStaticPropsFunction = async ({ locale }: ILocale) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
+    lastModifiedDate: await getLastModifiedDate(),
   },
 });
 
