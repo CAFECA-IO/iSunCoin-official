@@ -204,8 +204,38 @@
     "LAST_UPDATED": "最後更新於"
   },
 
+  "COMMON": {
+    "COMING_SOON": "即將推出",
+    "TRY_IT_NOW": "試試看"
+  },
+
   "USE_PAGE": {
     "USING_ISUNCOIN": "使用陽光幣",
-    "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧運算網路。運行iSunCoin的機器將共享其閒置的計算資源，用戶可以透過iSunCoin付費來租用這些資源。這允許用戶備份私有資料、快速部署公有雲服務、或訓練和運行他們的人工智慧模型。秉持互利共享的精神，您只需分享您的閒置運算資源即可享受以下雲端運算服務。"
+    "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧運算網路。運行iSunCoin的機器將共享其閒置的計算資源，用戶可以透過iSunCoin付費來租用這些資源。這允許用戶備份私有資料、快速部署公有雲服務、或訓練和運行他們的人工智慧模型。秉持互利共享的精神，您只需分享您的閒置運算資源即可享受以下雲端運算服務。",
+
+    "WHERE_TO_USE_ISUNCOIN": "在哪裡使用陽光幣？",
+
+    "SAFEGUARD_YOUR_DATA_UNTIL_THE_END_OF_THE_WORLD": "保護您的資料直到世界末日",
+    "SAFEGUARD_YOUR_DATA_UNTIL_THE_END_OF_THE_WORLD_DESCRIPTION": "iSunCoin 提供最先進的資料儲存解決方案，為您在 iSunCoin 網路上提供專用空間來儲存您的資料。每條資料都經過多層加密，確保其在傳輸和預存程序中的安全。 iSunCoin 採用零知識證明技術，跨全球多個節點進行冗餘備份和完整性驗證。只要 iSunCoin 正常運行，您的資料就保持完整和安全。",
+
+    "BECOME_A_GLOBAL_CITIZEN": "成為全球公民",
+    "BECOME_A_GLOBAL_CITIZEN_DESCRIPTION": "iSunCoin 網路提供了一個簡單、安全且國際認可的區塊鏈身份，稱為 iSunID。在數位化、全球化時代，iSunID讓您擁有國際有效的區塊鏈身分。您可以使用 iSunID 在帛琉等認可區塊鏈技術的國家/地區進行旅行和簽證、訪問金融服務、從事商業活動等。",
+
+    "RUN_CLOUD_SERVICES": "運行雲端服務",
+    "RUN_CLOUD_SERVICES_DESCRIPTION": "iSunCoin 支援基於 Docker 的雲端服務部署，方便開發者和企業部署和管理應用程式。您也可以為這些服務註冊一個唯一的區塊鏈網域。您的雲端服務將隨機分配到穩定的 iSunCoin 節點上，以確保高可用性，為使用者提供安全、高效、靈活的雲端服務體驗。",
+
+    "UTILIZE_GENERATIVE_AI_SERVICES": "利用生成式人工智慧服務",
+    "UTILIZE_GENERATIVE_AI_SERVICES_DESCRIPTION": "iSunCoin 支援基於 Docker 的雲端服務部署，方便開發者和企業部署和管理應用程式。您也可以為這些服務註冊一個唯一的區塊鏈網域。您的雲端服務將隨機分配到穩定的 iSunCoin 節點上，以確保高可用性，為使用者提供安全、高效、靈活的雲端服務體驗。",
+
+    "BROADCAST_YOUR_NEWS_ON_ISUNTV": "在陽光電視上播放您的新聞",
+    "BROADCAST_YOUR_NEWS_ON_ISUNTV_DESCRIPTION": "iSunVision 是一個運行在 iSunCoin 上的人工智慧新媒體平台，24/7播放科技、財經、體育、藝術等即時新聞。您可以指定一個報道主題，由 AI 自動生成，並安排由 AI 主播在可用時段進行廣播。",
+
+    "HOW_CAN_WE_HELP": "我們可以提供什麼協助嗎？",
+    "YOU_CAN_ASK_QUESTIONS_LIKE": "您可以提出類似以下範例的問題：",
+    "WHAT_S_PRELINE_UI": "Preline UI 是什麼？",
+    "HOW_MANY_STARTER_PAGES_EXAMPLES_ARE_THERE": "有多少個 Starter Pages 範例？",
+    "IS_THERE_A_PRO_VERSION": "有專業版嗎？",
+    "ENTER_YOUR_PROMPT_AND_LET_AI_DRAW_FOR_YOU_REQUIRES_1_ISC": "輸入提示，讓 AI 為您繪製 (需要 1 ISC)",
+    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "輸入主題，讓 AI 為您廣播 (需要 10 ISC)"
   }
 }

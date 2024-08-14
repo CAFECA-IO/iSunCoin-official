@@ -1,10 +1,13 @@
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const Step1 = () => {
+  const { t } = useTranslation('common');
+
   return (
     <section className="space-y-56px px-80px py-40px">
       <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
-        Become a Global Citizen
+        {t('USE_PAGE.BECOME_A_GLOBAL_CITIZEN')}
       </h1>
 
       <div className="flex bg-surface-brand-primary-soft">
@@ -17,7 +20,7 @@ const Step1 = () => {
       </div>
 
       <p className="text-base font-normal text-text-neutral-secondary">
-        {`The iSunCoin network offers a simple, secure, and internationally recognized blockchain identity known as iSunID. In the digital and globalized era, iSunID allows you to have an internationally valid blockchain identity. You can use iSunID for travel and visas in countries like Palau that recognize blockchain technology, access financial services, engage in business and commercial activities, and more.`}
+        {t('USE_PAGE.BECOME_A_GLOBAL_CITIZEN_DESCRIPTION')}
       </p>
     </section>
   );
