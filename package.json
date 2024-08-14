@@ -1,7 +1,6 @@
 {
   "name": "isuncoin-official",
   "version": "0.1.0+18",
-  "releaseDate": "2024-08-14",
   "private": true,
   "scripts": {
     "dev": "next dev",
