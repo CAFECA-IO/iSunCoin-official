@@ -94,8 +94,8 @@
     "RISK_MANAGEMENT_CONTENT": "評估項目的風險，並制定相應的應對措施。",
 
     "GOVERNANCE_COMMITTEE": "自治委員會",
-    "TOP_5_ISC_HOLDERS": "持有陽光幣最高者的前五名將自然成為自治委員會的一員",
-    "OTHERS_VIA_PROPOSALS": "其他委員的增減則需藉由提案方式表決執行",
+    "TOP_5_ISC_HOLDERS": "由前 5 名 ISC 持有者組成",
+    "OTHERS_VIA_PROPOSALS": "其他成員由投票決議增設",
 
     "DEPOSIT_1_ISC_PER_VOTE": "保證金：每票 1 ISC",
     "DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION": "為確保陽光幣社群自治的公平與透明，所有提案都需要藉由表決來進行決策，每個社群成員針對一項提案可以投下同意或否決一票。為提升投票與議案品質，減少隨意投票或惡意攻擊的行為，投票須抵押 1 ISC 作為保證金。所有參與者均可申請治理獎勵。",
