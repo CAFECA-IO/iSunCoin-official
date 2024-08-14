@@ -51,8 +51,8 @@
     "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "每份提案需要扣除 100 ISC 作为保证金",
     "VOTING_AFTER": "公告",
     "BLOCKS": "个区块后表决投票",
-    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "通过的提案（1,000 票以上）可退还保证金",
-    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "否决的提案将被没收保证金（进入奖励池）。",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "表决通过的提案可退还保证金",
+    "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "否决的提案将被没收保证金（进入奖励池）",
     "UPDATE_CYCLE": "更新周期",
     "SYSTEM_UPDATE": "系统更新",
     "DECISION_MAKING": "决策",
@@ -94,8 +94,8 @@
     "RISK_MANAGEMENT_CONTENT": "评估项目的风险，并制定相应的应对措施。",
 
     "GOVERNANCE_COMMITTEE": "自治委员会",
-    "TOP_5_ISC_HOLDERS": "持有阳光币最高者的前五名将自然成为自治委员会的一员",
-    "OTHERS_VIA_PROPOSALS": "其他委员的增减则需藉由提案方式表决执行",
+    "TOP_5_ISC_HOLDERS": "由前 5 名 ISC 持有者组成",
+    "OTHERS_VIA_PROPOSALS": "其他成员由投票决议增设",
 
     "DEPOSIT_1_ISC_PER_VOTE": "保证金：每票 1 ISC",
     "DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION": "为确保阳光币社群自治的公平与透明，所有提案都需要藉由表决来进行决策，每个社群成员针对一项提案可以投下同意或否决一票。为提升投票与议案品质，减少随意投票或恶意攻击的行为，投票须抵押 1 ISC 作为保证金。所有参与者均可申请治理奖励。",
@@ -159,5 +159,10 @@
     "COOKIE_POLICY": "Cookie 政策",
     "CONTACT_US": "联络我们",
     "LAST_UPDATED": "最后更新于"
+  },
+
+  "USE_PAGE": {
+    "USING_ISUNCOIN": "使用阳光币",
+    "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧运算网路。运行iSunCoin的机器将共享其闲置的计算资源，用户可以透过iSunCoin付费来租用这些资源。这允许用户备份私有资料、快速部署公有云服务、或训练和运行他们的人工智慧模型。秉持互利共享的精神，您只需分享您的闲置运算资源即可享受以下云端运算服务。"
   }
 }

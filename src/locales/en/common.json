@@ -51,7 +51,7 @@
     "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "Submit Proposals with 100 ISC Deposit",
     "VOTING_AFTER": "Voting after",
     "BLOCKS": "blocks",
-    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "Approved proposals (1,000+ votes) get deposit refunded.",
+    "APPROVED_PROPOSALS_1000_VOTES_GET_DEPOSIT_REFUNDED": "Approved proposals get deposit refunded.",
     "REJECTED_PROPOSALS_FORFEIT_DEPOSIT_GOES_TO_REWARD_POOL": "Rejected proposals forfeit deposit (Goes to reward pool).",
     "UPDATE_CYCLE": "Update Cycle",
     "SYSTEM_UPDATE": "System Update",
@@ -159,5 +159,10 @@
     "COOKIE_POLICY": "Cookie Policy",
     "CONTACT_US": "Contact Us",
     "LAST_UPDATED": "Last Updated"
+  },
+
+  "USE_PAGE": {
+    "USING_ISUNCOIN": "Using iSunCoin",
+    "USING_ISUNCOIN_DESCRIPTION": "iSunCoin aims to establish the world's largest shared artificial intelligence computing network. Machines running iSunCoin will share their idle computing resources, and users can rent these resources by paying with iSunCoin. This allows users to backup private data, quickly deploy public cloud services, or train and run their AI models. Embracing the spirit of mutual benefit and sharing, you only need to share your idle computing power to enjoy the following cloud computing services."
   }
 }
