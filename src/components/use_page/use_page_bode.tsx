@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import WhereToUseCoin from '@/components/use_page/where_to_use_coin';
 
 const UsePageBody = () => {
   const { t } = useTranslation('common');
@@ -31,6 +32,7 @@ const UsePageBody = () => {
       </section>
 
       {/* ===== WhereToUseCoin ===== */}
+      <WhereToUseCoin />
 
       {/* ===== GiveMeCoin ===== */}
     </main>
