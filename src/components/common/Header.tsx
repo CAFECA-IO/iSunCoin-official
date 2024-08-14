@@ -88,7 +88,7 @@ const Header = () => {
           />
         </div>
         <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-          <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
+          <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20} />
         </div>
       </div>
 

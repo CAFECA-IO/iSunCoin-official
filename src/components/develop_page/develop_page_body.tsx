@@ -1,6 +1,7 @@
+import { useTranslation } from 'next-i18next';
 import CurrentProposals from '@/components/develop_page/current_proposals';
 import ProposeForm from '@/components/develop_page/propose_form';
-import { useTranslation } from 'next-i18next';
+import UpdateHistory from '@/components/develop_page/update_history';
 
 const DevelopPageBody = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -13,6 +14,9 @@ const DevelopPageBody = () => {
 
       {/* Info:(20240813 - Julian) Propose Form */}
       <ProposeForm />
+
+      {/* Info:(20240813 - Julian) Update History */}
+      <UpdateHistory />
     </main>
   );
 };
