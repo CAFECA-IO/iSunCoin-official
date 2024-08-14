@@ -42,6 +42,14 @@ export const dummyUpdateHistoryList: IHistory[] = [
     id: 5,
     phase: '000005',
     version: '2.0.2',
+    updateTimestamp: 1673187291,
+    content:
+      'Dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  },
+  {
+    id: 6,
+    phase: '000006',
+    version: '2.0.3',
     updateTimestamp: 1683187291,
     content:
       'Voting Result Iste sed quia molestias vel reprehenderit ut qui consectetur. Neque nam unde quo omnis et perferendis quis dolores. Incidunt sunt ullam et qui ut id laborum sint. Aliquam dolorum velit quia. Ut rerum architecto animi est. Est modi error sit minima blanditiis omnis quo et atque. Incidunt at aliquid maiores quia qui ab nisi. Non corrupti qui soluta ipsam aperiam maxime facere. Aut voluptatem molestiae pariatur in non error aut. Harum ipsum perferendis error doloribus enim. Update progress Iste sed quia molestias vel reprehenderit ut qui consectetur. Neque nam unde quo omnis et perferendis quis dolores. Incidunt sunt ullam et qui ut id laborum sint. Aliquam dolorum velit quia. Ut rerum architecto animi est. Est modi error sit minima blanditiis omnis quo et atque. Incidunt at aliquid maiores quia qui ab nisi. Non corrupti qui soluta ipsam aperiam maxime facere. Aut voluptatem molestiae pariatur in non error aut. Harum ipsum perferendis error doloribus enim. Title Here 004 Iste sed quia molestias vel reprehenderit ut qui consectetur. Neque nam unde quo omnis et perferendis quis dolores. Incidunt sunt ullam et qui ut id laborum sint. Aliquam dolorum velit quia. Ut rerum architecto animi est. Est modi error sit minima blanditiis omnis quo et atque. Incidunt at aliquid maiores quia qui ab nisi. Non corrupti qui soluta ipsam aperiam maxime facere. Aut voluptatem molestiae pariatur in non error aut. Harum ipsum perferendis error doloribus enim.',

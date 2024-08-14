@@ -1,22 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import { dummyUpdateHistoryList } from '@/interfaces/history';
 import Pagination from '@/components/common/pagination';
+import { ITEMS_PER_PAGE } from '@/constants/config';
 
 const UpdateHistory = () => {
   const [searchInput, setSearchInput] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredHistoryList, setFilteredHistoryList] = useState(dummyUpdateHistoryList);
 
-  const totalPages = 1; // ToDo: (20240814 - Julian) Get total pages from API
+  const totalPages = 2; // ToDo: (20240814 - Julian) Get total pages from API
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
-  const updateHistoryList = dummyUpdateHistoryList
-    .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
-    .map((history) => <UpdateHistoryItem key={history.id} history={history} />);
+  useEffect(() => {
+    const filteredList = dummyUpdateHistoryList.filter((history) => {
+      // Info: (20240814 - Julian) 搜尋內容
+      return (
+        history.content.toLowerCase().includes(searchInput.toLowerCase()) ||
+        // Info: (20240814 - Julian) 搜尋期數
+        history.phase.toLowerCase().includes(searchInput.toLowerCase()) ||
+        // Info: (20240814 - Julian) 搜尋版本
+        history.version.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    });
+    setFilteredHistoryList(filteredList);
+  }, [searchInput]);
+
+  const updateHistoryList =
+    filteredHistoryList && filteredHistoryList.length > 0 ? (
+      filteredHistoryList
+        // Info: (20240814 - Julian) 根據更新時間排序
+        .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
+        // Info: (20240814 - Julian) 分頁
+        .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+        .map((history) => <UpdateHistoryItem key={history.id} history={history} />)
+    ) : (
+      <div className="flex w-full items-center justify-center py-40px text-2xl font-medium text-text-neutral-secondary">
+        No update history found
+      </div>
+    );
 
   return (
     <div className="flex flex-col items-center gap-60px px-80px py-40px">
