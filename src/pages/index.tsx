@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ILocale } from '@/interfaces/locale';
-import Header from '@/components/common/Header';
+import Header from '@/components/common/header';
 import HomePageBody from '@/components/home_page/home_page_body';
-import Footer from '@/components/common/Footer';
+import Footer from '@/components/common/footer';
 
 const HomePage = () => {
   return (

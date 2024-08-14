@@ -1415,7 +1415,10 @@ module.exports = {
           '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
         downDropShadowM:
           '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+
         regularShadow: '0px 8px 16px 0px #00000026',
+
+        downDropShadowSM: '0px 1px 2px 0px #0000000D',
 
         downDropShadowL:
           '0px 14px 30px 0px #3143621A, 0px 55px 55px 0px #31436217, 0px 124px 74px 0px #3143620D, 0px 220px 88px 0px #31436203, 0px 344px 96px 0px #31436200',
@@ -1478,6 +1481,8 @@ module.exports = {
         '0.5px': '0.5px',
         '3px': '3px',
         '5px': '5px',
+        '7px': '7px',
+        '10px': '10px',
       },
       backgroundSize: {
         150: '150%',
