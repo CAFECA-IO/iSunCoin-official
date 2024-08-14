@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import Step0 from '@/components/use_page/step0';
 import Step1 from '@/components/use_page/step1';
 import Step2 from '@/components/use_page/step2';
@@ -30,13 +31,14 @@ const SwitchButton = ({ isActive, onClick, text }: SwitchButtonProps) => {
 };
 
 const WhereToUseCoin = () => {
+  const { t } = useTranslation('common');
   const [step, setStep] = useState(0);
 
   return (
     <section className="bg-surface-neutral-surface-lv2">
       <div className="flex flex-col items-center gap-42px px-80px py-40px">
         <h1 className="text-36px font-semibold text-text-neutral-primary">
-          Where to use iSunCoin?
+          {t('USE_PAGE.WHERE_TO_USE_ISUNCOIN')}
         </h1>
 
         {/* Buttons */}
@@ -44,31 +46,31 @@ const WhereToUseCoin = () => {
           <SwitchButton
             isActive={step === 0}
             onClick={() => setStep(0)}
-            text="Safeguard Your Data Until the End of the World"
+            text={t('USE_PAGE.SAFEGUARD_YOUR_DATA_UNTIL_THE_END_OF_THE_WORLD')}
           />
 
           <SwitchButton
             isActive={step === 1}
             onClick={() => setStep(1)}
-            text="Become a Global Citizen"
+            text={t('USE_PAGE.BECOME_A_GLOBAL_CITIZEN')}
           />
 
           <SwitchButton
             isActive={step === 2}
             onClick={() => setStep(2)}
-            text="Run Cloud Services"
+            text={t('USE_PAGE.RUN_CLOUD_SERVICES')}
           />
 
           <SwitchButton
             isActive={step === 3}
             onClick={() => setStep(3)}
-            text="Utilize Generative AI Services"
+            text={t('USE_PAGE.UTILIZE_GENERATIVE_AI_SERVICES')}
           />
 
           <SwitchButton
             isActive={step === 4}
             onClick={() => setStep(4)}
-            text="Broadcast Your News on iSunTV"
+            text={t('USE_PAGE.BROADCAST_YOUR_NEWS_ON_ISUNTV')}
           />
         </div>
       </div>
