@@ -15,21 +15,22 @@ const Footer = ({ lastModifiedDate }: FooterProps) => {
   return (
     <footer className="flex items-center justify-between gap-10px bg-surface-neutral-surface-lv2 px-20px py-24px lg:px-80px">
       {/* Logo */}
-      <section className="space-y-16px">
+      <section className="shrink-0 space-y-16px">
         <div>
           <Link href={ISUNCOIN_ROUTE_V2.HOME_PAGE} className="flex items-center gap-8px">
             <Image src="/logo/isuncoin_logo.svg" alt="logo" width={40} height={40}></Image>
             <Image src="/logo/isuncoin.svg" alt="logo_string" width={90} height={18}></Image>
           </Link>
         </div>
-        <p className="text-xs font-normal text-text-neutral-secondary">
-          {t('FOOTER.LAST_UPDATED')}: {lastModifiedDate}
-        </p>
+        <div className="flex text-xs font-normal text-text-neutral-secondary xl:flex-row">
+          <p>{t('FOOTER.LAST_UPDATED')}:&nbsp;</p>
+          <p>{lastModifiedDate}</p>
+        </div>
       </section>
 
       {/* Navigation */}
       <section>
-        <ul className="flex gap-24px text-sm font-medium text-button-text-secondary">
+        <ul className="flex text-center text-sm font-medium text-button-text-secondary xl:gap-24px">
           <li>
             <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.ABOUT_US')}</p>
           </li>
@@ -49,10 +50,9 @@ const Footer = ({ lastModifiedDate }: FooterProps) => {
       </section>
 
       {/* Version */}
-      <section>
-        <p className="text-end text-xs font-normal text-text-neutral-secondary">
-          iSunCoin.com v{version}
-        </p>
+      <section className="flex flex-col text-end text-xs font-normal text-text-neutral-secondary xl:flex-row">
+        <p>iSunCoin.com</p>
+        <p>&nbsp;v{version}</p>
       </section>
     </footer>
   );
