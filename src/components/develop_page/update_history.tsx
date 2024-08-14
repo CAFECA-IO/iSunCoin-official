@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import { dummyUpdateHistoryList } from '@/interfaces/history';
+import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import Pagination from '@/components/common/pagination';
+import DatePicker, { DatePickerType } from '@/components/common/date_picker';
 import { ITEMS_PER_PAGE } from '@/constants/config';
+import { IDatePeriod, defaultDatePeriod } from '@/interfaces/date_period';
 
 const UpdateHistory = () => {
-  const [searchInput, setSearchInput] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [searchInput, setSearchInput] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [selectedPeriod, setSelectedPeriod] = useState<IDatePeriod>(defaultDatePeriod);
+
   const [filteredHistoryList, setFilteredHistoryList] = useState(dummyUpdateHistoryList);
 
   const totalPages = 2; // ToDo: (20240814 - Julian) Get total pages from API
@@ -17,18 +21,30 @@ const UpdateHistory = () => {
   };
 
   useEffect(() => {
-    const filteredList = dummyUpdateHistoryList.filter((history) => {
-      // Info: (20240814 - Julian) 搜尋內容
-      return (
-        history.content.toLowerCase().includes(searchInput.toLowerCase()) ||
-        // Info: (20240814 - Julian) 搜尋期數
-        history.phase.toLowerCase().includes(searchInput.toLowerCase()) ||
-        // Info: (20240814 - Julian) 搜尋版本
-        history.version.toLowerCase().includes(searchInput.toLowerCase())
-      );
-    });
+    const filteredList = dummyUpdateHistoryList
+      .filter((history) => {
+        return (
+          // Info: (20240814 - Julian) 搜尋內容
+          history.content.toLowerCase().includes(searchInput.toLowerCase()) ||
+          // Info: (20240814 - Julian) 搜尋期數
+          history.phase.toLowerCase().includes(searchInput.toLowerCase()) ||
+          // Info: (20240814 - Julian) 搜尋版本
+          history.version.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      })
+      .filter((history) => {
+        // Info: (20240814 - Julian) 搜尋日期
+        if (selectedPeriod.startTimeStamp === 0 && selectedPeriod.endTimeStamp === 0) {
+          return true;
+        } else {
+          return (
+            history.updateTimestamp >= selectedPeriod.startTimeStamp &&
+            history.updateTimestamp <= selectedPeriod.endTimeStamp
+          );
+        }
+      });
     setFilteredHistoryList(filteredList);
-  }, [searchInput]);
+  }, [searchInput, selectedPeriod]);
 
   const updateHistoryList =
     filteredHistoryList && filteredHistoryList.length > 0 ? (
@@ -51,15 +67,11 @@ const UpdateHistory = () => {
         {/* Info:(20240814 - Julian) Filter */}
         <div className="flex w-full items-center justify-between gap-100px">
           {/* Info:(20240814 - Julian) Date Picker */}
-          <div className="inline-flex h-11 items-center justify-start rounded-lg border bg-white shadow">
-            <div className="flex h-11 items-center justify-start">
-              <div className="flex h-11 items-start justify-start gap-2.5 px-3 py-2.5">
-                <div className="text-base font-medium leading-normal tracking-tight">
-                  Start Date - End Date
-                </div>
-              </div>
-            </div>
-          </div>
+          <DatePicker
+            type={DatePickerType.PERIOD}
+            period={selectedPeriod}
+            setPeriod={setSelectedPeriod}
+          />
           {/* Info:(20240814 - Julian) Search bar */}
           <div className="flex flex-1 items-center rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base">
             <input

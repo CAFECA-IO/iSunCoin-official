@@ -34,7 +34,7 @@ const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
                 : 'text-text-neutral-tertiary'
             }
           >
-            {timestampToString(updateTimestamp).DMY}
+            {timestampToString(updateTimestamp).date}
           </p>
           <div
             className={`${isOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
