@@ -159,5 +159,10 @@
     "COOKIE_POLICY": "Cookie 政策",
     "CONTACT_US": "联络我们",
     "LAST_UPDATED": "最后更新于"
+  },
+
+  "USE_PAGE": {
+    "USING_ISUNCOIN": "使用阳光币",
+    "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧运算网路。运行iSunCoin的机器将共享其闲置的计算资源，用户可以透过iSunCoin付费来租用这些资源。这允许用户备份私有资料、快速部署公有云服务、或训练和运行他们的人工智慧模型。秉持互利共享的精神，您只需分享您的闲置运算资源即可享受以下云端运算服务。"
   }
 }
