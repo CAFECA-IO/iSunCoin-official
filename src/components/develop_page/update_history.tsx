@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import { dummyUpdateHistoryList } from '@/interfaces/history';
+import Pagination from '@/components/common/pagination';
 
 const UpdateHistory = () => {
   const [searchInput, setSearchInput] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = 1; // ToDo: (20240814 - Julian) Get total pages from API
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
@@ -47,6 +51,11 @@ const UpdateHistory = () => {
         <div className="flex w-full flex-col rounded-lg border border-accordion-surface-background-stroke-border bg-accordion-surface-background-primary">
           {updateHistoryList}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
     </div>
   );

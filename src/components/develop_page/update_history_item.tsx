@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import { IHistory } from '@/interfaces/history';
+import { timestampToString } from '@/lib/utils/common';
 
 const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
   const { phase, version, updateTimestamp, content } = history;
@@ -24,8 +25,16 @@ const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
       >
         <h3>Phase {phase}</h3>
         <div className="flex items-center gap-10px">
-          <p>
-            Version {version} | {updateTimestamp}
+          <p>Version {version}</p>
+          <p>|</p>
+          <p
+            className={
+              isOpen
+                ? 'text-accordion-surface-background-text-title-active'
+                : 'text-text-neutral-tertiary'
+            }
+          >
+            {timestampToString(updateTimestamp).DMY}
           </p>
           <div
             className={`${isOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}

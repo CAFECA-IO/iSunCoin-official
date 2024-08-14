@@ -108,6 +108,10 @@
     "CONFIRM_BTN": "Confirm"
   },
 
+  "COMMON": {
+    "OF": "of"
+  },
+
   "HEADER": {
     "USE": "Use",
     "DEVELOP": "Develop",

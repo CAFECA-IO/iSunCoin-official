@@ -108,6 +108,10 @@
     "CONFIRM_BTN": "确认"
   },
 
+  "COMMON": {
+    "OF": "之"
+  },
+
   "HEADER": {
     "USE": "使用",
     "DEVELOP": "开发",
