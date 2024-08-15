@@ -1,11 +1,18 @@
-import React, { useState, useContext, createContext } from 'react';
-import { IMessageModal, defaultMessageModalData } from '@/interfaces/message_modal';
+import React, { useState, useContext, createContext, useCallback } from 'react';
+import Image from 'next/image';
+import { toast as toastify } from 'react-toastify';
 import MessageModal from '@/components/common/message_modal';
+import Toast from '@/components/common/toast';
+import { IToastify, ToastPosition, ToastType } from '@/interfaces/toastify';
+import { IMessageModal, defaultMessageModalData } from '@/interfaces/message_modal';
 
 interface IGlobalContext {
   isMessageModalVisible: boolean;
   messageModalVisibleHandler: () => void;
   messageModalDataHandler: (data: IMessageModal) => void;
+
+  toastHandler: (props: IToastify) => void;
+  eliminateToast: (id?: string) => void;
 }
 
 export interface IGlobalProvider {
@@ -26,11 +33,116 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
     setMessageModalData(data);
   };
 
+  // Info: (20240815 - Julian)  呼叫 toast 的方法
+  const toastHandler = useCallback(
+    ({
+      id,
+      type,
+      content,
+      closeable,
+      autoClose: isAutoClose,
+      position: toastPosition,
+      onClose = () => {},
+    }: IToastify) => {
+      const bodyStyle =
+        'before:absolute before:h-100vh before:w-6px before:top-0 before:left-0 md:w-fit max-w-400px w-100vw text-card-text-primary items-center md:scale-100 scale-75 text-sm font-barlow pointer-events-auto';
+
+      const toastId = id;
+      const position = toastPosition ?? ToastPosition.TOP_CENTER; // Info:(20240513 - Julian) default position 'top-center'
+
+      const displayContent = <div className="mr-20px">{content}</div>;
+
+      // Info:(20240513 - Julian) 如果 closeable 為 false，則 autoClose、closeOnClick、draggable 都會被設為 false
+      const autoClose = closeable ? (isAutoClose ?? 5000) : false; // Info:(20240513 - Julian) default autoClose 5000ms
+
+      const closeOnClick = closeable; // Info:(20240513 - Julian) default closeOnClick true
+      const draggable = closeable; // Info:(20240513 - Julian) default draggable true
+      const closeButton = closeable
+        ? () => (
+            <div className="relative h-20px w-20px">
+              <Image src="/icons/cross.svg" alt="close" fill objectFit="contain" />
+            </div>
+          )
+        : false;
+
+      switch (type) {
+        case ToastType.SUCCESS:
+          toastify.success(displayContent, {
+            icon: <Image src="/icons/success.svg" alt="success" width={24} height={24} />,
+            className: `${bodyStyle} before:bg-surface-state-success`,
+            toastId,
+            position,
+            autoClose,
+            closeOnClick,
+            draggable,
+            closeButton,
+            onClose,
+          });
+          break;
+        case ToastType.ERROR:
+          toastify.error(displayContent, {
+            icon: <Image src="/icons/error.svg" alt="error" width={24} height={24} />,
+            className: `${bodyStyle} before:bg-surface-state-error`,
+            toastId,
+            position,
+            autoClose,
+            closeOnClick,
+            draggable,
+            closeButton,
+            onClose,
+          });
+          break;
+        case ToastType.WARNING:
+          toastify.warning(displayContent, {
+            icon: <Image src="/icons/warning.svg" alt="warning" width={24} height={24} />,
+            className: `${bodyStyle} before:bg-surface-state-warning`,
+            toastId,
+            position,
+            autoClose,
+            closeOnClick,
+            draggable,
+            closeButton,
+            onClose,
+          });
+          break;
+        case ToastType.INFO:
+          toastify.info(displayContent, {
+            icon: <Image src="/icons/info.svg" alt="info" width={24} height={24} />,
+            className: `${bodyStyle} before:bg-surface-brand-secondary`,
+            toastId,
+            position,
+            autoClose,
+            closeOnClick,
+            draggable,
+            closeButton,
+            onClose,
+          });
+          break;
+        default:
+          toastify(displayContent);
+          break;
+      }
+    },
+    []
+  );
+
+  // Info: (20240815 - Julian) 清除 toast 的方法
+  const eliminateToast = (id?: string) => {
+    if (id) {
+      toastify.dismiss(id);
+    } else {
+      toastify.dismiss(); // Info:(20240815 - Julian) 清除所有 toast
+    }
+  };
+
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     isMessageModalVisible,
     messageModalVisibleHandler,
     messageModalDataHandler,
+
+    toastHandler,
+    eliminateToast,
   };
 
   return (
@@ -40,6 +152,8 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
         modalVisibilityHandler={messageModalVisibleHandler}
         messageModalData={messageModalData}
       />
+
+      <Toast />
 
       {children}
     </GlobalContext.Provider>

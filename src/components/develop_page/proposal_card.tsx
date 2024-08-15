@@ -1,11 +1,13 @@
 import { useTranslation } from 'next-i18next';
 import { IProposal } from '@/interfaces/proposal';
 import { useGlobalCtx } from '@/contexts/global_context';
+import { ToastPosition, ToastType } from '@/interfaces/toastify';
+import { ToastId } from '@/constants/toastify';
 
 const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
   const { t } = useTranslation('common');
-  const { title, content, agreeCount, disagreeCount } = proposal;
-  const { messageModalVisibleHandler, messageModalDataHandler } = useGlobalCtx();
+  const { id, title, content, agreeCount, disagreeCount } = proposal;
+  const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
 
   const agreeHandler = () => {
     messageModalDataHandler({
@@ -14,6 +16,15 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
       confirmHandler: () => {
         // ToDo: (20240813 - Julian) Submit agree
+        // Info: (20240815 - Julian) Show toast & close message modal
+        toastHandler({
+          id: `${ToastId.VOTING_SUCCESS}-${id}`,
+          type: ToastType.SUCCESS,
+          content: t('TOAST.VOTING_SUCCESS'),
+          closeable: true,
+          position: ToastPosition.BOTTOM_LEFT,
+        });
+        messageModalVisibleHandler();
       },
     });
     messageModalVisibleHandler();
@@ -25,7 +36,16 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
       message: t('MESSAGE_MODAL.DISAGREE_PROPOSAL_MESSAGE'),
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
       confirmHandler: () => {
-        // ToDo: (20240813 - Julian) Submit agree
+        // ToDo: (20240813 - Julian) Submit disagree
+        // Info: (20240815 - Julian) Show toast & close message modal
+        toastHandler({
+          id: `${ToastId.VOTING_SUCCESS}-${id}`,
+          type: ToastType.SUCCESS,
+          content: t('TOAST.VOTING_SUCCESS'),
+          closeable: true,
+          position: ToastPosition.BOTTOM_LEFT,
+        });
+        messageModalVisibleHandler();
       },
     });
     messageModalVisibleHandler();

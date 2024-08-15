@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { useGlobalCtx } from '@/contexts/global_context';
+import { ToastId } from '@/constants/toastify';
+import { ToastPosition, ToastType } from '@/interfaces/toastify';
 
 const ContractForm = () => {
   const { t } = useTranslation('common');
+  const { toastHandler } = useGlobalCtx();
 
   // Info: (20240809 - Julian) 信件送出的時間
   const now = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
@@ -42,9 +46,14 @@ const ContractForm = () => {
   };
 
   const successProcess = () => {
-    // ToDo: (20240809 - Julian) 成功的土司
-    // eslint-disable-next-line no-console
-    console.log('success');
+    // Info: (20240815 - Julian) 成功的土司
+    toastHandler({
+      id: ToastId.CONTRACT_SUCCESS,
+      type: ToastType.SUCCESS,
+      content: t('TOAST.CONTRACT_SENT_SUCCESS'),
+      closeable: true,
+      position: ToastPosition.BOTTOM_LEFT,
+    });
 
     // Info: (20240809 - Julian) 清空 input
     setFirstNameInput('');
@@ -56,9 +65,14 @@ const ContractForm = () => {
   };
 
   const failedProcess = () => {
-    // ToDo: (20240809 - Julian) 失敗的土司
-    // eslint-disable-next-line no-console
-    console.error('failed');
+    // Info: (20240815 - Julian) 失敗的土司
+    toastHandler({
+      id: ToastId.CONTRACT_ERROR,
+      type: ToastType.ERROR,
+      content: t('TOAST.CONTRACT_SENT_ERROR'),
+      closeable: true,
+      position: ToastPosition.BOTTOM_LEFT,
+    });
     setIsSending(false);
   };
 
