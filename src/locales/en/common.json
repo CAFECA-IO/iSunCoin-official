@@ -245,6 +245,10 @@
     "HOW_MANY_STARTER_PAGES_EXAMPLES_ARE_THERE": "How many Starter Pages & Examples are there?",
     "IS_THERE_A_PRO_VERSION": "Is there a PRO version?",
     "ENTER_YOUR_PROMPT_AND_LET_AI_DRAW_FOR_YOU_REQUIRES_1_ISC": "Enter your prompt and let AI draw for you (Requires 1 ISC)",
-    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "Enter a topic and let AI broadcast for you (Requires 10 ISC)"
+    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "Enter a topic and let AI broadcast for you (Requires 10 ISC)",
+
+    "I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN": "I Don't Need Services, Just Give Me iSunCoin",
+    "WALLETS_DESCRIPTION": "Stop subscribing to services on iSunCoin nodes to retain your iSunCoin rewards. You can view mining history directly on the nodes and transfer the mined iSunCoin to other cryptocurrency wallets or cold wallets for safekeeping.",
+    "ALL": "All"
   }
 }

@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import WhereToUseCoin from '@/components/use_page/where_to_use_coin';
+import GiveMeCoin from '@/components/use_page/give_me_coin';
+import ContributeSection from '@/components/common/contribute_section';
 
 const UsePageBody = () => {
   const { t } = useTranslation('common');
@@ -9,7 +11,7 @@ const UsePageBody = () => {
     <main className="mt-88px min-h-screen max-w-full overflow-x-hidden bg-surface-neutral-main-background font-barlow">
       {/* ===== HeroForUsePage ===== */}
       <section className="flex items-center justify-between gap-20px bg-surface-brand-primary-10 pr-10px pt-32px xl:pr-80px">
-        {/* cover image */}
+        {/* image */}
         <div className="w-3/5">
           <Image
             src="/elements/hero_use_page.svg"
@@ -20,7 +22,7 @@ const UsePageBody = () => {
           ></Image>
         </div>
 
-        {/* content */}
+        {/* text */}
         <div className="flex w-2/5 flex-col justify-center gap-24px">
           <h1 className="text-44px font-bold text-text-neutral-primary">
             {t('USE_PAGE.USING_ISUNCOIN')}
@@ -31,10 +33,14 @@ const UsePageBody = () => {
         </div>
       </section>
 
-      {/* ===== WhereToUseCoin ===== */}
+      {/* ===== WhereToUseCoin (Where to use iSunCoin?) ===== */}
       <WhereToUseCoin />
 
-      {/* ===== GiveMeCoin ===== */}
+      {/* ===== GiveMeCoin (I Don’t Need Services, Just Give Me iSunCoin) ===== */}
+      <GiveMeCoin />
+
+      {/* ===== Contribute Section ===== */}
+      <ContributeSection />
     </main>
   );
 };

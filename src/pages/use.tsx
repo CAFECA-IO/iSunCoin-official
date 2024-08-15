@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ILocale } from '@/interfaces/locale';
 import Header from '@/components/common/header';
-import UsePageBody from '@/components/use_page/use_page_bode';
+import UsePageBody from '@/components/use_page/use_page_body';
 import Footer from '@/components/common/footer';
 import { getLastModifiedDate } from '@/lib/utils/common_backend';
 

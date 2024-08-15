@@ -245,6 +245,10 @@
     "HOW_MANY_STARTER_PAGES_EXAMPLES_ARE_THERE": "有多少個 Starter Pages 範例？",
     "IS_THERE_A_PRO_VERSION": "有專業版嗎？",
     "ENTER_YOUR_PROMPT_AND_LET_AI_DRAW_FOR_YOU_REQUIRES_1_ISC": "輸入提示，讓 AI 為您繪製 (需要 1 ISC)",
-    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "輸入主題，讓 AI 為您廣播 (需要 10 ISC)"
+    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "輸入主題，讓 AI 為您廣播 (需要 10 ISC)",
+
+    "I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN": "我不需要服務，只要給我陽光幣",
+    "WALLETS_DESCRIPTION": "停止訂閱 iSunCoin 節點上的服務以保留您的陽光幣獎勵。您可以直接在節點上查看挖礦歷史記錄，並將挖出的陽光幣轉移到其他加密貨幣錢包或冷錢包中妥善保管。",
+    "ALL": "全部"
   }
 }
