@@ -45,10 +45,12 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
       onClose = () => {},
     }: IToastify) => {
       const bodyStyle =
-        'before:absolute before:h-100vh before:w-5px before:top-0 before:left-0 md:w-400px w-100vw md:scale-100 scale-75 text-sm font-barlow pointer-events-auto';
+        'before:absolute before:h-100vh before:w-6px before:top-0 before:left-0 md:w-fit max-w-400px w-100vw text-card-text-primary items-center md:scale-100 scale-75 text-sm font-barlow pointer-events-auto';
 
       const toastId = id;
       const position = toastPosition ?? ToastPosition.TOP_CENTER; // Info:(20240513 - Julian) default position 'top-center'
+
+      const displayContent = <div className="mr-20px">{content}</div>;
 
       // Info:(20240513 - Julian) 如果 closeable 為 false，則 autoClose、closeOnClick、draggable 都會被設為 false
       const autoClose = closeable ? (isAutoClose ?? 5000) : false; // Info:(20240513 - Julian) default autoClose 5000ms
@@ -57,17 +59,17 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
       const draggable = closeable; // Info:(20240513 - Julian) default draggable true
       const closeButton = closeable
         ? () => (
-            <div className="h-20px w-20px">
-              <Image src="/icons/cross.svg" width={16} height={16} alt="close" />
+            <div className="relative h-20px w-20px">
+              <Image src="/icons/cross.svg" alt="close" fill objectFit="contain" />
             </div>
           )
         : false;
 
       switch (type) {
         case ToastType.SUCCESS:
-          toastify.success(content, {
+          toastify.success(displayContent, {
             icon: <Image src="/icons/success.svg" alt="success" width={24} height={24} />,
-            className: `${bodyStyle} before:bg-alert-surface-surface-success`,
+            className: `${bodyStyle} before:bg-surface-state-success`,
             toastId,
             position,
             autoClose,
@@ -78,9 +80,9 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
           });
           break;
         case ToastType.ERROR:
-          toastify.error(content, {
+          toastify.error(displayContent, {
             icon: <Image src="/icons/error.svg" alt="error" width={24} height={24} />,
-            className: `${bodyStyle} before:bg-alert-surface-surface-error`,
+            className: `${bodyStyle} before:bg-surface-state-error`,
             toastId,
             position,
             autoClose,
@@ -91,9 +93,9 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
           });
           break;
         case ToastType.WARNING:
-          toastify.warning(content, {
+          toastify.warning(displayContent, {
             icon: <Image src="/icons/warning.svg" alt="warning" width={24} height={24} />,
-            className: `${bodyStyle} before:bg-alert-surface-surface-warning`,
+            className: `${bodyStyle} before:bg-surface-state-warning`,
             toastId,
             position,
             autoClose,
@@ -104,9 +106,9 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
           });
           break;
         case ToastType.INFO:
-          toastify.info(content, {
+          toastify.info(displayContent, {
             icon: <Image src="/icons/info.svg" alt="info" width={24} height={24} />,
-            className: `${bodyStyle} before:bg-alert-surface-surface-info`,
+            className: `${bodyStyle} before:bg-surface-brand-secondary`,
             toastId,
             position,
             autoClose,
@@ -117,7 +119,7 @@ export const GlobalProvider = ({ children }: IGlobalProvider) => {
           });
           break;
         default:
-          toastify(content);
+          toastify(displayContent);
           break;
       }
     },

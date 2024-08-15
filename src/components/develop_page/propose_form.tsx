@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useGlobalCtx } from '@/contexts/global_context';
+import { ToastType, ToastPosition } from '@/interfaces/toastify';
+import { ToastId } from '@/constants/toastify';
 
 const ProposeForm = () => {
   const { t } = useTranslation('common');
-  const { messageModalVisibleHandler, messageModalDataHandler } = useGlobalCtx();
+  const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -32,6 +34,21 @@ const ProposeForm = () => {
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (100 ISC)`,
       confirmHandler: () => {
         // ToDo: (20240813 - Julian) Submit proposal
+        // Info: (20240815 - Julian) Show toast & close message modal
+        toastHandler({
+          id: `${ToastId.PROPOSAL_SUCCESS}`,
+          type: ToastType.SUCCESS,
+          content: (
+            <div>
+              {t('TOAST.PROPOSE_TOPIC_SUCCESS_1')}
+              <span className="font-bold"> {inputTitle} </span>
+              {t('TOAST.PROPOSE_TOPIC_SUCCESS_2')}
+            </div>
+          ),
+          closeable: true,
+          position: ToastPosition.BOTTOM_LEFT,
+        });
+        messageModalVisibleHandler();
       },
     });
     messageModalVisibleHandler();

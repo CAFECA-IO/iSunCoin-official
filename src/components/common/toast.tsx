@@ -9,7 +9,6 @@ const Toast = () => {
       pauseOnHover
       theme="light"
       limit={5}
-      //  className={'toast-container'} // Info: (20240725 - Liz) 使用自定義樣式調整 toast container
     />
   );
 };

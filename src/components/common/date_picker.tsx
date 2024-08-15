@@ -153,7 +153,7 @@ const PopulateDates = ({
 
     return (
       <button
-        key={el?.date}
+        key={`${el?.date}`}
         type="button"
         disabled={isDisable}
         className={`relative z-10 h-30px w-full whitespace-nowrap text-base disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
@@ -356,7 +356,7 @@ const DatePicker = ({
       id="date_picker_button"
       type="button"
       onClick={openCalendarHandler}
-      className={`flex w-300px items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base ${isDateSelected ? 'date-picker-surface-date-selected' : 'text-date-picker-text-default'} `}
+      className={`flex w-300px items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base ${isDateSelected ? 'text-date-picker-surface-date-selected' : 'text-date-picker-text-default'} `}
     >
       <p>{displayedText}</p>
       <Image src="/icons/calendar.svg" alt="calendar_icon" width={20} height={20} />
