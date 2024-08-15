@@ -52,32 +52,34 @@ const PopulateDates = ({
 }: IPopulateDatesParams) => {
   const { t } = useTranslation('common');
 
-  // Info: (2020417 - Julian) 用於日期選取的樣式
+  // Info: (20240815 - Julian) 選取日期的橘色圓圈
   const selectedCircleStyle =
-    'before:absolute before:top-0 before:-z-10 before:w-30px before:h-30px before:rounded-full before:bg-date-picker-surface-date-selected';
+    'before:absolute before:top-0 before:-z-10 before:w-full before:h-30px before:rounded-full before:bg-date-picker-surface-date-selected';
 
-  // Info: (20240417 - Julian) 顯示星期標題
+  // Info: (20240815 - Julian) 顯示星期標題
   const weekNameList = WEEK_DAY_NAME_LIST.map((week) => (
     <p className="mx-auto h-35px w-35px text-primaryYellow" key={week}>
       {t(week)}
     </p>
   ));
 
-  // Info: (2020417 - Julian) 將時間戳記還原為當天日期且時間設置為 00:00:00 的時間戳記
+  // Info: (20240815 - Julian) 將時間戳記還原為當天日期且時間設置為 00:00:00 的時間戳記
   const resetTimestampToMidnight = (timestamp: number) => {
     const date = new Date(timestamp);
     date.setHours(0, 0, 0);
     return date.getTime();
   };
 
-  // Info: (20240417 - Julian) 顯示月份中的每一天
+  // Info: (20240815 - Julian) 顯示月份中的每一天
   const formatDaysInMonth = daysInMonth.map((el: Dates) => {
     const date = el ? new Date(`${selectedYear}/${selectedMonth}/${el.date} 00:00:00`) : null;
 
-    // Info: (20240417 - Julian) 因為 selectTimeTwo 是 23:59:59，所以還原時間設置為 00:00:00
+    const uniqueKey = el?.date || Math.random().toString(36).substring(7); // Info: (20240417 - Julian) 如果日期不存在，則用亂數產生 key
+
+    // Info: (20240815 - Julian) 因為 selectTimeTwo 是 23:59:59，所以還原時間設置為 00:00:00
     const selectTimeTwoReset = resetTimestampToMidnight(selectTimeTwo);
 
-    // Info: (20240417 - Julian) 已選擇區間的樣式
+    // Info: (20240815 - Julian) 已選擇區間的樣式
     const isSelectedPeriodStyle =
       selectTimeOne &&
       selectTimeTwoReset &&
@@ -88,19 +90,21 @@ const PopulateDates = ({
         ? 'bg-date-picker-surface-date-period'
         : '';
 
-    // Info: (20240417 - Julian) DateOne 和 DateTwo 的樣式
+    // Info: (20240417 - Julian) 日期樣式
     const isSelectedDateStyle = date?.getTime()
-      ? !selectTimeTwoReset && date.getTime() === selectTimeOne
-        ? // ToDo: (20240814 - Julian) 樣式怪怪的，要再調整
-          'rounded-full before:left-0 before:right-0 before:rounded-full before:bg-date-picker-surface-date-selected'
+      ? // Info: (20240417 - Julian) 區間日期的樣式 -> 淺色背景填滿
+        !selectTimeTwoReset && date.getTime() === selectTimeOne
+        ? 'rounded-full before:rounded-full before:bg-date-picker-surface-date-selected'
         : selectTimeOne && selectTimeTwoReset
-          ? date.getTime() === selectTimeOne && date.getTime() === selectTimeTwoReset
-            ? // ToDo: (20240814 - Julian) 樣式怪怪的，要再調整
-              'rounded-full before:left-0 before:right-0 before:rounded-full before:bg-date-picker-surface-date-selected'
-            : date.getTime() === selectTimeOne
-              ? `rounded-l-full before:left-0 ${selectedCircleStyle}`
-              : date.getTime() === selectTimeTwoReset
-                ? `rounded-r-full before:right-0 ${selectedCircleStyle}`
+          ? // Info: (20240814 - Julian) 日期一和日期二相同 -> 橘色圓圈
+            date.getTime() === selectTimeOne && date.getTime() === selectTimeTwoReset
+            ? 'rounded-full bg-date-picker-surface-date-selected'
+            : // Info: (20240815 - Julian) 日期一的樣式 -> 橘色圓圈 + 圓角左邊的淺色背景
+              date.getTime() === selectTimeOne
+              ? `rounded-l-full ${selectedCircleStyle}`
+              : // Info: (20240815 - Julian) 日期二的樣式 -> 橘色圓圈 + 圓角右邊的淺色背景
+                date.getTime() === selectTimeTwoReset
+                ? `rounded-r-full ${selectedCircleStyle}`
                 : ''
           : ''
       : '';
@@ -153,10 +157,10 @@ const PopulateDates = ({
 
     return (
       <button
-        key={el?.date}
+        key={uniqueKey}
         type="button"
         disabled={isDisable}
-        className={`relative z-10 h-30px w-full whitespace-nowrap text-base disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
+        className={`relative z-10 flex h-30px w-full items-center justify-center whitespace-nowrap text-base disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
         onClick={dateClickHandler}
       >
         {el?.date ?? ' '}
@@ -194,8 +198,6 @@ const DatePicker = ({
   const [dateTwo, setDateTwo] = useState<Date | null>(
     new Date(period.endTimeStamp * MILLISECONDS_IN_A_SECOND)
   );
-
-  const isDateSelected = dateOne && dateTwo && dateOne.getTime() !== 0 && dateTwo.getTime() !== 0;
 
   const [selectedMonth, setSelectedMonth] = useState(today.getMonth() + 1); // Info: (20240814 - Julian) 0 (January) to 11 (December).
   const [selectedYear, setSelectedYear] = useState(today.getFullYear());
@@ -353,10 +355,10 @@ const DatePicker = ({
 
   const displayedButtonContent = (
     <button
-      id="date_picker_button"
+      id="date-picker-button"
       type="button"
       onClick={openCalendarHandler}
-      className={`flex w-300px items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base ${isDateSelected ? 'date-picker-surface-date-selected' : 'text-date-picker-text-default'} `}
+      className={`flex w-300px items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base text-date-picker-text-default`}
     >
       <p>{displayedText}</p>
       <Image src="/icons/calendar.svg" alt="calendar_icon" width={20} height={20} />
@@ -369,7 +371,7 @@ const DatePicker = ({
       {/* Info: (20240814 - Julian) Calender part */}
       <div
         ref={targetRef}
-        className={`absolute left-0 top-50px flex flex-col gap-12px rounded-md bg-date-picker-surface-calendar-background px-32px py-24px shadow-downDropShadowM ${componentVisible ? 'opacity-100' : 'opacity-0'} transition-all duration-300 ease-in-out`}
+        className={`absolute left-0 top-50px flex flex-col gap-12px rounded-md bg-date-picker-surface-calendar-background px-32px py-24px shadow-downDropShadowM ${componentVisible ? 'visible opacity-100' : 'invisible opacity-0'} transition-all duration-300 ease-in-out`}
       >
         {/* Info: Info: (20240814 - Julian) Today button */}
         <button
