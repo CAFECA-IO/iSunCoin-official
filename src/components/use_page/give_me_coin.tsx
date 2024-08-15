@@ -103,7 +103,7 @@ const TabButton = ({ isActive, onClick, text }: TabButtonProps) => {
   return (
     <button
       type="button"
-      className={`flex-1 border-b-2 border-tabs-stroke-default text-tabs-text-default hover:border-tabs-stroke-hover hover:text-tabs-text-hover disabled:border-tabs-stroke-disable disabled:text-tabs-text-disable ${
+      className={`flex-1 border-b-2 hover:border-tabs-stroke-hover hover:text-tabs-text-hover disabled:border-tabs-stroke-disable disabled:text-tabs-text-disable ${
         isActive ? activeBtnStyle : inactiveBtnStyle
       }`}
       onClick={onClick}
