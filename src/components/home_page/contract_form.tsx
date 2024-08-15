@@ -78,7 +78,7 @@ const ContractForm = () => {
       };
 
       // Info: (20240809 - Julian) call API
-      const res = await fetch('/api/send', {
+      const res = await fetch('/api/v1/email', {
         method: 'POST',
         body: JSON.stringify(emailData),
         headers: {
