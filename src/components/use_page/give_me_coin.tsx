@@ -184,10 +184,14 @@ const GiveMeCoin = () => {
   return (
     <section className="space-y-24px p-80px">
       {/* title */}
-      <h1>{t('USE_PAGE.I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN')}</h1>
+      <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
+        {t('USE_PAGE.I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN')}
+      </h1>
 
       {/* description */}
-      <p>{t('USE_PAGE.WALLETS_DESCRIPTION')}</p>
+      <p className="text-center text-base font-normal text-text-neutral-secondary">
+        {t('USE_PAGE.WALLETS_DESCRIPTION')}
+      </p>
 
       {/* tab buttons */}
       <div className="flex gap-16px">
