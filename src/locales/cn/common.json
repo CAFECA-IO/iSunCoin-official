@@ -183,10 +183,6 @@
     "SAT": "六"
   },
 
-  "COMMON": {
-    "OF": "之"
-  },
-
   "HEADER": {
     "USE": "使用",
     "DEVELOP": "开发",
@@ -206,7 +202,8 @@
 
   "COMMON": {
     "COMING_SOON": "即将推出",
-    "TRY_IT_NOW": "试试看"
+    "TRY_IT_NOW": "试试看",
+    "OF": "之"
   },
 
   "USE_PAGE": {
@@ -236,6 +233,10 @@
     "HOW_MANY_STARTER_PAGES_EXAMPLES_ARE_THERE": "有多少个 Starter Pages 范例？",
     "IS_THERE_A_PRO_VERSION": "有专业版吗？",
     "ENTER_YOUR_PROMPT_AND_LET_AI_DRAW_FOR_YOU_REQUIRES_1_ISC": "输入提示，让 AI 为您绘制 (需要 1 ISC)",
-    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "输入主题，让 AI 为您广播 (需要 10 ISC)"
+    "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "输入主题，让 AI 为您广播 (需要 10 ISC)",
+
+    "I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN": "我不需要服务，只要给我阳光币",
+    "WALLETS_DESCRIPTION": "停止订阅 iSunCoin 节点上的服务以保留您的阳光币奖励。您可以直接在节点上查看挖矿历史记录，并将挖出的阳光币转移到其他加密货币钱包或冷钱包中妥善保管。",
+    "ALL": "全部"
   }
 }
