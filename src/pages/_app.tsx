@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { GlobalProvider } from '@/contexts/global_context';
 import '@/styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App({ Component, pageProps }: AppProps) {
   return (

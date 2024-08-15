@@ -210,6 +210,14 @@
     "VERSION": "Version"
   },
 
+  "TOAST": {
+    "PROPOSE_TOPIC_SUCCESS_1": "Your proposal",
+    "PROPOSE_TOPIC_SUCCESS_2": "has been submitted",
+    "VOTING_SUCCESS": "Voting successfully",
+    "CONTRACT_SENT_SUCCESS": "Your message has been sent successfully",
+    "CONTRACT_SENT_ERROR": "Something went wrong. Please try again!"
+  },
+
   "USE_PAGE": {
     "USING_ISUNCOIN": "Using iSunCoin",
     "USING_ISUNCOIN_DESCRIPTION": "iSunCoin aims to establish the world's largest shared artificial intelligence computing network. Machines running iSunCoin will share their idle computing resources, and users can rent these resources by paying with iSunCoin. This allows users to backup private data, quickly deploy public cloud services, or train and run their AI models. Embracing the spirit of mutual benefit and sharing, you only need to share your idle computing power to enjoy the following cloud computing services.",

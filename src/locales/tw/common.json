@@ -210,6 +210,14 @@
     "VERSION": "版本"
   },
 
+  "TOAST": {
+    "PROPOSE_TOPIC_SUCCESS_1": "您的提案",
+    "PROPOSE_TOPIC_SUCCESS_2": "已提交",
+    "VOTING_SUCCESS": "投票成功",
+    "CONTRACT_SENT_SUCCESS": "您的訊息已成功發送",
+    "CONTRACT_SENT_ERROR": "發生錯誤，請再試一次"
+  },
+
   "USE_PAGE": {
     "USING_ISUNCOIN": "使用陽光幣",
     "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧運算網路。運行iSunCoin的機器將共享其閒置的計算資源，用戶可以透過iSunCoin付費來租用這些資源。這允許用戶備份私有資料、快速部署公有雲服務、或訓練和運行他們的人工智慧模型。秉持互利共享的精神，您只需分享您的閒置運算資源即可享受以下雲端運算服務。",
