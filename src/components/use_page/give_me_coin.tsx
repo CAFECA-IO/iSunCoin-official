@@ -6,72 +6,84 @@ const wallets: WalletType[] = [
   {
     name: 'Meta Mask',
     walletAvatarUrl: '/wallet_avatar/meta_mask.svg',
+    websiteUrl: 'https://metamask.io/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: '98',
     walletAvatarUrl: '/wallet_avatar/98.svg',
+    websiteUrl: 'https://coin98.com/wallet',
     platforms: ['iOS', 'Android', 'Linux'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Binance Wallet',
     walletAvatarUrl: '/wallet_avatar/binance_wallet.svg',
+    websiteUrl: 'https://www.binance.com/en/web3wallet',
     platforms: ['iOS', 'Android', 'Linux', 'Windows'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Blocto',
     walletAvatarUrl: '/wallet_avatar/blocto.svg',
+    websiteUrl: 'https://blocto.io/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Brave Wallet',
     walletAvatarUrl: '/wallet_avatar/brave_wallet.svg',
+    websiteUrl: 'https://brave.com/wallet/',
     platforms: ['iOS', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Coinbase Wallet',
     walletAvatarUrl: '/wallet_avatar/coinbase_wallet.svg',
+    websiteUrl: 'https://www.coinbase.com/wallet',
     platforms: ['Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Math Wallet',
     walletAvatarUrl: '/wallet_avatar/math_wallet.svg',
+    websiteUrl: 'https://mathwallet.org/en-us/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Opera',
     walletAvatarUrl: '/wallet_avatar/opera.svg',
+    websiteUrl: 'https://www.opera.com/',
     platforms: ['iOS', 'Android', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Safepal',
     walletAvatarUrl: '/wallet_avatar/safepal.svg',
+    websiteUrl: 'https://www.safepal.com/en/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'TP',
     walletAvatarUrl: '/wallet_avatar/tp.svg',
+    websiteUrl: 'https://www.tokenpocket.pro/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Trust',
     walletAvatarUrl: '/wallet_avatar/trust.svg',
+    websiteUrl: 'https://trustwallet.com/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
   {
     name: 'Wallet Connect',
     walletAvatarUrl: '/wallet_avatar/wallet_connect.svg',
+    websiteUrl: 'https://walletconnect.com/',
     platforms: ['iOS', 'Android', 'Linux', 'Windows', 'Mac', 'Chromium'],
     languages: ['中文（台灣）', '越南文', '英文'],
   },
@@ -105,6 +117,7 @@ const TabButton = ({ isActive, onClick, text }: TabButtonProps) => {
 interface WalletType {
   name: string;
   walletAvatarUrl: string;
+  websiteUrl: string;
   platforms: string[];
   languages: string[];
 }
@@ -115,7 +128,12 @@ interface WalletProps {
 
 const Wallet = ({ wallet }: WalletProps) => {
   return (
-    <div className="flex h-200px w-300px flex-col justify-between rounded-lg bg-white p-20px">
+    <a
+      href={wallet.websiteUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-200px w-300px flex-col justify-between rounded-lg bg-white p-20px"
+    >
       <div className="flex items-center gap-14px">
         <Image src={wallet.walletAvatarUrl} alt={wallet.name} width={60} height={60} />
         <p className="text-base font-semibold">{wallet.name}</p>
@@ -130,7 +148,7 @@ const Wallet = ({ wallet }: WalletProps) => {
         <Image src="/icons/language_icon.svg" alt="language_icon" width={24} height={24}></Image>
         <p className="text-sm">{wallet.languages.join(', ') + '+14'}</p>
       </div>
-    </div>
+    </a>
   );
 };
 
@@ -147,7 +165,7 @@ const Wallets = ({ activeTab }: WalletsProps) => {
       : wallets.filter((wallet) => wallet.platforms.includes(activeTab));
 
   return (
-    <div className="grid grid-cols-4 gap-16px">
+    <div className="flex flex-wrap justify-center gap-16px">
       {filteredWallets.map((wallet) => (
         <Wallet key={wallet.name} wallet={wallet} />
       ))}
