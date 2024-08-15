@@ -6,6 +6,7 @@ import Image from 'next/image';
 import I18n from '@/components/common/i18n';
 import { useTranslation } from 'next-i18next';
 import LanguageMenu from '@/components/common/language_menu';
+import Search from '@/components/common/search';
 
 const DesktopVersion = () => {
   const { t } = useTranslation('common');
@@ -81,18 +82,7 @@ const DesktopVersion = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-        <div className="grow">
-          <input
-            type="text"
-            placeholder={t('HEADER.SEARCH')}
-            className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-          />
-        </div>
-        <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-          <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
-        </div>
-      </div>
+      <Search />
 
       {/* Language Selector Button */}
       <I18n />
@@ -144,18 +134,7 @@ const MobileVersion = () => {
         {/* Dropdown Menu */}
         <div className={showLanguageList ? 'hidden' : 'block'}>
           {/* Search Bar */}
-          <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-            <div className="grow">
-              <input
-                type="text"
-                placeholder={t('HEADER.SEARCH')}
-                className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-              />
-            </div>
-            <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-              <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
-            </div>
-          </div>
+          <Search />
 
           {/* Navigation Links */}
           <nav>
