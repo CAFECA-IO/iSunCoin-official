@@ -371,7 +371,7 @@ const DatePicker = ({
       {/* Info: (20240814 - Julian) Calender part */}
       <div
         ref={targetRef}
-        className={`absolute left-0 top-50px flex flex-col gap-12px rounded-md bg-date-picker-surface-calendar-background px-32px py-24px shadow-downDropShadowM ${componentVisible ? 'opacity-100' : 'opacity-0'} transition-all duration-300 ease-in-out`}
+        className={`absolute left-0 top-50px flex flex-col gap-12px rounded-md bg-date-picker-surface-calendar-background px-32px py-24px shadow-downDropShadowM ${componentVisible ? 'visible opacity-100' : 'invisible opacity-0'} transition-all duration-300 ease-in-out`}
       >
         {/* Info: Info: (20240814 - Julian) Today button */}
         <button

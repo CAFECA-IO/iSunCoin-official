@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { useGlobalCtx } from '@/contexts/global_context';
+import { useProposalCtx } from '@/contexts/proposal_context';
 import { ToastType, ToastPosition } from '@/interfaces/toastify';
 import { ToastId } from '@/constants/toastify';
 
 const ProposeForm = () => {
   const { t } = useTranslation('common');
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
+  const { isDuringProposal, currentPhase, remainingBlocks } = useProposalCtx();
+
+  const displayNextPhase = (currentPhase + 1).toString().padStart(6, '0');
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -55,7 +59,8 @@ const ProposeForm = () => {
   };
 
   return (
-    <div className="relative p-80px">
+    // Info:(20240815 - Julian) 如果是在提案期間，則 ProposeForm 將顯示在最上方
+    <div className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}
@@ -65,11 +70,14 @@ const ProposeForm = () => {
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
             <p className="text-lg font-bold text-text-brand-primary-lv1">
-              {t('DEVELOP_PAGE.PHASE_1')} 000002 {t('DEVELOP_PAGE.PHASE_2')}
+              {t('DEVELOP_PAGE.PHASE_1')} {displayNextPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
             <h2 className="text-36px font-semibold text-text-neutral-secondary">
               {t('DEVELOP_PAGE.PROPOSALS_START_1')}
-              <span className="text-64px font-bold text-text-neutral-primary"> 655360</span>{' '}
+              <span className="text-64px font-bold text-text-neutral-primary">
+                {' '}
+                {remainingBlocks}{' '}
+              </span>
               {t('DEVELOP_PAGE.PROPOSALS_START_2')}
             </h2>
           </div>
@@ -106,8 +114,9 @@ const ProposeForm = () => {
                   placeholder={t('DEVELOP_PAGE.FORM_TITLE_PLACEHOLDER')}
                   value={inputTitle}
                   onChange={handleTitleChange}
-                  className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder"
+                  className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:placeholder:text-input-text-disable"
                   required
+                  disabled={!isDuringProposal}
                 />
               </div>
               {/* Info:(20240813 - Julian) Proposal Content */}
@@ -120,31 +129,34 @@ const ProposeForm = () => {
                   placeholder={t('DEVELOP_PAGE.FORM_CONTENT_PLACEHOLDER')}
                   value={inputContent}
                   onChange={handleContentChange}
-                  className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder"
+                  className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:placeholder:text-input-text-disable"
                   required
+                  disabled={!isDuringProposal}
                 />
               </div>
               {/* Info:(20240813 - Julian) Checkbox */}
-              <div className="flex items-center gap-8px">
+              <label
+                htmlFor="proposal-checkbox"
+                className={`flex items-center gap-8px text-sm ${isDuringProposal ? 'text-checkbox-text-primary' : 'text-checkbox-text-disable'}`}
+              >
                 <input
                   id="proposal-checkbox"
                   type="checkbox"
                   checked={isChecked}
                   onChange={handleCheckboxChange}
-                  className="relative h-16px w-16px appearance-none rounded-xxs border border-navyBlue2 bg-white outline-none after:absolute after:top-0 after:-mt-3px after:ml-px after:hidden after:text-sm after:text-white after:content-checked checked:bg-navyBlue2 checked:after:block"
+                  className="relative h-16px w-16px appearance-none rounded-xxs border border-navyBlue2 bg-white outline-none after:absolute after:top-0 after:-mt-3px after:ml-px after:hidden after:text-sm after:text-white after:content-checked checked:bg-navyBlue2 checked:after:block disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:text-input-text-disable"
                   required
+                  disabled={!isDuringProposal}
                 />
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label htmlFor="proposal-checkbox" className="text-sm text-checkbox-text-primary">
-                  {t('DEVELOP_PAGE.CHECKBOX_TEXT')}
-                </label>
-              </div>
+                {t('DEVELOP_PAGE.CHECKBOX_TEXT')}
+              </label>
             </div>
             {/* Info:(20240813 - Julian) Button */}
             <button
               id="proposal-submit-button"
               type="submit"
-              className="ml-auto w-fit rounded-xs bg-button-surface-strong-primary px-32px py-14px text-button-text-primary-solid"
+              className="ml-auto w-fit rounded-xs bg-button-surface-strong-primary px-32px py-14px text-button-text-primary-solid disabled:bg-button-surface-strong-disable disabled:text-button-text-disable"
+              disabled={!isDuringProposal}
             >
               {t('DEVELOP_PAGE.SUBMIT_BUTTON')} (100 ISC)
             </button>
