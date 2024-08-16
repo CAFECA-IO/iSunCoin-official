@@ -102,7 +102,10 @@ const RealTimeData = () => {
   const bgColorP5 = `bg-darkRed`;
 
   return (
-    <div className="flex w-full flex-col items-center bg-surface-neutral-main-background">
+    <div
+      id="real-time-data"
+      className="flex w-full flex-col items-center bg-surface-neutral-main-background"
+    >
       {/* Info:(20240812 - Julian) Data */}
       <div className="flex w-full flex-col items-center gap-24px px-80px pb-40px pt-80px">
         <h1 className="text-xl font-bold text-text-neutral-primary">

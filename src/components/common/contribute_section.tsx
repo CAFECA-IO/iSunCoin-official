@@ -5,7 +5,10 @@ const ContributeSection = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className="flex w-full flex-col items-center justify-between gap-80px bg-surface-neutral-surface-lv2 px-80px py-40px md:flex-row">
+    <div
+      id="contribute"
+      className="flex w-full flex-col items-center justify-between gap-80px bg-surface-neutral-surface-lv2 px-80px py-40px md:flex-row"
+    >
       {/* Info:(20240808 - Julian) Image */}
       <div className="flex justify-end md:w-1/2">
         <Image src="/elements/contribute.png" width={480} height={480} alt="contribute_image" />
