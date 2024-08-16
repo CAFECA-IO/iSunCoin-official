@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { useGlobalCtx } from '@/contexts/global_context';
 import { ToastId } from '@/constants/toastify';
 import { ToastPosition, ToastType } from '@/interfaces/toastify';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const ContractForm = () => {
   const { t } = useTranslation('common');
@@ -92,7 +93,7 @@ const ContractForm = () => {
       };
 
       // Info: (20240809 - Julian) call API
-      const res = await fetch('/api/v1/email', {
+      const res = await fetch(ISUNCOIN_API_V1.EMAIL, {
         method: 'POST',
         body: JSON.stringify(emailData),
         headers: {
