@@ -1,12 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ThemeToggle = () => {
   const [isOn, setIsOn] = useState(false);
 
+  useEffect(() => {
+    // On mount, check the user's preference
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      setIsOn(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsOn(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isOn) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    setIsOn(!isOn);
+  };
+
   return (
     <div
       className={`flex h-36px w-66px flex-none cursor-pointer items-center rounded-full p-2px transition-colors duration-300 ease-in-out ${isOn ? 'bg-switch-surface-active' : 'bg-switch-surface-base'}`}
-      onClick={() => setIsOn(!isOn)}
+      onClick={toggleTheme}
     >
       <div
         className={`flex h-32px w-32px items-center justify-center rounded-full bg-white shadow-md transition-transform ease-in-out ${isOn ? 'translate-x-30px' : ''}`}

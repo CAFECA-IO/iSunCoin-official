@@ -26,7 +26,7 @@ const Slide2 = () => (
     <div className="flex gap-54px">
       <div className="flex basis-1/2 flex-col gap-40px pl-80px">
         <div>
-          <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">PRO</h3>
+          <h3 className="pb-16px text-9xl font-extrabold text-text-neutral-primary">PRO</h3>
           <p className="text-32px font-semibold text-text-neutral-secondary">
             Turning imagination into reality
           </p>
@@ -106,7 +106,7 @@ const Slide3 = () => (
     <div className="flex gap-54px">
       <div className="flex basis-1/2 flex-col gap-40px pl-80px">
         <div>
-          <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">MAX </h3>
+          <h3 className="pb-16px text-9xl font-extrabold text-text-neutral-primary">MAX </h3>
           <p className="text-32px font-semibold text-text-neutral-secondary">
             Making wishes come true
           </p>
@@ -186,7 +186,7 @@ const Slide4 = () => (
     <div className="flex">
       <div className="flex basis-1/4 flex-col gap-40px pl-80px">
         <div>
-          <h3 className="pb-16px text-9xl font-extrabold text-text-text-primary">Enterprise </h3>
+          <h3 className="pb-16px text-9xl font-extrabold text-text-neutral-primary">Enterprise </h3>
           <p className="text-32px font-semibold text-text-neutral-secondary">
             The power to lead the future
           </p>

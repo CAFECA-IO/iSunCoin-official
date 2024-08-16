@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Info: (20240816-Tzuhan) 意味著我們可以透過在 HTML element 上添加 dark 來控制暗黑模式
   content: ['./src/**/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -350,10 +351,6 @@ module.exports = {
           tertiary: 'var(--text-neutral-tertiary)',
         },
 
-        'text-text-primary': {
-          DEFAULT: 'var(--text-text-primary)',
-        },
-
         'text-state-error': {
           DEFAULT: 'var(--text-state-error)',
           invert: 'var(--text-state-error-invert)',
@@ -653,8 +650,8 @@ module.exports = {
         'switch-surface-base': 'var(--switch-surface-base)',
         'switch-surface-controller': 'var(--switch-surface-controller)',
         'switch-surface-disable': 'var(--switch-surface-disable)',
-        'switch-text-active': 'var(--switch-text-active)',
-        'switch-text-inactive': 'var(--switch-text-inactive)',
+        'switch-text-primary': 'var(--switch-text-primary)',
+        'switch-text-disable': 'var(--switch-text-disable)',
         'tabs-stroke-active': 'var(--tabs-stroke-active)',
         'tabs-stroke-default': 'var(--tabs-stroke-default)',
         'tabs-stroke-disable': 'var(--tabs-stroke-disable)',

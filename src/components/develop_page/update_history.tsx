@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { dummyUpdateHistoryList } from '@/interfaces/history';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
@@ -78,7 +77,7 @@ const UpdateHistory = () => {
             setPeriod={setSelectedPeriod}
           />
           {/* Info:(20240814 - Julian) Search bar */}
-          <div className="flex flex-1 items-center rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base">
+          <div className="flex flex-1 items-center rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base text-button-text-secondary">
             <input
               id="proposal-search-input"
               type="text"
@@ -87,7 +86,23 @@ const UpdateHistory = () => {
               placeholder={t('COMMON.SEARCH')}
               className="flex-1 bg-transparent outline-none placeholder:text-input-text-input-placeholder"
             />
-            <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20} />
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 20"
+              className="fill-current"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="wrapper">
+                <path
+                  id="Union"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M9.58574 3.25122C6.08794 3.25122 3.25241 6.08675 3.25241 9.58455C3.25241 13.0824 6.08794 15.9179 9.58574 15.9179C11.2885 15.9179 12.8344 15.2459 13.9725 14.1526C13.9969 14.1181 14.0246 14.0851 14.0555 14.0542C14.0864 14.0233 14.1193 13.9957 14.1539 13.9713C15.2471 12.8331 15.9191 11.2873 15.9191 9.58455C15.9191 6.08675 13.0835 3.25122 9.58574 3.25122ZM15.6298 14.5679C16.7476 13.2137 17.4191 11.4776 17.4191 9.58455C17.4191 5.25832 13.912 1.75122 9.58574 1.75122C5.25951 1.75122 1.75241 5.25832 1.75241 9.58455C1.75241 13.9108 5.25951 17.4179 9.58574 17.4179C11.4788 17.4179 13.215 16.7464 14.5692 15.6286L16.9721 18.0315C17.265 18.3244 17.7398 18.3244 18.0327 18.0316C18.3256 17.7387 18.3256 17.2638 18.0327 16.9709L15.6298 14.5679Z"
+                />
+              </g>
+            </svg>
           </div>
         </div>
         {/* Info:(20240814 - Julian) Update History List */}
