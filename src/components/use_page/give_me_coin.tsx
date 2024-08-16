@@ -182,7 +182,7 @@ const GiveMeCoin = () => {
   };
 
   return (
-    <section className="space-y-24px p-80px">
+    <section id="cold-wallets" className="space-y-24px p-80px">
       {/* title */}
       <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
         {t('USE_PAGE.I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN')}

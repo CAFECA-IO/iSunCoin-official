@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
+import { ISUNCOIN_ROUTES } from '@/constants/url';
 import ThemeToggle from '@/components/common/toggle/theme_toggle';
 import Image from 'next/image';
 import I18n from '@/components/common/i18n';
 import { useTranslation } from 'next-i18next';
 import LanguageMenu from '@/components/common/language_menu';
+import Search from '@/components/common/search';
 
 const DesktopVersion = () => {
   const { t } = useTranslation('common');
@@ -17,7 +18,7 @@ const DesktopVersion = () => {
         <ul className="flex items-center justify-between gap-10px">
           <li>
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.HOME_PAGE} className="flex items-center gap-8px">
+              <Link href={ISUNCOIN_ROUTES.HOME_PAGE} className="flex items-center gap-8px">
                 <Image
                   src="/logo/isuncoin_logo.svg"
                   alt="logo"
@@ -37,28 +38,28 @@ const DesktopVersion = () => {
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
+              <Link href={ISUNCOIN_ROUTES.USE_PAGE}>
                 <p className="text-lg font-medium">{t('HEADER.USE')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
+              <Link href={ISUNCOIN_ROUTES.DEVELOP_PAGE}>
                 <p className="text-lg font-medium">{t('HEADER.DEVELOP')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
+              <Link href={ISUNCOIN_ROUTES.AUTONOMY}>
                 <p className="text-lg font-medium">{t('HEADER.AUTONOMY')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
+              {/* <Link href={ISUNCOIN_ROUTES.RESEARCH}></Link> */}
               <p className="cursor-not-allowed text-lg font-medium text-tabs-text-disable">
                 {t('HEADER.RESEARCH')}
               </p>
@@ -81,18 +82,7 @@ const DesktopVersion = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-        <div className="grow">
-          <input
-            type="text"
-            placeholder={t('HEADER.SEARCH')}
-            className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-          />
-        </div>
-        <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-          <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
-        </div>
-      </div>
+      <Search />
 
       {/* Language Selector Button */}
       <I18n />
@@ -116,7 +106,7 @@ const MobileVersion = () => {
     <header className="fixed inset-x-0 top-0 z-40 flex flex-col justify-between bg-surface-neutral-surface-lv1 font-barlow shadow-header lg:hidden">
       <div className="flex h-88px items-center justify-between p-16px">
         <div>
-          <Link href={ISUNCOIN_ROUTE_V2.HOME_PAGE} className="flex items-center gap-8px">
+          <Link href={ISUNCOIN_ROUTES.HOME_PAGE} className="flex items-center gap-8px">
             <Image
               src="/logo/isuncoin_logo.svg"
               alt="logo"
@@ -144,18 +134,7 @@ const MobileVersion = () => {
         {/* Dropdown Menu */}
         <div className={showLanguageList ? 'hidden' : 'block'}>
           {/* Search Bar */}
-          <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-            <div className="grow">
-              <input
-                type="text"
-                placeholder={t('HEADER.SEARCH')}
-                className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-              />
-            </div>
-            <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
-              <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20}></Image>
-            </div>
-          </div>
+          <Search />
 
           {/* Navigation Links */}
           <nav>
@@ -163,7 +142,7 @@ const MobileVersion = () => {
             <ul>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
+                  <Link href={ISUNCOIN_ROUTES.USE_PAGE}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.USE')}
                     </p>
@@ -172,7 +151,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
+                  <Link href={ISUNCOIN_ROUTES.DEVELOP_PAGE}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.DEVELOP')}
                     </p>
@@ -181,7 +160,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
+                  <Link href={ISUNCOIN_ROUTES.AUTONOMY}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.AUTONOMY')}
                     </p>
@@ -190,7 +169,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
+                  {/* <Link href={ISUNCOIN_ROUTES.RESEARCH}></Link> */}
                   <p className="cursor-not-allowed text-lg font-medium text-tabs-text-disable">
                     {t('HEADER.RESEARCH')}
                   </p>
