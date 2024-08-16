@@ -21,12 +21,12 @@ const CurrentProposals = () => {
   const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
   const displayProposalList =
-    proposalList && proposalList.length ? (
+    proposalList && proposalList.length > 0 ? (
       proposalList.map((proposal) => <ProposalCard key={proposal.id} proposal={proposal} />)
     ) : (
       <div className="col-span-2 flex w-full flex-col items-center text-xl font-semibold text-card-text-tertiary">
         <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
-        <p>{t('COMMON.EMPTY')}</p>
+        <p>{t('DEVELOP_PAGE.NOT_PROPOSALS_YET')}</p>
       </div>
     );
 

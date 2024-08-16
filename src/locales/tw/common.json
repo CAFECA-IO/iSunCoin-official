@@ -121,6 +121,7 @@
     "PHASE_2": "期",
     "PROPOSALS_START_1": "提案將於",
     "PROPOSALS_START_2": "個區塊開始",
+    "NOT_PROPOSALS_YET": "目前還沒有提案唷",
     "VOTINGS_END_1": "投票將於",
     "VOTINGS_END_2": "個區塊結束",
     "FORM_TITLE": "我想提案",
@@ -131,7 +132,8 @@
     "FORM_CONTENT_PLACEHOLDER": "提案的詳細內容",
     "CHECKBOX_TEXT": "您需要支付 100 ISC 作為提案押金，當提案表決通過，押金才會退還；否則將進入獎勵池。",
     "SUBMIT_BUTTON": "提案",
-    "UPDATE_HISTORY": "更新歷史"
+    "UPDATE_HISTORY": "更新歷史",
+    "NOT_HISTORY_YET": "目前還沒有歷史記錄唷"
   },
 
   "MESSAGE_MODAL": {
@@ -207,7 +209,7 @@
     "OF": "之",
     "SEARCH": "搜尋",
     "VERSION": "版本",
-    "EMPTY": "無資料"
+    "EMPTY": "查無資料"
   },
 
   "TOAST": {

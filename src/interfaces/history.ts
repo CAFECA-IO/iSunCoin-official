@@ -5,3 +5,9 @@ export interface IHistory {
   updateTimestamp: number;
   content: string;
 }
+
+// Info: (20240816 - Julian) 包含總頁數
+export interface IHistoryData {
+  totalPages: number;
+  historyList: IHistory[];
+}

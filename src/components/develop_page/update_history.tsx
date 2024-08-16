@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
-import { IHistory } from '@/interfaces/history';
+import { IHistory, IHistoryData } from '@/interfaces/history';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import Pagination from '@/components/common/pagination';
 import DatePicker, { DatePickerType } from '@/components/common/date_picker';
@@ -15,16 +15,17 @@ const UpdateHistory = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedPeriod, setSelectedPeriod] = useState<IDatePeriod>(defaultDatePeriod);
-  const [historyList, setHistoryList] = useState<IHistory[]>([]);
+  const [historyData, setHistoryData] = useState<IHistoryData>();
   const [filteredHistoryList, setFilteredHistoryList] = useState<IHistory[]>([]);
 
   useEffect(() => {
     fetch(ISUNCOIN_API_V1.HISTORY)
       .then((response) => response.json())
-      .then((data) => setHistoryList(data));
+      .then((data) => setHistoryData(data));
   }, []);
 
-  const totalPages = 2; // ToDo: (20240814 - Julian) Get total pages from API
+  const totalPages = historyData ? historyData.totalPages : 0;
+  const historyList = historyData ? historyData.historyList : [];
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
@@ -54,10 +55,16 @@ const UpdateHistory = () => {
         }
       });
     setFilteredHistoryList(filteredList);
-  }, [searchInput, selectedPeriod, historyList]);
+  }, [searchInput, selectedPeriod, historyData]);
 
   const updateHistoryList =
-    filteredHistoryList && filteredHistoryList.length > 0 ? (
+    historyList.length <= 0 ? (
+      // Info: (20240816 - Julian) 目前還沒有資料
+      <div className="flex w-full flex-col items-center p-40px text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('DEVELOP_PAGE.NOT_HISTORY_YET')}</p>
+      </div>
+    ) : filteredHistoryList && filteredHistoryList.length > 0 ? (
       filteredHistoryList
         // Info: (20240814 - Julian) 根據更新時間排序
         .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
@@ -65,6 +72,7 @@ const UpdateHistory = () => {
         .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
         .map((history) => <UpdateHistoryItem key={history.id} history={history} />)
     ) : (
+      // Info: (20240816 - Julian) 查無資料
       <div className="flex w-full flex-col items-center p-40px text-xl font-semibold text-card-text-tertiary">
         <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
         <p>{t('COMMON.EMPTY')}</p>

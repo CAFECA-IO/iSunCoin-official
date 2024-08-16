@@ -121,6 +121,7 @@
     "PHASE_2": "期",
     "PROPOSALS_START_1": "提案将于",
     "PROPOSALS_START_2": "个区块开始",
+    "NOT_PROPOSALS_YET": "目前还没有提案哟",
     "VOTINGS_END_1": "投票将于",
     "VOTINGS_END_2": "个区块结束",
     "FORM_TITLE": "我想提案",
@@ -131,7 +132,8 @@
     "FORM_CONTENT_PLACEHOLDER": "提案的详细内容",
     "CHECKBOX_TEXT": "您需要支付 100 ISC 作为提案押金，当提案被批准时，押金将退还。否则将进入奖励池。",
     "SUBMIT_BUTTON": "提案",
-    "UPDATE_HISTORY": "更新历史"
+    "UPDATE_HISTORY": "更新历史",
+    "NOT_HISTORY_YET": "目前还没有历史记录哟"
   },
 
   "MESSAGE_MODAL": {
@@ -207,7 +209,7 @@
     "OF": "之",
     "SEARCH": "搜寻",
     "VERSION": "版本",
-    "EMPTY": "无资料"
+    "EMPTY": "查无资料"
   },
 
   "TOAST": {

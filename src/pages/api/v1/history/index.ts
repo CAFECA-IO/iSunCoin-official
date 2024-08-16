@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { IHistory } from '@/interfaces/history';
+import { IHistoryData, IHistory } from '@/interfaces/history';
 
 export default async function handler(
   request: NextApiRequest,
-  response: NextApiResponse<IHistory[]>
+  response: NextApiResponse<IHistoryData>
 ) {
-  const dummyUpdateHistoryList: IHistory[] = [
+  const dummyHistoryList: IHistory[] = [
     {
       id: 1,
       phase: '000001',
@@ -55,7 +55,12 @@ export default async function handler(
     },
   ];
 
+  const dummyHistoryData: IHistoryData = {
+    totalPages: 2,
+    historyList: dummyHistoryList,
+  };
+
   if (request.method === 'GET') {
-    response.status(200).json(dummyUpdateHistoryList);
+    response.status(200).json(dummyHistoryData);
   }
 }
