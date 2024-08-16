@@ -1,17 +1,25 @@
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
-import { dummyProposals } from '@/interfaces/proposal';
 import ProposalCard from '@/components/develop_page/proposal_card';
 import { useProposalCtx } from '@/contexts/proposal_context';
+import { IProposal } from '@/interfaces/proposal';
 
 const CurrentProposals = () => {
   const { t } = useTranslation('common');
+  const [proposalList, setProposalList] = useState<IProposal[]>([]);
+
+  useEffect(() => {
+    fetch('/api/v1/proposal')
+      .then((response) => response.json())
+      .then((data) => setProposalList(data));
+  }, []);
 
   const { isDuringProposal, currentPhase, remainingBlocks } = useProposalCtx();
 
   const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
-  const proposalList = dummyProposals.map((proposal) => (
+  const displayProposalList = proposalList.map((proposal) => (
     <ProposalCard key={proposal.id} proposal={proposal} />
   ));
 
@@ -52,7 +60,7 @@ const CurrentProposals = () => {
             {t('DEVELOP_PAGE.CURRENT_PROPOSALS')}
           </h2>
           <div className="grid w-full grid-flow-row grid-cols-1 gap-20px py-20px md:grid-cols-2">
-            {proposalList}
+            {displayProposalList}
           </div>
         </div>
       </div>
