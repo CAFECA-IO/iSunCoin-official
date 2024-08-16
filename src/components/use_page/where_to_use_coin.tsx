@@ -35,7 +35,7 @@ const WhereToUseCoin = () => {
   const [step, setStep] = useState(0);
 
   return (
-    <section className="bg-surface-neutral-surface-lv2">
+    <section id="use-isuncoin" className="bg-surface-neutral-surface-lv2">
       <div className="flex flex-col items-center gap-42px px-80px py-40px">
         <h1 className="text-36px font-semibold text-text-neutral-primary">
           {t('USE_PAGE.WHERE_TO_USE_ISUNCOIN')}

@@ -5,7 +5,7 @@ export const ISUNCOIN_ROUTE_V1 = {
   PRODUCTS: '/v1/products',
 };
 
-export const ISUNCOIN_ROUTE_V2 = {
+export const ISUNCOIN_ROUTES = {
   HOME_PAGE: '/',
   USE_PAGE: '/use',
   DEVELOP_PAGE: '/develop',
@@ -20,4 +20,20 @@ export const ISUNCOIN_API_V1 = {
   VOTE: '/api/v1/proposal/[proposalId]/vote', // Info: (20240816 - Julian) [POST] vote for a proposal
   PHASE: '/api/v1/phase', // Info: (20240816 - Julian) [GET] current phase
   EMAIL: '/api/v1/email', // Info: (20240816 - Julian) [POST] send email
+};
+
+export const ISUNCOIN_ANCHORS = {
+  // Home Page
+  DOWNLOAD: '/#download',
+  CONTACT: '/#contact',
+  REAL_TIME_DATA: '/#real-time-data',
+
+  // Use Page
+  CONTRIBUTE: '/use#contribute',
+  USE_ISUNCOIN: '/use#use-isuncoin',
+  COLD_WALLETS: '/use#cold-wallets',
+
+  // Develop Page
+  PROPOSALS: '/develop#proposals',
+  PROPOSE: '/develop#propose',
 };

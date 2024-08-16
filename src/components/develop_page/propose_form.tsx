@@ -74,7 +74,7 @@ const ProposeForm = () => {
 
   return (
     // Info:(20240815 - Julian) 如果是在提案期間，則 ProposeForm 將顯示在最上方
-    <div className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
+    <div id="propose" className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}
