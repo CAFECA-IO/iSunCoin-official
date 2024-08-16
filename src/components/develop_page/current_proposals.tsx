@@ -2,16 +2,22 @@ import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { dummyProposals } from '@/interfaces/proposal';
 import ProposalCard from '@/components/develop_page/proposal_card';
+import { useProposalCtx } from '@/contexts/proposal_context';
 
 const CurrentProposals = () => {
   const { t } = useTranslation('common');
+
+  const { isDuringProposal, currentPhase, remainingBlocks } = useProposalCtx();
+
+  const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
   const proposalList = dummyProposals.map((proposal) => (
     <ProposalCard key={proposal.id} proposal={proposal} />
   ));
 
   return (
-    <div className="relative p-80px">
+    // Info:(20240815 - Julian) 如果不是提案期間，則 CurrentProposals 將顯示在最上方
+    <div className={`relative p-80px ${isDuringProposal ? '' : 'order-first'}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}
@@ -21,11 +27,14 @@ const CurrentProposals = () => {
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
             <p className="text-lg font-bold text-text-brand-primary-lv1">
-              {t('DEVELOP_PAGE.PHASE_1')} 000001 {t('DEVELOP_PAGE.PHASE_2')}
+              {t('DEVELOP_PAGE.PHASE_1')} {displayCurrentPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
             <h2 className="text-36px font-semibold text-text-neutral-secondary">
               {t('DEVELOP_PAGE.VOTINGS_END_1')}
-              <span className="text-64px font-bold text-text-neutral-primary"> 655360 </span>
+              <span className="text-64px font-bold text-text-neutral-primary">
+                {' '}
+                {remainingBlocks}{' '}
+              </span>
               {t('DEVELOP_PAGE.VOTINGS_END_2')}
             </h2>
           </div>

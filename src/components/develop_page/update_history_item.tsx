@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import { IHistory } from '@/interfaces/history';
 import { timestampToString } from '@/lib/utils/common';
 
 const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
+  const { t } = useTranslation('common');
   const { phase, version, updateTimestamp, content } = history;
 
   const {
@@ -23,9 +25,13 @@ const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
         onClick={handleToggle}
         className={`flex h-96px cursor-pointer items-center justify-between px-40px py-32px text-xl font-semibold ${isOpen ? 'text-accordion-surface-background-text-title-active' : 'text-accordion-surface-background-text-title'} `}
       >
-        <h3>Phase {phase}</h3>
+        <h3>
+          {t('DEVELOP_PAGE.PHASE_1')} {phase} {t('DEVELOP_PAGE.PHASE_2')}
+        </h3>
         <div className="flex items-center gap-10px">
-          <p>Version {version}</p>
+          <p>
+            {t('COMMON.VERSION')} {version}
+          </p>
           <p>|</p>
           <p
             className={

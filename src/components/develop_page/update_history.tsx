@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 import { dummyUpdateHistoryList } from '@/interfaces/history';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import Pagination from '@/components/common/pagination';
@@ -8,6 +9,8 @@ import { ITEMS_PER_PAGE } from '@/constants/config';
 import { IDatePeriod, defaultDatePeriod } from '@/interfaces/date_period';
 
 const UpdateHistory = () => {
+  const { t } = useTranslation('common');
+
   const [searchInput, setSearchInput] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedPeriod, setSelectedPeriod] = useState<IDatePeriod>(defaultDatePeriod);
@@ -56,13 +59,15 @@ const UpdateHistory = () => {
         .map((history) => <UpdateHistoryItem key={history.id} history={history} />)
     ) : (
       <div className="flex w-full items-center justify-center py-40px text-2xl font-medium text-text-neutral-secondary">
-        No update history found
+        {t('DEVELOP_PAGE.HISTORY_NOT_FOUND')}
       </div>
     );
 
   return (
     <div className="flex flex-col items-center gap-60px px-80px py-40px">
-      <h2 className="text-44px font-bold text-text-neutral-primary">Update History</h2>
+      <h2 className="text-44px font-bold text-text-neutral-primary">
+        {t('DEVELOP_PAGE.UPDATE_HISTORY')}
+      </h2>
       <div className="flex w-full flex-col items-center gap-60px">
         {/* Info:(20240814 - Julian) Filter */}
         <div className="flex w-full items-center justify-between gap-100px">
@@ -79,7 +84,7 @@ const UpdateHistory = () => {
               type="text"
               value={searchInput}
               onChange={handleSearch}
-              placeholder="Search"
+              placeholder={t('COMMON.SEARCH')}
               className="flex-1 bg-transparent outline-none placeholder:text-input-text-input-placeholder"
             />
             <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20} />

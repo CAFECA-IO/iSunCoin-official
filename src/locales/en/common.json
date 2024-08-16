@@ -130,7 +130,9 @@
     "FORM_CONTENT_TEXT": "Proposals",
     "FORM_CONTENT_PLACEHOLDER": "Detail of your proposal",
     "CHECKBOX_TEXT": "You need to deposit 100 ISC to propose, it would only be refund when your proposals is approved. otherwise it will goes to reward pool.",
-    "SUBMIT_BUTTON": "Propose"
+    "SUBMIT_BUTTON": "Propose",
+    "UPDATE_HISTORY": "Update History",
+    "HISTORY_NOT_FOUND": "No update history found"
   },
 
   "MESSAGE_MODAL": {
@@ -203,7 +205,17 @@
   "COMMON": {
     "COMING_SOON": "Coming Soon",
     "TRY_IT_NOW": "Try it Now",
-    "OF": "of"
+    "OF": "of",
+    "SEARCH": "Search",
+    "VERSION": "Version"
+  },
+
+  "TOAST": {
+    "PROPOSE_TOPIC_SUCCESS_1": "Your proposal",
+    "PROPOSE_TOPIC_SUCCESS_2": "has been submitted",
+    "VOTING_SUCCESS": "Voting successfully",
+    "CONTRACT_SENT_SUCCESS": "Your message has been sent successfully",
+    "CONTRACT_SENT_ERROR": "Something went wrong. Please try again!"
   },
 
   "USE_PAGE": {
