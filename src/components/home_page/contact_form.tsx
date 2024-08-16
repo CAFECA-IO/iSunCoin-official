@@ -6,7 +6,7 @@ import { ToastId } from '@/constants/toastify';
 import { ToastPosition, ToastType } from '@/interfaces/toastify';
 import { ISUNCOIN_API_V1 } from '@/constants/url';
 
-const ContractForm = () => {
+const ContactForm = () => {
   const { t } = useTranslation('common');
   const { toastHandler } = useGlobalCtx();
 
@@ -49,9 +49,9 @@ const ContractForm = () => {
   const successProcess = () => {
     // Info: (20240815 - Julian) 成功的土司
     toastHandler({
-      id: ToastId.CONTRACT_SUCCESS,
+      id: ToastId.CONTACT_SUCCESS,
       type: ToastType.SUCCESS,
-      content: t('TOAST.CONTRACT_SENT_SUCCESS'),
+      content: t('TOAST.CONTACT_SENT_SUCCESS'),
       closeable: true,
       position: ToastPosition.BOTTOM_LEFT,
     });
@@ -68,9 +68,9 @@ const ContractForm = () => {
   const failedProcess = () => {
     // Info: (20240815 - Julian) 失敗的土司
     toastHandler({
-      id: ToastId.CONTRACT_ERROR,
+      id: ToastId.CONTACT_ERROR,
       type: ToastType.ERROR,
-      content: t('TOAST.CONTRACT_SENT_ERROR'),
+      content: t('TOAST.CONTACT_SENT_ERROR'),
       closeable: true,
       position: ToastPosition.BOTTOM_LEFT,
     });
@@ -118,7 +118,7 @@ const ContractForm = () => {
     <div className="flex flex-col-reverse items-center justify-center gap-12px bg-surface-neutral-main-background px-80px py-40px md:flex-row">
       {/* Info:(20240809 - Julian) Form ticket */}
       <div className="flex w-90vw flex-col gap-48px rounded-lg bg-stroke-neutral-invert p-48px font-semibold text-input-text-primary shadow-downDropShadowM md:w-550px">
-        <h2 className="text-44px">{t('HOME_PAGE.CONTRACT_TITLE')}</h2>
+        <h2 className="text-44px">{t('HOME_PAGE.CONTACT_TITLE')}</h2>
         {/* Info:(20240809 - Julian) Form */}
         <form
           onSubmit={submitHandler}
@@ -132,26 +132,26 @@ const ContractForm = () => {
           </div>
           {/* Info:(20240809 - Julian) First Name */}
           <div className="flex flex-col gap-8px text-sm">
-            <p>{t('HOME_PAGE.CONTRACT_FIRST_NAME')}</p>
+            <p>{t('HOME_PAGE.CONTACT_FIRST_NAME')}</p>
             <input
               id="first-name-input"
               type="text"
               value={firstNameInput}
               onChange={handleFirstNameInput}
-              placeholder={t('HOME_PAGE.CONTRACT_FIRST_NAME')}
+              placeholder={t('HOME_PAGE.CONTACT_FIRST_NAME')}
               required
               className="w-full rounded-sm border border-input-stroke-input p-8px px-12px py-10px font-medium outline-none"
             />
           </div>
           {/* Info:(20240809 - Julian) Last Name */}
           <div className="flex flex-col gap-8px text-sm">
-            <p>{t('HOME_PAGE.CONTRACT_LAST_NAME')}</p>
+            <p>{t('HOME_PAGE.CONTACT_LAST_NAME')}</p>
             <input
               id="last-name-input"
               type="text"
               value={lastNameInput}
               onChange={handleLastNameInput}
-              placeholder={t('HOME_PAGE.CONTRACT_LAST_NAME')}
+              placeholder={t('HOME_PAGE.CONTACT_LAST_NAME')}
               required
               className="w-full rounded-sm border border-input-stroke-input p-8px px-12px py-10px font-medium outline-none"
             />
@@ -159,11 +159,11 @@ const ContractForm = () => {
           {/* Info:(20240809 - Julian) Email */}
           <div className="col-span-2 flex flex-col gap-8px text-sm">
             <p>
-              {t('HOME_PAGE.CONTRACT_EMAIL')}
+              {t('HOME_PAGE.CONTACT_EMAIL')}
               <span
                 className={`${emailIsValid ? 'opacity-0' : 'opacity-100'} ml-10px text-xs text-rose-500`}
               >
-                {t('HOME_PAGE.CONTRACT_EMAIL_VERIFY')}
+                {t('HOME_PAGE.CONTACT_EMAIL_VERIFY')}
               </span>
             </p>
             <input
@@ -178,7 +178,7 @@ const ContractForm = () => {
           </div>
           {/* Info:(20240809 - Julian) Phone Number */}
           <div className="col-span-2 flex flex-col gap-8px text-sm">
-            <p>{t('HOME_PAGE.CONTRACT_PHONE')}</p>
+            <p>{t('HOME_PAGE.CONTACT_PHONE')}</p>
             <input
               id="phone-input"
               type="text"
@@ -191,13 +191,13 @@ const ContractForm = () => {
           </div>
           {/* Info:(20240809 - Julian) Detail */}
           <div className="col-span-2 flex flex-col gap-8px text-sm">
-            <p>{t('HOME_PAGE.CONTRACT_DETAIL')}</p>
+            <p>{t('HOME_PAGE.CONTACT_DETAIL')}</p>
             <textarea
               id="detail-input"
               value={detailInput}
               onChange={handleDetailInput}
               rows={4}
-              placeholder={t('HOME_PAGE.CONTRACT_DETAIL_PLACEHOLDER')}
+              placeholder={t('HOME_PAGE.CONTACT_DETAIL_PLACEHOLDER')}
               required
               className="w-full rounded-sm border border-input-stroke-input p-8px px-12px py-10px font-medium outline-none"
             />
@@ -210,7 +210,7 @@ const ContractForm = () => {
               disabled={!emailIsValid}
               className="flex items-center gap-8px rounded-xs bg-button-surface-strong-primary px-24px py-10px text-button-text-primary-solid hover:bg-button-surface-strong-primary-hover disabled:bg-button-surface-strong-disable disabled:text-button-text-disable"
             >
-              <p className="text-base">{t('HOME_PAGE.CONTRACT_SUBMIT')}</p>
+              <p className="text-base">{t('HOME_PAGE.CONTACT_SUBMIT')}</p>
               <svg
                 width="24"
                 height="25"
@@ -239,4 +239,4 @@ const ContractForm = () => {
   );
 };
 
-export default ContractForm;
+export default ContactForm;

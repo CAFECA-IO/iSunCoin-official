@@ -31,15 +31,15 @@
     "REAL_TIME_24_HR_MINED": "Mined Blocks in 24 H",
     "CONTRIBUTE_TITLE": "Contribute to iSunCoin.com",
     "CONTRIBUTE_DESCRIPTION": "This website adheres to the \"Public Domain Contribution Declaration\" (CC0) and provides technical support and explanations for iSunCoin in a non-profit manner while promoting related applications. You can propose editing suggestions, recommend fantastic new features, or assist with debugging for all content on this website.",
-    "CONTRACT_TITLE": "Get In Touch",
-    "CONTRACT_FIRST_NAME": "First Name",
-    "CONTRACT_LAST_NAME": "Last Name",
-    "CONTRACT_EMAIL": "Email",
-    "CONTRACT_EMAIL_VERIFY": "Invalid email format",
-    "CONTRACT_PHONE": "Phone Number",
-    "CONTRACT_DETAIL": "Detail",
-    "CONTRACT_DETAIL_PLACEHOLDER": "What do you want to tell us.",
-    "CONTRACT_SUBMIT": "Send"
+    "CONTACT_TITLE": "Get In Touch",
+    "CONTACT_FIRST_NAME": "First Name",
+    "CONTACT_LAST_NAME": "Last Name",
+    "CONTACT_EMAIL": "Email",
+    "CONTACT_EMAIL_VERIFY": "Invalid email format",
+    "CONTACT_PHONE": "Phone Number",
+    "CONTACT_DETAIL": "Detail",
+    "CONTACT_DETAIL_PLACEHOLDER": "What do you want to tell us.",
+    "CONTACT_SUBMIT": "Send"
   },
 
   "AUTONOMY_PAGE": {
@@ -216,8 +216,8 @@
     "PROPOSE_TOPIC_SUCCESS_1": "Your proposal",
     "PROPOSE_TOPIC_SUCCESS_2": "has been submitted",
     "VOTING_SUCCESS": "Voting successfully",
-    "CONTRACT_SENT_SUCCESS": "Your message has been sent successfully",
-    "CONTRACT_SENT_ERROR": "Something went wrong. Please try again!"
+    "CONTACT_SENT_SUCCESS": "Your message has been sent successfully",
+    "CONTACT_SENT_ERROR": "Something went wrong. Please try again!"
   },
 
   "USE_PAGE": {
