@@ -12,3 +12,8 @@ export const ISUNCOIN_ROUTE_V2 = {
   AUTONOMY: '/autonomy',
   // ToDo: (20240808 - Liz) RESEARCH: '/research',
 };
+
+export const ISUNCOIN_API_V1 = {
+  PROPOSAL: '/api/v1/proposal',
+  HISTORY: '/api/v1/history',
+};

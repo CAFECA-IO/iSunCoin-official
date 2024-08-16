@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
-import { dummyUpdateHistoryList } from '@/interfaces/history';
+import { IHistory } from '@/interfaces/history';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import Pagination from '@/components/common/pagination';
 import DatePicker, { DatePickerType } from '@/components/common/date_picker';
 import { ITEMS_PER_PAGE } from '@/constants/config';
 import { IDatePeriod, defaultDatePeriod } from '@/interfaces/date_period';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const UpdateHistory = () => {
   const { t } = useTranslation('common');
@@ -14,8 +15,14 @@ const UpdateHistory = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedPeriod, setSelectedPeriod] = useState<IDatePeriod>(defaultDatePeriod);
+  const [historyList, setHistoryList] = useState<IHistory[]>([]);
+  const [filteredHistoryList, setFilteredHistoryList] = useState<IHistory[]>([]);
 
-  const [filteredHistoryList, setFilteredHistoryList] = useState(dummyUpdateHistoryList);
+  useEffect(() => {
+    fetch(ISUNCOIN_API_V1.HISTORY)
+      .then((response) => response.json())
+      .then((data) => setHistoryList(data));
+  }, []);
 
   const totalPages = 2; // ToDo: (20240814 - Julian) Get total pages from API
 
@@ -24,7 +31,7 @@ const UpdateHistory = () => {
   };
 
   useEffect(() => {
-    const filteredList = dummyUpdateHistoryList
+    const filteredList = historyList
       .filter((history) => {
         return (
           // Info: (20240814 - Julian) 搜尋內容
@@ -47,7 +54,7 @@ const UpdateHistory = () => {
         }
       });
     setFilteredHistoryList(filteredList);
-  }, [searchInput, selectedPeriod]);
+  }, [searchInput, selectedPeriod, historyList]);
 
   const updateHistoryList =
     filteredHistoryList && filteredHistoryList.length > 0 ? (

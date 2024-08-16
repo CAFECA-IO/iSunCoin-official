@@ -4,13 +4,14 @@ import { useTranslation } from 'next-i18next';
 import ProposalCard from '@/components/develop_page/proposal_card';
 import { useProposalCtx } from '@/contexts/proposal_context';
 import { IProposal } from '@/interfaces/proposal';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const CurrentProposals = () => {
   const { t } = useTranslation('common');
   const [proposalList, setProposalList] = useState<IProposal[]>([]);
 
   useEffect(() => {
-    fetch('/api/v1/proposal')
+    fetch(ISUNCOIN_API_V1.PROPOSAL)
       .then((response) => response.json())
       .then((data) => setProposalList(data));
   }, []);
