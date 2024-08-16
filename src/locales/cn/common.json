@@ -131,8 +131,7 @@
     "FORM_CONTENT_PLACEHOLDER": "提案的详细内容",
     "CHECKBOX_TEXT": "您需要支付 100 ISC 作为提案押金，当提案被批准时，押金将退还。否则将进入奖励池。",
     "SUBMIT_BUTTON": "提案",
-    "UPDATE_HISTORY": "更新历史",
-    "HISTORY_NOT_FOUND": "未找到更新历史"
+    "UPDATE_HISTORY": "更新历史"
   },
 
   "MESSAGE_MODAL": {
@@ -207,7 +206,8 @@
     "TRY_IT_NOW": "试试看",
     "OF": "之",
     "SEARCH": "搜寻",
-    "VERSION": "版本"
+    "VERSION": "版本",
+    "EMPTY": "无资料"
   },
 
   "TOAST": {

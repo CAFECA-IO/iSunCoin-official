@@ -65,8 +65,9 @@ const UpdateHistory = () => {
         .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
         .map((history) => <UpdateHistoryItem key={history.id} history={history} />)
     ) : (
-      <div className="flex w-full items-center justify-center py-40px text-2xl font-medium text-text-neutral-secondary">
-        {t('DEVELOP_PAGE.HISTORY_NOT_FOUND')}
+      <div className="flex w-full flex-col items-center p-40px text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('COMMON.EMPTY')}</p>
       </div>
     );
 

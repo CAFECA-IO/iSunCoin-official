@@ -20,9 +20,15 @@ const CurrentProposals = () => {
 
   const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
-  const displayProposalList = proposalList.map((proposal) => (
-    <ProposalCard key={proposal.id} proposal={proposal} />
-  ));
+  const displayProposalList =
+    proposalList && proposalList.length ? (
+      proposalList.map((proposal) => <ProposalCard key={proposal.id} proposal={proposal} />)
+    ) : (
+      <div className="col-span-2 flex w-full flex-col items-center text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('COMMON.EMPTY')}</p>
+      </div>
+    );
 
   return (
     // Info:(20240815 - Julian) 如果不是提案期間，則 CurrentProposals 將顯示在最上方
