@@ -16,4 +16,5 @@ export const ISUNCOIN_ROUTE_V2 = {
 export const ISUNCOIN_API_V1 = {
   PROPOSAL: '/api/v1/proposal',
   HISTORY: '/api/v1/history',
+  PROPOSE: '/api/v1/proposal/propose',
 };
