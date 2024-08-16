@@ -14,8 +14,9 @@ export const ISUNCOIN_ROUTE_V2 = {
 };
 
 export const ISUNCOIN_API_V1 = {
-  PROPOSAL: '/api/v1/proposal',
-  HISTORY: '/api/v1/history',
-  PROPOSE: '/api/v1/proposal/propose',
-  VOTE: '/api/v1/proposal/[proposalId]/vote',
+  PROPOSAL: '/api/v1/proposal', // Info: (20240816 - Julian) [GET] all proposal list
+  HISTORY: '/api/v1/history', // Info: (20240816 - Julian) [GET] all history list
+  PROPOSE: '/api/v1/proposal/propose', // Info: (20240816 - Julian) [POST] new proposal
+  VOTE: '/api/v1/proposal/[proposalId]/vote', // Info: (20240816 - Julian) [POST] vote for a proposal
+  PHASE: '/api/v1/phase', // Info: (20240816 - Julian) [GET] current phase
 };
