@@ -23,17 +23,17 @@ export const ISUNCOIN_API_V1 = {
 };
 
 export const ISUNCOIN_ANCHORS = {
-  // Home Page
+  // Info: (20240816 - Julian) Home Page
   DOWNLOAD: '/#download',
   CONTACT: '/#contact',
   REAL_TIME_DATA: '/#real-time-data',
 
-  // Use Page
+  // Info: (20240816 - Julian) Use Page
   CONTRIBUTE: '/use#contribute',
   USE_ISUNCOIN: '/use#use-isuncoin',
   COLD_WALLETS: '/use#cold-wallets',
 
-  // Develop Page
+  // Info: (20240816 - Julian) Develop Page
   PROPOSALS: '/develop#proposals',
   PROPOSE: '/develop#propose',
 };
