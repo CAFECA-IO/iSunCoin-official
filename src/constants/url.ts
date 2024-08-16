@@ -13,18 +13,27 @@ export const ISUNCOIN_ROUTES = {
   // ToDo: (20240808 - Liz) RESEARCH: '/research',
 };
 
+export const ISUNCOIN_API_V1 = {
+  PROPOSAL: '/api/v1/proposal', // Info: (20240816 - Julian) [GET] all proposal list
+  HISTORY: '/api/v1/history', // Info: (20240816 - Julian) [GET] all history list
+  PROPOSE: '/api/v1/proposal/propose', // Info: (20240816 - Julian) [POST] new proposal
+  VOTE: '/api/v1/proposal/[proposalId]/vote', // Info: (20240816 - Julian) [POST] vote for a proposal
+  PHASE: '/api/v1/phase', // Info: (20240816 - Julian) [GET] current phase
+  EMAIL: '/api/v1/email', // Info: (20240816 - Julian) [POST] send email
+};
+
 export const ISUNCOIN_ANCHORS = {
-  // Home Page
+  // Info: (20240816 - Julian) Home Page
   DOWNLOAD: '/#download',
   CONTACT: '/#contact',
   REAL_TIME_DATA: '/#real-time-data',
 
-  // Use Page
+  // Info: (20240816 - Julian) Use Page
   CONTRIBUTE: '/use#contribute',
   USE_ISUNCOIN: '/use#use-isuncoin',
   COLD_WALLETS: '/use#cold-wallets',
 
-  // Develop Page
+  // Info: (20240816 - Julian) Develop Page
   PROPOSALS: '/develop#proposals',
   PROPOSE: '/develop#propose',
 };

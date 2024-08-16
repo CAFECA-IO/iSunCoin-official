@@ -1,19 +1,34 @@
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
-import { dummyProposals } from '@/interfaces/proposal';
 import ProposalCard from '@/components/develop_page/proposal_card';
 import { useProposalCtx } from '@/contexts/proposal_context';
+import { IProposal } from '@/interfaces/proposal';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const CurrentProposals = () => {
   const { t } = useTranslation('common');
+  const [proposalList, setProposalList] = useState<IProposal[]>([]);
+
+  useEffect(() => {
+    fetch(ISUNCOIN_API_V1.PROPOSAL)
+      .then((response) => response.json())
+      .then((data) => setProposalList(data));
+  }, []);
 
   const { isDuringProposal, currentPhase, remainingBlocks } = useProposalCtx();
 
   const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
-  const proposalList = dummyProposals.map((proposal) => (
-    <ProposalCard key={proposal.id} proposal={proposal} />
-  ));
+  const displayProposalList =
+    proposalList && proposalList.length > 0 ? (
+      proposalList.map((proposal) => <ProposalCard key={proposal.id} proposal={proposal} />)
+    ) : (
+      <div className="col-span-2 flex w-full flex-col items-center text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('DEVELOP_PAGE.NOT_PROPOSALS_YET')}</p>
+      </div>
+    );
 
   return (
     // Info:(20240815 - Julian) 如果不是提案期間，則 CurrentProposals 將顯示在最上方
@@ -52,7 +67,7 @@ const CurrentProposals = () => {
             {t('DEVELOP_PAGE.CURRENT_PROPOSALS')}
           </h2>
           <div className="grid w-full grid-flow-row grid-cols-1 gap-20px py-20px md:grid-cols-2">
-            {proposalList}
+            {displayProposalList}
           </div>
         </div>
       </div>

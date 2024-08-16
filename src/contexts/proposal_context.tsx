@@ -1,4 +1,5 @@
-import React, { useState, createContext } from 'react';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
+import React, { useState, useEffect, createContext } from 'react';
 
 interface IProposalContext {
   isDuringProposal: boolean;
@@ -13,13 +14,21 @@ export interface IProposalProvider {
 const ProposalContext = createContext<IProposalContext | undefined>(undefined);
 
 export const ProposalProvider = ({ children }: IProposalProvider) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isDuringProposal, setIsDuringProposal] = useState(false); // ToDo: (20240815 - Julian) 從 API 取得提案期間
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentPhase, setCurrentPhase] = useState(3); // ToDo: (20240815 - Julian) 從 API 取得當前期數
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [remainingBlocks, setRemainingBlocks] = useState(465368); // ToDo: (20240815 - Julian) 從 API 取得剩餘區塊數
+  const [isDuringProposal, setIsDuringProposal] = useState(false);
+  const [currentPhase, setCurrentPhase] = useState(0);
+  const [remainingBlocks, setRemainingBlocks] = useState(0);
 
+  useEffect(() => {
+    fetch(ISUNCOIN_API_V1.PHASE)
+      .then((response) => response.json())
+      .then((data) => {
+        setIsDuringProposal(data.isDuringProposal);
+        setCurrentPhase(data.phase);
+        setRemainingBlocks(data.remainingBlocks);
+      });
+  }, []);
+
+  // Deprecated: (20240816 - Julian) for develop
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     isDuringProposal,
