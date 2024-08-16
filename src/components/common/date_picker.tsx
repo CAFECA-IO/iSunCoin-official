@@ -392,7 +392,7 @@ const DatePicker = ({
         <button
           type="button"
           onClick={todayClickHandler}
-          className="w-full rounded border border-secondaryBlue p-1 text-sm text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+          className="w-full rounded border border-button-stroke-secondary p-1 text-sm text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
         >
           {t('DATE_PICKER.TODAY')}
         </button>
@@ -402,7 +402,7 @@ const DatePicker = ({
           <button
             type="button"
             onClick={goToPrevMonth}
-            className="rounded border border-secondaryBlue p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
           >
             <svg
               width="16"
@@ -432,7 +432,7 @@ const DatePicker = ({
           <button
             type="button"
             onClick={goToNextMonth}
-            className="rounded border border-secondaryBlue p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
           >
             <svg
               width="16"
