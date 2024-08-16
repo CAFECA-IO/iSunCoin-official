@@ -28,6 +28,7 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
       });
   }, []);
 
+  // Deprecated: (20240816 - Julian) for develop
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     isDuringProposal,
