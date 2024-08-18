@@ -35,7 +35,10 @@ const ParticipateSection = () => {
   ));
 
   return (
-    <div className="flex w-full flex-col-reverse items-center justify-between bg-surface-neutral-surface-lv2 md:flex-row">
+    <div
+      id="download"
+      className="flex w-full flex-col-reverse items-center justify-between bg-surface-neutral-surface-lv2 md:flex-row"
+    >
       {/* Info:(20240808 - Julian) Text */}
       <div className="flex flex-col items-start gap-y-20px p-80px md:w-1/2">
         <p className="text-36px font-semibold text-text-neutral-primary">

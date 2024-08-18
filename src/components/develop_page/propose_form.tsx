@@ -5,6 +5,7 @@ import { useGlobalCtx } from '@/contexts/global_context';
 import { useProposalCtx } from '@/contexts/proposal_context';
 import { ToastType, ToastPosition } from '@/interfaces/toastify';
 import { ToastId } from '@/constants/toastify';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const ProposeForm = () => {
   const { t } = useTranslation('common');
@@ -29,6 +30,36 @@ const ProposeForm = () => {
     setIsChecked(e.target.checked);
   };
 
+  const proposeHandler = async () => {
+    const response = await fetch(ISUNCOIN_API_V1.PROPOSE, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: inputTitle,
+        content: inputContent,
+      }),
+    });
+
+    if (response.ok) {
+      // Info: (20240816 - Julian) Show toast
+      toastHandler({
+        id: `${ToastId.PROPOSAL_SUCCESS}`,
+        type: ToastType.SUCCESS,
+        content: (
+          <div>
+            {t('TOAST.PROPOSE_TOPIC_SUCCESS_1')}
+            <span className="font-bold"> {inputTitle} </span>
+            {t('TOAST.PROPOSE_TOPIC_SUCCESS_2')}
+          </div>
+        ),
+        closeable: true,
+        position: ToastPosition.BOTTOM_LEFT,
+      });
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -36,31 +67,14 @@ const ProposeForm = () => {
       title: t('MESSAGE_MODAL.NEW_PROPOSAL_TITLE'),
       message: t('MESSAGE_MODAL.NEW_PROPOSAL_MESSAGE'),
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (100 ISC)`,
-      confirmHandler: () => {
-        // ToDo: (20240813 - Julian) Submit proposal
-        // Info: (20240815 - Julian) Show toast & close message modal
-        toastHandler({
-          id: `${ToastId.PROPOSAL_SUCCESS}`,
-          type: ToastType.SUCCESS,
-          content: (
-            <div>
-              {t('TOAST.PROPOSE_TOPIC_SUCCESS_1')}
-              <span className="font-bold"> {inputTitle} </span>
-              {t('TOAST.PROPOSE_TOPIC_SUCCESS_2')}
-            </div>
-          ),
-          closeable: true,
-          position: ToastPosition.BOTTOM_LEFT,
-        });
-        messageModalVisibleHandler();
-      },
+      confirmHandler: proposeHandler,
     });
     messageModalVisibleHandler();
   };
 
   return (
     // Info:(20240815 - Julian) 如果是在提案期間，則 ProposeForm 將顯示在最上方
-    <div className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
+    <div id="propose" className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}

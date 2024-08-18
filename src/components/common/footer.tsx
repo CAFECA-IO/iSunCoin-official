@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
+import { ISUNCOIN_ROUTES } from '@/constants/url';
 import packageJson from '@package';
 import { useTranslation } from 'next-i18next';
 
@@ -18,7 +18,7 @@ const Footer = ({ lastModifiedDate }: FooterProps) => {
       <section className="shrink-0 space-y-16px">
         <div>
           <Link
-            href={ISUNCOIN_ROUTE_V2.HOME_PAGE}
+            href={ISUNCOIN_ROUTES.HOME_PAGE}
             className="flex items-center gap-8px text-surface-brand-secondary"
           >
             <Image src="/logo/isuncoin_logo.svg" alt="logo" width={40} height={40}></Image>

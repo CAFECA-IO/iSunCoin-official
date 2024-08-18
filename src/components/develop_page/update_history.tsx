@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
-import { dummyUpdateHistoryList } from '@/interfaces/history';
+import Image from 'next/image';
+import { IHistory, IHistoryData } from '@/interfaces/history';
 import UpdateHistoryItem from '@/components/develop_page/update_history_item';
 import Pagination from '@/components/common/pagination';
 import DatePicker, { DatePickerType } from '@/components/common/date_picker';
 import { ITEMS_PER_PAGE } from '@/constants/config';
 import { IDatePeriod, defaultDatePeriod } from '@/interfaces/date_period';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const UpdateHistory = () => {
   const { t } = useTranslation('common');
@@ -13,17 +15,24 @@ const UpdateHistory = () => {
   const [searchInput, setSearchInput] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedPeriod, setSelectedPeriod] = useState<IDatePeriod>(defaultDatePeriod);
+  const [historyData, setHistoryData] = useState<IHistoryData>();
+  const [filteredHistoryList, setFilteredHistoryList] = useState<IHistory[]>([]);
 
-  const [filteredHistoryList, setFilteredHistoryList] = useState(dummyUpdateHistoryList);
+  useEffect(() => {
+    fetch(ISUNCOIN_API_V1.HISTORY)
+      .then((response) => response.json())
+      .then((data) => setHistoryData(data));
+  }, []);
 
-  const totalPages = 2; // ToDo: (20240814 - Julian) Get total pages from API
+  const totalPages = historyData ? historyData.totalPages : 0;
+  const historyList = historyData ? historyData.historyList : [];
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
   useEffect(() => {
-    const filteredList = dummyUpdateHistoryList
+    const filteredList = historyList
       .filter((history) => {
         return (
           // Info: (20240814 - Julian) 搜尋內容
@@ -46,10 +55,16 @@ const UpdateHistory = () => {
         }
       });
     setFilteredHistoryList(filteredList);
-  }, [searchInput, selectedPeriod]);
+  }, [searchInput, selectedPeriod, historyData]);
 
   const updateHistoryList =
-    filteredHistoryList && filteredHistoryList.length > 0 ? (
+    historyList.length <= 0 ? (
+      // Info: (20240816 - Julian) 目前還沒有資料
+      <div className="flex w-full flex-col items-center p-40px text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('DEVELOP_PAGE.NOT_HISTORY_YET')}</p>
+      </div>
+    ) : filteredHistoryList && filteredHistoryList.length > 0 ? (
       filteredHistoryList
         // Info: (20240814 - Julian) 根據更新時間排序
         .sort((a, b) => b.updateTimestamp - a.updateTimestamp)
@@ -57,8 +72,10 @@ const UpdateHistory = () => {
         .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
         .map((history) => <UpdateHistoryItem key={history.id} history={history} />)
     ) : (
-      <div className="flex w-full items-center justify-center py-40px text-2xl font-medium text-text-neutral-secondary">
-        {t('DEVELOP_PAGE.HISTORY_NOT_FOUND')}
+      // Info: (20240816 - Julian) 查無資料
+      <div className="flex w-full flex-col items-center p-40px text-xl font-semibold text-card-text-tertiary">
+        <Image src="/elements/empty.svg" alt="Empty" width={80} height={90} />
+        <p>{t('COMMON.EMPTY')}</p>
       </div>
     );
 

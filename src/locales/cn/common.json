@@ -31,15 +31,15 @@
     "REAL_TIME_24_HR_MINED": "24 小时挖矿区块数",
     "CONTRIBUTE_TITLE": "为 iSunCoin.com 做出贡献",
     "CONTRIBUTE_DESCRIPTION": "此网站遵守「公众领域贡献宣告」（CC0），以非盈利形式提供 iSunCoin 技术支持与说明，并推广相关应用。你可以针对本网站的所有内容提出编辑建议、推荐超赞的新功能或协助除错。",
-    "CONTRACT_TITLE": "联络我们",
-    "CONTRACT_FIRST_NAME": "名字",
-    "CONTRACT_LAST_NAME": "姓氏",
-    "CONTRACT_EMAIL": "电子邮件",
-    "CONTRACT_EMAIL_VERIFY": "电子邮件格式有误",
-    "CONTRACT_PHONE": "电话号码",
-    "CONTRACT_DETAIL": "描述",
-    "CONTRACT_DETAIL_PLACEHOLDER": "想告诉我们什么",
-    "CONTRACT_SUBMIT": "发送"
+    "CONTACT_TITLE": "联络我们",
+    "CONTACT_FIRST_NAME": "名字",
+    "CONTACT_LAST_NAME": "姓氏",
+    "CONTACT_EMAIL": "电子邮件",
+    "CONTACT_EMAIL_VERIFY": "电子邮件格式有误",
+    "CONTACT_PHONE": "电话号码",
+    "CONTACT_DETAIL": "描述",
+    "CONTACT_DETAIL_PLACEHOLDER": "想告诉我们什么",
+    "CONTACT_SUBMIT": "发送"
   },
 
   "AUTONOMY_PAGE": {
@@ -121,6 +121,7 @@
     "PHASE_2": "期",
     "PROPOSALS_START_1": "提案将于",
     "PROPOSALS_START_2": "个区块开始",
+    "NOT_PROPOSALS_YET": "目前还没有提案哟",
     "VOTINGS_END_1": "投票将于",
     "VOTINGS_END_2": "个区块结束",
     "FORM_TITLE": "我想提案",
@@ -132,7 +133,7 @@
     "CHECKBOX_TEXT": "您需要支付 100 ISC 作为提案押金，当提案被批准时，押金将退还。否则将进入奖励池。",
     "SUBMIT_BUTTON": "提案",
     "UPDATE_HISTORY": "更新历史",
-    "HISTORY_NOT_FOUND": "未找到更新历史"
+    "NOT_HISTORY_YET": "目前还没有历史记录哟"
   },
 
   "MESSAGE_MODAL": {
@@ -207,15 +208,16 @@
     "TRY_IT_NOW": "试试看",
     "OF": "之",
     "SEARCH": "搜寻",
-    "VERSION": "版本"
+    "VERSION": "版本",
+    "EMPTY": "查无资料"
   },
 
   "TOAST": {
     "PROPOSE_TOPIC_SUCCESS_1": "您的提案",
     "PROPOSE_TOPIC_SUCCESS_2": "已提交",
     "VOTING_SUCCESS": "投票成功",
-    "CONTRACT_SENT_SUCCESS": "您的讯息已成功发送",
-    "CONTRACT_SENT_ERROR": "发生错误，请再试一次"
+    "CONTACT_SENT_SUCCESS": "您的讯息已成功发送",
+    "CONTACT_SENT_ERROR": "发生错误，请再试一次"
   },
 
   "USE_PAGE": {

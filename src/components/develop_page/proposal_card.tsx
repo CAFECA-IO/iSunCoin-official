@@ -3,29 +3,44 @@ import { IProposal } from '@/interfaces/proposal';
 import { useGlobalCtx } from '@/contexts/global_context';
 import { ToastPosition, ToastType } from '@/interfaces/toastify';
 import { ToastId } from '@/constants/toastify';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
   const { t } = useTranslation('common');
   const { id, title, content, agreeCount, disagreeCount } = proposal;
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
 
+  const voteHandler = async (isAgree: boolean) => {
+    const voteType = isAgree ? 'agree' : 'disagree';
+
+    const response = await fetch(ISUNCOIN_API_V1.VOTE.replace('[proposalId]', `${id}`), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: voteType,
+      }),
+    });
+
+    if (response.ok) {
+      // Info: (20240816 - Julian) Show toast
+      toastHandler({
+        id: `${ToastId.VOTING_SUCCESS}-${id}`,
+        type: ToastType.SUCCESS,
+        content: `${t('TOAST.VOTING_SUCCESS')} (${title})`,
+        closeable: true,
+        position: ToastPosition.BOTTOM_LEFT,
+      });
+    }
+  };
+
   const agreeHandler = () => {
     messageModalDataHandler({
       title: `${t('MESSAGE_MODAL.AGREE_PROPOSAL_TITLE')} "${title}"`,
       message: t('MESSAGE_MODAL.AGREE_PROPOSAL_MESSAGE'),
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
-      confirmHandler: () => {
-        // ToDo: (20240813 - Julian) Submit agree
-        // Info: (20240815 - Julian) Show toast & close message modal
-        toastHandler({
-          id: `${ToastId.VOTING_SUCCESS}-${id}`,
-          type: ToastType.SUCCESS,
-          content: t('TOAST.VOTING_SUCCESS'),
-          closeable: true,
-          position: ToastPosition.BOTTOM_LEFT,
-        });
-        messageModalVisibleHandler();
-      },
+      confirmHandler: () => voteHandler(true), // Info:(20240816 - Julian) 投贊成票
     });
     messageModalVisibleHandler();
   };
@@ -35,18 +50,7 @@ const ProposalCard = ({ proposal }: { proposal: IProposal }) => {
       title: `${t('MESSAGE_MODAL.DISAGREE_PROPOSAL_TITLE')} "${title}"`,
       message: t('MESSAGE_MODAL.DISAGREE_PROPOSAL_MESSAGE'),
       confirmBtnText: `${t('MESSAGE_MODAL.CONFIRM_BTN')} (1 ISC)`,
-      confirmHandler: () => {
-        // ToDo: (20240813 - Julian) Submit disagree
-        // Info: (20240815 - Julian) Show toast & close message modal
-        toastHandler({
-          id: `${ToastId.VOTING_SUCCESS}-${id}`,
-          type: ToastType.SUCCESS,
-          content: t('TOAST.VOTING_SUCCESS'),
-          closeable: true,
-          position: ToastPosition.BOTTOM_LEFT,
-        });
-        messageModalVisibleHandler();
-      },
+      confirmHandler: () => voteHandler(false), // Info:(20240816 - Julian) 投反對票
     });
     messageModalVisibleHandler();
   };

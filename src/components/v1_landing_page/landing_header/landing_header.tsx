@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import useOuterClick from '@/lib/hooks/use_outer_click';
-import { ISUNCOIN_ROUTE_V1 } from '@/constants/url';
+import { ISUNCOIN_ROUTES } from '@/constants/url';
 import ThemeToggle from '@/components/common/toggle/theme_toggle';
 
 const languages = [
@@ -29,7 +29,7 @@ const LandingHeader = () => {
         <ul className="flex items-center gap-lv-7">
           <li>
             <div>
-              <Link href={ISUNCOIN_ROUTE_V1.LANDING_PAGE}>
+              <Link href={ISUNCOIN_ROUTES.HOME_PAGE}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="139"
@@ -77,7 +77,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V1.ABOUT}>
+              <Link href={ISUNCOIN_ROUTES.HOME_PAGE}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="96"
@@ -122,7 +122,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V1.GROUND_STAR_CHAIN}>
+              <Link href={ISUNCOIN_ROUTES.HOME_PAGE}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="179"
@@ -167,7 +167,7 @@ const LandingHeader = () => {
           </li>
           <li className="group text-tabs-text-default">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V1.PRODUCTS}>
+              <Link href={ISUNCOIN_ROUTES.HOME_PAGE}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="118"

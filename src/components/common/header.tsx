@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import { ISUNCOIN_ROUTE_V2 } from '@/constants/url';
+import { ISUNCOIN_ROUTES } from '@/constants/url';
 import ThemeToggle from '@/components/common/toggle/theme_toggle';
 import Image from 'next/image';
 import I18n from '@/components/common/i18n';
 import { useTranslation } from 'next-i18next';
 import LanguageMenu from '@/components/common/language_menu';
+import Search from '@/components/common/search';
 
 const DesktopVersion = () => {
   const { t } = useTranslation('common');
@@ -18,7 +19,7 @@ const DesktopVersion = () => {
           <li>
             <div>
               <Link
-                href={ISUNCOIN_ROUTE_V2.HOME_PAGE}
+                href={ISUNCOIN_ROUTES.HOME_PAGE}
                 className="flex items-center gap-8px text-surface-brand-secondary"
               >
                 <Image
@@ -76,28 +77,28 @@ const DesktopVersion = () => {
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
+              <Link href={ISUNCOIN_ROUTES.USE_PAGE}>
                 <p className="text-lg font-medium">{t('HEADER.USE')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
+              <Link href={ISUNCOIN_ROUTES.DEVELOP_PAGE}>
                 <p className="text-lg font-medium">{t('HEADER.DEVELOP')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
+              <Link href={ISUNCOIN_ROUTES.AUTONOMY}>
                 <p className="text-lg font-medium">{t('HEADER.AUTONOMY')}</p>
               </Link>
             </div>
           </li>
           <li className="text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
             <div>
-              {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
+              {/* <Link href={ISUNCOIN_ROUTES.RESEARCH}></Link> */}
               <p className="cursor-not-allowed text-lg font-medium text-tabs-text-disable">
                 {t('HEADER.RESEARCH')}
               </p>
@@ -110,34 +111,7 @@ const DesktopVersion = () => {
       <div className="h-56px w-1px bg-stroke-neutral-primary"></div>
 
       {/* Search Bar */}
-      <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-        <div className="grow">
-          <input
-            type="text"
-            placeholder={t('HEADER.SEARCH')}
-            className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-          />
-        </div>
-        <div className="flex cursor-pointer items-center rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px text-button-text-secondary">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 20"
-            className="fill-current"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="wrapper">
-              <path
-                id="Union"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M9.58574 3.25122C6.08794 3.25122 3.25241 6.08675 3.25241 9.58455C3.25241 13.0824 6.08794 15.9179 9.58574 15.9179C11.2885 15.9179 12.8344 15.2459 13.9725 14.1526C13.9969 14.1181 14.0246 14.0851 14.0555 14.0542C14.0864 14.0233 14.1193 13.9957 14.1539 13.9713C15.2471 12.8331 15.9191 11.2873 15.9191 9.58455C15.9191 6.08675 13.0835 3.25122 9.58574 3.25122ZM15.6298 14.5679C16.7476 13.2137 17.4191 11.4776 17.4191 9.58455C17.4191 5.25832 13.912 1.75122 9.58574 1.75122C5.25951 1.75122 1.75241 5.25832 1.75241 9.58455C1.75241 13.9108 5.25951 17.4179 9.58574 17.4179C11.4788 17.4179 13.215 16.7464 14.5692 15.6286L16.9721 18.0315C17.265 18.3244 17.7398 18.3244 18.0327 18.0316C18.3256 17.7387 18.3256 17.2638 18.0327 16.9709L15.6298 14.5679Z"
-              />
-            </g>
-          </svg>
-        </div>
-      </div>
+      <Search />
 
       {/* Language Selector Button */}
       <I18n />
@@ -162,7 +136,7 @@ const MobileVersion = () => {
       <div className="flex h-88px items-center justify-between p-16px">
         <div>
           <Link
-            href={ISUNCOIN_ROUTE_V2.HOME_PAGE}
+            href={ISUNCOIN_ROUTES.HOME_PAGE}
             className="flex items-center gap-8px text-surface-brand-secondary"
           >
             <Image
@@ -244,34 +218,7 @@ const MobileVersion = () => {
         {/* Dropdown Menu */}
         <div className={showLanguageList ? 'hidden' : 'block'}>
           {/* Search Bar */}
-          <div className="flex grow justify-between rounded-sm bg-input-surface-input-background">
-            <div className="grow">
-              <input
-                type="text"
-                placeholder={t('HEADER.SEARCH')}
-                className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
-              />
-            </div>
-            <div className="flex cursor-pointer rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px text-button-text-secondary">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 20"
-                className="fill-current"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="wrapper">
-                  <path
-                    id="Union"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9.58574 3.25122C6.08794 3.25122 3.25241 6.08675 3.25241 9.58455C3.25241 13.0824 6.08794 15.9179 9.58574 15.9179C11.2885 15.9179 12.8344 15.2459 13.9725 14.1526C13.9969 14.1181 14.0246 14.0851 14.0555 14.0542C14.0864 14.0233 14.1193 13.9957 14.1539 13.9713C15.2471 12.8331 15.9191 11.2873 15.9191 9.58455C15.9191 6.08675 13.0835 3.25122 9.58574 3.25122ZM15.6298 14.5679C16.7476 13.2137 17.4191 11.4776 17.4191 9.58455C17.4191 5.25832 13.912 1.75122 9.58574 1.75122C5.25951 1.75122 1.75241 5.25832 1.75241 9.58455C1.75241 13.9108 5.25951 17.4179 9.58574 17.4179C11.4788 17.4179 13.215 16.7464 14.5692 15.6286L16.9721 18.0315C17.265 18.3244 17.7398 18.3244 18.0327 18.0316C18.3256 17.7387 18.3256 17.2638 18.0327 16.9709L15.6298 14.5679Z"
-                  />
-                </g>
-              </svg>
-            </div>
-          </div>
+          <Search />
 
           {/* Navigation Links */}
           <nav>
@@ -279,7 +226,7 @@ const MobileVersion = () => {
             <ul>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.USE_PAGE}>
+                  <Link href={ISUNCOIN_ROUTES.USE_PAGE}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.USE')}
                     </p>
@@ -288,7 +235,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.DEVELOP_PAGE}>
+                  <Link href={ISUNCOIN_ROUTES.DEVELOP_PAGE}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.DEVELOP')}
                     </p>
@@ -297,7 +244,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  <Link href={ISUNCOIN_ROUTE_V2.AUTONOMY}>
+                  <Link href={ISUNCOIN_ROUTES.AUTONOMY}>
                     <p className="text-lg font-medium text-dropdown-text-primary">
                       {t('HEADER.AUTONOMY')}
                     </p>
@@ -306,7 +253,7 @@ const MobileVersion = () => {
               </li>
               <li className="px-12px py-8px text-tabs-text-default hover:text-tabs-text-hover active:text-tabs-text-active">
                 <div>
-                  {/* <Link href={ISUNCOIN_ROUTE_V2.RESEARCH}></Link> */}
+                  {/* <Link href={ISUNCOIN_ROUTES.RESEARCH}></Link> */}
                   <p className="cursor-not-allowed text-lg font-medium text-tabs-text-disable">
                     {t('HEADER.RESEARCH')}
                   </p>

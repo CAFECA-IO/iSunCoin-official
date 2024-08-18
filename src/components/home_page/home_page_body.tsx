@@ -2,7 +2,7 @@ import WelcomeSection from '@/components/home_page/welcome_section';
 import ParticipateSection from '@/components/home_page/participate_section';
 import RealTimeData from '@/components/home_page/real_time_data';
 import ContributeSection from '@/components/common/contribute_section';
-import ContractForm from '@/components/home_page/contract_form';
+import ContactForm from '@/components/home_page/contact_form';
 
 const HomePageBody = () => {
   return (
@@ -19,8 +19,11 @@ const HomePageBody = () => {
       {/* Info:(20240808 - Julian) Contribute */}
       <ContributeSection />
 
-      {/* Info:(20240809 - Julian) Contract Form */}
-      <ContractForm />
+      {/* Info:(20240809 - Julian) Contact Form */}
+      <ContactForm />
+
+      {/* Info:(20240809 - Julian) This div is used to scroll to the contact form */}
+      <div id="contact"></div>
     </div>
   );
 };

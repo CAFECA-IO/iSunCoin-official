@@ -51,10 +51,10 @@ const Pagination = ({
     [router, pagePrefix]
   );
 
-  // Info: (20240419 - Julian) 如果位於第一頁，則將第一頁和上一頁的按鈕設為 disabled
-  const isFirstPage = currentPage === 1;
-  // Info: (20240419 - Julian) 如果位於最後一頁，則將最後一頁和下一頁的按鈕設為 disabled
-  const isLastPage = currentPage === totalPages;
+  // Info: (20240419 - Julian) 如果位於第一頁或總頁數為 0，則將第一頁和上一頁的按鈕設為 disabled
+  const isFirstPage = currentPage === 1 || totalPages === 0;
+  // Info: (20240419 - Julian) 如果位於最後一頁或總頁數為 0，則將最後一頁和下一頁的按鈕設為 disabled
+  const isLastPage = currentPage === totalPages || totalPages === 0;
 
   // Info: (20240419 - Julian)  限制輸入的頁數在 1 ~ totalPages 之間
   // Info: 用來處理頁數變更邏輯 (20240712 - Shirley)
@@ -213,6 +213,7 @@ const Pagination = ({
       onChange={pageChangeHandler}
       onKeyDown={handleKeyDown}
       className="h-40px w-40px rounded border border-button-stroke-secondary bg-transparent text-center text-sm font-semibold outline-none placeholder:text-lightGray3 disabled:border-lightGray3"
+      disabled={totalPages === 0} // Info: (20240419 - Julian) 總頁數為 0 時，輸入框設為 disabled
     />
   );
 
