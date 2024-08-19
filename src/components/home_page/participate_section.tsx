@@ -37,7 +37,7 @@ const ParticipateSection = () => {
   return (
     <div
       id="download"
-      className="flex w-full flex-col-reverse items-center justify-between md:flex-row"
+      className="flex w-full flex-col-reverse items-center justify-between bg-surface-neutral-surface-lv2 md:flex-row"
     >
       {/* Info:(20240808 - Julian) Text */}
       <div className="flex flex-col items-start gap-y-20px p-80px md:w-1/2">
@@ -48,7 +48,7 @@ const ParticipateSection = () => {
           {t('HOME_PAGE.PARTICIPATE_DESCRIPTION')}
         </p>
         {/* Info:(20240808 - Julian) Download */}
-        <div className="flex items-center divide-x divide-input-stroke-input rounded-sm border border-input-stroke-input text-text-text-primary">
+        <div className="flex items-center divide-x divide-input-stroke-input rounded-sm border border-input-stroke-input text-text-neutral-primary">
           <button
             id="select-version-btn"
             type="button"
@@ -59,7 +59,23 @@ const ParticipateSection = () => {
             <div
               className={`${versionVisible ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
             >
-              <Image src="/icons/chevron_down.svg" width={16} height={16} alt="arrow_down_icon" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                className="fill-current"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="wrapper">
+                  <path
+                    id="Union"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M2.97187 5.72077C3.26476 5.42788 3.73963 5.42788 4.03253 5.72077L8.0022 9.69044L11.9719 5.72077C12.2648 5.42788 12.7396 5.42788 13.0325 5.72077C13.3254 6.01366 13.3254 6.48854 13.0325 6.78143L8.53253 11.2814C8.23963 11.5743 7.76476 11.5743 7.47187 11.2814L2.97187 6.78143C2.67897 6.48854 2.67897 6.01366 2.97187 5.72077Z"
+                  />
+                </g>
+              </svg>
             </div>
 
             <div

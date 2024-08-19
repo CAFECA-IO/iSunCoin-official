@@ -132,7 +132,7 @@ const Wallet = ({ wallet }: WalletProps) => {
       href={wallet.websiteUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-200px w-300px flex-col justify-between rounded-lg bg-white p-20px"
+      className="flex h-200px w-300px flex-col justify-between rounded-lg bg-surface-neutral-surface-lv2 p-20px text-text-neutral-primary"
     >
       <div className="flex items-center gap-14px">
         <Image src={wallet.walletAvatarUrl} alt={wallet.name} width={60} height={60} />

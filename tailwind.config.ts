@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Info: (20240816-Tzuhan) 意味著我們可以透過在 HTML element 上添加 dark 來控制暗黑模式
   content: ['./src/**/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -350,10 +351,6 @@ module.exports = {
           tertiary: 'var(--text-neutral-tertiary)',
         },
 
-        'text-text-primary': {
-          DEFAULT: 'var(--text-text-primary)',
-        },
-
         'text-state-error': {
           DEFAULT: 'var(--text-state-error)',
           invert: 'var(--text-state-error-invert)',
@@ -653,8 +650,8 @@ module.exports = {
         'switch-surface-base': 'var(--switch-surface-base)',
         'switch-surface-controller': 'var(--switch-surface-controller)',
         'switch-surface-disable': 'var(--switch-surface-disable)',
-        'switch-text-active': 'var(--switch-text-active)',
-        'switch-text-inactive': 'var(--switch-text-inactive)',
+        'switch-text-primary': 'var(--switch-text-primary)',
+        'switch-text-disable': 'var(--switch-text-disable)',
         'tabs-stroke-active': 'var(--tabs-stroke-active)',
         'tabs-stroke-default': 'var(--tabs-stroke-default)',
         'tabs-stroke-disable': 'var(--tabs-stroke-disable)',
@@ -1367,7 +1364,7 @@ module.exports = {
         '50px': '50px',
       },
       boxShadow: {
-        s: '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
+        s: '0px 3px 7px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 13px 13px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 30px 18px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 53px 21px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 83px 23px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
         lg: '0 4px 10px rgba(0,0,0,0.7)',
         xl: '0 4px 24px rgba(0, 0, 0, 0.40)',
         xlReverse: '0px -4px 24px rgba(0, 0, 0, 0.40)',
@@ -1383,7 +1380,7 @@ module.exports = {
         custom5: '0px 447px 125px 0px rgba(32, 22, 93, 0)',
 
         dropmenu:
-          '0px 166px 46px 0px var(--Shadow-Lv-1, rgba(49, 67, 98, 0.00)), 0px 106px 42px 0px var(--Shadow-Lv-2, rgba(49, 67, 98, 0.01)), 0px 60px 36px 0px var(--Shadow-Lv-3, rgba(49, 67, 98, 0.05)), 0px 27px 27px 0px var(--Shadow-Lv-4, rgba(49, 67, 98, 0.09)), 0px 7px 15px 0px var(--Shadow-Lv-5, rgba(49, 67, 98, 0.10));',
+          '0px 166px 46px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0.00)), 0px 106px 42px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 60px 36px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 27px 27px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 7px 15px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.10));',
         tooltip:
           '0px 166px 46px 0px rgba(49, 67, 98, 0.00), 0px 106px 42px 0px rgba(49, 67, 98, 0.01), 0px 60px 36px 0px rgba(49, 67, 98, 0.05), 0px 27px 27px 0px rgba(49, 67, 98, 0.09), 0px 7px 15px 0px rgba(49, 67, 98, 0.10)',
         1: 'var(--shadow-lv-1)',
@@ -1393,35 +1390,35 @@ module.exports = {
         5: 'var(--shadow-lv-5)',
 
         sidebarMobile:
-          '0px -2px 5px 0px #3143621A, 0px -6px 10px 0px #31436217, 0px -11px 13px 0px #3143620D, 0px -28px 15px 0px #31436203, 0px -50px 17px 0px #31436200',
+          '0px -2px 5px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px -6px 10px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px -11px 13px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px -28px 15px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px -50px 17px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
         navbar:
-          '0px 2px 5px 0px #3143621A, 0px 6px 10px 0px #31436217, 0px 11px 13px 0px #3143620D, 0px 28px 15px 0px #31436203, 0px 50px 17px 0px #31436200',
+          '0px 2px 5px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 6px 10px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 11px 13px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 28px 15px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 50px 17px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
 
         revertBtn:
           '0px 28px 15px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 11px 13px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 6px 10px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 2px 5px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.10))',
         scrollBtn:
-          '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
+          '0px 3px 7px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 13px 13px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 30px 18px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 53px 21px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 83px 23px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
 
         /* iSunCoin */
         header:
-          '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+          '0px 7px 15px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 27px 27px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 60px 36px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 106px 42px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 166px 46px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
 
         footer:
-          '0px -3px 7px 0px #3143621A, 0px -13px 13px 0px #31436217, 0px -30px 18px 0px #3143620D, 0px -53px 21px 0px #31436203, 0px -83px 23px 0px #31436200',
+          '0px -3px 7px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px -13px 13px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px -30px 18px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px -53px 21px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px -83px 23px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
 
         downDropShadowXS:
-          '0px 2px 5px 0px #3143621A, 0px 6px 10px 0px #31436217, 0px 11px 13px 0px #3143620D, 0px 28px 15px 0px #31436203, 0px 50px 17px 0px #31436200',
+          '0px 2px 5px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 6px 10px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 11px 13px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 28px 15px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 50px 17px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
         downDropShadowS:
-          '0px 3px 7px 0px #3143621A, 0px 13px 13px 0px #31436217, 0px 30px 18px 0px #3143620D, 0px 53px 21px 0px #31436203, 0px 83px 23px 0px #31436200',
+          '0px 3px 7px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 13px 13px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 30px 18px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 53px 21px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 83px 23px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
         downDropShadowM:
-          '0px 7px 15px 0px #3143621A, 0px 27px 27px 0px #31436217, 0px 60px 36px 0px #3143620D, 0px 106px 42px 0px #31436203, 0px 166px 46px 0px #31436200',
+          '0px 7px 15px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 27px 27px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 60px 36px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 106px 42px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 166px 46px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
 
         regularShadow: '0px 8px 16px 0px #00000026',
 
         downDropShadowSM: '0px 1px 2px 0px #0000000D',
 
         downDropShadowL:
-          '0px 14px 30px 0px #3143621A, 0px 55px 55px 0px #31436217, 0px 124px 74px 0px #3143620D, 0px 220px 88px 0px #31436203, 0px 344px 96px 0px #31436200',
+          '0px 14px 30px 0px var(--shadow-lv-5, rgba(49, 67, 98, 0.1)), 0px 55px 55px 0px var(--shadow-lv-4, rgba(49, 67, 98, 0.09)), 0px 124px 74px 0px var(--shadow-lv-3, rgba(49, 67, 98, 0.05)), 0px 220px 88px 0px var(--shadow-lv-2, rgba(49, 67, 98, 0.01)), 0px 344px 96px 0px var(--shadow-lv-1, rgba(49, 67, 98, 0))',
       },
       dropShadow: {
         lg: '0 4px 10px rgba(0,0,0,0.7)',
