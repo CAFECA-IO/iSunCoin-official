@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-// import { useRouter } from 'next/router';
-// ToDo: (20240816 - Liz) 預計用 useRouter 來做路由跳轉，待研究成功後再移除 window.location.href，改用 router.push
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { searchableItems } from '@/constants/search';
 
@@ -11,9 +9,10 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState<{ title: string; url: string }[]>([]);
   const [isOpen, setIsOpen] = useState(false);
-  // const router = useRouter();
   const searchRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
+  // Info: (20240819 - Liz) handle the click outside event
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -27,6 +26,7 @@ const Search = () => {
     };
   }, []);
 
+  // Info: (20240819 - Liz) filter the searchable items based on the search term
   const handleSearch = (term: string) => {
     const filtered = searchableItems.filter((item) => {
       return item.title.toLowerCase().includes(term.toLowerCase());
@@ -35,16 +35,39 @@ const Search = () => {
     setIsOpen(filtered.length > 0);
   };
 
+  // Info: (20240819 - Liz) handle the input change event
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value;
     setSearchTerm(term);
     handleSearch(term);
   };
 
+  // Info: (20240819 - Liz) handle the result click event
   const handleResultClick = (url: string) => {
-    // router.push(url); // This will trigger error: Error: Cancel rendering route
+    const [pathname, hash] = url.split('#');
+    const isSamePage = pathname === router.pathname;
 
-    window.location.href = url; // This is a temporary solution
+    const scrollToHash = () => {
+      if (hash) {
+        // Info: (20240819 - Liz) scroll to the element with the id of the hash
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Info: (20240819 - Liz) scroll to top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    // Info: (20240819 - Liz) if the path is the same, just scroll to the hash
+    if (isSamePage) {
+      scrollToHash();
+    } else {
+      // Info: (20240819 - Liz) if the path is different, push the new path to the router
+      router.push(pathname).then(scrollToHash);
+    }
+
     setIsOpen(false);
     setSearchTerm('');
   };
@@ -69,13 +92,12 @@ const Search = () => {
           <ul className="p-8px">
             {results.map((item) => (
               <li key={item.title}>
-                <Link
-                  href={item.url}
+                <div
                   className="block px-12px py-8px text-sm font-medium text-dropdown-text-primary"
                   onClick={() => handleResultClick(item.url)}
                 >
                   {item.title}
-                </Link>
+                </div>
               </li>
             ))}
           </ul>
