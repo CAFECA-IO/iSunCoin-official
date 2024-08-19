@@ -109,9 +109,9 @@ const Search = () => {
           value={searchTerm}
           onChange={handleInputChange}
           placeholder={t('HEADER.SEARCH')}
-          className="w-full rounded-l-sm border border-r-0 border-lightGray3 bg-transparent px-12px py-10px text-lg font-medium outline-none placeholder:text-input-text-input-placeholder"
+          className="w-full rounded-l-sm border border-r-0 border-input-stroke-input bg-transparent px-12px py-10px text-lg font-medium text-input-text-primary outline-none placeholder:text-input-text-input-placeholder"
         />
-        <div className="flex shrink-0 cursor-pointer items-center justify-center rounded-r-sm border border-l-0 border-lightGray3 px-12px py-10px">
+        <div className="flex shrink-0 cursor-pointer items-center justify-center rounded-r-sm border border-l-0 border-input-stroke-input px-12px py-10px">
           <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20} />
         </div>
       </div>
