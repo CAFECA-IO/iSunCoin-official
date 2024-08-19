@@ -20,7 +20,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
 
       sendEmail(emailConfig, emailBody);
 
-      response.status(200).json({ message: 'Email sent successfully' });
+      response.status(200).json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Error sending email:', error);
