@@ -61,7 +61,7 @@ const ThreeModelsIntro = () => {
   return (
     <section className="py-40px">
       <div className="mx-auto max-w-975px space-y-20px">
-        <h1 className="text-64px font-bold text-text-text-primary">
+        <h1 className="text-64px font-bold text-text-neutral-primary">
           <span className="text-text-brand-primary-lv2">3</span> models for different users.
         </h1>
         <p className="text-lg font-semibold text-text-neutral-secondary">

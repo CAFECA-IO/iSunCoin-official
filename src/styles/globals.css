@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --color-green-500: #9fd4db;
-    --stroke-neutral-tertiary: var(--color-green-500);
-    --radius: 0.5rem;
+    /* --color-green-500: #9fd4db; */ /* Info: (20240816-tzuhan) design guideline 上沒有這個變數 */
+    /* --stroke-neutral-tertiary: var(--color-green-500); */ /* Info: (20240816-tzuhan) 跟 design guideline 不一致且重複定義 */
+    /* --radius: 0.5rem; */ /* Info: (20240816-tzuhan) design guideline 上沒有這個變數 */
 
     /* --red-700: #f03e3e; */
 
@@ -177,8 +177,23 @@
     --number-120: 120px;
     --number-full: 999px;
 
+    --file-uploading-number-percent-current: 0px;
+    --file-uploading-number-bar-current: 24px;
+    --file-uploading-number-bar-min: 24px;
+    --file-uploading-number-percent-max: 100px;
+    --file-uploading-number-bar-max: 750px;
+    --progress-bar-number-percent-current: 0px;
+    --progress-bar-number-bar-current: 24px;
+    --progress-bar-number-bar-min: 24px;
+    --progress-bar-number-percent-max: 100px;
+    --progress-bar-number-bar-max: 350px;
+
+    /* string */
+    --file-uploading-number-lebel: '0 %';
+    --progress-bar-number-lebel: '0 %';
+
     /* light mode colors */
-    --shadow-lv-1: #195cd0;
+    --shadow-lv-1: #31436200;
     --shadow-lv-2: #31436203;
     --shadow-lv-3: #3143620d;
     --shadow-lv-4: #31436217;
@@ -320,8 +335,6 @@
     --text-support-pink: var(--support-pink-600);
     --text-support-rose: var(--support-rose-600);
     --text-support-taro: var(--support-taro-600);
-
-    --text-text-primary: #1a2e50;
 
     /* light mode spacing */
     --radius-xxs: var(--number-3);
@@ -604,8 +617,8 @@
     --switch-surface-base: var(--surface-neutral-depth);
     --switch-surface-controller: var(--surface-neutral-surface-lv2);
     --switch-surface-disable: var(--surface-neutral-mute);
-    --switch-text-active: var(--text-neutral-primary);
-    --switch-text-inactive: var(--text-neutral-mute);
+    --switch-text-disable: var(--text-neutral-mute);
+    --switch-text-primary: var(--text-neutral-primary);
     --tabs-stroke-active: var(--stroke-brand-primary);
     --tabs-stroke-default: var(--stroke-neutral-quaternary);
     --tabs-stroke-disable: var(--stroke-neutral-mute);
@@ -629,8 +642,8 @@
   }
 
   .dark {
-    --color-green-500: #2a2602;
-    --stroke-neutral-tertiary: var(--color-green-500);
+    /* --color-green-500: #2a2602; */ /* Info: (20240816-tzuhan) design guideline 上沒有這個顏色 */
+    /* --stroke-neutral-tertiary: var(--color-green-500); */ /* Info: (20240816-tzuhan) 跟 design guideline 不一致且重複定義 */
 
     /* dark mode colors */
     --shadow-lv-1: #06080c00;
@@ -645,13 +658,13 @@
     --stroke-brand-secondary-moderate: var(--royal-blue-200);
     --stroke-brand-secondary-soft: var(--royal-blue-100);
     --stroke-neutral-invert: var(--neutral-700);
-    --stroke-neutral-mute: var(--neutral-300);
+    --stroke-neutral-mute: var(--neutral-400);
     --stroke-neutral-primary: var(--neutral-50);
-    --stroke-neutral-quaternary: var(--neutral-600);
-    --stroke-neutral-secondary: var(--neutral-200);
+    --stroke-neutral-quaternary: var(--neutral-300);
+    --stroke-neutral-secondary: var(--neutral-100);
     --stroke-neutral-solid-dark: var(--neutral-700);
     --stroke-neutral-solid-light: var(--neutral-white);
-    --stroke-neutral-tertiary: var(--neutral-400);
+    --stroke-neutral-tertiary: var(--neutral-200);
     --stroke-state-error: var(--red-400);
     --stroke-state-success: var(--green-400);
     --stroke-state-warning: var(--yellow-400);
@@ -1030,11 +1043,12 @@
     --switch-surface-active: var(--surface-brand-primary);
     --switch-surface-base: var(--surface-neutral-depth);
     --switch-surface-controller: var(--surface-neutral-surface-lv2);
+    --switch-surface-controller-disable: var(--surface-neutral-main-background);
     --switch-surface-disable: var(--surface-neutral-mute);
-    --switch-text-active: var(--text-neutral-primary);
-    --switch-text-inactive: var(--text-neutral-mute);
+    --switch-text-disable: var(--text-neutral-mute);
+    --switch-text-primary: var(--text-neutral-primary);
     --tabs-stroke-active: var(--stroke-brand-primary);
-    --tabs-stroke-default: var(--stroke-neutral-quaternary);
+    --tabs-stroke-default: var(--stroke-neutral-tertiary);
     --tabs-stroke-disable: var(--stroke-neutral-mute);
     --tabs-stroke-hover: var(--stroke-brand-primary-soft);
     --tabs-stroke-secondary: var(--stroke-brand-secondary-moderate);

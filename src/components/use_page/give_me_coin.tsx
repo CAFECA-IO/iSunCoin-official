@@ -132,7 +132,7 @@ const Wallet = ({ wallet }: WalletProps) => {
       href={wallet.websiteUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex h-200px w-300px flex-col justify-between rounded-lg bg-white p-20px"
+      className="flex h-200px w-300px flex-col justify-between rounded-lg bg-surface-neutral-surface-lv2 p-20px text-text-neutral-primary"
     >
       <div className="flex items-center gap-14px">
         <Image src={wallet.walletAvatarUrl} alt={wallet.name} width={60} height={60} />
@@ -182,7 +182,7 @@ const GiveMeCoin = () => {
   };
 
   return (
-    <section className="space-y-24px p-80px">
+    <section id="cold-wallets" className="space-y-24px p-80px">
       {/* title */}
       <h1 className="text-center text-36px font-semibold text-text-neutral-primary">
         {t('USE_PAGE.I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN')}

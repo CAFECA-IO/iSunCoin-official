@@ -32,7 +32,7 @@ const CurrentProposals = () => {
 
   return (
     // Info:(20240815 - Julian) 如果不是提案期間，則 CurrentProposals 將顯示在最上方
-    <div className={`relative p-80px ${isDuringProposal ? '' : 'order-first'}`}>
+    <div id="proposals" className={`relative p-80px ${isDuringProposal ? '' : 'order-first'}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}

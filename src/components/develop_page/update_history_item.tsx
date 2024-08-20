@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 import useOuterClick from '@/lib/hooks/use_outer_click';
@@ -45,7 +44,23 @@ const UpdateHistoryItem = ({ history }: { history: IHistory }) => {
           <div
             className={`${isOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
           >
-            <Image src="/icons/chevron_down.svg" width={24} height={24} alt="arrow_down_icon" />
+            <svg
+              width="16"
+              height="17"
+              viewBox="0 0 16 17"
+              className="fill-current"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="wrapper">
+                <path
+                  id="Union"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M2.97187 5.72077C3.26476 5.42788 3.73963 5.42788 4.03253 5.72077L8.0022 9.69044L11.9719 5.72077C12.2648 5.42788 12.7396 5.42788 13.0325 5.72077C13.3254 6.01366 13.3254 6.48854 13.0325 6.78143L8.53253 11.2814C8.23963 11.5743 7.76476 11.5743 7.47187 11.2814L2.97187 6.78143C2.67897 6.48854 2.67897 6.01366 2.97187 5.72077Z"
+                />
+              </g>
+            </svg>
           </div>
         </div>
       </div>

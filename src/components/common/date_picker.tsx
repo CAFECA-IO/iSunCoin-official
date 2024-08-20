@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, Dispatch, SetStateAction } from 'react';
-import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import { MONTH_ABBREVIATION_NAME_LIST, WEEK_DAY_NAME_LIST } from '@/constants/display';
@@ -361,7 +360,23 @@ const DatePicker = ({
       className={`flex w-300px items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base text-date-picker-text-default`}
     >
       <p>{displayedText}</p>
-      <Image src="/icons/calendar.svg" alt="calendar_icon" width={20} height={20} />
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        className="fill-current"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="wrapper">
+          <path
+            id="Union"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M6.66911 0.917763C7.08332 0.917763 7.41911 1.25355 7.41911 1.66776V2.58443H12.5858V1.66776C12.5858 1.25355 12.9216 0.917763 13.3358 0.917763C13.75 0.917763 14.0858 1.25355 14.0858 1.66776V2.5853C14.516 2.58745 14.8869 2.59495 15.2055 2.62098C15.6688 2.65883 16.0872 2.73957 16.4779 2.93866C17.0894 3.25025 17.5866 3.74743 17.8982 4.35896C18.0973 4.7497 18.178 5.1681 18.2159 5.63136C18.2525 6.07893 18.2525 6.62965 18.2524 7.30304V7.33443V8.33443V14.3344V14.3658C18.2525 15.0392 18.2525 15.5899 18.2159 16.0375C18.178 16.5008 18.0973 16.9192 17.8982 17.3099C17.5866 17.9214 17.0894 18.4186 16.4779 18.7302C16.0872 18.9293 15.6688 19.01 15.2055 19.0479C14.7579 19.0844 14.2072 19.0844 13.5339 19.0844H13.5024H6.50244H6.47101C5.79764 19.0844 5.24693 19.0844 4.79937 19.0479C4.33611 19.01 3.91771 18.9293 3.52697 18.7302C2.91545 18.4186 2.41826 17.9214 2.10667 17.3099C1.90758 16.9192 1.82684 16.5008 1.78899 16.0375C1.75243 15.5899 1.75243 15.0392 1.75244 14.3658L1.75244 14.3344V8.33443V7.33443L1.75244 7.30301C1.75243 6.62963 1.75243 6.07892 1.78899 5.63136C1.82684 5.1681 1.90758 4.7497 2.10667 4.35896C2.41826 3.74743 2.91545 3.25025 3.52697 2.93866C3.91771 2.73957 4.33611 2.65883 4.79937 2.62098C5.118 2.59495 5.48889 2.58745 5.91911 2.5853V1.66776C5.91911 1.25355 6.2549 0.917763 6.66911 0.917763ZM5.91911 4.08539C5.5067 4.08751 5.18714 4.0943 4.92152 4.116C4.55102 4.14627 4.352 4.20178 4.20796 4.27517C3.87867 4.44295 3.61096 4.71066 3.44318 5.03995C3.36979 5.18398 3.31428 5.38301 3.28401 5.75351C3.25303 6.13276 3.25244 6.62199 3.25244 7.33443V7.58443H16.7524V7.33443C16.7524 6.62199 16.7519 6.13276 16.7209 5.75351C16.6906 5.38301 16.6351 5.18398 16.5617 5.03995C16.3939 4.71066 16.1262 4.44295 15.7969 4.27517C15.6529 4.20178 15.4539 4.14627 15.0834 4.116C14.8177 4.0943 14.4982 4.08751 14.0858 4.08539V5.0011C14.0858 5.41531 13.75 5.7511 13.3358 5.7511C12.9216 5.7511 12.5858 5.41531 12.5858 5.0011V4.08443H7.41911V5.0011C7.41911 5.41531 7.08332 5.7511 6.66911 5.7511C6.2549 5.7511 5.91911 5.41531 5.91911 5.0011V4.08539ZM16.7524 9.08443H3.25244V14.3344C3.25244 15.0469 3.25303 15.5361 3.28401 15.9154C3.31428 16.2859 3.36979 16.4849 3.44318 16.6289C3.61096 16.9582 3.87868 17.2259 4.20796 17.3937C4.352 17.4671 4.55102 17.5226 4.92152 17.5529C5.30078 17.5838 5.79 17.5844 6.50244 17.5844H13.5024C14.2149 17.5844 14.7041 17.5838 15.0834 17.5529C15.4539 17.5226 15.6529 17.4671 15.7969 17.3937C16.1262 17.2259 16.3939 16.9582 16.5617 16.6289C16.6351 16.4849 16.6906 16.2859 16.7209 15.9154C16.7519 15.5361 16.7524 15.0469 16.7524 14.3344V9.08443Z"
+          />
+        </g>
+      </svg>
     </button>
   );
 
@@ -377,7 +392,7 @@ const DatePicker = ({
         <button
           type="button"
           onClick={todayClickHandler}
-          className="w-full rounded border border-secondaryBlue p-1 text-sm text-secondaryBlue hover:border-primaryYellow hover:text-primaryYellow"
+          className="w-full rounded border border-button-stroke-secondary p-1 text-sm text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
         >
           {t('DATE_PICKER.TODAY')}
         </button>
@@ -387,23 +402,55 @@ const DatePicker = ({
           <button
             type="button"
             onClick={goToPrevMonth}
-            className="rounded border border-secondaryBlue p-2 text-secondaryBlue hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
           >
-            <Image src="/icons/chevron_left.svg" height={16} width={16} alt="go_previous_button" />
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              className="fill-current"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="wrapper">
+                <path
+                  id="Union"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M13.4779 3.71319C13.844 4.0793 13.844 4.67289 13.4779 5.03901L8.51577 10.0011L13.4779 14.9632C13.844 15.3293 13.844 15.9229 13.4779 16.289C13.1117 16.6551 12.5181 16.6551 12.152 16.289L6.52703 10.664C6.16091 10.2979 6.16091 9.7043 6.52703 9.33819L12.152 3.71319C12.5181 3.34707 13.1117 3.34707 13.4779 3.71319Z"
+                />
+              </g>
+            </svg>
           </button>
           {/* Info: (20240417 - Julian) Month and Year */}
           <div className="flex space-x-4">
-            <p className="text-secondaryBlue">{displayedYear}</p>
-            <p className="text-secondaryBlue">{displayedMonth}</p>
+            <p className="text-text-brand-secondary-lv1">{displayedYear}</p>
+            <p className="text-text-brand-secondary-lv1">{displayedMonth}</p>
           </div>
 
           {/* Info: Next button (20240417 - Julian) */}
           <button
             type="button"
             onClick={goToNextMonth}
-            className="rounded border border-secondaryBlue p-2 text-secondaryBlue hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
           >
-            <Image src="/icons/chevron_right.svg" height={16} width={16} alt="go_next_button" />
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              className="fill-current"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="wrapper">
+                <path
+                  id="Union"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M6.52703 3.71319C6.89315 3.34707 7.48674 3.34707 7.85285 3.71319L13.4779 9.33819C13.844 9.7043 13.844 10.2979 13.4779 10.664L7.85285 16.289C7.48674 16.6551 6.89315 16.6551 6.52703 16.289C6.16091 15.9229 6.16091 15.3293 6.52703 14.9632L11.4891 10.0011L6.52703 5.03901C6.16091 4.67289 6.16091 4.0793 6.52703 3.71319Z"
+                />
+              </g>
+            </svg>
           </button>
         </div>
         <PopulateDates

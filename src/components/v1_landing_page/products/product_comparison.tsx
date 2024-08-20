@@ -73,7 +73,7 @@ const TypeProList = ({ openModal, hideMaxList, hideEnterpriseList }: TypeProList
   };
 
   return (
-    <div className="flex-1 space-y-40px text-text-text-primary">
+    <div className="flex-1 space-y-40px text-text-neutral-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
           {typeProData.type}
@@ -288,7 +288,7 @@ const TypeMaxList = ({ openModal, hideProList, hideEnterpriseList }: TypeMaxList
   };
 
   return (
-    <div className="flex-1 space-y-40px text-text-text-primary">
+    <div className="flex-1 space-y-40px text-text-neutral-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
           {typeMaxData.type}
@@ -503,7 +503,7 @@ const TypeEnterpriseList = ({ openModal, hideProList, hideMaxList }: TypeEnterpr
   };
 
   return (
-    <div className="space-y-40px text-text-text-primary">
+    <div className="space-y-40px text-text-neutral-primary">
       <div className="space-y-8px">
         <h1 className="text-44px font-bold">
           {typeEnterpriseData.type}
@@ -728,7 +728,7 @@ const Modal = ({
 
   return (
     <div className="mx-auto flex max-w-500px flex-1 flex-col justify-between gap-16px rounded-lg bg-surface-neutral-surface-lv1 px-40px py-20px shadow-downDropShadowM">
-      <h4 className="text-xl font-bold text-text-text-primary">Detail info.</h4>
+      <h4 className="text-xl font-bold text-text-neutral-primary">Detail info.</h4>
 
       <p className="text-lg font-semibold text-text-neutral-primary">
         {isProListVisible && (

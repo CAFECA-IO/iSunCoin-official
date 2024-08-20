@@ -21,6 +21,9 @@ const HomePageBody = () => {
 
       {/* Info:(20240809 - Julian) Contact Form */}
       <ContactForm />
+
+      {/* Info:(20240809 - Julian) This div is used to scroll to the contact form */}
+      <div id="contact"></div>
     </div>
   );
 };

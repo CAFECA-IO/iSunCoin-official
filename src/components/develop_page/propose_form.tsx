@@ -74,7 +74,7 @@ const ProposeForm = () => {
 
   return (
     // Info:(20240815 - Julian) 如果是在提案期間，則 ProposeForm 將顯示在最上方
-    <div className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
+    <div id="propose" className={`relative p-80px ${isDuringProposal ? 'order-first' : ''}`}>
       {/* Info:(20240813 - Julian) Background */}
       <div className="absolute left-0 top-0 h-550px w-full bg-surface-brand-primary-soft"></div>
       {/* Info:(20240813 - Julian) Content */}
@@ -158,7 +158,7 @@ const ProposeForm = () => {
                   type="checkbox"
                   checked={isChecked}
                   onChange={handleCheckboxChange}
-                  className="relative h-16px w-16px appearance-none rounded-xxs border border-navyBlue2 bg-white outline-none after:absolute after:top-0 after:-mt-3px after:ml-px after:hidden after:text-sm after:text-white after:content-checked checked:bg-navyBlue2 checked:after:block disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:text-input-text-disable"
+                  className="relative h-16px w-16px appearance-none rounded-xxs border border-navyBlue2 outline-none after:absolute after:top-0 after:-mt-3px after:ml-px after:hidden after:text-sm after:text-white after:content-checked checked:bg-navyBlue2 checked:after:block disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:text-input-text-disable"
                   required
                   disabled={!isDuringProposal}
                 />

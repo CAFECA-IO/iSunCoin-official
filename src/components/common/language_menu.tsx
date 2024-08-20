@@ -50,10 +50,11 @@ const LanguageMenu = ({
               height="16"
               viewBox="0 0 17 16"
               fill="none"
+              className="fill-current"
             >
               <path
                 d="M13.8334 8H3.16669M3.16669 8L7.16669 12M3.16669 8L7.16669 4"
-                stroke="#314362"
+                stroke="currentColor"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
