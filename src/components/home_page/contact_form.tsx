@@ -89,7 +89,7 @@ const ContactForm = () => {
       event.preventDefault();
 
       const emailData = {
-        comment: `<h3>姓名：${firstNameInput} ${lastNameInput}</h3><h3>電話：${phoneInput}</h3><h3>電郵：${emailInput}</h3><h3>回饋：${detailInput}</h3><p>${now}<p>`,
+        comment: `<h3>姓名：${firstNameInput} ${lastNameInput}</h3><h3>電話：${phoneInput}</h3><h3>電郵：${emailInput}</h3><h3>訊息內容：${detailInput}</h3><p>${now}<p>`,
       };
 
       // Info: (20240809 - Julian) call API
@@ -104,11 +104,14 @@ const ContactForm = () => {
 
       const { success } = result;
 
-      if (success) {
-        successProcess();
-      } else {
-        failedProcess();
-      }
+      // Info: (20240819 - Julian) 等待動畫播放 3 秒後再執行
+      setTimeout(() => {
+        if (success) {
+          successProcess();
+        } else {
+          failedProcess();
+        }
+      }, 3000);
     } catch (error) {
       failedProcess();
     }
