@@ -118,7 +118,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse items-center justify-center gap-12px bg-surface-neutral-main-background px-80px py-40px md:flex-row">
+    <div
+      id="contact"
+      className="flex flex-col-reverse items-center justify-center gap-12px bg-surface-neutral-main-background px-80px py-40px md:flex-row"
+    >
       {/* Info:(20240809 - Julian) Form ticket */}
       <div className="flex w-90vw flex-col gap-48px rounded-lg bg-stroke-neutral-invert p-48px font-semibold text-input-text-primary shadow-downDropShadowM md:w-550px">
         <h2 className="text-44px">{t('HOME_PAGE.CONTACT_TITLE')}</h2>
