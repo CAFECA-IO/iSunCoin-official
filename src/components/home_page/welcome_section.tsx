@@ -50,12 +50,12 @@ const WelcomeSection = () => {
   return (
     <>
       {/* Info:(20240808 - Julian) Frame */}
-      <div className="relative h-800px w-screen">
+      <div className="relative mt-60px h-300px w-screen md:h-600px">
         <Image src="/elements/frame.png" fill style={{ objectFit: 'cover' }} alt="" />
       </div>
 
       {/* Info:(20240808 - Julian) Welcome */}
-      <div className="flex flex-col items-center bg-surface-neutral-main-background px-80px py-40px">
+      <div className="flex flex-col items-center bg-surface-neutral-main-background px-20px py-40px md:px-80px">
         {/* Info:(20240808 - Julian) Text */}
         <div className="flex flex-col items-center gap-24px">
           {/* Info:(20240808 - Julian) Title */}
@@ -63,7 +63,7 @@ const WelcomeSection = () => {
             <p className="text-xl font-bold text-text-brand-primary-lv2">
               {t('HOME_PAGE.WELCOME')}
             </p>
-            <h1 className="text-64px font-semibold text-text-brand-secondary-lv1">
+            <h1 className="text-3xl font-semibold text-text-brand-secondary-lv1 md:text-64px">
               {t('HOME_PAGE.ISUNCOIN')}
             </h1>
           </div>
@@ -94,7 +94,7 @@ const WelcomeSection = () => {
             </svg>
           </a>
           {/* Info:(20240808 - Julian) Description */}
-          <div className="text-base text-text-neutral-primary">
+          <div className="text-sm text-text-neutral-primary md:text-base">
             <p>{t('HOME_PAGE.WELCOME_DESCRIPTION_1')}</p>
             <p>{t('HOME_PAGE.WELCOME_DESCRIPTION_2')}</p>
             <p>{t('HOME_PAGE.WELCOME_DESCRIPTION_3')}</p>
@@ -102,7 +102,7 @@ const WelcomeSection = () => {
           </div>
         </div>
         {/* Info:(20240808 - Julian) Intro cards */}
-        <div className="grid w-full grid-flow-row grid-cols-1 gap-80px px-20px py-40px md:grid-cols-2">
+        <div className="grid w-full grid-flow-row grid-cols-1 gap-40px px-20px py-40px md:grid-cols-2">
           {introCards}
         </div>
       </div>

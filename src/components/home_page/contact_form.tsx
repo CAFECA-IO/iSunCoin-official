@@ -123,12 +123,12 @@ const ContactForm = () => {
       className="flex flex-col-reverse items-center justify-center gap-12px bg-surface-neutral-main-background px-80px py-40px md:flex-row"
     >
       {/* Info:(20240809 - Julian) Form ticket */}
-      <div className="flex w-90vw flex-col gap-48px rounded-lg bg-stroke-neutral-invert p-48px font-semibold text-input-text-primary shadow-downDropShadowM md:w-550px">
-        <h2 className="text-44px">{t('HOME_PAGE.CONTACT_TITLE')}</h2>
+      <div className="flex w-90vw flex-col gap-24px rounded-lg bg-stroke-neutral-invert p-20px font-semibold text-input-text-primary shadow-downDropShadowM md:w-550px md:gap-48px md:p-48px">
+        <h2 className="text-xl md:text-44px">{t('HOME_PAGE.CONTACT_TITLE')}</h2>
         {/* Info:(20240809 - Julian) Form */}
         <form
           onSubmit={submitHandler}
-          className="relative grid flex-1 grid-flow-row grid-cols-2 gap-24px"
+          className="relative grid flex-1 grid-flow-row grid-cols-2 gap-12px md:gap-24px"
         >
           {/* Info:(20240809 - Julian) Sending animation */}
           <div

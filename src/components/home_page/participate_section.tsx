@@ -40,11 +40,11 @@ const ParticipateSection = () => {
       className="flex w-full flex-col-reverse items-center justify-between bg-surface-neutral-surface-lv2 md:flex-row"
     >
       {/* Info:(20240808 - Julian) Text */}
-      <div className="flex flex-col items-start gap-y-20px p-80px md:w-1/2">
-        <p className="text-36px font-semibold text-text-neutral-primary">
+      <div className="flex flex-col items-start gap-y-20px p-20px md:w-1/2 md:p-80px">
+        <p className="text-2xl font-semibold text-text-neutral-primary md:text-36px">
           {t('HOME_PAGE.PARTICIPATE_TITLE')}
         </p>
-        <p className="font-normal text-text-neutral-secondary">
+        <p className="text-sm font-normal text-text-neutral-secondary md:text-base">
           {t('HOME_PAGE.PARTICIPATE_DESCRIPTION')}
         </p>
         {/* Info:(20240808 - Julian) Download */}
@@ -96,7 +96,7 @@ const ParticipateSection = () => {
         </div>
       </div>
       {/* Info:(20240808 - Julian) Image */}
-      <div className="relative h-550px w-full md:w-1/2">
+      <div className="relative h-250px w-full md:h-550px md:w-1/2">
         <Image
           src="/elements/participate.png"
           fill
