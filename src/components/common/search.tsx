@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { searchableItems } from '@/constants/search';
+import Link from 'next/link';
 
 interface Result {
   title: string;
@@ -16,34 +16,7 @@ interface SearchResultItemsProps {
 }
 
 const SearchResultItems = ({ setIsOpen, setSearchTerm, results }: SearchResultItemsProps) => {
-  const router = useRouter();
-
-  // Info: (20240819 - Liz) handle the result click event
-  const handleResultClick = (url: string) => {
-    const [pathname, hash] = url.split('#');
-    const isSamePage = pathname === router.pathname;
-
-    const scrollToHash = () => {
-      if (hash) {
-        // Info: (20240819 - Liz) scroll to the element with the id of the hash
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        // Info: (20240819 - Liz) scroll to top of the page
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-
-    // Info: (20240819 - Liz) if the path is the same, just scroll to the hash
-    if (isSamePage) {
-      scrollToHash();
-    } else {
-      // Info: (20240819 - Liz) if the path is different, push the new path to the router
-      router.push(pathname).then(scrollToHash);
-    }
-
+  const handleResultClick = () => {
     setIsOpen(false);
     setSearchTerm('');
   };
@@ -52,12 +25,13 @@ const SearchResultItems = ({ setIsOpen, setSearchTerm, results }: SearchResultIt
     <ul className="p-8px">
       {results.map((item) => (
         <li key={item.title}>
-          <div
+          <Link
+            href={item.url}
             className="block px-12px py-8px text-sm font-medium text-dropdown-text-primary"
-            onClick={() => handleResultClick(item.url)}
+            onClick={() => handleResultClick()}
           >
             {item.title}
-          </div>
+          </Link>
         </li>
       ))}
     </ul>
