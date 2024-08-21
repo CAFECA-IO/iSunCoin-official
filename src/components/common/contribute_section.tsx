@@ -7,15 +7,15 @@ const ContributeSection = () => {
   return (
     <div
       id="contribute"
-      className="flex w-full flex-col items-center justify-between gap-80px bg-surface-neutral-surface-lv2 px-80px py-40px md:flex-row"
+      className="flex w-full flex-col items-center justify-between gap-x-80px gap-y-10px bg-surface-neutral-surface-lv2 px-20px py-40px md:flex-row md:px-80px"
     >
       {/* Info:(20240808 - Julian) Image */}
-      <div className="flex justify-end md:w-1/2">
+      <div className="flex w-2/3 justify-end md:w-1/2">
         <Image src="/elements/contribute.png" width={480} height={480} alt="contribute_image" />
       </div>
       {/* Info:(20240808 - Julian) Text */}
       <div className="flex flex-col items-start gap-20px md:w-1/2">
-        <p className="text-36px font-bold text-text-neutral-primary">
+        <p className="text-2xl font-bold text-text-neutral-primary md:text-36px">
           {t('HOME_PAGE.CONTRIBUTE_TITLE')}
         </p>
         <p className="text-base text-text-neutral-secondary">

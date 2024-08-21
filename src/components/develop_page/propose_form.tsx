@@ -10,7 +10,7 @@ import { ISUNCOIN_API_V1 } from '@/constants/url';
 const ProposeForm = () => {
   const { t } = useTranslation('common');
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
-  const { isDuringProposal, currentPhase, remainingBlocks } = useProposalCtx();
+  const { isDuringProposal, currentPhase, nextProposalStartBlocks } = useProposalCtx();
 
   const displayNextPhase = (currentPhase + 1).toString().padStart(6, '0');
 
@@ -90,7 +90,7 @@ const ProposeForm = () => {
               {t('DEVELOP_PAGE.PROPOSALS_START_1')}
               <span className="text-64px font-bold text-text-neutral-primary">
                 {' '}
-                {remainingBlocks}{' '}
+                {nextProposalStartBlocks}{' '}
               </span>
               {t('DEVELOP_PAGE.PROPOSALS_START_2')}
             </h2>
