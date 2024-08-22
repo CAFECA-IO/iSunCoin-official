@@ -10,30 +10,31 @@ import { ISUNCOIN_API_V1 } from '@/constants/url';
 const ProposeForm = () => {
   const { t } = useTranslation('common');
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
-  const { isDuringProposal, currentPhase, proposalBlock } = useProposalCtx();
+  const { isStart, isDuringProposal, currentPhase, proposalBlock } = useProposalCtx();
 
-  // Info:(20240822 - Julian) 由於每一期是 [ 提案期 | 投票期 ]
-  const displayPhase = isDuringProposal
-    ? // 如果正在提案期，則當前期數為 currentPhase
-      currentPhase.toString().padStart(6, '0')
-    : // 如果正在投票期，則當前期數為 currentPhase + 1
-      (currentPhase + 1).toString().padStart(6, '0');
+  const displayPhase =
+    isDuringProposal && isStart
+      ? // Info:(20240822 - Julian) 如果正在提案期且已過 phase 0，則當前期數為 currentPhase - 1
+        (currentPhase - 1).toString().padStart(6, '0')
+      : // Info:(20240822 - Julian) 否則當前期數為 currentPhase
+        currentPhase.toString().padStart(6, '0');
 
-  const displayTitle = isDuringProposal ? (
-    // Info:(20240822 - Julian) 如果是在提案期間，則顯示提案何時結束
-    <h2 className="text-36px font-semibold text-text-neutral-secondary">
-      {t('DEVELOP_PAGE.PROPOSALS_END_1')}
-      <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
-      {t('DEVELOP_PAGE.PROPOSALS_END_2')}
-    </h2>
-  ) : (
-    // Info:(20240822 - Julian) 如果是在投票期間，則顯示下次提案何時開始
-    <h2 className="text-36px font-semibold text-text-neutral-secondary">
-      {t('DEVELOP_PAGE.PROPOSALS_START_1')}
-      <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
-      {t('DEVELOP_PAGE.PROPOSALS_START_2')}
-    </h2>
-  );
+  const displayTitle =
+    isDuringProposal && isStart ? (
+      // Info:(20240822 - Julian) 如果是在提案期間且已過 phase 0，則顯示提案何時結束
+      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+        {t('DEVELOP_PAGE.PROPOSALS_END_1')}
+        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        {t('DEVELOP_PAGE.PROPOSALS_END_2')}
+      </h2>
+    ) : (
+      // Info:(20240822 - Julian) 否則顯示下次提案何時開始
+      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+        {t('DEVELOP_PAGE.PROPOSALS_START_1')}
+        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        {t('DEVELOP_PAGE.PROPOSALS_START_2')}
+      </h2>
+    );
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
