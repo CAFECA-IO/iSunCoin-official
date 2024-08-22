@@ -10,9 +10,33 @@ import { ISUNCOIN_API_V1 } from '@/constants/url';
 const ProposeForm = () => {
   const { t } = useTranslation('common');
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
-  const { isDuringProposal, currentPhase, nextProposalStartBlocks } = useProposalCtx();
+  const { isStart, isDuringProposal, currentPhase, proposalBlock } = useProposalCtx();
 
-  const displayNextPhase = (currentPhase + 1).toString().padStart(6, '0');
+  const isFormDisabled = !isDuringProposal || !isStart;
+
+  const displayPhase =
+    isDuringProposal && isStart
+      ? // Info:(20240822 - Julian) 如果正在提案期且已過 phase 0，則當前期數為 currentPhase - 1
+        (currentPhase - 1).toString().padStart(6, '0')
+      : // Info:(20240822 - Julian) 否則當前期數為 currentPhase
+        currentPhase.toString().padStart(6, '0');
+
+  const displayTitle =
+    isDuringProposal && isStart ? (
+      // Info:(20240822 - Julian) 如果是在提案期間且已過 phase 0，則顯示提案何時結束
+      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+        {t('DEVELOP_PAGE.PROPOSALS_END_1')}
+        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        {t('DEVELOP_PAGE.PROPOSALS_END_2')}
+      </h2>
+    ) : (
+      // Info:(20240822 - Julian) 否則顯示下次提案何時開始
+      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+        {t('DEVELOP_PAGE.PROPOSALS_START_1')}
+        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        {t('DEVELOP_PAGE.PROPOSALS_START_2')}
+      </h2>
+    );
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -84,16 +108,9 @@ const ProposeForm = () => {
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
             <p className="text-lg font-bold text-text-brand-primary-lv1">
-              {t('DEVELOP_PAGE.PHASE_1')} {displayNextPhase} {t('DEVELOP_PAGE.PHASE_2')}
+              {t('DEVELOP_PAGE.PHASE_1')} {displayPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
-            <h2 className="text-36px font-semibold text-text-neutral-secondary">
-              {t('DEVELOP_PAGE.PROPOSALS_START_1')}
-              <span className="text-64px font-bold text-text-neutral-primary">
-                {' '}
-                {nextProposalStartBlocks}{' '}
-              </span>
-              {t('DEVELOP_PAGE.PROPOSALS_START_2')}
-            </h2>
+            {displayTitle}
           </div>
           {/* Info:(20240813 - Julian) Image */}
           <Image
@@ -130,7 +147,7 @@ const ProposeForm = () => {
                   onChange={handleTitleChange}
                   className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:placeholder:text-input-text-disable"
                   required
-                  disabled={!isDuringProposal}
+                  disabled={isFormDisabled}
                 />
               </div>
               {/* Info:(20240813 - Julian) Proposal Content */}
@@ -145,7 +162,7 @@ const ProposeForm = () => {
                   onChange={handleContentChange}
                   className="w-full rounded-sm border border-input-stroke-input bg-input-surface-input-background px-12px py-10px text-base outline-none placeholder:text-input-text-input-placeholder disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:placeholder:text-input-text-disable"
                   required
-                  disabled={!isDuringProposal}
+                  disabled={isFormDisabled}
                 />
               </div>
               {/* Info:(20240813 - Julian) Checkbox */}
@@ -160,7 +177,7 @@ const ProposeForm = () => {
                   onChange={handleCheckboxChange}
                   className="relative h-16px w-16px appearance-none rounded-xxs border border-navyBlue2 outline-none after:absolute after:top-0 after:-mt-3px after:ml-px after:hidden after:text-sm after:text-white after:content-checked checked:bg-navyBlue2 checked:after:block disabled:border-input-stroke-disable disabled:bg-input-surface-input-disable disabled:text-input-text-disable"
                   required
-                  disabled={!isDuringProposal}
+                  disabled={isFormDisabled}
                 />
                 {t('DEVELOP_PAGE.CHECKBOX_TEXT')}
               </label>
@@ -170,7 +187,7 @@ const ProposeForm = () => {
               id="proposal-submit-button"
               type="submit"
               className="ml-auto w-fit rounded-xs bg-button-surface-strong-primary px-32px py-14px text-button-text-primary-solid disabled:bg-button-surface-strong-disable disabled:text-button-text-disable"
-              disabled={!isDuringProposal}
+              disabled={isFormDisabled}
             >
               {t('DEVELOP_PAGE.SUBMIT_BUTTON')} (100 ISC)
             </button>
