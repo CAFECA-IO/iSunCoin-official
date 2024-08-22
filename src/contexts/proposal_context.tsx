@@ -11,7 +11,7 @@ import { IPhase } from '@/interfaces/phase';
 interface IProposalContext {
   isDuringProposal: boolean;
   nextProposalStartBlocks: number;
-  nextVoteEndBlocks: number;
+  nextVoteStartBlocks: number;
   currentPhase: number;
 }
 
@@ -30,8 +30,8 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
   const [currentPhase, setCurrentPhase] = useState(0);
   // Info: (20240821 - Julian) 距離下次提案期開始的區塊數
   const [nextProposalStartBlocks, setNextProposalStartBlocks] = useState(0);
-  // Info: (20240821 - Julian) 距離下次投票期結束的區塊數
-  const [nextVoteEndBlocks, setNextVoteEndBlocks] = useState(0);
+  // Info: (20240821 - Julian) 距離下次投票期開始的區塊數
+  const [nextVoteStartBlocks, setNextVoteStartBlocks] = useState(0);
 
   useEffect(() => {
     fetch(ISUNCOIN_API_V1.PHASE)
@@ -64,9 +64,6 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
           ? FIRST_VOTE_BLOCK - blockNumber
           : HALF_BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE);
 
-      // Info: (20240822 - Julian) 畫面顯示用
-      const nextVoteEnd = nextVoteStart + HALF_BLOCKS_PER_PHASE;
-
       // Info: (20240821 - Julian) 提案期：過了 phase 0 && 當前區塊數 % 每期區塊數 < 每期區塊數的前一半
       const isProposal =
         blockNumber >= FIRST_PROPOSAL_BLOCK &&
@@ -74,12 +71,12 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
 
       setCurrentPhase(phase);
       setNextProposalStartBlocks(nextProposalStart);
-      setNextVoteEndBlocks(nextVoteEnd);
+      setNextVoteStartBlocks(nextVoteStart);
       setIsDuringProposal(isProposal);
     } else {
       setCurrentPhase(0);
       setNextProposalStartBlocks(0);
-      setNextVoteEndBlocks(0);
+      setNextVoteStartBlocks(0);
       setIsDuringProposal(false);
     }
   }, [blockNumber]);
@@ -89,7 +86,7 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
   const value = {
     isDuringProposal,
     nextProposalStartBlocks,
-    nextVoteEndBlocks,
+    nextVoteStartBlocks,
     currentPhase,
   };
 
