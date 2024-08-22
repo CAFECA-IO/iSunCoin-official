@@ -4,14 +4,15 @@ import {
   BLOCKS_PER_PHASE,
   HALF_BLOCKS_PER_PHASE,
   FIRST_PROPOSAL_BLOCK,
-  // FIRST_VOTE_BLOCK,
+  FIRST_VOTE_BLOCK,
 } from '@/constants/config';
 import { IPhase } from '@/interfaces/phase';
 
 interface IProposalContext {
   isDuringProposal: boolean;
   currentPhase: number;
-  blockNumber: number;
+  proposalBlock: number;
+  votingBlock: number;
 }
 
 export interface IProposalProvider {
@@ -27,6 +28,10 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
   const [isDuringProposal, setIsDuringProposal] = useState(false);
   // Info: (20240821 - Julian) 當前期數
   const [currentPhase, setCurrentPhase] = useState(0);
+  // Info: (20240822 - Julian) 用於顯示 ProposeForm 的區塊數
+  const [proposalBlock, setProposalBlock] = useState(0);
+  // Info: (20240822 - Julian) 用於顯示 CurrentProposals 的區塊數
+  const [votingBlock, setVotingBlock] = useState(0);
 
   useEffect(() => {
     fetch(ISUNCOIN_API_V1.PHASE)
@@ -35,7 +40,7 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
         const blockHeight = parseInt(data.result, 16);
         setBlockNumber(blockHeight);
       });
-    setBlockNumber(BLOCKS_PER_PHASE + HALF_BLOCKS_PER_PHASE - 1);
+    setBlockNumber(BLOCKS_PER_PHASE + BLOCKS_PER_PHASE + 2);
   }, []);
 
   useEffect(() => {
@@ -44,23 +49,37 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
       // Info: (20240821 - Julian) 計算當前期數：當前區塊數 / 每期區塊數(1310720)
       const phase = Math.floor(blockNumber / BLOCKS_PER_PHASE);
 
-      /* Info: (20240821 - Julian) 計算距離下次投票期開始還剩多少區塊
-       * 如果還在 phase 0 (未進入第一次投票期)： FIRST_VOTE_BLOCK - 當前區塊數
-       * 如果過了 phase 0：每期區塊數的前一半 - (當前區塊數 % 每期區塊數) */
-      // const nextVoteStart =
-      //   blockNumber < FIRST_VOTE_BLOCK
-      //     ? FIRST_VOTE_BLOCK - blockNumber
-      //     : HALF_BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE);
-
       // Info: (20240821 - Julian) 提案期：過了 phase 0 && 當前區塊數 % 每期區塊數 < 每期區塊數的前一半
       const isProposal =
         blockNumber >= FIRST_PROPOSAL_BLOCK &&
         blockNumber % BLOCKS_PER_PHASE < HALF_BLOCKS_PER_PHASE;
 
+      const remainingBlock = isProposal
+        ? // 正在提案中 -> 計算距離「本次投票期開始」「下次提案期結束」還剩多少區塊： 每期區塊數的前一半 - (當前區塊數 % 每期區塊數)
+          HALF_BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE)
+        : // 已進入投票期 -> 計算距離「本次投票期結束」「下次提案期開始」還剩多少區塊： 每期區塊數 - (當前區塊數 % 每期區塊數)
+          BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE);
+
+      const showingProposalBlock =
+        blockNumber < FIRST_PROPOSAL_BLOCK
+          ? // 如果還在 phase 0 (未進入第一次投票期)： FIRST_PROPOSAL_BLOCK - 當前區塊數
+            FIRST_PROPOSAL_BLOCK - blockNumber
+          : remainingBlock;
+
+      const showingVotingBlock =
+        blockNumber < FIRST_PROPOSAL_BLOCK
+          ? // 如果還在 phase 0 (未進入第一次投票期)： FIRST_VOTE_BLOCK - 當前區塊數
+            FIRST_VOTE_BLOCK - blockNumber
+          : remainingBlock;
+
       setCurrentPhase(phase);
+      setProposalBlock(showingProposalBlock);
+      setVotingBlock(showingVotingBlock);
       setIsDuringProposal(isProposal);
     } else {
       setCurrentPhase(0);
+      setProposalBlock(0);
+      setVotingBlock(0);
       setIsDuringProposal(false);
     }
   }, [blockNumber]);
@@ -69,8 +88,9 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const value = {
     isDuringProposal,
-    blockNumber,
     currentPhase,
+    proposalBlock,
+    votingBlock,
   };
 
   return <ProposalContext.Provider value={value}>{children}</ProposalContext.Provider>;
