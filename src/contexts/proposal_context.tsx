@@ -45,8 +45,8 @@ export const ProposalProvider = ({ children }: IProposalProvider) => {
   useEffect(() => {
     // Info: (20240821 - Julian) 如果區塊數 !== NaN，則執行以下程式碼
     if (!Number.isNaN(blockNumber)) {
-      // Info: (20240821 - Julian) 計算當前期數：當前區塊數 / 每期區塊數(1310720)
-      const phase = Math.floor(blockNumber / BLOCKS_PER_PHASE);
+      // Info: (20240821 - Julian) 計算當前期數：當前區塊數 / 每期區塊數(1310720) +1
+      const phase = Math.floor(blockNumber / BLOCKS_PER_PHASE) + 1;
 
       /* Info: (20240821 - Julian) 計算距離下次提案期開始還剩多少區塊
        * 如果還在 phase 0 (未進入第一次投票期)： FIRST_PROPOSAL_BLOCK - 當前區塊數
