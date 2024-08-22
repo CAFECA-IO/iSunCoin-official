@@ -6,13 +6,47 @@ import { useProposalCtx } from '@/contexts/proposal_context';
 import { ToastType, ToastPosition } from '@/interfaces/toastify';
 import { ToastId } from '@/constants/toastify';
 import { ISUNCOIN_API_V1 } from '@/constants/url';
+import { BLOCKS_PER_PHASE, FIRST_PROPOSAL_BLOCK, HALF_BLOCKS_PER_PHASE } from '@/constants/config';
 
 const ProposeForm = () => {
   const { t } = useTranslation('common');
   const { messageModalVisibleHandler, messageModalDataHandler, toastHandler } = useGlobalCtx();
-  const { isDuringProposal, currentPhase, nextProposalStartBlocks } = useProposalCtx();
+  const { isDuringProposal, currentPhase, blockNumber } = useProposalCtx();
 
-  const displayNextPhase = (currentPhase + 1).toString().padStart(6, '0');
+  // Info: (20240822 - Julian) 計算區塊數
+  const displayBlock =
+    blockNumber < FIRST_PROPOSAL_BLOCK
+      ? // 如果還在 phase 0 (未進入第一次投票期)： FIRST_PROPOSAL_BLOCK - 當前區塊數
+        FIRST_PROPOSAL_BLOCK - blockNumber
+      : // 如果過了 phase 0：
+        isDuringProposal
+        ? // 正在提案中 -> 計算距離本次提案期結束還剩多少區塊： 每期區塊數的前一半 - (當前區塊數 % 每期區塊數)
+          HALF_BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE)
+        : // 已進入投票期 -> 計算距離下次投票期開始還剩多少區塊： 每期區塊數 - (當前區塊數 % 每期區塊數)
+          BLOCKS_PER_PHASE - (blockNumber % BLOCKS_PER_PHASE);
+
+  // Info:(20240822 - Julian) 由於每一期是 [ 提案期 | 投票期 ]
+  const displayPhase = isDuringProposal
+    ? // 如果正在提案期，則當前期數為 currentPhase
+      currentPhase.toString().padStart(6, '0')
+    : // 如果正在投票期，則當前期數為 currentPhase + 1
+      (currentPhase + 1).toString().padStart(6, '0');
+
+  const displayTitle = isDuringProposal ? (
+    // Info:(20240822 - Julian) 如果是在提案期間，則顯示提案何時結束
+    <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      {t('DEVELOP_PAGE.PROPOSALS_END_1')}
+      <span className="text-64px font-bold text-text-neutral-primary"> {displayBlock} </span>
+      {t('DEVELOP_PAGE.PROPOSALS_END_2')}
+    </h2>
+  ) : (
+    // Info:(20240822 - Julian) 如果是在投票期間，則顯示下次提案何時開始
+    <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      {t('DEVELOP_PAGE.PROPOSALS_START_1')}
+      <span className="text-64px font-bold text-text-neutral-primary"> {displayBlock} </span>
+      {t('DEVELOP_PAGE.PROPOSALS_START_2')}
+    </h2>
+  );
 
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
@@ -84,16 +118,9 @@ const ProposeForm = () => {
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
             <p className="text-lg font-bold text-text-brand-primary-lv1">
-              {t('DEVELOP_PAGE.PHASE_1')} {displayNextPhase} {t('DEVELOP_PAGE.PHASE_2')}
+              {t('DEVELOP_PAGE.PHASE_1')} {displayPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
-            <h2 className="text-36px font-semibold text-text-neutral-secondary">
-              {t('DEVELOP_PAGE.PROPOSALS_START_1')}
-              <span className="text-64px font-bold text-text-neutral-primary">
-                {' '}
-                {nextProposalStartBlocks}{' '}
-              </span>
-              {t('DEVELOP_PAGE.PROPOSALS_START_2')}
-            </h2>
+            {displayTitle}
           </div>
           {/* Info:(20240813 - Julian) Image */}
           <Image

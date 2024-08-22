@@ -16,7 +16,7 @@ const CurrentProposals = () => {
       .then((data) => setProposalList(data));
   }, []);
 
-  const { isDuringProposal, currentPhase, nextVoteStartBlocks } = useProposalCtx();
+  const { isDuringProposal, currentPhase, blockNumber } = useProposalCtx();
 
   const displayCurrentPhase = currentPhase.toString().padStart(6, '0');
 
@@ -46,10 +46,7 @@ const CurrentProposals = () => {
             </p>
             <h2 className="text-36px font-semibold text-text-neutral-secondary">
               {t('DEVELOP_PAGE.VOTINGS_END_1')}
-              <span className="text-64px font-bold text-text-neutral-primary">
-                {' '}
-                {nextVoteStartBlocks}{' '}
-              </span>
+              <span className="text-64px font-bold text-text-neutral-primary"> {blockNumber} </span>
               {t('DEVELOP_PAGE.VOTINGS_END_2')}
             </h2>
           </div>
