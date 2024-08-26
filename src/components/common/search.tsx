@@ -77,21 +77,22 @@ const Search = () => {
 
   return (
     <div className="relative grow" ref={searchRef}>
-      <div className="flex justify-between rounded-sm bg-input-surface-input-background">
+      <div className="flex justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background">
         <input
+          id="global-search-input"
           type="text"
           value={searchTerm}
           onChange={handleInputChange}
           placeholder={t('HEADER.SEARCH')}
-          className="w-full rounded-l-sm border border-r-0 border-input-stroke-input bg-transparent px-12px py-10px text-lg font-medium text-input-text-primary outline-none placeholder:text-input-text-input-placeholder"
+          className="w-full rounded-l-sm bg-transparent px-12px py-10px text-base font-medium text-input-text-input-filled outline-none placeholder:text-input-text-input-placeholder"
         />
-        <div className="flex shrink-0 cursor-pointer items-center justify-center rounded-r-sm border border-l-0 border-input-stroke-input px-12px py-10px">
+        <div className="flex shrink-0 cursor-pointer items-center justify-center rounded-r-sm px-12px py-10px">
           <Image src="/icons/search_icon.svg" alt="search_icon" width={20} height={20} />
         </div>
       </div>
 
       {isOpen && (
-        <div className="absolute z-10 mt-1 w-full rounded-sm bg-white shadow-downDropShadowM">
+        <div className="absolute z-10 mt-1 w-full rounded-sm bg-surface-neutral-surface-lv1 shadow-downDropShadowM">
           <SearchResultItems
             setIsOpen={setIsOpen}
             setSearchTerm={setSearchTerm}

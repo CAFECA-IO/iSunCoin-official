@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 const languages = [
   { label: 'English', code: 'en' },
@@ -19,6 +20,7 @@ const LanguageMenu = ({
   onClickBackBtn = () => {},
 }: LanguageMenuProps) => {
   const { asPath } = useRouter();
+  const { t } = useTranslation('common');
 
   return (
     <>
@@ -30,7 +32,7 @@ const LanguageMenu = ({
           onClick={onClick}
           scroll={false}
           locale={lang.code}
-          className="w-full cursor-pointer px-24px py-10px text-center text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
+          className="w-full px-24px py-10px text-center text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
         >
           {lang.label}
         </Link>
@@ -39,9 +41,10 @@ const LanguageMenu = ({
       {/* Back Button */}
       {backBtn && (
         <button
+          id="back-btn"
           type="button"
           onClick={onClickBackBtn}
-          className="flex w-full cursor-pointer items-center justify-center gap-12px px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
+          className="flex w-full items-center justify-center gap-12px px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
         >
           <div>
             <svg
@@ -49,7 +52,6 @@ const LanguageMenu = ({
               width="17"
               height="16"
               viewBox="0 0 17 16"
-              fill="none"
               className="fill-current"
             >
               <path
@@ -61,7 +63,7 @@ const LanguageMenu = ({
               />
             </svg>
           </div>
-          <p>Back</p>
+          <p>{t('HEADER.BACK')}</p>
         </button>
       )}
     </>
