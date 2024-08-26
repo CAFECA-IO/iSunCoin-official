@@ -95,7 +95,7 @@ const Pagination = ({
       type="button"
       onClick={firstPageHandler}
       disabled={isFirstPage}
-      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-primaryYellow hover:text-primaryYellow disabled:border-lightGray3 disabled:text-lightGray3"
+      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-input-stroke-selected hover:text-button-text-primary-hover disabled:border-input-stroke-input disabled:text-date-picker-text-input-placeholder"
     >
       <svg
         width="20"
@@ -124,7 +124,7 @@ const Pagination = ({
       type="button"
       onClick={previousPageHandler}
       disabled={isFirstPage}
-      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-primaryYellow hover:text-primaryYellow disabled:border-lightGray3 disabled:text-lightGray3"
+      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-input-stroke-selected hover:text-button-text-primary-hover disabled:border-input-stroke-input disabled:text-date-picker-text-input-placeholder"
     >
       <svg
         width="20"
@@ -151,7 +151,7 @@ const Pagination = ({
       type="button"
       onClick={lastPageHandler}
       disabled={isLastPage}
-      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-primaryYellow hover:text-primaryYellow disabled:border-lightGray3 disabled:text-lightGray3"
+      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-input-stroke-selected hover:text-button-text-primary-hover disabled:border-input-stroke-input disabled:text-date-picker-text-input-placeholder"
     >
       <svg
         width="20"
@@ -180,7 +180,7 @@ const Pagination = ({
       type="button"
       onClick={nextPageHandler}
       disabled={isLastPage}
-      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-primaryYellow hover:text-primaryYellow disabled:border-lightGray3 disabled:text-lightGray3"
+      className="flex h-40px w-40px items-center justify-center rounded border border-button-stroke-secondary hover:border-input-stroke-selected hover:text-button-text-primary-hover disabled:border-input-stroke-input disabled:text-date-picker-text-input-placeholder"
     >
       <svg
         width="20"
@@ -212,10 +212,13 @@ const Pagination = ({
       value={targetPageRef.current}
       onChange={pageChangeHandler}
       onKeyDown={handleKeyDown}
-      className="h-40px w-40px rounded border border-button-stroke-secondary bg-transparent text-center text-sm font-semibold outline-none placeholder:text-lightGray3 disabled:border-lightGray3"
+      className="h-40px w-40px rounded border border-button-stroke-secondary bg-transparent text-center text-sm font-semibold outline-none disabled:border-input-stroke-input disabled:text-date-picker-text-input-placeholder"
       disabled={totalPages === 0} // Info: (20240419 - Julian) 總頁數為 0 時，輸入框設為 disabled
     />
   );
+
+  const totalPageTextStyle =
+    totalPages === 0 ? 'text-date-picker-text-input-placeholder' : 'text-button-text-secondary';
 
   return (
     <ul className="flex items-start gap-10px text-button-text-secondary">
@@ -227,7 +230,7 @@ const Pagination = ({
       <li className="flex flex-col items-center">
         {displayPageInput}
         {/* Info: (20240419 - Julian) 顯示總頁數 */}
-        <p>
+        <p className={totalPageTextStyle}>
           {t('COMMON.OF')} {totalPages}
         </p>
       </li>

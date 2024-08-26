@@ -673,79 +673,18 @@ module.exports = {
         'tree-stroke-icon': 'var(--tree-stroke-icon)',
         'tree-text-primary': 'var(--tree-text-primary)',
 
+        // Info: (20240826 - Julian) For world map
         skyBlue: '#94BBEA',
         darkSkyBlue: '#5E8ACC',
         lightOrange: '#FFBC00',
         darkOrange: '#FF9000',
         darkRed: '#ED3B3B',
-
-        darkPurple: '#24274A',
-        darkPurple2: '#2C315B',
-        darkPurple3: '#1F2243',
-        darkPurple4: '#3F497A',
-
-        lightWhite: '#FCFCFF',
-
-        lightGreen: '#2D7E58',
-
-        lightBlue: '#31D3F5',
-
-        lightRed: '#C84949',
-
-        lilac: '#ABA7BD',
-        lilac2: '#6857d733',
-        violet: '#6857D7',
-        violet2: '#9747FF',
-
-        bluePurple: '#627EEA',
-        primaryBlue: '#11FFF5',
-        'primaryBlue-500': 'rgba(17, 255, 245, 0.5)',
-        hoverWhite: '#F0F0F0',
-
-        primaryYellow: '#FFA502',
-        primaryYellow2: '#996301',
-        primaryYellow3: '#FFD892',
-        primaryYellow4: '#FFA600',
-        primaryYellow5: '#CC8401',
-        primaryYellow6: '#997C15',
-
-        secondaryBlue: '#001840',
-        tertiaryBlue: '#304872',
-        tertiaryBlue2: '#002462B2',
-
-        lightGray: '#CED1D7',
-        lightGray2: '#828998',
-        lightGray3: '#C1C9D5',
-        lightGray4: '#7F8A9D',
-        lightGray5: '#58667F',
-        lightGray6: '#CDD1D9',
-        lightGray7: '#F4F5F7',
-
-        navyBlue: '#002462',
-        navyBlue2: '#27354E',
-        darkBlue: '#1570EF',
-        darkBlue2: '#314362',
-
-        errorRed: '#963737',
-        errorRed2: '#FED7D7',
-        errorRed3: '#FB5C5C',
-
-        successGreen: '#1E543B',
-        successGreen2: '#D3F4E5',
-        successGreen3: '#4BD394',
-
-        warningYellow: '#FFCF24',
-
-        indigo: '#8098F9',
       },
       backgroundImage: {
         landingPageKv: 'url("/v1/elements/landing_page_kv.png")',
         landingDataGraphic: 'url("/v1/elements/landing_data_graphic.png")',
         groundKv: 'url("/v1/elements/ground_kv.png")',
         starsWeb: 'url("/v1/elements/stars_web.png")',
-        productsSlide1: 'url("/v1/elements/products_slide1.png")',
-        productsSlide2: 'url("/v1/elements/products_slide2.png")',
-        productsSlide3: 'url("/v1/elements/products_slide3.png")',
         yellowCurveLine: 'url("/v1/elements/yellow_curve_line.png")',
         contactUsBg: 'url("/v1/elements/contact_us_bg.png")',
         moreDetailBg: 'url("/v1/elements/more_detail_bg.png")',
