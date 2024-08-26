@@ -24,7 +24,7 @@ const ParticipateSection = () => {
   const versionDropMenu = Object.values(iSunCoinVersion).map((version) => (
     <div
       key={version}
-      className="w-full p-12px py-8px text-left hover:bg-drag-n-drop-surface-hover"
+      className="w-full p-12px py-8px text-left hover:bg-button-surface-soft-primary-hover"
       onClick={() => {
         setSelectedVersion(version);
         setVersionVisible(false);
@@ -59,22 +59,12 @@ const ParticipateSection = () => {
             <div
               className={`${versionVisible ? 'rotate-180' : 'rotate-0'} transition-all duration-300 ease-in-out`}
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                className="fill-current"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="wrapper">
-                  <path
-                    id="Union"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M2.97187 5.72077C3.26476 5.42788 3.73963 5.42788 4.03253 5.72077L8.0022 9.69044L11.9719 5.72077C12.2648 5.42788 12.7396 5.42788 13.0325 5.72077C13.3254 6.01366 13.3254 6.48854 13.0325 6.78143L8.53253 11.2814C8.23963 11.5743 7.76476 11.5743 7.47187 11.2814L2.97187 6.78143C2.67897 6.48854 2.67897 6.01366 2.97187 5.72077Z"
-                  />
-                </g>
+              <svg width="16" height="16" viewBox="0 0 16 16" className="fill-current">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M2.97187 5.72077C3.26476 5.42788 3.73963 5.42788 4.03253 5.72077L8.0022 9.69044L11.9719 5.72077C12.2648 5.42788 12.7396 5.42788 13.0325 5.72077C13.3254 6.01366 13.3254 6.48854 13.0325 6.78143L8.53253 11.2814C8.23963 11.5743 7.76476 11.5743 7.47187 11.2814L2.97187 6.78143C2.67897 6.48854 2.67897 6.01366 2.97187 5.72077Z"
+                />
               </svg>
             </div>
 

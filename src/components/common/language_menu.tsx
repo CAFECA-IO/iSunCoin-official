@@ -32,7 +32,7 @@ const LanguageMenu = ({
           onClick={onClick}
           scroll={false}
           locale={lang.code}
-          className="w-full px-24px py-10px text-center text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
+          className="w-full px-24px py-10px text-center text-base font-medium text-tabs-text-default hover:bg-button-surface-soft-primary-hover"
         >
           {lang.label}
         </Link>
@@ -44,7 +44,7 @@ const LanguageMenu = ({
           id="back-btn"
           type="button"
           onClick={onClickBackBtn}
-          className="flex w-full items-center justify-center gap-12px px-24px py-10px text-base font-medium text-button-text-secondary hover:bg-drag-n-drop-surface-hover"
+          className="flex w-full items-center justify-center gap-12px px-24px py-10px text-base font-medium text-tabs-text-default hover:bg-button-surface-soft-primary-hover"
         >
           <div>
             <svg
