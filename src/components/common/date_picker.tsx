@@ -159,7 +159,7 @@ const PopulateDates = ({
         key={uniqueKey}
         type="button"
         disabled={isDisable}
-        className={`relative z-10 flex h-30px w-full items-center justify-center whitespace-nowrap text-base disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
+        className={`relative z-10 flex h-30px w-full items-center justify-center whitespace-nowrap text-base text-date-picker-text-default disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
         onClick={dateClickHandler}
       >
         {el?.date ?? ' '}

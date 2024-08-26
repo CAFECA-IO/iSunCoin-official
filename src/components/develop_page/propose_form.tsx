@@ -24,16 +24,16 @@ const ProposeForm = () => {
   const displayTitle =
     isDuringProposal && isStart ? (
       // Info:(20240822 - Julian) 如果是在提案期間且已過 phase 0，則顯示提案何時結束
-      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      <h2 className="text-36px font-semibold text-text-neutral-solid-dark">
         {t('DEVELOP_PAGE.PROPOSALS_END_1')}
-        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        <span className="text-64px font-bold"> {proposalBlock} </span>
         {t('DEVELOP_PAGE.PROPOSALS_END_2')}
       </h2>
     ) : (
       // Info:(20240822 - Julian) 否則顯示下次提案何時開始
-      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      <h2 className="text-36px font-semibold text-text-neutral-solid-dark">
         {t('DEVELOP_PAGE.PROPOSALS_START_1')}
-        <span className="text-64px font-bold text-text-neutral-primary"> {proposalBlock} </span>
+        <span className="text-64px font-bold"> {proposalBlock} </span>
         {t('DEVELOP_PAGE.PROPOSALS_START_2')}
       </h2>
     );
@@ -107,7 +107,7 @@ const ProposeForm = () => {
         <div className="flex items-center justify-between px-30px">
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
-            <p className="text-lg font-bold text-text-brand-primary-lv1">
+            <p className="text-lg font-bold text-text-brand-primary-solid">
               {t('DEVELOP_PAGE.PHASE_1')} {displayPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
             {displayTitle}
@@ -121,7 +121,7 @@ const ProposeForm = () => {
           />
         </div>
         {/* Info:(20240813 - Julian) Block */}
-        <div className="relative z-10 mt-40px flex flex-col items-center gap-24px rounded-lg bg-surface-neutral-surface-lv1 p-48px shadow-downDropShadowL">
+        <div className="relative z-10 mt-40px flex flex-col items-center gap-24px rounded-lg bg-surface-neutral-surface-lv2 p-48px shadow-downDropShadowL">
           <form onSubmit={handleSubmit} className="flex w-full flex-col items-center gap-48px">
             {/* Info:(20240813 - Julian) Title */}
             <div className="flex flex-col items-center gap-8px">

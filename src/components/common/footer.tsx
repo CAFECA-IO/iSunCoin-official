@@ -18,7 +18,7 @@ const Footer = ({ lastModifiedDate }: FooterProps) => {
       <section className="shrink-0 space-y-16px">
         <Link
           href={ISUNCOIN_ROUTES.HOME_PAGE}
-          className="flex items-center gap-8px text-surface-brand-secondary"
+          className="flex items-center gap-8px text-surface-brand-secondary-invert"
         >
           <Image src="/logo/isuncoin_logo.svg" alt="logo" width={40} height={40}></Image>
           <svg
@@ -73,7 +73,7 @@ const Footer = ({ lastModifiedDate }: FooterProps) => {
 
       {/* Navigation */}
       <section>
-        <ul className="flex flex-col text-center text-sm font-medium text-button-text-secondary md:flex-row xl:gap-24px">
+        <ul className="flex flex-col text-center text-sm font-medium text-tabs-text-disable md:flex-row xl:gap-24px">
           <li>
             <p className="cursor-not-allowed px-16px py-8px">{t('FOOTER.ABOUT_US')}</p>
           </li>

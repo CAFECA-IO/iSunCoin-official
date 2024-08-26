@@ -16,7 +16,7 @@ const GovernanceRewards = () => {
       </div>
 
       <div className="flex justify-center lg:w-2/3">
-        <Image src="/elements/cheer.svg" alt="cheer" width={746} height={568}></Image>
+        <Image src="/elements/cheer.svg" alt="cheer" width={746} height={568} />
       </div>
     </section>
   );

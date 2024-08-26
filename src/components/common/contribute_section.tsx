@@ -22,7 +22,7 @@ const ContributeSection = () => {
           {t('HOME_PAGE.CONTRIBUTE_DESCRIPTION')}
         </p>
         <a
-          href="https://github.com/CAFECA-IO"
+          href="https://github.com/CAFECA-IO/iSunCoin-official"
           target="_blank"
           className="flex items-center gap-8px rounded-xs bg-button-surface-strong-secondary px-32px py-14px text-button-text-invert hover:bg-button-surface-strong-secondary-hover"
           rel="noreferrer"
