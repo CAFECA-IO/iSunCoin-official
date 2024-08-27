@@ -79,6 +79,15 @@ const UpdateHistory = () => {
       </div>
     );
 
+  const displayPagination =
+    historyList.length > 0 && filteredHistoryList.length > 0 ? (
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        setCurrentPage={setCurrentPage}
+      />
+    ) : null;
+
   return (
     <div className="flex flex-col items-center gap-60px px-80px py-40px">
       <h2 className="text-44px font-bold text-text-neutral-primary">
@@ -126,11 +135,7 @@ const UpdateHistory = () => {
         <div className="flex w-full flex-col rounded-lg border border-accordion-surface-background-stroke-border bg-accordion-surface-background-primary">
           {updateHistoryList}
         </div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          setCurrentPage={setCurrentPage}
-        />
+        {displayPagination}
       </div>
     </div>
   );

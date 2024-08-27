@@ -57,7 +57,7 @@ const PopulateDates = ({
 
   // Info: (20240815 - Julian) 顯示星期標題
   const weekNameList = WEEK_DAY_NAME_LIST.map((week) => (
-    <p className="mx-auto h-35px w-35px text-primaryYellow" key={week}>
+    <p className="mx-auto h-35px w-35px text-date-picker-text-week" key={week}>
       {t(week)}
     </p>
   ));
@@ -159,7 +159,7 @@ const PopulateDates = ({
         key={uniqueKey}
         type="button"
         disabled={isDisable}
-        className={`relative z-10 flex h-30px w-full items-center justify-center whitespace-nowrap text-base disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
+        className={`relative z-10 flex h-30px w-full items-center justify-center whitespace-nowrap text-base text-date-picker-text-default disabled:text-date-picker-text-disable ${isDisable ? '' : 'hover:bg-date-picker-surface-input-selected'} ${isSelectedPeriodStyle} ${isSelectedDateStyle}`}
         onClick={dateClickHandler}
       >
         {el?.date ?? ' '}
@@ -392,7 +392,7 @@ const DatePicker = ({
         <button
           type="button"
           onClick={todayClickHandler}
-          className="w-full rounded border border-button-stroke-secondary p-1 text-sm text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+          className="w-full rounded border border-button-stroke-secondary p-1 text-sm text-button-text-secondary hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
         >
           {t('DATE_PICKER.TODAY')}
         </button>
@@ -402,7 +402,7 @@ const DatePicker = ({
           <button
             type="button"
             onClick={goToPrevMonth}
-            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-button-text-secondary hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
           >
             <svg
               width="16"
@@ -432,7 +432,7 @@ const DatePicker = ({
           <button
             type="button"
             onClick={goToNextMonth}
-            className="rounded border border-button-stroke-secondary p-2 text-text-brand-secondary-lv1 hover:border-primaryYellow hover:text-primaryYellow"
+            className="rounded border border-button-stroke-secondary p-2 text-button-text-secondary hover:border-button-stroke-primary-hover hover:text-button-text-primary-hover"
           >
             <svg
               width="16"

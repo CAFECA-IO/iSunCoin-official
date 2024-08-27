@@ -195,7 +195,11 @@
     "DEVELOP": "Develop",
     "AUTONOMY": "Autonomy",
     "RESEARCH": "Research",
-    "SEARCH": "Search"
+    "SEARCH": "Search",
+    "MENU": "Menu",
+    "LANGUAGE": "Language",
+    "DARK_MODE": "Dark Mode",
+    "BACK": "Back"
   },
 
   "FOOTER": {

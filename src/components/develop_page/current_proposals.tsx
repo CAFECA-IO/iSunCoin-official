@@ -24,16 +24,16 @@ const CurrentProposals = () => {
     // Info:(20240822 - Julian) 如果是在投票期間且已過 phase 0，則顯示投票何時結束
     isStart && !isDuringProposal ? (
       // Info:(20240822 - Julian)
-      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      <h2 className="text-36px font-semibold text-text-neutral-solid-dark">
         {t('DEVELOP_PAGE.VOTINGS_END_1')}
-        <span className="text-64px font-bold text-text-neutral-primary"> {votingBlock} </span>
+        <span className="text-64px font-bold"> {votingBlock} </span>
         {t('DEVELOP_PAGE.VOTINGS_END_2')}
       </h2>
     ) : (
       // Info:(20240822 - Julian) 否則顯示下次投票何時開始
-      <h2 className="text-36px font-semibold text-text-neutral-secondary">
+      <h2 className="text-36px font-semibold text-text-neutral-solid-dark">
         {t('DEVELOP_PAGE.VOTINGS_START_1')}
-        <span className="text-64px font-bold text-text-neutral-primary"> {votingBlock} </span>
+        <span className="text-64px font-bold"> {votingBlock} </span>
         {t('DEVELOP_PAGE.VOTINGS_START_2')}
       </h2>
     );
@@ -59,7 +59,7 @@ const CurrentProposals = () => {
         <div className="flex items-center justify-between px-30px">
           {/* Info:(20240813 - Julian) Title */}
           <div className="flex flex-col">
-            <p className="text-lg font-bold text-text-brand-primary-lv1">
+            <p className="text-lg font-bold text-text-brand-primary-solid">
               {t('DEVELOP_PAGE.PHASE_1')} {displayCurrentPhase} {t('DEVELOP_PAGE.PHASE_2')}
             </p>
             {displayTitle}

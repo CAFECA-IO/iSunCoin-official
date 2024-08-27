@@ -195,7 +195,11 @@
     "DEVELOP": "開發",
     "AUTONOMY": "自治",
     "RESEARCH": "研究",
-    "SEARCH": "搜尋"
+    "SEARCH": "搜尋",
+    "MENU": "選單",
+    "LANGUAGE": "語言",
+    "DARK_MODE": "深色模式",
+    "BACK": "返回"
   },
 
   "FOOTER": {

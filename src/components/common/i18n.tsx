@@ -1,6 +1,7 @@
 import useOuterClick from '@/lib/hooks/use_outer_click';
 import React from 'react';
 import LanguageMenu from '@/components/common/language_menu';
+import { useTranslation } from 'next-i18next';
 
 interface I18nProps {
   // Info: (20240813 - Liz) 顯示語言選單在手機版 Header 中必須使用
@@ -15,6 +16,8 @@ const I18n = ({
   showLanguageList = false,
   setShowLanguageList = () => {},
 }: I18nProps) => {
+  const { t } = useTranslation('common');
+
   const {
     targetRef: dropdownRef,
     componentVisible: dropdownOpen,
@@ -55,14 +58,14 @@ const I18n = ({
   );
 
   const textVersion = (
-    <div className="relative flex px-12px py-8px text-lg font-medium text-dropdown-text-primary">
+    <div className="relative flex px-12px py-8px text-base font-medium text-dropdown-text-primary">
       <button
         type="button"
         onClick={() => {
           toggleDropdown();
           setShowLanguageList((prev) => !prev);
         }}
-        className="flex items-center justify-between gap-12px hover:text-stroke-brand-primary"
+        className="flex w-full items-center gap-12px hover:text-stroke-brand-primary"
       >
         <div className="flex items-center justify-between">
           <svg
@@ -80,7 +83,7 @@ const I18n = ({
             />
           </svg>
         </div>
-        <p>Language</p>
+        <p>{t('HEADER.LANGUAGE')}</p>
 
         <div className="flex items-center justify-between">
           <svg
