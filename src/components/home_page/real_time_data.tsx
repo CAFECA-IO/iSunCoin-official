@@ -49,8 +49,9 @@ const RealTimeData = () => {
         {({ geographies }) => {
           return geographies.map((geo) => {
             // Info:(20240827 - Julian) Find the data of the country
-            const d = globalData.find((s) => s.name === geo.properties.name) ?? {
+            const d = globalData.find((s) => s.countryCode === geo.id) ?? {
               name: '',
+              countryCode: '',
               minedBlocks: 0,
             };
 
