@@ -27,4 +27,5 @@ export const ISUNCOIN_API_V1 = {
   PHASE: '/api/v1/phase', // Info: (20240816 - Julian) [GET] current phase
   EMAIL: '/api/v1/email', // Info: (20240816 - Julian) [POST] send email
   REAL_TIME_DATA: '/api/v1/real_data', // Info: (20240826 - Julian) [GET] real time data
+  GLOBAL_MINING_DATA: '/api/v1/real_data/global_mining', // Info: (20240827 - Julian) [GET] global mining data
 };
