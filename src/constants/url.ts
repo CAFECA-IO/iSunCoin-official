@@ -26,4 +26,5 @@ export const ISUNCOIN_API_V1 = {
   VOTE: '/api/v1/proposal/[proposalId]/vote', // Info: (20240816 - Julian) [POST] vote for a proposal
   PHASE: '/api/v1/phase', // Info: (20240816 - Julian) [GET] current phase
   EMAIL: '/api/v1/email', // Info: (20240816 - Julian) [POST] send email
+  REAL_TIME_DATA: '/api/v1/real_data', // Info: (20240826 - Julian) [GET] real time data
 };

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { csv } from 'd3-fetch';
 import { useTranslation } from 'next-i18next';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
+import { IRealTimeData, defaultRealTimeData } from '@/interfaces/real_time_data';
+import { numberWithCommas } from '@/lib/utils/common';
+import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 interface ICSVData {
   name: string;
@@ -20,6 +23,13 @@ enum MapColor {
 const RealTimeData = () => {
   const { t } = useTranslation('common');
   const [csvData, setCsvData] = useState<ICSVData[]>([]);
+  const [realTimeData, setRealTimeData] = useState<IRealTimeData>(defaultRealTimeData);
+
+  useEffect(() => {
+    fetch(ISUNCOIN_API_V1.REAL_TIME_DATA)
+      .then((response) => response.json())
+      .then((data) => setRealTimeData(data));
+  }, []);
 
   useEffect(() => {
     csv('/real_time_data/world.csv').then((data) => {
@@ -37,6 +47,8 @@ const RealTimeData = () => {
       setCsvData(parsedData as ICSVData[]);
     });
   }, []);
+
+  const { totalIssuance, totalNodes, totalComputingPower, oneDayTransactions } = realTimeData;
 
   const mapGraph =
     csvData && csvData.length ? (
@@ -117,7 +129,9 @@ const RealTimeData = () => {
             <p className="text-sm text-text-neutral-secondary">
               {t('HOME_PAGE.REAL_TIME_TOTAL_ISSUANCE')}
             </p>
-            <p className="text-32px font-bold text-text-brand-secondary-lv2">856,721</p>
+            <p className="text-32px font-bold text-text-brand-secondary-lv2">
+              {numberWithCommas(totalIssuance)}
+            </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_ISC')}</p>
           </div>
           {/* Info:(20240812 - Julian) Total Nodes */}
@@ -125,7 +139,9 @@ const RealTimeData = () => {
             <p className="text-sm text-text-neutral-secondary">
               {t('HOME_PAGE.REAL_TIME_TOTAL_NODES')}
             </p>
-            <p className="text-32px font-bold text-text-brand-secondary-lv2">47,511</p>
+            <p className="text-32px font-bold text-text-brand-secondary-lv2">
+              {numberWithCommas(totalNodes)}
+            </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_NODES')}</p>
           </div>
           {/* Info:(20240812 - Julian) Total Computing Power */}
@@ -133,7 +149,9 @@ const RealTimeData = () => {
             <p className="text-sm text-text-neutral-secondary">
               {t('HOME_PAGE.REAL_TIME_TOTAL_COMPUTING_POWER')}
             </p>
-            <p className="text-32px font-bold text-text-brand-secondary-lv2">2,687,145</p>
+            <p className="text-32px font-bold text-text-brand-secondary-lv2">
+              {numberWithCommas(totalComputingPower)}
+            </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TOPS')}</p>
           </div>
           {/* Info:(20240812 - Julian) 24-Hour Transactions */}
@@ -141,7 +159,9 @@ const RealTimeData = () => {
             <p className="text-sm text-text-neutral-secondary">
               {t('HOME_PAGE.REAL_TIME_24_HR_TXNS')}
             </p>
-            <p className="text-32px font-bold text-text-brand-secondary-lv2">540,000</p>
+            <p className="text-32px font-bold text-text-brand-secondary-lv2">
+              {numberWithCommas(oneDayTransactions)}
+            </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TXNS')}</p>
           </div>
         </div>

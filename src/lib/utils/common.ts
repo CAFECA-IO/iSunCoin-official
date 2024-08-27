@@ -1,6 +1,10 @@
 import { MILLISECONDS_IN_A_SECOND } from '@/constants/config';
 import { MONTH_ABBREVIATION_NAME_LIST, MONTH_FULL_NAME_LIST } from '@/constants/display';
 
+export const numberWithCommas = (x: number | string) => {
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+};
+
 export const timestampToString = (timestamp: number | undefined) => {
   if (timestamp === undefined || timestamp === null || timestamp <= 0) {
     return {
