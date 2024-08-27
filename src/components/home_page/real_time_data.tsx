@@ -1,16 +1,9 @@
 import { useState, useEffect } from 'react';
-import { csv } from 'd3-fetch';
 import { useTranslation } from 'next-i18next';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
-import { IRealTimeData, defaultRealTimeData } from '@/interfaces/real_time_data';
+import { IRealTimeData, defaultRealTimeData, IGlobalMiningData } from '@/interfaces/real_time_data';
 import { numberWithCommas } from '@/lib/utils/common';
 import { ISUNCOIN_API_V1 } from '@/constants/url';
-
-interface ICSVData {
-  name: string;
-  FID: string;
-  mined: number;
-}
 
 enum MapColor {
   PHASE_1 = '#94BBEA',
@@ -22,90 +15,80 @@ enum MapColor {
 
 const RealTimeData = () => {
   const { t } = useTranslation('common');
-  const [csvData, setCsvData] = useState<ICSVData[]>([]);
+  const [globalData, setGlobalData] = useState<IGlobalMiningData[]>([]);
   const [realTimeData, setRealTimeData] = useState<IRealTimeData>(defaultRealTimeData);
 
   useEffect(() => {
+    // Info:(20240827 - Julian) 取得四格資料
     fetch(ISUNCOIN_API_V1.REAL_TIME_DATA)
       .then((response) => response.json())
       .then((data) => setRealTimeData(data));
-  }, []);
 
-  useEffect(() => {
-    csv('/real_time_data/world.csv').then((data) => {
-      const { columns } = data;
-      // Info:(20240812 - Julian) 根據 columns 將資料轉換成物件
-      const parsedData = data.map((row: Record<string, string>) => {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const obj: Record<string, any> = {};
-        columns.forEach((column: string) => {
-          obj[column] = row[column];
-        });
-        return obj;
-      });
-
-      setCsvData(parsedData as ICSVData[]);
-    });
+    // Info:(20240827 - Julian) 取得全球挖礦資料
+    fetch(ISUNCOIN_API_V1.GLOBAL_MINING_DATA)
+      .then((response) => response.json())
+      .then((data) => setGlobalData(data));
   }, []);
 
   const { totalIssuance, totalNodes, totalComputingPower, oneDayTransactions } = realTimeData;
 
-  const mapGraph =
-    csvData && csvData.length ? (
-      <ComposableMap projectionConfig={{ rotate: [-20, 0, 0] }}>
-        {/* Info:(20240812 - Julian) Add shadow to the map */}
-        <defs>
-          <filter id="shadow">
-            <feDropShadow dy="8" stdDeviation="0.1" floodColor="#192E47" />
-          </filter>
-        </defs>
-        <Geographies
-          stroke="white"
-          strokeWidth={0.25}
-          geography="/real_time_data/feature.json"
-          filter="url(#shadow)"
-        >
-          {({ geographies }) => {
-            return geographies.map((geo) => {
-              const d = csvData.find((s) => s.name === geo.properties.name) ?? {
-                name: '',
-                mined: 0,
-              };
+  const mapGraph = globalData.length ? (
+    <ComposableMap projectionConfig={{ rotate: [-20, 0, 0] }}>
+      {/* Info:(20240812 - Julian) Add shadow to the map */}
+      <defs>
+        <filter id="shadow">
+          <feDropShadow dy="8" stdDeviation="0.1" floodColor="#192E47" />
+        </filter>
+      </defs>
+      <Geographies
+        stroke="white"
+        strokeWidth={0.25}
+        geography="/real_time_data/feature.json"
+        filter="url(#shadow)"
+      >
+        {({ geographies }) => {
+          return geographies.map((geo) => {
+            // Info:(20240827 - Julian) Find the data of the country
+            const d = globalData.find((s) => s.name === geo.properties.name) ?? {
+              name: '',
+              minedBlocks: 0,
+            };
 
-              const color =
-                d.mined > 800
-                  ? MapColor.PHASE_5
-                  : d.mined > 600
-                    ? MapColor.PHASE_4
-                    : d.mined > 400
-                      ? MapColor.PHASE_3
-                      : d.mined > 200
-                        ? MapColor.PHASE_2
-                        : MapColor.PHASE_1;
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  style={{
-                    default: {
-                      fill: color,
-                      outline: 'none',
-                    },
-                    hover: {
-                      fill: 'white',
-                      outline: 'none',
-                    },
-                    pressed: {
-                      outline: 'none',
-                    },
-                  }}
-                />
-              );
-            });
-          }}
-        </Geographies>
-      </ComposableMap>
-    ) : null;
+            // Info:(20240827 - Julian) Set the color according to the mined data
+            const color =
+              d.minedBlocks > 800
+                ? MapColor.PHASE_5
+                : d.minedBlocks > 600
+                  ? MapColor.PHASE_4
+                  : d.minedBlocks > 400
+                    ? MapColor.PHASE_3
+                    : d.minedBlocks > 200
+                      ? MapColor.PHASE_2
+                      : MapColor.PHASE_1;
+            return (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                style={{
+                  default: {
+                    fill: color,
+                    outline: 'none',
+                  },
+                  hover: {
+                    fill: 'white',
+                    outline: 'none',
+                  },
+                  pressed: {
+                    outline: 'none',
+                  },
+                }}
+              />
+            );
+          });
+        }}
+      </Geographies>
+    </ComposableMap>
+  ) : null;
 
   const bgColorP1 = `bg-skyBlue`;
   const bgColorP2 = `bg-darkSkyBlue`;
