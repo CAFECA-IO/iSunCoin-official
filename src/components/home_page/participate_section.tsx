@@ -20,6 +20,21 @@ const ParticipateSection = () => {
   } = useOuterClick<HTMLDivElement>(false);
 
   const handleVersionClick = () => setVersionVisible(!versionVisible);
+  const downloadHandler = () => {
+    // Info:(20240912 - Luphia) Download the selected version
+    switch (selectedVersion) {
+      case iSunCoinVersion.WINDOWS:
+        window.open('/download/latest/isuncoin-gui-windows.zip');
+        break;
+      case iSunCoinVersion.MAC:
+        window.open('/download/latest/isuncoin-gui-mac.dmg');
+        break;
+      case iSunCoinVersion.LINUX:
+      default:
+        window.open('/download/latest/isuncoin-linux.zip');
+        break;
+    }
+  };
 
   const versionDropMenu = Object.values(iSunCoinVersion).map((version) => (
     <div
@@ -78,8 +93,8 @@ const ParticipateSection = () => {
           <button
             id="download-btn"
             type="button"
-            disabled
             className="px-12px py-10px disabled:text-input-text-input-placeholder"
+            onClick={downloadHandler}
           >
             {t('HOME_PAGE.DOWNLOAD')}
           </button>
