@@ -227,7 +227,7 @@ const LandingHeader = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="flex grow items-center justify-between rounded-sm border border-lightGray3 bg-input-surface-input-background">
+      <div className="flex grow items-center justify-between rounded-sm border border-input-stroke-input bg-input-surface-input-background">
         <div className="grow">
           <input
             type="text"
