@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { IRealTimeData, defaultRealTimeData, IGlobalMiningData } from '@/interfaces/real_time_data';
-import { numberWithCommas } from '@/lib/utils/common';
+import { numberWithMozaic } from '@/lib/utils/common';
 import { ISUNCOIN_API_V1 } from '@/constants/url';
 
 enum MapColor {
@@ -114,7 +114,7 @@ const RealTimeData = () => {
               {t('HOME_PAGE.REAL_TIME_TOTAL_ISSUANCE')}
             </p>
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
-              {numberWithCommas(totalIssuance)}
+              {numberWithMozaic(totalIssuance)}
             </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_ISC')}</p>
           </div>
@@ -124,7 +124,7 @@ const RealTimeData = () => {
               {t('HOME_PAGE.REAL_TIME_TOTAL_NODES')}
             </p>
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
-              {numberWithCommas(totalNodes)}
+              {numberWithMozaic(totalNodes)}
             </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_NODES')}</p>
           </div>
@@ -134,7 +134,7 @@ const RealTimeData = () => {
               {t('HOME_PAGE.REAL_TIME_TOTAL_COMPUTING_POWER')}
             </p>
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
-              {numberWithCommas(totalComputingPower)}
+              {numberWithMozaic(totalComputingPower)}
             </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TOPS')}</p>
           </div>
@@ -144,7 +144,7 @@ const RealTimeData = () => {
               {t('HOME_PAGE.REAL_TIME_24_HR_TXNS')}
             </p>
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
-              {numberWithCommas(oneDayTransactions)}
+              {numberWithMozaic(oneDayTransactions)}
             </p>
             <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TXNS')}</p>
           </div>
