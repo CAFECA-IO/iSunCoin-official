@@ -5,6 +5,10 @@ export const numberWithCommas = (x: number | string) => {
   return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
 };
 
+export const numberWithMozaic = (x: number | string) => {
+  return x.toString().replace(/./g, '*');
+};
+
 export const timestampToString = (timestamp: number | undefined) => {
   if (timestamp === undefined || timestamp === null || timestamp <= 0) {
     return {
