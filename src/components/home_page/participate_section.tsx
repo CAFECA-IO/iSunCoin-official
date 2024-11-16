@@ -31,7 +31,7 @@ const ParticipateSection = () => {
         break;
       case iSunCoinVersion.LINUX:
       default:
-        window.open('/download/latest/isuncoin-linux.zip');
+        window.open('/download/latest/isuncoin-gui-linux.appimage');
         break;
     }
   };
