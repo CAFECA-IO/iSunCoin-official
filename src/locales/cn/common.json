@@ -1,31 +1,31 @@
 {
   "HOME_PAGE": {
     "WELCOME": "欢迎来到",
-    "ISUNCOIN": "阳光币",
+    "ISUNCOIN": "阳光链",
     "WHITEPAPER": "白皮书",
     "WHITEPAPER_LINK": "/whitepaper/isuncoin_whitepaper_cn_v1.1.2.pdf",
-    "WELCOME_DESCRIPTION_1": "阳光币是一项开放自由的网际网路科技，它串联所有电脑重新定义算力单位标准，并为数以万计的去中心式应用程式提供运作环境。",
+    "WELCOME_DESCRIPTION_1": "阳光链是一项开放自由的网际网路科技，它串联所有电脑重新定义算力单位标准，并为数以万计的去中心式应用程式提供运作环境。",
     "WELCOME_DESCRIPTION_2": "它实现了零知识证明的会计向量标准，使人们可以运用标准且具备隐私保护的格式公开交换资讯；它可以建立全球范围的公开帐本，也能提供人们创建并在平台上运行去中心式应用服务。",
-    "WELCOME_DESCRIPTION_3": "阳光币的分散式帐本技术非常灵活，允许用户创建任何形式的程式码逻辑，实现我们尚未想像到的系统，且任何电脑都能运行阳光币为平台提供算力并获取奖励。",
+    "WELCOME_DESCRIPTION_3": "阳光链的分散式帐本技术非常灵活，允许用户创建任何形式的程式码逻辑，实现我们尚未想像到的系统，且任何电脑都能运行阳光链为平台提供算力并获取奖励。",
     "WELCOME_DESCRIPTION_4": "",
     "INTRO_CARD_1_TITLE": "开放自由",
-    "INTRO_CARD_1_DESCRIPTION": "阳光币是一项开放自由的网际网路科技。",
+    "INTRO_CARD_1_DESCRIPTION": "阳光链是一项开放自由的网际网路科技。",
     "INTRO_CARD_2_TITLE": "共享算力",
-    "INTRO_CARD_2_DESCRIPTION": "阳光币串联所有电脑重新定义算力单位标准，并为数以万计的去中心式应用程式提供运作环境。",
+    "INTRO_CARD_2_DESCRIPTION": "阳光链串联所有电脑重新定义算力单位标准，并为数以万计的去中心式应用程式提供运作环境。",
     "INTRO_CARD_3_TITLE": "隐私保障",
-    "INTRO_CARD_3_DESCRIPTION": "阳光币实现了零知识证明的会计向量标准，运用标准且具备隐私保护的格式公开交换资讯。",
+    "INTRO_CARD_3_DESCRIPTION": "阳光链实现了零知识证明的会计向量标准，运用标准且具备隐私保护的格式公开交换资讯。",
     "INTRO_CARD_4_TITLE": "世界接轨",
-    "INTRO_CARD_4_DESCRIPTION": "阳光币可以建立全球范围的公开帐本，轻易建立面向全世界的应用服务。",
-    "PARTICIPATE_TITLE": "参与阳光币",
-    "PARTICIPATE_DESCRIPTION": "阳光币透过电脑将能源转换成算力资源，并提供算力资源给阳光币平台换取奖励来实现挖矿，一般的家用电脑或是笔记性电脑安装 iSunCoin 软体即可立即开始挖矿。为达到最佳的算力转换效益，推荐使用 10 Mbps 以上频宽的网路、算力 10 TOPS 以上、记忆体 4 GB 以上、储存容量 1 TB 以上的机器。",
+    "INTRO_CARD_4_DESCRIPTION": "阳光链可以建立全球范围的公开帐本，轻易建立面向全世界的应用服务。",
+    "PARTICIPATE_TITLE": "参与阳光链",
+    "PARTICIPATE_DESCRIPTION": "阳光链透过电脑将能源转换成算力资源，并提供算力资源给阳光链平台换取奖励来实现挖矿，一般的家用电脑或是笔记性电脑安装 iSunCoin 软体即可立即开始挖矿。为达到最佳的算力转换效益，推荐使用 10 Mbps 以上频宽的网路、算力 10 SUNS 以上、记忆体 4 GB 以上、储存容量 1 TB 以上的机器。",
     "DOWNLOAD": "下载",
-    "REAL_TIME_DATA_TITLE": "阳光币即时数据",
+    "REAL_TIME_DATA_TITLE": "阳光链即时数据",
     "REAL_TIME_TOTAL_ISSUANCE": "总发行量",
     "REAL_TIME_ISC": "ISC",
     "REAL_TIME_TOTAL_NODES": "总节点数",
     "REAL_TIME_NODES": "nodes",
     "REAL_TIME_TOTAL_COMPUTING_POWER": "总算力",
-    "REAL_TIME_TOPS": "TOPS",
+    "REAL_TIME_SUNS": "SUNS",
     "REAL_TIME_24_HR_TXNS": "24 小时交易数",
     "REAL_TIME_TXNS": "Txns",
     "REAL_TIME_24_HR_MINED": "24 小时挖矿区块数",
@@ -43,11 +43,11 @@
   },
 
   "AUTONOMY_PAGE": {
-    "AUTONOMY_TITLE": "阳光币自治",
-    "AUTONOMY_DESCRIPTION": "阳光币采用去中心式治理，持币者可以透过提案、投票等方式参与社区治理。持有阳光币的用户即具备社群成员资格，任何社群成员都可以提出改善阳光币生态的建议，经过社区广泛讨论和投票后，决议将被写入智能合约并自动执行透过社区共识驱动的决策，能够确保项目长期健康发展，并吸引更多的用户和开发者加入。",
+    "AUTONOMY_TITLE": "阳光链自治",
+    "AUTONOMY_DESCRIPTION": "阳光链采用去中心式治理，持币者可以透过提案、投票等方式参与社区治理。持有 ISC 的用户即具备社群成员资格，任何社群成员都可以提出改善阳光链生态的建议，经过社区广泛讨论和投票后，决议将被写入智能合约并自动执行透过社区共识驱动的决策，能够确保项目长期健康发展，并吸引更多的用户和开发者加入。",
     "DECENTRALIZED_GOVERNANCE": "去中心化治理",
     "PARTICIPATION": "参与：持币者可以提议和投票。",
-    "COMMUNITY_MEMBERS": "社群成员：任何拥有阳光币的人。",
+    "COMMUNITY_MEMBERS": "社群成员：任何拥有 ISC 的人。",
     "SUBMIT_PROPOSALS_WITH_100_ISC_DEPOSIT": "每份提案需要扣除 100 ISC 作为保证金",
     "VOTING_AFTER": "公告",
     "BLOCKS": "个区块后表决投票",
@@ -59,12 +59,12 @@
     "EXECUTION": "执行",
     "PRIORITIZATION": "优先顺序",
     "SYSTEM_UPDATE_CONTENT": "每 1,310,720 个区块进行一次系统升级。",
-    "DECISION_MAKING_CONTENT": "社群成员可透过提案与投票，直接参与决策阳光币的未来发展方向。",
+    "DECISION_MAKING_CONTENT": "社群成员可透过提案与投票，直接参与决策阳光链的未来发展方向。",
     "EXECUTION_CONTENT": "社群决议通过的提案将交由专责团队执行，并定期向社群回报执行进度。为确保系统稳定性，执行团队将严格评估各项方案，并弹性调整执行时程。",
     "PRIORITIZATION_CONTENT": "采纳的提案将根据同意票数减去 否决票数后的差额数字由高至低决定执行顺序排序，若提案过多无法于本期完成，将延续至下个周期执行。参与治理，且提供有效被采纳的意见之社群成员，将在下一个更新周期中获得治理奖励。",
 
     "ELIGIBILITY": "资格",
-    "ELIGIBILITY_DESCRIPTION": "持有 10,000 以上的阳光币",
+    "ELIGIBILITY_DESCRIPTION": "持有 10,000 以上的阳光链",
     "DEPOSIT": "保证金",
     "DEPOSIT_DESCRIPTION": "每份提案 100 ISC 保证金",
     "VOTING": "投票",
@@ -98,7 +98,7 @@
     "OTHERS_VIA_PROPOSALS": "其他成员由投票决议增设",
 
     "DEPOSIT_1_ISC_PER_VOTE": "保证金：每票 1 ISC",
-    "DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION": "为确保阳光币社群自治的公平与透明，所有提案都需要藉由表决来进行决策，每个社群成员针对一项提案可以投下同意或否决一票。为提升投票与议案品质，减少随意投票或恶意攻击的行为，投票须抵押 1 ISC 作为保证金。所有参与者均可申请治理奖励。",
+    "DEPOSIT_1_ISC_PER_VOTE_DESCRIPTION": "为确保阳光链社群自治的公平与透明，所有提案都需要藉由表决来进行决策，每个社群成员针对一项提案可以投下同意或否决一票。为提升投票与议案品质，减少随意投票或恶意攻击的行为，投票须抵押 1 ISC 作为保证金。所有参与者均可申请治理奖励。",
     "APPROVAL": "提案通过",
     "REFUND_PROPOSAL_DEPOSITS": "退还提案保证金",
     "REFUND_VOTING_DEPOSIT": "退还投票保证金",
@@ -107,7 +107,7 @@
     "GOES_TO_REWARD_POOL": "进入奖励池",
 
     "GOVERNANCE_REWARDS": "治理奖励",
-    "GOVERNANCE_REWARDS_DESCRIPTION": "参与阳光币的提案与投票都需要缴纳一定数量的保证金，大部分的保证金在决算后将予以退还，只有被否决的提案保证金因意见不被社群采纳而遭没收，没收的保证金将投入治理奖励池作为治理奖励。除此之外，每个区块也会提供额外的治理奖励。"
+    "GOVERNANCE_REWARDS_DESCRIPTION": "参与阳光链的提案与投票都需要缴纳一定数量的保证金，大部分的保证金在决算后将予以退还，只有被否决的提案保证金因意见不被社群采纳而遭没收，没收的保证金将投入治理奖励池作为治理奖励。除此之外，每个区块也会提供额外的治理奖励。"
   },
 
   "DEVELOP_PAGE": {
@@ -229,10 +229,10 @@
   },
 
   "USE_PAGE": {
-    "USING_ISUNCOIN": "使用阳光币",
+    "USING_ISUNCOIN": "使用 ISC",
     "USING_ISUNCOIN_DESCRIPTION": "iSunCoin旨在建立全球最大的共享人工智慧运算网路。运行iSunCoin的机器将共享其闲置的计算资源，用户可以透过iSunCoin付费来租用这些资源。这允许用户备份私有资料、快速部署公有云服务、或训练和运行他们的人工智慧模型。秉持互利共享的精神，您只需分享您的闲置运算资源即可享受以下云端运算服务。",
 
-    "WHERE_TO_USE_ISUNCOIN": "在哪里使用阳光币？",
+    "WHERE_TO_USE_ISUNCOIN": "在哪里使用 ISC？",
 
     "SAFEGUARD_YOUR_DATA_UNTIL_THE_END_OF_THE_WORLD": "保护您的资料直到世界末日",
     "SAFEGUARD_YOUR_DATA_UNTIL_THE_END_OF_THE_WORLD_DESCRIPTION": "iSunCoin 提供最先进的资料储存解决方案，为您在iSunCoin 网路上提供专用空间来储存您的资料。每条资料都经过多层加密，确保其在传输和预存程序中的安全。 iSunCoin采用零知识证明技术，跨全球多个节点进行冗余备份和完整性验证。只要iSunCoin 正常运行，您的资料就保持完整和安全。",
@@ -257,8 +257,8 @@
     "ENTER_YOUR_PROMPT_AND_LET_AI_DRAW_FOR_YOU_REQUIRES_1_ISC": "输入提示，让 AI 为您绘制 (需要 1 ISC)",
     "ENTER_A_TOPIC_AND_LET_AI_BROADCAST_FOR_YOU_REQUIRES_10_ISC": "输入主题，让 AI 为您广播 (需要 10 ISC)",
 
-    "I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN": "我不需要服务，只要给我阳光币",
-    "WALLETS_DESCRIPTION": "停止订阅 iSunCoin 节点上的服务以保留您的阳光币奖励。您可以直接在节点上查看挖矿历史记录，并将挖出的阳光币转移到其他加密货币钱包或冷钱包中妥善保管。",
+    "I_DONT_NEED_SERVICES_JUST_GIVE_ME_ISUNCOIN": "我不需要服务，只要给我 ISC",
+    "WALLETS_DESCRIPTION": "停止订阅 iSunCoin 节点上的服务以保留您的 ISC 奖励。您可以直接在节点上查看挖矿历史记录，并将挖出的 ISC 转移到其他加密货币钱包或冷钱包中妥善保管。",
     "ALL": "全部"
   }
 }

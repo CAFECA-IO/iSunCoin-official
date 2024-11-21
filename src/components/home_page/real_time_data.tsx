@@ -136,7 +136,7 @@ const RealTimeData = () => {
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
               {numberWithMozaic(totalComputingPower)}
             </p>
-            <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TOPS')}</p>
+            <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.SUNS')}</p>
           </div>
           {/* Info:(20240812 - Julian) 24-Hour Transactions */}
           <div className="flex w-200px flex-col items-center gap-36px rounded-sm bg-surface-neutral-surface-lv2 px-30px py-20px shadow-downDropShadowS">
