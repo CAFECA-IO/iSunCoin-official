@@ -111,7 +111,7 @@ const RealTimeData = () => {
           {/* Info:(20240812 - Julian) Total Issuance */}
           <div className="flex w-200px flex-col items-center gap-36px rounded-sm bg-surface-neutral-surface-lv2 px-30px py-20px shadow-downDropShadowS">
             <p className="text-sm text-text-neutral-secondary">
-              {t('HOME_PAGE.REAL_TIME_TOTAL_ISSUANCE')}
+              {t('HOME_PAGE.REAL_TIME_24_HR_ISSUANCE')}
             </p>
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
               {numberWithMozaic(totalIssuance)}
@@ -136,7 +136,7 @@ const RealTimeData = () => {
             <p className="text-32px font-bold text-text-brand-secondary-lv2">
               {numberWithMozaic(totalComputingPower)}
             </p>
-            <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_TOPS')}</p>
+            <p className="text-sm text-text-neutral-secondary">{t('HOME_PAGE.REAL_TIME_SUNS')}</p>
           </div>
           {/* Info:(20240812 - Julian) 24-Hour Transactions */}
           <div className="flex w-200px flex-col items-center gap-36px rounded-sm bg-surface-neutral-surface-lv2 px-30px py-20px shadow-downDropShadowS">
@@ -156,7 +156,7 @@ const RealTimeData = () => {
         <div className="relative w-full">{mapGraph}</div>
         {/* Info:(20240812 - Julian) Map Legend */}
         <div className="flex w-full flex-col items-center gap-10px text-sm font-bold md:-mt-120px md:px-80px md:text-xl">
-          <p className="text-text-neutral-primary">{t('HOME_PAGE.REAL_TIME_24_HR_MINED')}</p>
+          <p className="text-text-neutral-primary">{t('HOME_PAGE.REAL_TIME_24_HR_NODES')}</p>
           <div className="grid w-full grid-flow-row grid-cols-5 items-center overflow-hidden whitespace-nowrap rounded-full border-3px border-white text-center">
             <div className={`${bgColorP1} text-text-neutral-solid-light`}>0-200</div>
             <div className={`${bgColorP2} text-text-neutral-solid-light`}>200-400</div>
